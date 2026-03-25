@@ -1,0 +1,2135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fantasy Grounds Character Sheet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cinzel+Decorative:wght@700&family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+/* ===== CSS VARIABLES ===== */
+:root {
+  --bg: #08080f;
+  --bg-card: #0e0e1a;
+  --bg-card2: #13132000;
+  --bg-hover: #1a1a2e;
+  --border: #2a2a3d;
+  --border-gold: #b8922a;
+  --border-gold-bright: #d4a843;
+  --gold: #d4a843;
+  --gold-light: #f0c870;
+  --gold-dim: #7a5e28;
+  --text: #ede5d0;
+  --text-dim: #9a8f7e;
+  --text-bright: #fff8ee;
+  --red: #c44040;
+  --red-dark: #8a2020;
+  --green: #4da86e;
+  --blue: #4a90d9;
+  --blue-bright: #72b0f0;
+  --purple: #9b6bc0;
+  --teal: #3ea8a8;
+  --orange: #d07040;
+  --font-display: 'Cinzel', 'Palatino Linotype', Palatino, serif;
+  --font-deco: 'Cinzel Decorative', 'Palatino Linotype', serif;
+  --font-body: 'EB Garamond', 'Palatino Linotype', Georgia, serif;
+  --shadow: 0 4px 24px rgba(0,0,0,0.7);
+  --glow-gold: 0 0 12px rgba(212,168,67,0.25);
+  --glow-gold-strong: 0 0 20px rgba(212,168,67,0.5);
+  --radius: 8px;
+  --radius-lg: 12px;
+}
+
+/* ===== RESET ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 20px; }
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  padding-top: 48px;
+  background-image:
+    radial-gradient(ellipse at 20% 20%, rgba(50,30,80,0.3) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 80%, rgba(20,20,60,0.4) 0%, transparent 60%);
+}
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--gold-dim); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--gold); }
+
+/* ===== UPLOAD ZONE ===== */
+#upload-zone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 24px;
+}
+.upload-inner {
+  text-align: center;
+  max-width: 520px;
+  padding: 60px 48px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow), var(--glow-gold);
+  position: relative;
+  overflow: hidden;
+}
+.upload-inner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 20px,
+    rgba(212,168,67,0.02) 20px,
+    rgba(212,168,67,0.02) 21px
+  );
+}
+.upload-dragon {
+  font-size: 64px;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 0 12px rgba(212,168,67,0.6));
+}
+.upload-inner h1 {
+  font-family: var(--font-deco);
+  font-size: 1.7rem;
+  color: var(--gold);
+  margin-bottom: 8px;
+  letter-spacing: 0.04em;
+  text-shadow: 0 0 20px rgba(212,168,67,0.5);
+}
+.upload-inner p {
+  color: var(--text-dim);
+  font-size: 1rem;
+  margin-bottom: 32px;
+  font-style: italic;
+}
+.upload-drop-zone {
+  border: 2px dashed var(--border-gold);
+  border-radius: var(--radius);
+  padding: 32px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+  background: rgba(212,168,67,0.04);
+}
+.upload-drop-zone:hover, .upload-drop-zone.drag-over {
+  border-color: var(--gold-light);
+  background: rgba(212,168,67,0.1);
+  box-shadow: var(--glow-gold);
+}
+.upload-drop-zone p { color: var(--text); font-style: normal; margin: 0; }
+.upload-drop-zone .drop-sub { color: var(--text-dim); font-size: 0.85rem; margin-top: 6px; font-style: italic; }
+#file-input { display: none; }
+.upload-btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #8a5c14, #c9a84c, #8a5c14);
+  color: #fff8ee;
+  padding: 12px 32px;
+  border-radius: 6px;
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  border: 1px solid var(--gold-light);
+  box-shadow: 0 2px 12px rgba(212,168,67,0.3);
+  transition: all 0.2s;
+  text-transform: uppercase;
+}
+.upload-btn:hover {
+  box-shadow: 0 2px 20px rgba(212,168,67,0.6);
+  transform: translateY(-1px);
+}
+.upload-hint {
+  margin-top: 20px;
+  color: var(--text-dim);
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
+/* ===== CHARACTER SHEET ===== */
+#sheet { display: none; padding: 16px; max-width: 1500px; margin: 0 auto; }
+
+/* --- HEADER --- */
+.cs-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-lg);
+  padding: 20px 28px;
+  margin-bottom: 14px;
+  box-shadow: var(--shadow), var(--glow-gold);
+  position: relative;
+  overflow: hidden;
+}
+.cs-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(212,168,67,0.06) 0%, transparent 50%);
+  pointer-events: none;
+}
+.portrait-frame {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 3px solid var(--border-gold);
+  background: linear-gradient(135deg, #2a1f0a, #1a1428);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  flex-shrink: 0;
+  box-shadow: var(--glow-gold-strong), inset 0 0 20px rgba(0,0,0,0.7);
+  overflow: hidden;
+}
+.portrait-frame img { width: 100%; height: 100%; object-fit: cover; }
+.header-info { flex: 1; }
+.char-name {
+  font-family: var(--font-deco);
+  font-size: 2.4rem;
+  color: var(--gold-light);
+  letter-spacing: 0.06em;
+  text-shadow: 0 0 30px rgba(212,168,67,0.6), 0 2px 4px rgba(0,0,0,0.8);
+  line-height: 1.1;
+}
+.char-subtitle {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  color: var(--text-dim);
+  letter-spacing: 0.05em;
+  margin-top: 4px;
+}
+.char-subtitle span {
+  color: var(--text);
+}
+.char-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 12px;
+}
+.char-meta-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.char-meta-label {
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--gold-dim);
+}
+.char-meta-value {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  color: var(--text-bright);
+}
+.header-badges {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  flex-shrink: 0;
+}
+.badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(212,168,67,0.12);
+  border: 1px solid var(--border-gold);
+  border-radius: 20px;
+  padding: 4px 14px;
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  color: var(--gold);
+  letter-spacing: 0.06em;
+}
+.badge.active { background: rgba(212,168,67,0.25); box-shadow: var(--glow-gold); }
+.badge-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); }
+
+/* --- STATS BAR --- */
+.cs-stats-bar {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+.stat-block {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 10px 14px;
+  text-align: center;
+  flex: 1;
+  min-width: 80px;
+  position: relative;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+.stat-block:hover {
+  border-color: var(--border-gold);
+  box-shadow: var(--glow-gold);
+}
+.stat-block.stat-hp {
+  flex: 2;
+  min-width: 140px;
+  border-color: rgba(77,168,110,0.4);
+}
+.stat-block.stat-hp:hover { border-color: var(--green); }
+.stat-block.stat-ac { border-color: rgba(74,144,217,0.4); }
+.stat-block.stat-ac:hover { border-color: var(--blue); }
+.stat-label {
+  font-family: var(--font-display);
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-dim);
+  margin-bottom: 4px;
+}
+.stat-value {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--text-bright);
+}
+.stat-value.hp-disp { font-size: 1.3rem; }
+.stat-value.gold { color: var(--gold-light); }
+.stat-value.green { color: var(--green); }
+.stat-value.blue { color: var(--blue-bright); }
+.stat-sub { font-size: 0.7rem; color: var(--text-dim); margin-top: 3px; }
+.hp-bar-wrap { margin-top: 6px; height: 5px; background: rgba(255,255,255,0.08); border-radius: 3px; overflow: hidden; }
+.hp-bar-fill { height: 100%; border-radius: 3px; transition: width 0.5s ease; }
+.hp-bar-temp { position: absolute; bottom: 8px; right: 10px; font-size: 0.7rem; color: var(--blue-bright); }
+
+/* ===== MAIN LAYOUT ===== */
+.cs-main {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 14px;
+  align-items: start;
+}
+@media (max-width: 900px) {
+  .cs-main { grid-template-columns: 1fr; }
+}
+
+/* ===== SIDEBAR ===== */
+.cs-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: sticky;
+  top: 16px;
+  max-height: calc(100vh - 32px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 4px;
+}
+.section-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 14px 16px;
+  box-shadow: var(--shadow);
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--gold);
+  border-bottom: 1px solid var(--border-gold);
+  padding-bottom: 6px;
+  margin-bottom: 12px;
+}
+
+/* Ability Scores */
+.abilities-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+.ability-box {
+  background: linear-gradient(150deg, rgba(30,25,15,0.8), rgba(20,15,30,0.8));
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 8px 4px 6px;
+  text-align: center;
+  position: relative;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  cursor: default;
+}
+.ability-box:hover {
+  border-color: var(--border-gold);
+  box-shadow: var(--glow-gold);
+}
+.ability-name {
+  font-family: var(--font-display);
+  font-size: 0.55rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-dim);
+}
+.ability-score {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  line-height: 1.1;
+  margin: 2px 0;
+}
+.ability-mod {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: var(--text-bright);
+  line-height: 1;
+  text-shadow: 0 0 10px rgba(240,200,112,0.3);
+}
+.ability-save-indicator {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1px solid var(--text-dim);
+  background: transparent;
+}
+.ability-save-indicator.proficient {
+  background: var(--gold);
+  border-color: var(--gold);
+  box-shadow: 0 0 4px rgba(212,168,67,0.6);
+}
+.ability-save-val {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  margin-top: 2px;
+}
+
+/* Saves list */
+.saves-list { display: flex; flex-direction: column; gap: 4px; }
+.save-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 3px 4px;
+  border-radius: 4px;
+  transition: background 0.15s;
+}
+.save-row:hover { background: rgba(255,255,255,0.04); }
+.prof-pip {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1.5px solid var(--text-dim);
+  flex-shrink: 0;
+}
+.prof-pip.filled { background: var(--gold); border-color: var(--gold); }
+.save-name {
+  flex: 1;
+  font-size: 0.82rem;
+  color: var(--text);
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+}
+.save-bonus {
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-bright);
+  min-width: 28px;
+  text-align: right;
+}
+
+/* Skills list */
+.skills-list { display: flex; flex-direction: column; gap: 3px; }
+.skill-row {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 3px 4px;
+  border-radius: 4px;
+  transition: background 0.15s;
+}
+.skill-row:hover { background: rgba(255,255,255,0.04); }
+.skill-row.proficient .skill-name { color: var(--gold-light); font-weight: 600; }
+.skill-name { flex: 1; font-family: var(--font-display); font-size: 0.74rem; letter-spacing: 0.02em; color: var(--text); }
+.skill-stat { font-family: var(--font-display); font-size: 0.64rem; color: var(--text-dim); text-transform: uppercase; min-width: 28px; }
+.skill-bonus { font-family: var(--font-display); font-size: 0.82rem; font-weight: 600; color: var(--text-bright); min-width: 28px; text-align: right; }
+
+/* ===== RIGHT CONTENT ===== */
+.cs-content { display: flex; flex-direction: column; gap: 14px; }
+
+/* ===== TABS ===== */
+.tab-nav {
+  display: flex;
+  gap: 4px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 8px;
+  flex-wrap: wrap;
+}
+.tab-btn {
+  flex: 1;
+  min-width: 80px;
+  padding: 9px 14px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  color: var(--text-dim);
+  font-family: var(--font-display);
+  font-size: 0.73rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+.tab-btn:hover { background: rgba(255,255,255,0.05); color: var(--text); }
+.tab-btn.active {
+  background: linear-gradient(135deg, rgba(212,168,67,0.18), rgba(212,168,67,0.08));
+  border-color: var(--border-gold);
+  color: var(--gold-light);
+  box-shadow: var(--glow-gold);
+}
+.tab-icon { font-size: 1rem; }
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+
+/* ===== COMBAT TAB ===== */
+.weapons-wrap {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.table-header {
+  background: linear-gradient(90deg, rgba(212,168,67,0.15), rgba(212,168,67,0.05));
+  border-bottom: 1px solid var(--border-gold);
+  padding: 10px 16px;
+}
+.table-header-title {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--gold);
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th {
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-dim);
+  padding: 8px 14px;
+  text-align: left;
+  background: rgba(0,0,0,0.2);
+  border-bottom: 1px solid var(--border);
+}
+td {
+  padding: 10px 14px;
+  font-size: 0.85rem;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  vertical-align: middle;
+}
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: rgba(255,255,255,0.03); }
+.weapon-name { font-family: var(--font-display); font-size: 0.82rem; color: var(--text-bright); font-weight: 600; }
+.weapon-dmg { font-family: var(--font-display); color: var(--orange); font-weight: 600; font-size: 0.88rem; }
+.weapon-atk { font-family: var(--font-display); color: var(--gold-light); font-weight: 700; font-size: 0.9rem; }
+.weapon-type { font-size: 0.78rem; color: var(--text-dim); }
+.weapon-magic { color: var(--purple); font-size: 0.7rem; font-family: var(--font-display); letter-spacing: 0.06em; }
+.weapon-props { font-size: 0.72rem; color: var(--text-dim); font-style: italic; max-width: 200px; }
+.carried-icon { font-size: 0.7rem; }
+
+/* Special Actions */
+.actions-grid { display: flex; flex-direction: column; gap: 8px; }
+.action-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 12px 16px;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.action-card:hover { border-color: var(--border-gold); box-shadow: var(--glow-gold); }
+.action-header { display: flex; align-items: center; gap: 10px; }
+.action-icon { font-size: 1.2rem; width: 28px; text-align: center; }
+.action-name {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-bright);
+  flex: 1;
+}
+.action-usage {
+  background: rgba(212,168,67,0.12);
+  border: 1px solid var(--border-gold);
+  border-radius: 10px;
+  padding: 2px 10px;
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  color: var(--gold);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.action-desc {
+  font-size: 0.82rem;
+  color: var(--text-dim);
+  margin-top: 8px;
+  font-style: italic;
+  line-height: 1.4;
+  display: none;
+}
+.action-card.expanded .action-desc { display: block; }
+.action-chevron { font-size: 0.75rem; color: var(--text-dim); transition: transform 0.2s; }
+.action-card.expanded .action-chevron { transform: rotate(90deg); }
+
+/* Death saves */
+.death-saves-wrap {
+  background: var(--bg-card);
+  border: 1px solid rgba(196,64,64,0.3);
+  border-radius: var(--radius);
+  padding: 12px 16px;
+}
+.death-saves-inner { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.ds-label { font-family: var(--font-display); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-dim); }
+.ds-pips { display: flex; gap: 5px; }
+.ds-pip {
+  width: 16px; height: 16px;
+  border-radius: 50%;
+  border: 2px solid;
+  transition: background 0.2s;
+}
+.ds-pip.success { border-color: var(--green); }
+.ds-pip.success.filled { background: var(--green); }
+.ds-pip.fail { border-color: var(--red); }
+.ds-pip.fail.filled { background: var(--red); }
+
+/* ===== SPELLS TAB ===== */
+.spell-casting-info {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.spell-info-item { text-align: center; }
+.spell-info-label { font-family: var(--font-display); font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--text-dim); }
+.spell-info-val { font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; color: var(--gold-light); }
+.spell-info-sub { font-family: var(--font-display); font-size: 0.65rem; color: var(--text-dim); }
+
+/* Spell Slots */
+.spell-slots-wrap {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  margin-bottom: 12px;
+}
+.slots-grid { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 10px; }
+.slot-group { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.slot-level { font-family: var(--font-display); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-dim); }
+.slot-pips { display: flex; gap: 5px; }
+.slot-pip {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid var(--border-gold);
+  transition: all 0.2s;
+  cursor: default;
+}
+.slot-pip.available {
+  background: var(--gold);
+  box-shadow: 0 0 6px rgba(212,168,67,0.5);
+}
+.slot-pip.used { background: transparent; opacity: 0.4; }
+.slot-count { font-family: var(--font-display); font-size: 0.7rem; color: var(--text-dim); }
+
+/* Spell Cards */
+.spell-level-group { margin-bottom: 16px; }
+.spell-level-header {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--gold-dim);
+  padding: 6px 0;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.spell-level-badge {
+  background: rgba(212,168,67,0.15);
+  border: 1px solid var(--border-gold);
+  border-radius: 10px;
+  padding: 1px 10px;
+  font-size: 0.65rem;
+  color: var(--gold);
+}
+.spell-cards-list { display: flex; flex-direction: column; gap: 6px; }
+.spell-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: border-color 0.2s;
+  cursor: pointer;
+}
+.spell-card:hover { border-color: rgba(212,168,67,0.4); }
+.spell-card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+}
+.spell-prepared-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1.5px solid var(--text-dim);
+  flex-shrink: 0;
+}
+.spell-prepared-dot.prepared {
+  background: var(--green);
+  border-color: var(--green);
+  box-shadow: 0 0 5px rgba(77,168,110,0.5);
+}
+.spell-name { flex: 1; font-family: var(--font-display); font-size: 0.85rem; font-weight: 600; color: var(--text-bright); }
+.spell-school-tag {
+  font-family: var(--font-display);
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 2px 8px;
+  border-radius: 8px;
+  border: 1px solid;
+}
+.spell-meta-row {
+  display: flex;
+  gap: 14px;
+  padding: 0 14px 10px;
+  flex-wrap: wrap;
+}
+.spell-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.spell-meta-lbl { font-family: var(--font-display); font-size: 0.58rem; text-transform: uppercase; color: var(--text-dim); letter-spacing: 0.1em; }
+.spell-meta-val { font-family: var(--font-display); font-size: 0.75rem; color: var(--text); }
+.spell-desc-body {
+  padding: 10px 14px 12px;
+  border-top: 1px solid var(--border);
+  background: rgba(0,0,0,0.25);
+  display: none;
+}
+.spell-desc-body.open { display: block; }
+.spell-desc-body p { font-size: 0.82rem; line-height: 1.5; color: var(--text); margin-bottom: 6px; }
+.spell-desc-body p:last-child { margin-bottom: 0; }
+.spell-desc-body b, .spell-desc-body strong { color: var(--text-bright); }
+.spell-desc-body .ft-h {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+  margin: 8px 0 4px;
+}
+.spell-desc-body ul { padding-left: 18px; }
+.spell-desc-body li { font-size: 0.82rem; line-height: 1.5; color: var(--text); }
+.spell-desc-body .linklist { font-size: 0.78rem; color: var(--text-dim); font-style: italic; margin-top: 6px; }
+.spell-chevron { font-size: 0.75rem; color: var(--text-dim); transition: transform 0.2s; }
+.spell-card.expanded .spell-chevron { transform: rotate(90deg); }
+.spell-card.expanded .spell-desc-body { display: block; }
+
+/* School colors */
+.school-abjuration { color: var(--blue); border-color: rgba(74,144,217,0.4); background: rgba(74,144,217,0.1); }
+.school-conjuration { color: #e8c050; border-color: rgba(232,192,80,0.4); background: rgba(232,192,80,0.1); }
+.school-divination { color: #c8c8e8; border-color: rgba(200,200,232,0.4); background: rgba(200,200,232,0.1); }
+.school-enchantment { color: #d080d0; border-color: rgba(208,128,208,0.4); background: rgba(208,128,208,0.1); }
+.school-evocation { color: var(--orange); border-color: rgba(208,112,64,0.4); background: rgba(208,112,64,0.1); }
+.school-illusion { color: var(--teal); border-color: rgba(62,168,168,0.4); background: rgba(62,168,168,0.1); }
+.school-necromancy { color: #80c880; border-color: rgba(128,200,128,0.4); background: rgba(128,200,128,0.1); }
+.school-transmutation { color: #c8a060; border-color: rgba(200,160,96,0.4); background: rgba(200,160,96,0.1); }
+
+/* ===== INVENTORY TAB ===== */
+.coins-wrap {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  margin-bottom: 12px;
+}
+.coins-row { display: flex; gap: 10px; margin-top: 10px; flex-wrap: wrap; }
+.coin-item {
+  flex: 1;
+  min-width: 60px;
+  background: rgba(0,0,0,0.3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 8px 12px;
+  text-align: center;
+  transition: border-color 0.2s;
+}
+.coin-item:hover { border-color: var(--border-gold); }
+.coin-name { font-family: var(--font-display); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-dim); }
+.coin-amount { font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; color: var(--gold-light); }
+.coin-pp { color: #d0d0f0; }
+.coin-gp { color: var(--gold-light); }
+.coin-ep { color: #a0c8a0; }
+.coin-sp { color: #c8c8c8; }
+.coin-cp { color: #c88060; }
+
+/* Encumbrance */
+.encumbrance-bar-wrap {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 14px 16px;
+  margin-bottom: 12px;
+}
+.encumb-info { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+.encumb-label { font-family: var(--font-display); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-dim); }
+.encumb-val { font-family: var(--font-display); font-size: 0.85rem; color: var(--text-bright); }
+.encumb-bar { height: 8px; background: rgba(255,255,255,0.08); border-radius: 4px; overflow: hidden; }
+.encumb-fill { height: 100%; border-radius: 4px; background: linear-gradient(90deg, var(--green), var(--gold), var(--red)); transition: width 0.5s; }
+
+/* Inventory items */
+.inv-category { margin-bottom: 14px; }
+.inv-cat-title {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--gold-dim);
+  padding: 6px 0;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 8px;
+}
+.inv-items-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+@media (max-width: 700px) { .inv-items-grid { grid-template-columns: 1fr; } }
+.inv-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 10px 12px;
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.inv-card:hover { border-color: var(--border-gold); box-shadow: var(--glow-gold); }
+.inv-card-header { display: flex; align-items: flex-start; gap: 8px; }
+.inv-name { flex: 1; font-family: var(--font-display); font-size: 0.82rem; font-weight: 600; color: var(--text-bright); line-height: 1.2; }
+.inv-count { font-family: var(--font-display); font-size: 0.75rem; color: var(--text-dim); white-space: nowrap; }
+.inv-tags { display: flex; gap: 4px; flex-wrap: wrap; margin-top: 5px; }
+.inv-tag {
+  font-family: var(--font-display);
+  font-size: 0.58rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 1px 7px;
+  border-radius: 6px;
+  border: 1px solid;
+}
+.tag-magic { color: var(--purple); border-color: rgba(155,107,192,0.4); background: rgba(155,107,192,0.1); }
+.tag-attuned { color: var(--gold); border-color: rgba(212,168,67,0.4); background: rgba(212,168,67,0.1); }
+.tag-weapon { color: var(--orange); border-color: rgba(208,112,64,0.4); background: rgba(208,112,64,0.1); }
+.tag-armor { color: var(--blue-bright); border-color: rgba(114,176,240,0.4); background: rgba(114,176,240,0.1); }
+.tag-scroll { color: #d0d080; border-color: rgba(208,208,128,0.4); background: rgba(208,208,128,0.1); }
+.tag-consumable { color: var(--green); border-color: rgba(77,168,110,0.4); background: rgba(77,168,110,0.1); }
+.tag-rare { color: #c890e0; border-color: rgba(200,144,224,0.4); background: rgba(200,144,224,0.1); }
+.tag-uncommon { color: #80c880; border-color: rgba(128,200,128,0.4); background: rgba(128,200,128,0.1); }
+.tag-common { color: var(--text-dim); border-color: rgba(154,143,126,0.4); background: rgba(154,143,126,0.1); }
+.tag-stowed { color: var(--text-dim); border-color: rgba(100,100,100,0.3); background: rgba(100,100,100,0.08); }
+.inv-weight { font-family: var(--font-display); font-size: 0.68rem; color: var(--text-dim); margin-top: 3px; }
+.inv-desc {
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
+  line-height: 1.45;
+  display: none;
+}
+.inv-desc.open { display: block; }
+.inv-desc p { margin-bottom: 4px; }
+.inv-desc b, .inv-desc strong { color: var(--text); }
+.inv-desc i, .inv-desc em { color: var(--text-dim); }
+.inv-desc .ft-h { font-family: var(--font-display); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold-dim); margin: 6px 0 3px; }
+
+/* ===== FEATURES TAB ===== */
+.features-list { display: flex; flex-direction: column; gap: 8px; }
+.feature-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+.feature-card:hover { border-color: var(--border-gold); }
+.feature-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 14px;
+}
+.feature-level-badge {
+  font-family: var(--font-display);
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-dim);
+  background: rgba(255,255,255,0.06);
+  border-radius: 4px;
+  padding: 2px 7px;
+  flex-shrink: 0;
+  min-width: 36px;
+  text-align: center;
+}
+.feature-name { flex: 1; font-family: var(--font-display); font-size: 0.85rem; font-weight: 600; color: var(--text-bright); }
+.feature-spec {
+  font-family: var(--font-display);
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 2px 8px;
+  border-radius: 8px;
+  border: 1px solid rgba(155,107,192,0.4);
+  background: rgba(155,107,192,0.1);
+  color: var(--purple);
+  flex-shrink: 0;
+}
+.feature-body {
+  padding: 10px 14px 12px;
+  border-top: 1px solid var(--border);
+  background: rgba(0,0,0,0.2);
+  display: none;
+}
+.feature-body.open { display: block; }
+.feature-body p { font-size: 0.82rem; line-height: 1.5; color: var(--text); margin-bottom: 6px; }
+.feature-body p:last-child { margin-bottom: 0; }
+.feature-body b, .feature-body strong { color: var(--text-bright); }
+.feature-body .ft-h { font-family: var(--font-display); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); margin: 8px 0 4px; }
+.feature-body ul { padding-left: 18px; margin-bottom: 6px; }
+.feature-body li { font-size: 0.82rem; line-height: 1.5; color: var(--text); }
+.feature-body .linklist { font-size: 0.78rem; color: var(--text-dim); font-style: italic; margin-top: 6px; }
+.feature-body .link-ref { margin-right: 8px; }
+
+/* Type grouping */
+.feature-group-title {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--gold-dim);
+  padding: 8px 0 6px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 6px;
+}
+
+/* ===== INFO TAB ===== */
+.info-section { margin-bottom: 18px; }
+.info-section-title {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--gold);
+  border-bottom: 1px solid var(--border-gold);
+  padding-bottom: 6px;
+  margin-bottom: 12px;
+}
+.lang-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.lang-tag {
+  background: rgba(212,168,67,0.1);
+  border: 1px solid var(--border-gold);
+  border-radius: 16px;
+  padding: 5px 16px;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  color: var(--gold-light);
+}
+.prof-items { display: flex; flex-direction: column; gap: 6px; }
+.prof-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.83rem;
+  color: var(--text);
+}
+.prof-item::before { content: '◆'; color: var(--gold-dim); font-size: 0.6rem; margin-top: 4px; flex-shrink: 0; }
+.senses-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.sense-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 8px 14px;
+  text-align: center;
+}
+.sense-label { font-family: var(--font-display); font-size: 0.63rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-dim); }
+.sense-val { font-family: var(--font-display); font-size: 0.9rem; color: var(--text-bright); }
+
+/* XP Bar */
+.xp-wrap {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 10px 14px;
+}
+.xp-info { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+.xp-label { font-family: var(--font-display); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-dim); }
+.xp-val { font-family: var(--font-display); font-size: 0.82rem; color: var(--text-bright); }
+.xp-bar { height: 6px; background: rgba(255,255,255,0.07); border-radius: 3px; overflow: hidden; }
+.xp-fill { height: 100%; border-radius: 3px; background: linear-gradient(90deg, var(--purple), var(--gold)); transition: width 0.5s; }
+
+/* ===== UTILITY ===== */
+.gold-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border-gold), transparent);
+  margin: 10px 0;
+}
+.no-items { font-size: 0.8rem; color: var(--text-dim); font-style: italic; padding: 8px 0; }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+
+/* Animations */
+@keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+.fade-in { animation: fadeIn 0.4s ease-out forwards; }
+
+/* Print styles */
+@media print {
+  body { background: white; color: black; }
+  #upload-zone { display: none !important; }
+  #sheet { display: block !important; }
+}
+
+/* Responsiveness */
+@media (max-width: 600px) {
+  .cs-header { flex-direction: column; text-align: center; }
+  .char-name { font-size: 1.8rem; }
+  .char-meta { justify-content: center; }
+  .header-badges { align-items: center; }
+  .abilities-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* ===== FONT BAR ===== */
+.font-bar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  background: rgba(8,8,15,0.96);
+  border-bottom: 1px solid var(--border);
+  padding: 7px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  backdrop-filter: blur(8px);
+}
+.font-bar-label {
+  font-family: var(--font-display);
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-dim);
+  white-space: nowrap;
+  margin-right: 4px;
+}
+.font-btn {
+  padding: 4px 14px;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--text-dim);
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.15s;
+  line-height: 1.4;
+}
+.font-btn:hover { border-color: var(--border-gold); color: var(--text); }
+.font-btn.active { border-color: var(--border-gold); background: rgba(212,168,67,0.15); color: var(--gold); }
+
+/* Font overrides */
+body.font-helvetica { --font-display: Helvetica, Arial, sans-serif; --font-deco: Helvetica, Arial, sans-serif; --font-body: Helvetica, Arial, sans-serif; }
+body.font-arial     { --font-display: Arial, sans-serif; --font-deco: Arial, sans-serif; --font-body: Arial, sans-serif; }
+body.font-verdana   { --font-display: Verdana, Geneva, sans-serif; --font-deco: Verdana, Geneva, sans-serif; --font-body: Verdana, Geneva, sans-serif; }
+body.font-calibri   { --font-display: Calibri, 'Gill Sans', sans-serif; --font-deco: Calibri, 'Gill Sans', sans-serif; --font-body: Calibri, 'Gill Sans', sans-serif; }
+</style>
+</head>
+<body>
+
+<!-- ===== FONT BAR ===== -->
+<div class="font-bar">
+  <span class="font-bar-label">Font:</span>
+  <button class="font-btn active" data-font="">Default</button>
+  <button class="font-btn" data-font="font-helvetica">Helvetica</button>
+  <button class="font-btn" data-font="font-arial">Arial</button>
+  <button class="font-btn" data-font="font-verdana">Verdana</button>
+  <button class="font-btn" data-font="font-calibri">Calibri</button>
+</div>
+
+<!-- ===== UPLOAD ZONE ===== -->
+<div id="upload-zone">
+  <div class="upload-inner fade-in">
+    <div class="upload-dragon">⚔️</div>
+    <h1>Character Sheet Viewer</h1>
+    <p>Fantasy Grounds XML Export Viewer</p>
+
+    <div class="upload-drop-zone" id="drop-zone">
+      <p>🗂 Drop your XML file here</p>
+      <p class="drop-sub">or use the button below to browse</p>
+    </div>
+
+    <input type="file" id="file-input" accept=".xml" style="display:none">
+    <button id="open-btn" class="upload-btn">📂 Open XML File</button>
+
+    <p class="upload-hint">Supports Fantasy Grounds 5E character exports</p>
+  </div>
+</div>
+
+<!-- ===== CHARACTER SHEET ===== -->
+<div id="sheet">
+
+  <!-- HEADER -->
+  <div class="cs-header" id="cs-header"></div>
+
+  <!-- STATS BAR -->
+  <div class="cs-stats-bar" id="cs-stats-bar"></div>
+
+  <!-- MAIN LAYOUT -->
+  <div class="cs-main">
+
+    <!-- SIDEBAR -->
+    <div class="cs-sidebar">
+      <div class="section-card" id="sidebar-abilities"></div>
+      <div class="section-card" id="sidebar-saves"></div>
+      <div class="section-card" id="sidebar-skills"></div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="cs-content">
+      <!-- TAB NAV -->
+      <div class="tab-nav" id="tab-nav">
+        <button class="tab-btn active" data-tab="combat"><span class="tab-icon">⚔️</span> Combat</button>
+        <button class="tab-btn" data-tab="spells"><span class="tab-icon">✨</span> Spells</button>
+        <button class="tab-btn" data-tab="inventory"><span class="tab-icon">🎒</span> Inventory</button>
+        <button class="tab-btn" data-tab="features"><span class="tab-icon">📜</span> Features</button>
+        <button class="tab-btn" data-tab="info"><span class="tab-icon">ℹ️</span> Info</button>
+      </div>
+
+      <!-- COMBAT TAB -->
+      <div class="tab-panel active" id="tab-combat"></div>
+
+      <!-- SPELLS TAB -->
+      <div class="tab-panel" id="tab-spells"></div>
+
+      <!-- INVENTORY TAB -->
+      <div class="tab-panel" id="tab-inventory"></div>
+
+      <!-- FEATURES TAB -->
+      <div class="tab-panel" id="tab-features"></div>
+
+      <!-- INFO TAB -->
+      <div class="tab-panel" id="tab-info"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ===== UTILITIES =====
+const qs = (sel, root = document) => root.querySelector(sel);
+const qsa = (sel, root = document) => Array.from(root.querySelectorAll(sel));
+const getText = (node) => node ? node.textContent.trim() : '';
+const getNum = (node) => node ? (parseInt(node.textContent.trim()) || 0) : 0;
+const fmt = (n) => n >= 0 ? `+${n}` : `${n}`;
+
+function ftToHtml(node) {
+  if (!node) return '';
+  function conv(n) {
+    if (n.nodeType === 3) return n.textContent;
+    if (n.nodeType !== 1) return '';
+    const tag = n.tagName.toLowerCase();
+    const inner = Array.from(n.childNodes).map(conv).join('');
+    switch (tag) {
+      case 'p': return `<p>${inner}</p>`;
+      case 'b': return `<b>${inner}</b>`;
+      case 'i': return `<em>${inner}</em>`;
+      case 'h': return `<div class="ft-h">${inner}</div>`;
+      case 'list': return `<ul>${inner}</ul>`;
+      case 'li': return `<li>${inner}</li>`;
+      case 'linklist':
+        const links = Array.from(n.querySelectorAll('link')).map(l =>
+          `<span class="link-ref">${Array.from(l.childNodes).map(conv).join('')}</span>`
+        ).join(' · ');
+        return `<div class="linklist">${links}</div>`;
+      case 'link': return `<span class="link-ref">${inner}</span>`;
+      default: return inner;
+    }
+  }
+  return Array.from(node.childNodes).map(conv).join('');
+}
+
+// ===== XML PARSER =====
+function parseCharacter(xmlDoc) {
+  const c = xmlDoc.querySelector('character');
+  if (!c) return null;
+
+  // Name, race, etc.
+  const name = getText(c.querySelector('name'));
+  const race = getText(c.querySelector('race'));
+  const level = getNum(c.querySelector(':scope > level'));
+  const background = getText(c.querySelector('background'));
+  const destiny = getText(c.querySelector('destiny'));
+  const size = getText(c.querySelector('size'));
+  const senses = getText(c.querySelector('senses'));
+  const inspiration = getNum(c.querySelector('inspiration'));
+  const hero = getNum(c.querySelector('hero'));
+  const exp = getNum(c.querySelector('exp'));
+  const expNeeded = getNum(c.querySelector('expneeded'));
+  const profBonus = getNum(c.querySelector('profbonus'));
+  const perception = getNum(c.querySelector('perception'));
+
+  // Classes
+  const classes = qsa('classes > *', c).map(cls => ({
+    name: getText(cls.querySelector('name')),
+    level: getNum(cls.querySelector('level')),
+    specialization: getText(cls.querySelector('specialization')),
+    hddie: getText(cls.querySelector('hddie')),
+  })).filter(cl => cl.name);
+
+  // Abilities
+  const abilityNames = ['strength', 'dexterity', 'constitution', 'intelligence', 'wisdom', 'charisma', 'luck'];
+  const abilities = {};
+  abilityNames.forEach(ab => {
+    const node = c.querySelector(`abilities > ${ab}`);
+    if (node) {
+      abilities[ab] = {
+        score: getNum(node.querySelector('score')),
+        bonus: getNum(node.querySelector('bonus')),
+        save: getNum(node.querySelector('save')),
+        saveProf: getNum(node.querySelector('saveprof')),
+        current: ab === 'luck' ? getNum(node.querySelector('current')) : null,
+      };
+    }
+  });
+
+  // HP
+  const hpNode = c.querySelector('hp');
+  const hp = {
+    total: getNum(hpNode?.querySelector('total')),
+    wounds: getNum(hpNode?.querySelector('wounds')),
+    temporary: getNum(hpNode?.querySelector('temporary')),
+    deathFail: getNum(hpNode?.querySelector('deathsavefail')),
+    deathSuccess: getNum(hpNode?.querySelector('deathsavesuccess')),
+  };
+  hp.current = Math.max(0, hp.total - hp.wounds);
+
+  // AC
+  const acNode = c.querySelector('defenses > ac');
+  const ac = {
+    total: getNum(acNode?.querySelector('total')),
+    armor: getNum(acNode?.querySelector('armor')),
+    shield: getNum(acNode?.querySelector('shield')),
+    misc: getNum(acNode?.querySelector('misc')),
+  };
+
+  // Initiative, speed
+  const initiative = getNum(c.querySelector('initiative > total'));
+  const speed = getNum(c.querySelector('speed > total'));
+
+  // Encumbrance
+  const enc = {
+    load: getNum(c.querySelector('encumbrance > load')),
+    max: getNum(c.querySelector('encumbrance > max')),
+    bulky: getNum(c.querySelector('encumbrance > bulkyitems')),
+    supply: getNum(c.querySelector('encumbrance > supply')),
+  };
+
+  // Skills
+  const skills = qsa('skilllist > *', c).map(sk => ({
+    name: getText(sk.querySelector('name')),
+    stat: getText(sk.querySelector('stat')),
+    total: getNum(sk.querySelector('total')),
+    prof: getNum(sk.querySelector('prof')),
+    misc: getNum(sk.querySelector('misc')),
+  })).filter(s => s.name).sort((a, b) => a.name.localeCompare(b.name));
+
+  // Coins
+  const coins = qsa('coins > *', c).map(cn => ({
+    name: getText(cn.querySelector('name')),
+    amount: getNum(cn.querySelector('amount')),
+  })).filter(co => co.name);
+
+  // Languages
+  const languages = qsa('languagelist > *', c).map(l => getText(l.querySelector('name'))).filter(Boolean);
+
+  // Proficiencies
+  const proficiencies = qsa('proficiencylist > *', c).map(p => getText(p.querySelector('name'))).filter(Boolean);
+
+  // Spell slots
+  const spellSlots = [];
+  for (let i = 1; i <= 9; i++) {
+    const node = c.querySelector(`powermeta > spellslots${i}`);
+    const max = getNum(node?.querySelector('max'));
+    if (max > 0) {
+      spellSlots.push({
+        level: i,
+        max,
+        used: getNum(node?.querySelector('used')),
+        remaining: max - getNum(node?.querySelector('used')),
+      });
+    }
+  }
+
+  // Powers (spells + actions)
+  const seenSpellNames = new Set();
+  const powers = qsa('powers > *', c).map(pw => {
+    const nm = getText(pw.querySelector('name'));
+    const lvl = getNum(pw.querySelector('level'));
+    const key = `${nm}|${lvl}`;
+    if (seenSpellNames.has(key)) return null;
+    seenSpellNames.add(key);
+    return {
+      name: nm,
+      level: lvl,
+      group: getText(pw.querySelector('group')),
+      school: getText(pw.querySelector('school')),
+      prepared: getNum(pw.querySelector('prepared')),
+      cast: getNum(pw.querySelector('cast')),
+      castingTime: getText(pw.querySelector('castingtime')),
+      range: getText(pw.querySelector('range')),
+      duration: getText(pw.querySelector('duration')),
+      components: getText(pw.querySelector('components')),
+      ritual: getNum(pw.querySelector('ritual')),
+      rare: getNum(pw.querySelector('rare')),
+      source: getText(pw.querySelector('source')),
+      description: ftToHtml(pw.querySelector('description')),
+    };
+  }).filter(Boolean);
+
+  // Weapons
+  const weapons = qsa('weaponlist > *', c).map(w => {
+    const damages = qsa('damagelist > *', w).map(d => ({
+      dice: getText(d.querySelector('dice')),
+      bonus: getNum(d.querySelector('bonus')),
+      stat: getText(d.querySelector('stat')),
+      type: getText(d.querySelector('type')),
+    }));
+    return {
+      name: getText(w.querySelector('name')),
+      attackBonus: getNum(w.querySelector('attackbonus')),
+      attackStat: getText(w.querySelector('attackstat')) || 'strength',
+      carried: getNum(w.querySelector('carried')),
+      prof: getNum(w.querySelector('prof')),
+      properties: getText(w.querySelector('properties')),
+      ranged: getNum(w.querySelector('type')) === 1,
+      damages,
+    };
+  }).filter(w => w.name);
+
+  // Inventory
+  const inventory = qsa('inventorylist > *', c).map(item => {
+    const nm = getText(item.querySelector('name'));
+    if (!nm) return null;
+    return {
+      name: nm,
+      type: getText(item.querySelector('type')),
+      subtype: getText(item.querySelector('subtype')),
+      count: getNum(item.querySelector('count')),
+      weight: parseFloat(item.querySelector('weight')?.textContent || '0'),
+      carried: getNum(item.querySelector('carried')),
+      damage: getText(item.querySelector('damage')),
+      ac: getNum(item.querySelector('ac')),
+      rarity: getText(item.querySelector('rarity')),
+      properties: getText(item.querySelector('properties')),
+      cost: getText(item.querySelector('cost')),
+      attune: getNum(item.querySelector('attune')),
+      isIdentified: getNum(item.querySelector('isidentified')),
+      desc: ftToHtml(item.querySelector('description')),
+    };
+  }).filter(Boolean);
+
+  // Features
+  const features = qsa('featurelist > *', c).map(f => ({
+    name: getText(f.querySelector('name')),
+    level: getNum(f.querySelector('level')),
+    specialization: getText(f.querySelector('specialization')),
+    desc: ftToHtml(f.querySelector('text')),
+    type: 'class',
+  }));
+
+  // Racial traits
+  const traits = qsa('traitlist > *', c).map(t => ({
+    name: getText(t.querySelector('name')),
+    type: getText(t.querySelector('type')) || 'racial',
+    desc: ftToHtml(t.querySelector('text')),
+    level: 0,
+    specialization: '',
+  }));
+
+  // Feats
+  const feats = qsa('featlist > *', c).map(f => ({
+    name: getText(f.querySelector('name')),
+    type: getText(f.querySelector('type')) || 'feat',
+    desc: ftToHtml(f.querySelector('text')),
+    level: 0,
+    specialization: '',
+  }));
+
+  // Compute spell attack and save DC
+  const wisBonus = abilities.wisdom?.bonus ?? 0;
+  const spellDC = 8 + profBonus + wisBonus;
+  const spellAtk = profBonus + wisBonus;
+
+  return {
+    name, race, level, background, destiny, size, senses,
+    inspiration, hero, exp, expNeeded, profBonus, perception,
+    classes, abilities, hp, ac, initiative, speed, enc,
+    skills, coins, languages, proficiencies,
+    spellSlots, powers, weapons, inventory,
+    features, traits, feats, spellDC, spellAtk,
+  };
+}
+
+// ===== RENDER FUNCTIONS =====
+
+function renderHeader(ch) {
+  const cls = ch.classes[0];
+  const classLine = ch.classes.map(c =>
+    `${c.name} ${c.level}${c.specialization ? ` (${c.specialization})` : ''}`
+  ).join(' / ');
+
+  document.getElementById('cs-header').innerHTML = `
+    <div class="portrait-frame">
+      <span style="filter:drop-shadow(0 0 6px rgba(212,168,67,0.8))">🧝</span>
+    </div>
+    <div class="header-info">
+      <div class="char-name">${ch.name}</div>
+      <div class="char-subtitle"><span>${ch.race}</span> · <span>${classLine}</span> · <span>Level ${ch.level}</span></div>
+      <div class="char-meta">
+        <div class="char-meta-item">
+          <span class="char-meta-label">Background</span>
+          <span class="char-meta-value">${ch.background || '—'}</span>
+        </div>
+        <div class="char-meta-item">
+          <span class="char-meta-label">Destiny</span>
+          <span class="char-meta-value">${ch.destiny || '—'}</span>
+        </div>
+        <div class="char-meta-item">
+          <span class="char-meta-label">Size</span>
+          <span class="char-meta-value">${ch.size || '—'}</span>
+        </div>
+        <div class="char-meta-item">
+          <span class="char-meta-label">Hit Die</span>
+          <span class="char-meta-value">${cls?.hddie || '—'}</span>
+        </div>
+        ${ch.classes[0]?.specialization ? `
+        <div class="char-meta-item">
+          <span class="char-meta-label">Archetype</span>
+          <span class="char-meta-value">${ch.classes[0].specialization}</span>
+        </div>` : ''}
+      </div>
+    </div>
+    <div class="header-badges">
+      ${ch.inspiration ? `<div class="badge active"><div class="badge-dot"></div>Inspired</div>` : ''}
+      <div class="badge${ch.hero > 0 ? ' active' : ''}">
+        ⭐ ${ch.hero} Hero Point${ch.hero !== 1 ? 's' : ''}
+      </div>
+      <div class="badge">
+        📖 ${ch.exp.toLocaleString()} / ${ch.expNeeded.toLocaleString()} XP
+      </div>
+    </div>
+  `;
+}
+
+function renderStatsBar(ch) {
+  const hpPct = ch.hp.total > 0 ? Math.round((ch.hp.current / ch.hp.total) * 100) : 0;
+  const hpColor = hpPct > 50 ? '#4da86e' : hpPct > 25 ? '#d4a843' : '#c44040';
+
+  document.getElementById('cs-stats-bar').innerHTML = `
+    <div class="stat-block stat-hp">
+      <div class="stat-label">Hit Points</div>
+      <div class="stat-value hp-disp" style="color:${hpColor}">${ch.hp.current} <span style="font-size:0.9rem;color:var(--text-dim)">/ ${ch.hp.total}</span></div>
+      <div class="hp-bar-wrap"><div class="hp-bar-fill" style="width:${hpPct}%; background:${hpColor}"></div></div>
+      ${ch.hp.temporary > 0 ? `<div class="stat-sub">+${ch.hp.temporary} temp</div>` : ''}
+    </div>
+    <div class="stat-block stat-ac">
+      <div class="stat-label">Armor Class</div>
+      <div class="stat-value blue">${ch.ac.total}</div>
+      <div class="stat-sub">AC</div>
+    </div>
+    <div class="stat-block">
+      <div class="stat-label">Initiative</div>
+      <div class="stat-value">${fmt(ch.initiative)}</div>
+    </div>
+    <div class="stat-block">
+      <div class="stat-label">Speed</div>
+      <div class="stat-value">${ch.speed}</div>
+      <div class="stat-sub">ft</div>
+    </div>
+    <div class="stat-block">
+      <div class="stat-label">Proficiency</div>
+      <div class="stat-value gold">${fmt(ch.profBonus)}</div>
+    </div>
+    <div class="stat-block">
+      <div class="stat-label">Passive Perc.</div>
+      <div class="stat-value">${ch.perception}</div>
+    </div>
+    <div class="stat-block">
+      <div class="stat-label">Spell Save DC</div>
+      <div class="stat-value gold">${ch.spellDC}</div>
+      <div class="stat-sub">WIS</div>
+    </div>
+    <div class="stat-block">
+      <div class="stat-label">Spell Attack</div>
+      <div class="stat-value gold">${fmt(ch.spellAtk)}</div>
+    </div>
+    <div class="stat-block">
+      <div class="stat-label">Luck</div>
+      <div class="stat-value">${ch.abilities.luck?.score ?? 10}</div>
+      <div class="stat-sub">${fmt(ch.abilities.luck?.bonus ?? 0)}</div>
+    </div>
+  `;
+}
+
+function renderAbilities(ch) {
+  const abLabels = {
+    strength: 'STR', dexterity: 'DEX', constitution: 'CON',
+    intelligence: 'INT', wisdom: 'WIS', charisma: 'CHA',
+  };
+
+  const abOrder = ['strength', 'dexterity', 'constitution', 'intelligence', 'wisdom', 'charisma'];
+
+  const html = `
+    <div class="section-title">Ability Scores</div>
+    <div class="abilities-grid">
+      ${abOrder.map(ab => {
+        const a = ch.abilities[ab];
+        if (!a) return '';
+        return `
+          <div class="ability-box" title="${ab} Save: ${fmt(a.save)}">
+            <div class="ability-save-indicator ${a.saveProf ? 'proficient' : ''}" title="Saving throw: ${a.saveProf ? 'Proficient' : 'Not proficient'}"></div>
+            <div class="ability-name">${abLabels[ab]}</div>
+            <div class="ability-score">${a.score}</div>
+            <div class="ability-mod">${fmt(a.bonus)}</div>
+            <div class="ability-save-val">Save ${fmt(a.save)}</div>
+          </div>
+        `;
+      }).join('')}
+    </div>
+  `;
+
+  document.getElementById('sidebar-abilities').innerHTML = html;
+}
+
+function renderSaves(ch) {
+  const abLabels = {
+    strength: 'Strength', dexterity: 'Dexterity', constitution: 'Constitution',
+    intelligence: 'Intelligence', wisdom: 'Wisdom', charisma: 'Charisma',
+  };
+  const abOrder = ['strength', 'dexterity', 'constitution', 'intelligence', 'wisdom', 'charisma'];
+
+  const html = `
+    <div class="section-title">Saving Throws</div>
+    <div class="saves-list">
+      ${abOrder.map(ab => {
+        const a = ch.abilities[ab];
+        if (!a) return '';
+        return `
+          <div class="save-row">
+            <div class="prof-pip ${a.saveProf ? 'filled' : ''}"></div>
+            <div class="save-name">${abLabels[ab]}</div>
+            <div class="save-bonus">${fmt(a.save)}</div>
+          </div>
+        `;
+      }).join('')}
+    </div>
+  `;
+  document.getElementById('sidebar-saves').innerHTML = html;
+}
+
+function renderSkills(ch) {
+  const statAbbr = { strength: 'STR', dexterity: 'DEX', constitution: 'CON', intelligence: 'INT', wisdom: 'WIS', charisma: 'CHA' };
+
+  const html = `
+    <div class="section-title">Skills</div>
+    <div class="skills-list">
+      ${ch.skills.map(sk => `
+        <div class="skill-row ${sk.prof ? 'proficient' : ''}">
+          <div class="prof-pip ${sk.prof ? 'filled' : ''}"></div>
+          <div class="skill-name">${sk.name}</div>
+          <div class="skill-stat">${statAbbr[sk.stat?.toLowerCase()] || ''}</div>
+          <div class="skill-bonus">${fmt(sk.total)}</div>
+        </div>
+      `).join('')}
+    </div>
+  `;
+  document.getElementById('sidebar-skills').innerHTML = html;
+}
+
+function renderCombatTab(ch) {
+  // Compute total attack bonus for weapon
+  function weaponAtkBonus(w) {
+    const stat = w.attackStat === 'dexterity' ? ch.abilities.dexterity?.bonus : ch.abilities.strength?.bonus;
+    const profBonus = w.prof ? ch.profBonus : 0;
+    return (stat ?? 0) + profBonus + w.attackBonus;
+  }
+
+  function formatDamage(w) {
+    const stat = w.attackStat === 'dexterity' ? ch.abilities.dexterity?.bonus : ch.abilities.strength?.bonus;
+    const statBonus = stat ?? 0;
+    return w.damages.map(d => {
+      let total = d.bonus;
+      if (d.stat === 'base' || d.stat === 'strength' || d.stat === 'dexterity') total += statBonus;
+      const bonusStr = total !== 0 ? (total > 0 ? `+${total}` : `${total}`) : '';
+      return `${d.dice}${bonusStr} <span style="color:var(--text-dim);font-size:0.75em">${d.type}</span>`;
+    }).join(' / ');
+  }
+
+  const equippedWeapons = ch.weapons.filter(w => w.carried === 1 || w.carried === 2);
+
+  const weaponsHtml = equippedWeapons.length === 0
+    ? '<div class="no-items" style="padding:16px">No weapons equipped.</div>'
+    : `<table>
+        <thead><tr>
+          <th>Weapon</th>
+          <th>Atk</th>
+          <th>Damage</th>
+          <th>Properties</th>
+        </tr></thead>
+        <tbody>
+          ${equippedWeapons.map(w => {
+            const atk = weaponAtkBonus(w);
+            const isMagic = w.name?.toLowerCase().includes('majestic') || w.properties?.toLowerCase().includes('magic');
+            const carried1 = w.carried === 1 ? '🟢' : '📦';
+            return `<tr>
+              <td>
+                <div class="weapon-name">${carried1} ${w.name}</div>
+                ${isMagic ? `<div class="weapon-magic">✦ Magic Weapon</div>` : ''}
+              </td>
+              <td><span class="weapon-atk">${fmt(atk)}</span></td>
+              <td><span class="weapon-dmg">${formatDamage(w)}</span></td>
+              <td><span class="weapon-props">${w.properties || '—'}</span></td>
+            </tr>`;
+          }).join('')}
+        </tbody>
+      </table>`;
+
+  // Special actions
+  const classActions = ch.powers.filter(p => p.group === 'Cleric Actions/Effects' || (p.group && p.group.includes('Action')));
+  const actionsHtml = classActions.map(a => `
+    <div class="action-card" onclick="this.classList.toggle('expanded')">
+      <div class="action-header">
+        <span class="action-icon">✦</span>
+        <span class="action-name">${a.name}</span>
+        ${a.castingTime ? `<span class="action-usage">${a.castingTime.replace('1 ', '')}</span>` : ''}
+        <span class="action-chevron">▶</span>
+      </div>
+      ${a.description ? `<div class="action-desc">${a.description}</div>` : ''}
+    </div>
+  `).join('');
+
+  // Death saves
+  const dsHtml = `
+    <div class="death-saves-wrap">
+      <div class="section-title" style="border:none;padding:0;margin-bottom:10px">Death Saving Throws</div>
+      <div class="death-saves-inner">
+        <div>
+          <div class="ds-label">Successes</div>
+          <div class="ds-pips">
+            ${[0,1,2].map(i => `<div class="ds-pip success${i < ch.hp.deathSuccess ? ' filled' : ''}"></div>`).join('')}
+          </div>
+        </div>
+        <div>
+          <div class="ds-label">Failures</div>
+          <div class="ds-pips">
+            ${[0,1,2].map(i => `<div class="ds-pip fail${i < ch.hp.deathFail ? ' filled' : ''}"></div>`).join('')}
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+
+  document.getElementById('tab-combat').innerHTML = `
+    <div class="weapons-wrap">
+      <div class="table-header"><div class="table-header-title">⚔️ Weapons & Attacks</div></div>
+      ${weaponsHtml}
+    </div>
+    ${actionsHtml.length ? `
+    <div style="margin-top:12px">
+      <div class="section-title" style="margin-bottom:10px; color:var(--gold); font-family:var(--font-display); font-size:0.7rem; text-transform:uppercase; letter-spacing:0.15em;">Special Actions</div>
+      <div class="actions-grid">${actionsHtml}</div>
+    </div>` : ''}
+    <div style="margin-top:12px">${dsHtml}</div>
+  `;
+}
+
+function renderSpellsTab(ch) {
+  function getSchoolClass(school) {
+    if (!school) return '';
+    const s = school.toLowerCase();
+    if (s.includes('abjur')) return 'school-abjuration';
+    if (s.includes('conjur')) return 'school-conjuration';
+    if (s.includes('divin')) return 'school-divination';
+    if (s.includes('enchant')) return 'school-enchantment';
+    if (s.includes('evocat')) return 'school-evocation';
+    if (s.includes('illus')) return 'school-illusion';
+    if (s.includes('necro')) return 'school-necromancy';
+    if (s.includes('transmu')) return 'school-transmutation';
+    return '';
+  }
+
+  function getSchoolName(school) {
+    if (!school) return '';
+    const s = school.toLowerCase();
+    const match = ['abjuration','conjuration','divination','enchantment','evocation','illusion','necromancy','transmutation'].find(sc => s.includes(sc));
+    return match ? match.charAt(0).toUpperCase() + match.slice(1) : school.split(';')[0].trim();
+  }
+
+  const spells = ch.powers.filter(p => p.group === 'Spells' || !p.group || p.level !== undefined);
+
+  // Group by level
+  const byLevel = {};
+  spells.forEach(sp => {
+    const lvl = sp.level ?? 0;
+    if (!byLevel[lvl]) byLevel[lvl] = [];
+    byLevel[lvl].push(sp);
+  });
+
+  const slotHtml = ch.spellSlots.map(sl => `
+    <div class="slot-group">
+      <div class="slot-level">${sl.level === 1 ? '1st' : sl.level === 2 ? '2nd' : sl.level === 3 ? '3rd' : sl.level + 'th'}</div>
+      <div class="slot-pips">
+        ${Array.from({length: sl.max}, (_, i) => `
+          <div class="slot-pip ${i < sl.remaining ? 'available' : 'used'}" title="${i < sl.remaining ? 'Available' : 'Used'}"></div>
+        `).join('')}
+      </div>
+      <div class="slot-count">${sl.remaining}/${sl.max}</div>
+    </div>
+  `).join('');
+
+  const levelNames = ['Cantrips', '1st Level', '2nd Level', '3rd Level', '4th Level', '5th Level', '6th Level', '7th Level', '8th Level', '9th Level'];
+
+  const spellsHtml = Object.keys(byLevel).sort((a,b) => +a - +b).map(lvl => `
+    <div class="spell-level-group">
+      <div class="spell-level-header">
+        <span class="spell-level-badge">${levelNames[+lvl] || `Level ${lvl}`}</span>
+        <span style="color:var(--text-dim);font-size:0.65rem">${byLevel[lvl].length} spell${byLevel[lvl].length !== 1 ? 's' : ''}</span>
+      </div>
+      <div class="spell-cards-list">
+        ${byLevel[lvl].map(sp => {
+          const schoolClass = getSchoolClass(sp.school);
+          const schoolName = getSchoolName(sp.school);
+          const prepared = sp.prepared;
+          return `
+            <div class="spell-card" onclick="this.classList.toggle('expanded')">
+              <div class="spell-card-header">
+                <div class="spell-prepared-dot ${prepared ? 'prepared' : ''}" title="${prepared ? 'Prepared' : 'Not prepared'}"></div>
+                <div class="spell-name">${sp.name}</div>
+                ${schoolName ? `<span class="spell-school-tag ${schoolClass}">${schoolName}</span>` : ''}
+                ${sp.ritual ? `<span style="font-size:0.65rem;color:var(--gold-dim);margin-left:4px">(R)</span>` : ''}
+                <span class="spell-chevron">▶</span>
+              </div>
+              <div class="spell-meta-row">
+                ${sp.castingTime ? `<div class="spell-meta"><span class="spell-meta-lbl">Cast Time</span><span class="spell-meta-val">${sp.castingTime.trim()}</span></div>` : ''}
+                ${sp.range ? `<div class="spell-meta"><span class="spell-meta-lbl">Range</span><span class="spell-meta-val">${sp.range.trim()}</span></div>` : ''}
+                ${sp.duration ? `<div class="spell-meta"><span class="spell-meta-lbl">Duration</span><span class="spell-meta-val">${sp.duration.trim()}</span></div>` : ''}
+                ${sp.components ? `<div class="spell-meta"><span class="spell-meta-lbl">Components</span><span class="spell-meta-val">${sp.components.trim()}</span></div>` : ''}
+              </div>
+              ${sp.description ? `<div class="spell-desc-body">${sp.description}</div>` : ''}
+            </div>
+          `;
+        }).join('')}
+      </div>
+    </div>
+  `).join('');
+
+  document.getElementById('tab-spells').innerHTML = `
+    <div class="spell-casting-info">
+      <div class="spell-info-item">
+        <div class="spell-info-label">Spellcasting Ability</div>
+        <div class="spell-info-val">WIS</div>
+        <div class="spell-info-sub">${fmt(ch.abilities.wisdom?.bonus ?? 0)} modifier</div>
+      </div>
+      <div style="width:1px; height:48px; background:var(--border)"></div>
+      <div class="spell-info-item">
+        <div class="spell-info-label">Spell Save DC</div>
+        <div class="spell-info-val">${ch.spellDC}</div>
+        <div class="spell-info-sub">8+Prof+WIS</div>
+      </div>
+      <div style="width:1px; height:48px; background:var(--border)"></div>
+      <div class="spell-info-item">
+        <div class="spell-info-label">Spell Attack Bonus</div>
+        <div class="spell-info-val">${fmt(ch.spellAtk)}</div>
+        <div class="spell-info-sub">Prof+WIS</div>
+      </div>
+      <div style="flex:1"></div>
+      <div style="font-size:0.75rem; color:var(--text-dim); font-style:italic">
+        🟢 Prepared &nbsp; ○ Unprepared
+      </div>
+    </div>
+    ${ch.spellSlots.length ? `
+    <div class="spell-slots-wrap">
+      <div class="section-title" style="margin-bottom:0">Spell Slots</div>
+      <div class="slots-grid">${slotHtml}</div>
+    </div>` : ''}
+    <div id="spells-list">${spellsHtml}</div>
+  `;
+}
+
+function renderInventoryTab(ch) {
+  const coinsHtml = `
+    <div class="coins-wrap">
+      <div class="section-title" style="margin-bottom:0">Currency</div>
+      <div class="coins-row">
+        ${ch.coins.map(c => {
+          const cls = { PP: 'coin-pp', GP: 'coin-gp', EP: 'coin-ep', SP: 'coin-sp', CP: 'coin-cp' }[c.name] || '';
+          return `
+            <div class="coin-item">
+              <div class="coin-name">${c.name}</div>
+              <div class="coin-amount ${cls}">${c.amount}</div>
+            </div>
+          `;
+        }).join('')}
+      </div>
+    </div>
+  `;
+
+  const encPct = ch.enc.max > 0 ? Math.min(100, Math.round((ch.enc.load / ch.enc.max) * 100)) : 0;
+  const encColor = encPct < 50 ? '#4da86e' : encPct < 80 ? '#d4a843' : '#c44040';
+
+  const encHtml = `
+    <div class="encumbrance-bar-wrap">
+      <div class="encumb-info">
+        <span class="encumb-label">Encumbrance</span>
+        <span class="encumb-val">${ch.enc.load} / ${ch.enc.max} lbs</span>
+      </div>
+      <div class="encumb-bar">
+        <div class="encumb-fill" style="width:${encPct}%; background:${encColor}"></div>
+      </div>
+      <div style="display:flex; gap:16px; margin-top:6px; font-size:0.72rem; color:var(--text-dim); font-family:var(--font-display)">
+        <span>Bulky Items: ${ch.enc.bulky}</span>
+        <span>Supply: ${ch.enc.supply}</span>
+      </div>
+    </div>
+  `;
+
+  function itemTags(item) {
+    const tags = [];
+    if (item.rarity && !item.rarity.toLowerCase().includes('common')) {
+      const r = item.rarity.toLowerCase();
+      if (r.includes('uncommon')) tags.push(`<span class="inv-tag tag-uncommon">Uncommon</span>`);
+      else if (r.includes('rare')) tags.push(`<span class="inv-tag tag-rare">Rare</span>`);
+      else if (r.includes('common')) tags.push(`<span class="inv-tag tag-common">Common</span>`);
+    } else if (item.rarity?.toLowerCase() === 'common') {
+      tags.push(`<span class="inv-tag tag-common">Common</span>`);
+    }
+    if (item.properties?.toLowerCase().includes('magic') || item.rarity?.toLowerCase().includes('uncommon') || item.rarity?.toLowerCase().includes('rare')) {
+      if (!tags.some(t => t.includes('tag-magic'))) {
+        if (item.properties?.toLowerCase().includes('magic')) tags.push(`<span class="inv-tag tag-magic">Magic</span>`);
+      }
+    }
+    if (item.attune) tags.push(`<span class="inv-tag tag-attuned">Attuned</span>`);
+    if (item.type === 'Weapon') tags.push(`<span class="inv-tag tag-weapon">Weapon</span>`);
+    if (item.type === 'Armor') tags.push(`<span class="inv-tag tag-armor">Armor</span>`);
+    if (item.type === 'Scroll') tags.push(`<span class="inv-tag tag-scroll">Scroll</span>`);
+    if (item.type === 'Medicinals' || item.name?.toLowerCase().includes('potion')) tags.push(`<span class="inv-tag tag-consumable">Consumable</span>`);
+    if (item.carried === 2) tags.push(`<span class="inv-tag tag-stowed">Stowed</span>`);
+    if (item.carried === 0) tags.push(`<span class="inv-tag tag-stowed">Not Carried</span>`);
+    return tags.join('');
+  }
+
+  // Group items by type
+  const typeOrder = ['Weapon', 'Armor', 'Wondrous Item', 'Ring', 'Scroll', 'Medicinals', 'Adventuring Gear', 'Unusual Item', 'Other'];
+  const grouped = {};
+  ch.inventory.filter(i => i.carried !== 0 || i.count > 0).forEach(item => {
+    const t = item.type || 'Other';
+    if (!grouped[t]) grouped[t] = [];
+    grouped[t].push(item);
+  });
+
+  const sortedTypes = Object.keys(grouped).sort((a, b) => {
+    const ia = typeOrder.indexOf(a), ib = typeOrder.indexOf(b);
+    return (ia === -1 ? 99 : ia) - (ib === -1 ? 99 : ib);
+  });
+
+  const itemsHtml = sortedTypes.map(type => `
+    <div class="inv-category">
+      <div class="inv-cat-title">${type}</div>
+      <div class="inv-items-grid">
+        ${grouped[type].map((item, i) => `
+          <div class="inv-card" onclick="this.querySelector('.inv-desc')?.classList.toggle('open')">
+            <div class="inv-card-header">
+              <div class="inv-name">${item.name}</div>
+              ${item.count > 1 ? `<div class="inv-count">×${item.count}</div>` : ''}
+            </div>
+            <div class="inv-tags">
+              ${itemTags(item)}
+            </div>
+            ${item.damage ? `<div class="inv-weight" style="color:var(--orange)">${item.damage}</div>` : ''}
+            ${item.ac > 0 ? `<div class="inv-weight" style="color:var(--blue-bright)">AC ${item.ac}</div>` : ''}
+            ${item.cost ? `<div class="inv-weight">💰 ${item.cost}</div>` : ''}
+            ${item.weight > 0 ? `<div class="inv-weight">⚖ ${item.weight} lb${item.weight !== 1 ? 's' : ''}</div>` : ''}
+            ${item.properties ? `<div class="inv-weight" style="font-style:italic">${item.properties}</div>` : ''}
+            ${item.desc ? `<div class="inv-desc">${item.desc}</div>` : ''}
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  `).join('');
+
+  document.getElementById('tab-inventory').innerHTML = coinsHtml + encHtml + `<div id="items-list">${itemsHtml}</div>`;
+}
+
+function renderFeaturesTab(ch) {
+  function featureCard(f) {
+    const hasSub = f.specialization;
+    return `
+      <div class="feature-card" onclick="this.querySelector('.feature-body')?.classList.toggle('open')">
+        <div class="feature-header">
+          ${f.level > 0 ? `<div class="feature-level-badge">Lv ${f.level}</div>` : `<div class="feature-level-badge">—</div>`}
+          <div class="feature-name">${f.name}</div>
+          ${hasSub ? `<div class="feature-spec">${f.specialization}</div>` : ''}
+          <span class="action-chevron">▶</span>
+        </div>
+        ${f.desc ? `<div class="feature-body">${f.desc}</div>` : ''}
+      </div>
+    `;
+  }
+
+  const classFeats = ch.features.filter(f => f.type === 'class' || !f.type);
+  const raceTraits = ch.traits.filter(f => f.type === 'racial' || f.type === 'race');
+  const campaignTraits = ch.traits.filter(f => f.type !== 'racial' && f.type !== 'race');
+  const feats = ch.feats;
+
+  document.getElementById('tab-features').innerHTML = `
+    ${classFeats.length ? `
+      <div class="feature-group-title">Class Features</div>
+      <div class="features-list">${classFeats.map(featureCard).join('')}</div>
+    ` : ''}
+    ${raceTraits.length ? `
+      <div class="feature-group-title" style="margin-top:16px">Racial Traits</div>
+      <div class="features-list">${raceTraits.map(featureCard).join('')}</div>
+    ` : ''}
+    ${campaignTraits.length ? `
+      <div class="feature-group-title" style="margin-top:16px">Campaign Traits</div>
+      <div class="features-list">${campaignTraits.map(featureCard).join('')}</div>
+    ` : ''}
+    ${feats.length ? `
+      <div class="feature-group-title" style="margin-top:16px">Feats & Signs of Faith</div>
+      <div class="features-list">${feats.map(featureCard).join('')}</div>
+    ` : ''}
+  `;
+}
+
+function renderInfoTab(ch) {
+  const clsStrings = ch.classes.map(c => `${c.name} ${c.level}${c.specialization ? ` (${c.specialization})` : ''}`).join(', ');
+
+  const xpPct = ch.expNeeded > 0 ? Math.min(100, Math.round((ch.exp / ch.expNeeded) * 100)) : 100;
+
+  document.getElementById('tab-info').innerHTML = `
+    <div class="section-card">
+      <div class="info-section">
+        <div class="info-section-title">Languages</div>
+        <div class="lang-tags">
+          ${ch.languages.map(l => `<div class="lang-tag">${l}</div>`).join('')}
+        </div>
+      </div>
+
+      <div class="gold-divider"></div>
+
+      <div class="info-section">
+        <div class="info-section-title">Senses & Movement</div>
+        <div class="senses-row">
+          <div class="sense-item">
+            <div class="sense-label">Passive Perception</div>
+            <div class="sense-val">${ch.perception}</div>
+          </div>
+          <div class="sense-item">
+            <div class="sense-label">Speed</div>
+            <div class="sense-val">${ch.speed} ft</div>
+          </div>
+          <div class="sense-item">
+            <div class="sense-label">Size</div>
+            <div class="sense-val">${ch.size}</div>
+          </div>
+          ${ch.senses ? `<div class="sense-item">
+            <div class="sense-label">Special Senses</div>
+            <div class="sense-val">${ch.senses}</div>
+          </div>` : ''}
+        </div>
+      </div>
+
+      <div class="gold-divider"></div>
+
+      <div class="info-section">
+        <div class="info-section-title">Proficiencies</div>
+        <div class="prof-items">
+          ${ch.proficiencies.length
+            ? ch.proficiencies.map(p => `<div class="prof-item">${p}</div>`).join('')
+            : '<div class="no-items">None listed.</div>'}
+        </div>
+      </div>
+
+      <div class="gold-divider"></div>
+
+      <div class="info-section">
+        <div class="info-section-title">Experience Points</div>
+        <div class="xp-wrap">
+          <div class="xp-info">
+            <span class="xp-label">Progress to next level</span>
+            <span class="xp-val">${ch.exp.toLocaleString()} / ${ch.expNeeded.toLocaleString()} XP (${xpPct}%)</span>
+          </div>
+          <div class="xp-bar">
+            <div class="xp-fill" style="width: ${xpPct}%"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gold-divider"></div>
+
+      <div class="info-section">
+        <div class="info-section-title">Character Summary</div>
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px; font-size:0.85rem;">
+          <div><span style="color:var(--text-dim); font-family:var(--font-display); font-size:0.68rem; text-transform:uppercase; letter-spacing:0.1em">Race</span><br>${ch.race}</div>
+          <div><span style="color:var(--text-dim); font-family:var(--font-display); font-size:0.68rem; text-transform:uppercase; letter-spacing:0.1em">Class</span><br>${clsStrings}</div>
+          <div><span style="color:var(--text-dim); font-family:var(--font-display); font-size:0.68rem; text-transform:uppercase; letter-spacing:0.1em">Background</span><br>${ch.background || '—'}</div>
+          <div><span style="color:var(--text-dim); font-family:var(--font-display); font-size:0.68rem; text-transform:uppercase; letter-spacing:0.1em">Destiny</span><br>${ch.destiny || '—'}</div>
+          <div><span style="color:var(--text-dim); font-family:var(--font-display); font-size:0.68rem; text-transform:uppercase; letter-spacing:0.1em">Proficiency Bonus</span><br>${fmt(ch.profBonus)}</div>
+          <div><span style="color:var(--text-dim); font-family:var(--font-display); font-size:0.68rem; text-transform:uppercase; letter-spacing:0.1em">Hero Points</span><br>${ch.hero}</div>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function renderAll(ch) {
+  renderHeader(ch);
+  renderStatsBar(ch);
+  renderAbilities(ch);
+  renderSaves(ch);
+  renderSkills(ch);
+  renderCombatTab(ch);
+  renderSpellsTab(ch);
+  renderInventoryTab(ch);
+  renderFeaturesTab(ch);
+  renderInfoTab(ch);
+}
+
+// ===== TAB NAVIGATION =====
+document.getElementById('tab-nav').addEventListener('click', e => {
+  const btn = e.target.closest('.tab-btn');
+  if (!btn) return;
+  const tabId = btn.dataset.tab;
+
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+
+  btn.classList.add('active');
+  document.getElementById(`tab-${tabId}`)?.classList.add('active');
+});
+
+// ===== FILE LOADING =====
+function loadXML(xmlText) {
+  try {
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(xmlText, 'text/xml');
+    const err = doc.querySelector('parsererror');
+    if (err) { alert('XML parse error: ' + err.textContent); return; }
+
+    const ch = parseCharacter(doc);
+    if (!ch) { alert('Could not find character data in this XML file.'); return; }
+
+    // Show sheet
+    document.getElementById('upload-zone').style.display = 'none';
+    const sheet = document.getElementById('sheet');
+    sheet.style.display = 'block';
+    sheet.classList.add('fade-in');
+
+    renderAll(ch);
+  } catch(e) {
+    alert('Error loading character: ' + e.message);
+    console.error(e);
+  }
+}
+
+// File input
+const fileInput = document.getElementById('file-input');
+fileInput.addEventListener('change', e => {
+  const file = e.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = ev => loadXML(ev.target.result);
+  reader.readAsText(file);
+  fileInput.value = '';
+});
+
+// Open button
+document.getElementById('open-btn').addEventListener('click', () => fileInput.click());
+
+// Drag & drop
+const dropZone = document.getElementById('drop-zone');
+dropZone.addEventListener('click', () => fileInput.click());
+dropZone.addEventListener('dragenter', e => { e.preventDefault(); dropZone.classList.add('drag-over'); });
+dropZone.addEventListener('dragover', e => { e.preventDefault(); dropZone.classList.add('drag-over'); });
+dropZone.addEventListener('dragleave', e => { if (!dropZone.contains(e.relatedTarget)) dropZone.classList.remove('drag-over'); });
+dropZone.addEventListener('drop', e => {
+  e.preventDefault();
+  dropZone.classList.remove('drag-over');
+  const file = e.dataTransfer.files[0];
+  if (file && (file.name.endsWith('.xml') || file.type.includes('xml'))) {
+    const reader = new FileReader();
+    reader.onload = ev => loadXML(ev.target.result);
+    reader.readAsText(file);
+  } else {
+    alert('Please drop an XML file.');
+  }
+});
+
+// Font switcher
+document.querySelector('.font-bar').addEventListener('click', e => {
+  const btn = e.target.closest('.font-btn');
+  if (!btn) return;
+  document.querySelectorAll('.font-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.body.classList.remove('font-helvetica', 'font-arial', 'font-verdana', 'font-calibri');
+  if (btn.dataset.font) document.body.classList.add(btn.dataset.font);
+});
+
+// Upload UI shown by default; user must manually load a file
+</script>
+</body>
+</html>
