@@ -1225,16 +1225,16 @@ function parseCharacter(xmlDoc) {
   const name = getText(c.querySelector(':scope > name'));
   const race = getText(c.querySelector(':scope > race'));
   const level = getNum(c.querySelector(':scope > level'));
-  const background = getText(c.querySelector('background'));
-  const destiny = getText(c.querySelector('destiny'));
-  const size = getText(c.querySelector('size'));
-  const senses = getText(c.querySelector('senses'));
-  const inspiration = getNum(c.querySelector('inspiration'));
-  const hero = getNum(c.querySelector('hero'));
-  const exp = getNum(c.querySelector('exp'));
-  const expNeeded = getNum(c.querySelector('expneeded'));
-  const profBonus = getNum(c.querySelector('profbonus'));
-  const perception = getNum(c.querySelector('perception'));
+  const background = getText(c.querySelector(':scope > background'));
+  const destiny = getText(c.querySelector(':scope > destiny'));
+  const size = getText(c.querySelector(':scope > size'));
+  const senses = getText(c.querySelector(':scope > senses'));
+  const inspiration = getNum(c.querySelector(':scope > inspiration'));
+  const hero = getNum(c.querySelector(':scope > hero'));
+  const exp = getNum(c.querySelector(':scope > exp'));
+  const expNeeded = getNum(c.querySelector(':scope > expneeded'));
+  const profBonus = getNum(c.querySelector(':scope > profbonus'));
+  const perception = getNum(c.querySelector(':scope > perception'));
 
   // Classes
   const classes = qsa('classes > *', c).map(cls => ({
@@ -1242,6 +1242,7 @@ function parseCharacter(xmlDoc) {
     level: getNum(cls.querySelector('level')),
     specialization: getText(cls.querySelector('specialization')),
     hddie: getText(cls.querySelector('hddie')),
+    casterpactmagic: getNum(cls.querySelector('casterpactmagic')),
   })).filter(cl => cl.name);
 
   // Abilities
@@ -1313,6 +1314,12 @@ function parseCharacter(xmlDoc) {
   // Proficiencies
   const proficiencies = qsa('proficiencylist > *', c).map(p => getText(p.querySelector('name'))).filter(Boolean);
 
+  // Find spellcasting ability from powergroup
+  const spellGroupEntry = qsa('powergroup > *', c).find(pg => getText(pg.querySelector('name')) === 'Spells');
+  const spellStatName = getText(spellGroupEntry?.querySelector('stat')) ||
+    (classes.some(cl => cl.casterpactmagic === 1) ? 'charisma' : 'wisdom');
+  const spellAbilAbbr = { strength:'STR', dexterity:'DEX', constitution:'CON', intelligence:'INT', wisdom:'WIS', charisma:'CHA' }[spellStatName] ?? 'WIS';
+
   // Spell slots
   const spellSlots = [];
   for (let i = 1; i <= 9; i++) {
@@ -1325,6 +1332,16 @@ function parseCharacter(xmlDoc) {
         used: getNum(node?.querySelector('used')),
         remaining: max - getNum(node?.querySelector('used')),
       });
+    }
+  }
+  // Warlock pact magic slots (no 'used' field — recharges on short rest)
+  if (spellSlots.length === 0) {
+    for (let i = 1; i <= 9; i++) {
+      const node = c.querySelector(`powermeta > pactmagicslots${i}`);
+      const max = getNum(node?.querySelector('max'));
+      if (max > 0) {
+        spellSlots.push({ level: i, max, used: 0, remaining: max });
+      }
     }
   }
 
@@ -1400,7 +1417,7 @@ function parseCharacter(xmlDoc) {
   const features = qsa('featurelist > *', c).map(f => ({
     name: getText(f.querySelector('name')),
     level: getNum(f.querySelector('level')),
-    specialization: getText(f.querySelector('specialization')),
+    specialization: '',
     desc: ftToHtml(f.querySelector('text')),
     type: 'class',
   }));
@@ -1423,10 +1440,10 @@ function parseCharacter(xmlDoc) {
     specialization: '',
   }));
 
-  // Compute spell attack and save DC
-  const wisBonus = abilities.wisdom?.bonus ?? 0;
-  const spellDC = 8 + profBonus + wisBonus;
-  const spellAtk = profBonus + wisBonus;
+  // Compute spell attack and save DC using the character's actual spellcasting stat
+  const spellBonus = abilities[spellStatName]?.bonus ?? 0;
+  const spellDC = 8 + profBonus + spellBonus;
+  const spellAtk = profBonus + spellBonus;
 
   return {
     name, race, level, background, destiny, size, senses,
@@ -1434,7 +1451,7 @@ function parseCharacter(xmlDoc) {
     classes, abilities, hp, ac, initiative, speed, enc,
     skills, coins, languages, proficiencies,
     spellSlots, powers, weapons, inventory,
-    features, traits, feats, spellDC, spellAtk,
+    features, traits, feats, spellDC, spellAtk, spellStatName, spellAbilAbbr, spellBonus,
   };
 }
 
@@ -1525,7 +1542,7 @@ function renderStatsBar(ch) {
     <div class="stat-block">
       <div class="stat-label">Spell Save DC</div>
       <div class="stat-value gold">${ch.spellDC}</div>
-      <div class="stat-sub">WIS</div>
+      <div class="stat-sub">${ch.spellAbilAbbr}</div>
     </div>
     <div class="stat-block">
       <div class="stat-label">Spell Attack</div>
@@ -1662,8 +1679,8 @@ function renderCombatTab(ch) {
         </tbody>
       </table>`;
 
-  // Special actions
-  const classActions = ch.powers.filter(p => p.group === 'Cleric Actions/Effects' || (p.group && p.group.includes('Action')));
+  // Special actions (any power group whose name contains 'Action')
+  const classActions = ch.powers.filter(p => p.group && p.group.includes('Action'));
   const actionsHtml = classActions.map(a => `
     <div class="action-card" onclick="this.classList.toggle('expanded')">
       <div class="action-header">
@@ -1805,20 +1822,20 @@ function renderSpellsTab(ch) {
     <div class="spell-casting-info">
       <div class="spell-info-item">
         <div class="spell-info-label">Spellcasting Ability</div>
-        <div class="spell-info-val">WIS</div>
-        <div class="spell-info-sub">${fmt(ch.abilities.wisdom?.bonus ?? 0)} modifier</div>
+        <div class="spell-info-val">${ch.spellAbilAbbr}</div>
+        <div class="spell-info-sub">${fmt(ch.spellBonus)} modifier</div>
       </div>
       <div style="width:1px; height:48px; background:var(--border)"></div>
       <div class="spell-info-item">
         <div class="spell-info-label">Spell Save DC</div>
         <div class="spell-info-val">${ch.spellDC}</div>
-        <div class="spell-info-sub">8+Prof+WIS</div>
+        <div class="spell-info-sub">8+Prof+${ch.spellAbilAbbr}</div>
       </div>
       <div style="width:1px; height:48px; background:var(--border)"></div>
       <div class="spell-info-item">
         <div class="spell-info-label">Spell Attack Bonus</div>
         <div class="spell-info-val">${fmt(ch.spellAtk)}</div>
-        <div class="spell-info-sub">Prof+WIS</div>
+        <div class="spell-info-sub">Prof+${ch.spellAbilAbbr}</div>
       </div>
       <div style="flex:1"></div>
       <div style="font-size:0.75rem; color:var(--text-dim); font-style:italic">
