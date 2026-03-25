@@ -30,9 +30,9 @@
   --purple: #9b6bc0;
   --teal: #3ea8a8;
   --orange: #d07040;
-  --font-display: 'Cinzel', 'Palatino Linotype', Palatino, serif;
-  --font-deco: 'Cinzel Decorative', 'Palatino Linotype', serif;
-  --font-body: 'EB Garamond', 'Palatino Linotype', Georgia, serif;
+  --font-display: Verdana, Geneva, sans-serif;
+  --font-deco: Verdana, Geneva, sans-serif;
+  --font-body: Verdana, Geneva, sans-serif;
   --shadow: 0 4px 24px rgba(0,0,0,0.7);
   --glow-gold: 0 0 12px rgba(212,168,67,0.25);
   --glow-gold-strong: 0 0 20px rgba(212,168,67,0.5);
@@ -768,6 +768,8 @@ tr:hover td { background: rgba(255,255,255,0.03); }
 .spell-desc-body ul { padding-left: 18px; }
 .spell-desc-body li { font-size: 0.82rem; line-height: 1.5; color: var(--text); }
 .spell-desc-body .linklist { font-size: 0.78rem; color: var(--text-dim); font-style: italic; margin-top: 6px; }
+.spell-ext-link { display: inline-block; margin-top: 10px; font-size: 0.75rem; font-family: var(--font-display); color: var(--blue-bright); text-decoration: none; border: 1px solid rgba(114,176,240,0.3); border-radius: 4px; padding: 3px 10px; transition: all 0.15s; }
+.spell-ext-link:hover { border-color: var(--blue-bright); background: rgba(114,176,240,0.1); }
 .spell-chevron { font-size: 0.75rem; color: var(--text-dim); transition: transform 0.2s; }
 .spell-card.expanded .spell-chevron { transform: rotate(90deg); }
 .spell-card.expanded .spell-desc-body { display: block; }
@@ -1081,6 +1083,19 @@ tr:hover td { background: rgba(255,255,255,0.03); }
 }
 .font-btn:hover { border-color: var(--border-gold); color: var(--text); }
 .font-btn.active { border-color: var(--border-gold); background: rgba(212,168,67,0.15); color: var(--gold); }
+.load-new-btn {
+  margin-left: auto;
+  padding: 4px 14px;
+  background: transparent;
+  border: 1px solid var(--red-dark);
+  border-radius: 4px;
+  color: #e07070;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.15s;
+  line-height: 1.4;
+}
+.load-new-btn:hover { border-color: var(--red); background: rgba(196,64,64,0.15); color: #f09090; }
 
 /* Font overrides */
 body.font-arial     { --font-display: Arial, sans-serif; --font-deco: Arial, sans-serif; --font-body: Arial, sans-serif; }
@@ -1097,6 +1112,7 @@ body.font-calibri   { --font-display: Calibri, 'Gill Sans', sans-serif; --font-d
   <button class="font-btn" data-font="font-arial">Arial</button>
   <button class="font-btn" data-font="font-verdana">Verdana</button>
   <button class="font-btn" data-font="font-calibri">Calibri</button>
+  <button class="load-new-btn" id="load-new-btn">↩ Load New Character</button>
 </div>
 
 <!-- ===== UPLOAD ZONE ===== -->
@@ -1696,6 +1712,16 @@ function renderCombatTab(ch) {
 }
 
 function renderSpellsTab(ch) {
+  function toSlug(name) {
+    const stopWords = new Set(['of', 'the', 'a', 'an', 'at', 'in', 'on', 'to', 'for', 'with', 'from', 'and', 'or', 'by']);
+    return name
+      .replace(/\s*\(.*?\)/g, '')        // strip parentheticals like (30)
+      .toLowerCase()
+      .replace(/['']/g, '')
+      .split(/[^a-z0-9]+/)
+      .filter(w => w && !stopWords.has(w))
+      .join('-');
+  }
   function getSchoolClass(school) {
     if (!school) return '';
     const s = school.toLowerCase();
@@ -1767,7 +1793,7 @@ function renderSpellsTab(ch) {
                 ${sp.duration ? `<div class="spell-meta"><span class="spell-meta-lbl">Duration</span><span class="spell-meta-val">${sp.duration.trim()}</span></div>` : ''}
                 ${sp.components ? `<div class="spell-meta"><span class="spell-meta-lbl">Components</span><span class="spell-meta-val">${sp.components.trim()}</span></div>` : ''}
               </div>
-              ${sp.description ? `<div class="spell-desc-body">${sp.description}</div>` : ''}
+              ${sp.description ? `<div class="spell-desc-body">${sp.description}<a class="spell-ext-link" href="https://a5e.tools/spell/${toSlug(sp.name)}" target="_blank" rel="noopener">↗ View on a5e.tools</a></div>` : ''}
             </div>
           `;
         }).join('')}
@@ -2125,6 +2151,16 @@ document.querySelector('.font-bar').addEventListener('click', e => {
   btn.classList.add('active');
   document.body.classList.remove('font-arial', 'font-verdana', 'font-calibri');
   if (btn.dataset.font) document.body.classList.add(btn.dataset.font);
+});
+
+// Load new character
+document.getElementById('load-new-btn').addEventListener('click', () => {
+  document.getElementById('sheet').style.display = 'none';
+  const uz = document.getElementById('upload-zone');
+  uz.style.display = 'flex';
+  uz.querySelector('.upload-inner').classList.remove('fade-in');
+  void uz.querySelector('.upload-inner').offsetWidth; // force reflow
+  uz.querySelector('.upload-inner').classList.add('fade-in');
 });
 
 // Upload UI shown by default; user must manually load a file
