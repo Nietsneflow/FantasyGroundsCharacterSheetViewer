@@ -1083,7 +1083,6 @@ tr:hover td { background: rgba(255,255,255,0.03); }
 .font-btn.active { border-color: var(--border-gold); background: rgba(212,168,67,0.15); color: var(--gold); }
 
 /* Font overrides */
-body.font-helvetica { --font-display: Helvetica, Arial, sans-serif; --font-deco: Helvetica, Arial, sans-serif; --font-body: Helvetica, Arial, sans-serif; }
 body.font-arial     { --font-display: Arial, sans-serif; --font-deco: Arial, sans-serif; --font-body: Arial, sans-serif; }
 body.font-verdana   { --font-display: Verdana, Geneva, sans-serif; --font-deco: Verdana, Geneva, sans-serif; --font-body: Verdana, Geneva, sans-serif; }
 body.font-calibri   { --font-display: Calibri, 'Gill Sans', sans-serif; --font-deco: Calibri, 'Gill Sans', sans-serif; --font-body: Calibri, 'Gill Sans', sans-serif; }
@@ -1095,7 +1094,6 @@ body.font-calibri   { --font-display: Calibri, 'Gill Sans', sans-serif; --font-d
 <div class="font-bar">
   <span class="font-bar-label">Font:</span>
   <button class="font-btn active" data-font="">Default</button>
-  <button class="font-btn" data-font="font-helvetica">Helvetica</button>
   <button class="font-btn" data-font="font-arial">Arial</button>
   <button class="font-btn" data-font="font-verdana">Verdana</button>
   <button class="font-btn" data-font="font-calibri">Calibri</button>
@@ -2125,7 +2123,7 @@ document.querySelector('.font-bar').addEventListener('click', e => {
   if (!btn) return;
   document.querySelectorAll('.font-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
-  document.body.classList.remove('font-helvetica', 'font-arial', 'font-verdana', 'font-calibri');
+  document.body.classList.remove('font-arial', 'font-verdana', 'font-calibri');
   if (btn.dataset.font) document.body.classList.add(btn.dataset.font);
 });
 
