@@ -1222,8 +1222,8 @@ function parseCharacter(xmlDoc) {
   if (!c) return null;
 
   // Name, race, etc.
-  const name = getText(c.querySelector('name'));
-  const race = getText(c.querySelector('race'));
+  const name = getText(c.querySelector(':scope > name'));
+  const race = getText(c.querySelector(':scope > race'));
   const level = getNum(c.querySelector(':scope > level'));
   const background = getText(c.querySelector('background'));
   const destiny = getText(c.querySelector('destiny'));
@@ -1261,7 +1261,7 @@ function parseCharacter(xmlDoc) {
   });
 
   // HP
-  const hpNode = c.querySelector('hp');
+  const hpNode = c.querySelector(':scope > hp');
   const hp = {
     total: getNum(hpNode?.querySelector('total')),
     wounds: getNum(hpNode?.querySelector('wounds')),
