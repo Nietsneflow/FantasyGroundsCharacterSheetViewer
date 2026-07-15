@@ -11,7 +11,6 @@
 :root {
   --bg: #08080f;
   --bg-card: #0e0e1a;
-  --bg-card2: #13132000;
   --bg-hover: #1a1a2e;
   --border: #2a2a3d;
   --border-gold: #b8922a;
@@ -310,7 +309,6 @@ body {
 .stat-sub { font-size: 0.7rem; color: var(--text-dim); margin-top: 3px; }
 .hp-bar-wrap { margin-top: 6px; height: 5px; background: rgba(255,255,255,0.08); border-radius: 3px; overflow: hidden; }
 .hp-bar-fill { height: 100%; border-radius: 3px; transition: width 0.5s ease; }
-.hp-bar-temp { position: absolute; bottom: 8px; right: 10px; font-size: 0.7rem; color: var(--blue-bright); }
 
 /* ===== MAIN LAYOUT ===== */
 .cs-main {
@@ -436,6 +434,7 @@ body {
   flex-shrink: 0;
 }
 .prof-pip.filled { background: var(--gold); border-color: var(--gold); }
+.prof-pip.expert { background: var(--gold-light); border-color: var(--gold-light); box-shadow: 0 0 6px rgba(240,200,112,0.8); }
 .save-name {
   flex: 1;
   font-size: 0.82rem;
@@ -1099,7 +1098,6 @@ tr:hover td { background: rgba(255,255,255,0.03); }
 
 /* Font overrides */
 body.font-arial     { --font-display: Arial, sans-serif; --font-deco: Arial, sans-serif; --font-body: Arial, sans-serif; }
-body.font-verdana   { --font-display: Verdana, Geneva, sans-serif; --font-deco: Verdana, Geneva, sans-serif; --font-body: Verdana, Geneva, sans-serif; }
 body.font-calibri   { --font-display: Calibri, 'Gill Sans', sans-serif; --font-deco: Calibri, 'Gill Sans', sans-serif; --font-body: Calibri, 'Gill Sans', sans-serif; }
 </style>
 </head>
@@ -1108,9 +1106,8 @@ body.font-calibri   { --font-display: Calibri, 'Gill Sans', sans-serif; --font-d
 <!-- ===== FONT BAR ===== -->
 <div class="font-bar">
   <span class="font-bar-label">Font:</span>
-  <button class="font-btn active" data-font="">Default</button>
+  <button class="font-btn active" data-font="">Verdana</button>
   <button class="font-btn" data-font="font-arial">Arial</button>
-  <button class="font-btn" data-font="font-verdana">Verdana</button>
   <button class="font-btn" data-font="font-calibri">Calibri</button>
   <button class="load-new-btn" id="load-new-btn">↩ Load New Character</button>
 </div>
@@ -1186,14 +1183,21 @@ body.font-calibri   { --font-display: Calibri, 'Gill Sans', sans-serif; --font-d
 // ===== UTILITIES =====
 const qs = (sel, root = document) => root.querySelector(sel);
 const qsa = (sel, root = document) => Array.from(root.querySelectorAll(sel));
-const getText = (node) => node ? node.textContent.trim() : '';
+// Escape XML-sourced text so it can't inject markup into innerHTML
+const esc = (s) => String(s).replace(/[&<>"']/g, ch => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[ch]));
+const unesc = (s) => String(s).replace(/&(amp|lt|gt|quot|#39);/g, (_, e) => ({ amp:'&', lt:'<', gt:'>', quot:'"', '#39':"'" }[e]));
+// Scoped direct-child query — FG XML nests full stat blocks (cohorts, item spells,
+// power actions) whose tag names shadow the parent's, so never search descendants.
+const q = (el, path) => el ? el.querySelector(`:scope > ${path}`) : null;
+const qa = (el, path) => el ? Array.from(el.querySelectorAll(`:scope > ${path}`)) : [];
+const getText = (node) => node ? esc(node.textContent.trim()) : '';
 const getNum = (node) => node ? (parseInt(node.textContent.trim()) || 0) : 0;
 const fmt = (n) => n >= 0 ? `+${n}` : `${n}`;
 
 function ftToHtml(node) {
   if (!node) return '';
   function conv(n) {
-    if (n.nodeType === 3) return n.textContent;
+    if (n.nodeType === 3) return esc(n.textContent);
     if (n.nodeType !== 1) return '';
     const tag = n.tagName.toLowerCase();
     const inner = Array.from(n.childNodes).map(conv).join('');
@@ -1237,220 +1241,233 @@ function parseCharacter(xmlDoc) {
   const perception = getNum(c.querySelector(':scope > perception'));
 
   // Classes
-  const classes = qsa('classes > *', c).map(cls => ({
-    name: getText(cls.querySelector('name')),
-    level: getNum(cls.querySelector('level')),
-    specialization: getText(cls.querySelector('specialization')),
-    hddie: getText(cls.querySelector('hddie')),
-    casterpactmagic: getNum(cls.querySelector('casterpactmagic')),
+  const classes = qa(c, 'classes > *').map(cls => ({
+    name: getText(q(cls, 'name')),
+    level: getNum(q(cls, 'level')),
+    specialization: getText(q(cls, 'specialization')),
+    hddie: getText(q(cls, 'hddie')),
+    casterpactmagic: getNum(q(cls, 'casterpactmagic')),
   })).filter(cl => cl.name);
 
   // Abilities
   const abilityNames = ['strength', 'dexterity', 'constitution', 'intelligence', 'wisdom', 'charisma', 'luck'];
   const abilities = {};
   abilityNames.forEach(ab => {
-    const node = c.querySelector(`abilities > ${ab}`);
+    const node = q(c, `abilities > ${ab}`);
     if (node) {
       abilities[ab] = {
-        score: getNum(node.querySelector('score')),
-        bonus: getNum(node.querySelector('bonus')),
-        save: getNum(node.querySelector('save')),
-        saveProf: getNum(node.querySelector('saveprof')),
-        current: ab === 'luck' ? getNum(node.querySelector('current')) : null,
+        score: getNum(q(node, 'score')),
+        bonus: getNum(q(node, 'bonus')),
+        save: getNum(q(node, 'save')),
+        saveProf: getNum(q(node, 'saveprof')),
+        current: ab === 'luck' ? getNum(q(node, 'current')) : null,
       };
     }
   });
 
   // HP
-  const hpNode = c.querySelector(':scope > hp');
+  const hpNode = q(c, 'hp');
   const hp = {
-    total: getNum(hpNode?.querySelector('total')),
-    wounds: getNum(hpNode?.querySelector('wounds')),
-    temporary: getNum(hpNode?.querySelector('temporary')),
-    deathFail: getNum(hpNode?.querySelector('deathsavefail')),
-    deathSuccess: getNum(hpNode?.querySelector('deathsavesuccess')),
+    total: getNum(q(hpNode, 'total')),
+    wounds: getNum(q(hpNode, 'wounds')),
+    temporary: getNum(q(hpNode, 'temporary')),
+    deathFail: getNum(q(hpNode, 'deathsavefail')),
+    deathSuccess: getNum(q(hpNode, 'deathsavesuccess')),
   };
   hp.current = Math.max(0, hp.total - hp.wounds);
 
   // AC
-  const acNode = c.querySelector('defenses > ac');
+  const acNode = q(c, 'defenses > ac');
   const ac = {
-    total: getNum(acNode?.querySelector('total')),
-    armor: getNum(acNode?.querySelector('armor')),
-    shield: getNum(acNode?.querySelector('shield')),
-    misc: getNum(acNode?.querySelector('misc')),
+    total: getNum(q(acNode, 'total')),
+    armor: getNum(q(acNode, 'armor')),
+    shield: getNum(q(acNode, 'shield')),
+    misc: getNum(q(acNode, 'misc')),
   };
 
   // Initiative, speed
-  const initiative = getNum(c.querySelector('initiative > total'));
-  const speed = getNum(c.querySelector('speed > total'));
+  const initiative = getNum(q(c, 'initiative > total'));
+  const speed = getNum(q(c, 'speed > total'));
+  const speedSpecial = getText(q(c, 'speed > special'));
 
   // Encumbrance
   const enc = {
-    load: getNum(c.querySelector('encumbrance > load')),
-    max: getNum(c.querySelector('encumbrance > max')),
-    bulky: getNum(c.querySelector('encumbrance > bulkyitems')),
-    supply: getNum(c.querySelector('encumbrance > supply')),
+    load: getNum(q(c, 'encumbrance > load')),
+    max: getNum(q(c, 'encumbrance > max')),
+    bulky: getNum(q(c, 'encumbrance > bulkyitems')),
+    supply: getNum(q(c, 'encumbrance > supply')),
   };
 
   // Skills
-  const skills = qsa('skilllist > *', c).map(sk => ({
-    name: getText(sk.querySelector('name')),
-    stat: getText(sk.querySelector('stat')),
-    total: getNum(sk.querySelector('total')),
-    prof: getNum(sk.querySelector('prof')),
-    misc: getNum(sk.querySelector('misc')),
+  const skills = qa(c, 'skilllist > *').map(sk => ({
+    name: getText(q(sk, 'name')),
+    stat: getText(q(sk, 'stat')),
+    total: getNum(q(sk, 'total')),
+    prof: getNum(q(sk, 'prof')),
+    misc: getNum(q(sk, 'misc')),
   })).filter(s => s.name).sort((a, b) => a.name.localeCompare(b.name));
 
   // Coins
-  const coins = qsa('coins > *', c).map(cn => ({
-    name: getText(cn.querySelector('name')),
-    amount: getNum(cn.querySelector('amount')),
+  const coins = qa(c, 'coins > *').map(cn => ({
+    name: getText(q(cn, 'name')),
+    amount: getNum(q(cn, 'amount')),
   })).filter(co => co.name);
 
   // Languages
-  const languages = qsa('languagelist > *', c).map(l => getText(l.querySelector('name'))).filter(Boolean);
+  const languages = qa(c, 'languagelist > *').map(l => getText(q(l, 'name'))).filter(Boolean);
 
   // Proficiencies
-  const proficiencies = qsa('proficiencylist > *', c).map(p => getText(p.querySelector('name'))).filter(Boolean);
+  const proficiencies = qa(c, 'proficiencylist > *').map(p => getText(q(p, 'name'))).filter(Boolean);
 
   // Find spellcasting ability from powergroup
-  const spellGroupEntry = qsa('powergroup > *', c).find(pg => getText(pg.querySelector('name')) === 'Spells');
-  const spellStatName = getText(spellGroupEntry?.querySelector('stat')) ||
+  const spellGroupEntry = qa(c, 'powergroup > *').find(pg => getText(q(pg, 'name')) === 'Spells');
+  const spellStatName = getText(q(spellGroupEntry, 'stat')) ||
     (classes.some(cl => cl.casterpactmagic === 1) ? 'charisma' : 'wisdom');
   const spellAbilAbbr = { strength:'STR', dexterity:'DEX', constitution:'CON', intelligence:'INT', wisdom:'WIS', charisma:'CHA' }[spellStatName] ?? 'WIS';
 
   // Spell slots
   const spellSlots = [];
   for (let i = 1; i <= 9; i++) {
-    const node = c.querySelector(`powermeta > spellslots${i}`);
-    const max = getNum(node?.querySelector('max'));
+    const node = q(c, `powermeta > spellslots${i}`);
+    const max = getNum(q(node, 'max'));
     if (max > 0) {
-      spellSlots.push({
-        level: i,
-        max,
-        used: getNum(node?.querySelector('used')),
-        remaining: max - getNum(node?.querySelector('used')),
-      });
+      const used = getNum(q(node, 'used'));
+      spellSlots.push({ level: i, max, used, remaining: max - used });
     }
   }
-  // Warlock pact magic slots (no 'used' field — recharges on short rest)
+  // Warlock pact magic: per-slot nodes only carry 'max'; usage is tracked in
+  // pactmagicpoints (max/used), so estimate spent slots from the points ratio.
+  let pactPoints = null;
   if (spellSlots.length === 0) {
+    const points = q(c, 'powermeta > pactmagicpoints');
+    const ptsMax = getNum(q(points, 'max'));
+    const ptsUsed = getNum(q(points, 'used'));
     for (let i = 1; i <= 9; i++) {
-      const node = c.querySelector(`powermeta > pactmagicslots${i}`);
-      const max = getNum(node?.querySelector('max'));
+      const node = q(c, `powermeta > pactmagicslots${i}`);
+      const max = getNum(q(node, 'max'));
       if (max > 0) {
-        spellSlots.push({ level: i, max, used: 0, remaining: max });
+        const used = ptsMax > 0 ? Math.min(max, Math.floor(ptsUsed / (ptsMax / max))) : 0;
+        spellSlots.push({ level: i, max, used, remaining: max - used, pact: true });
       }
+    }
+    if (ptsMax > 0 && spellSlots.length > 0) {
+      pactPoints = { max: ptsMax, used: ptsUsed, remaining: ptsMax - ptsUsed };
     }
   }
 
   // Powers (spells + actions)
   const seenSpellNames = new Set();
-  const powers = qsa('powers > *', c).map(pw => {
-    const nm = getText(pw.querySelector('name'));
-    const lvl = getNum(pw.querySelector('level'));
+  const powers = qa(c, 'powers > *').map(pw => {
+    const nm = getText(q(pw, 'name'));
+    const lvl = getNum(q(pw, 'level'));
     const key = `${nm}|${lvl}`;
     if (seenSpellNames.has(key)) return null;
     seenSpellNames.add(key);
     return {
       name: nm,
       level: lvl,
-      group: getText(pw.querySelector('group')),
-      school: getText(pw.querySelector('school')),
-      prepared: getNum(pw.querySelector('prepared')),
-      cast: getNum(pw.querySelector('cast')),
-      castingTime: getText(pw.querySelector('castingtime')),
-      range: getText(pw.querySelector('range')),
-      duration: getText(pw.querySelector('duration')),
-      components: getText(pw.querySelector('components')),
-      ritual: getNum(pw.querySelector('ritual')),
-      rare: getNum(pw.querySelector('rare')),
-      source: getText(pw.querySelector('source')),
-      description: ftToHtml(pw.querySelector('description')),
+      group: getText(q(pw, 'group')),
+      school: getText(q(pw, 'school')),
+      prepared: getNum(q(pw, 'prepared')),
+      cast: getNum(q(pw, 'cast')),
+      castingTime: getText(q(pw, 'castingtime')),
+      range: getText(q(pw, 'range')),
+      duration: getText(q(pw, 'duration')),
+      components: getText(q(pw, 'components')),
+      ritual: getNum(q(pw, 'ritual')),
+      rare: getNum(q(pw, 'rare')),
+      usesPeriod: getText(q(pw, 'usesperiod')),
+      source: getText(q(pw, 'source')),
+      description: ftToHtml(q(pw, 'description')),
     };
   }).filter(Boolean);
 
   // Weapons
-  const weapons = qsa('weaponlist > *', c).map(w => {
-    const damages = qsa('damagelist > *', w).map(d => ({
-      dice: getText(d.querySelector('dice')),
-      bonus: getNum(d.querySelector('bonus')),
-      stat: getText(d.querySelector('stat')),
-      type: getText(d.querySelector('type')),
-    }));
+  const weapons = qa(c, 'weaponlist > *').map(w => {
+    const damages = qa(w, 'damagelist > *').map(d => {
+      const smNode = q(d, 'statmult');
+      return {
+        dice: getText(q(d, 'dice')),
+        bonus: getNum(q(d, 'bonus')),
+        stat: getText(q(d, 'stat')),
+        statmult: smNode ? getNum(smNode) : 1,
+        type: getText(q(d, 'type')),
+      };
+    });
     return {
-      name: getText(w.querySelector('name')),
-      attackBonus: getNum(w.querySelector('attackbonus')),
-      attackStat: getText(w.querySelector('attackstat')) || 'strength',
-      carried: getNum(w.querySelector('carried')),
-      prof: getNum(w.querySelector('prof')),
-      properties: getText(w.querySelector('properties')),
-      ranged: getNum(w.querySelector('type')) === 1,
+      name: getText(q(w, 'name')),
+      attackBonus: getNum(q(w, 'attackbonus')),
+      attackStat: getText(q(w, 'attackstat')),
+      carried: getNum(q(w, 'carried')),
+      prof: getNum(q(w, 'prof')),
+      properties: getText(q(w, 'properties')),
+      // type: 0 = melee, 1 = ranged, 2 = thrown
+      ranged: getNum(q(w, 'type')) === 1,
       damages,
     };
   }).filter(w => w.name);
 
   // Inventory
-  const inventory = qsa('inventorylist > *', c).map(item => {
-    const nm = getText(item.querySelector('name'));
+  const inventory = qa(c, 'inventorylist > *').map(item => {
+    const nm = getText(q(item, 'name'));
     if (!nm) return null;
     return {
       name: nm,
-      type: getText(item.querySelector('type')),
-      subtype: getText(item.querySelector('subtype')),
-      count: getNum(item.querySelector('count')),
-      weight: parseFloat(item.querySelector('weight')?.textContent || '0'),
-      carried: getNum(item.querySelector('carried')),
-      damage: getText(item.querySelector('damage')),
-      ac: getNum(item.querySelector('ac')),
-      rarity: getText(item.querySelector('rarity')),
-      properties: getText(item.querySelector('properties')),
-      cost: getText(item.querySelector('cost')),
-      attune: getNum(item.querySelector('attune')),
-      isIdentified: getNum(item.querySelector('isidentified')),
-      desc: ftToHtml(item.querySelector('description')),
+      type: getText(q(item, 'type')),
+      subtype: getText(q(item, 'subtype')),
+      count: getNum(q(item, 'count')),
+      weight: parseFloat(q(item, 'weight')?.textContent || '0'),
+      carried: getNum(q(item, 'carried')),
+      damage: getText(q(item, 'damage')),
+      ac: getNum(q(item, 'ac')),
+      rarity: getText(q(item, 'rarity')),
+      properties: getText(q(item, 'properties')),
+      cost: getText(q(item, 'cost')),
+      attune: getNum(q(item, 'attune')),
+      isIdentified: getNum(q(item, 'isidentified')),
+      desc: ftToHtml(q(item, 'description')),
     };
   }).filter(Boolean);
 
   // Features
-  const features = qsa('featurelist > *', c).map(f => ({
-    name: getText(f.querySelector('name')),
-    level: getNum(f.querySelector('level')),
-    specialization: '',
-    desc: ftToHtml(f.querySelector('text')),
+  const features = qa(c, 'featurelist > *').map(f => ({
+    name: getText(q(f, 'name')),
+    level: getNum(q(f, 'level')),
+    specialization: getText(q(f, 'specialization')),
+    desc: ftToHtml(q(f, 'text')),
     type: 'class',
   }));
 
   // Racial traits
-  const traits = qsa('traitlist > *', c).map(t => ({
-    name: getText(t.querySelector('name')),
-    type: getText(t.querySelector('type')) || 'racial',
-    desc: ftToHtml(t.querySelector('text')),
+  const traits = qa(c, 'traitlist > *').map(t => ({
+    name: getText(q(t, 'name')),
+    type: getText(q(t, 'type')) || 'racial',
+    desc: ftToHtml(q(t, 'text')),
     level: 0,
     specialization: '',
   }));
 
   // Feats
-  const feats = qsa('featlist > *', c).map(f => ({
-    name: getText(f.querySelector('name')),
-    type: getText(f.querySelector('type')) || 'feat',
-    desc: ftToHtml(f.querySelector('text')),
+  const feats = qa(c, 'featlist > *').map(f => ({
+    name: getText(q(f, 'name')),
+    type: getText(q(f, 'type')) || 'feat',
+    desc: ftToHtml(q(f, 'text')),
     level: 0,
     specialization: '',
   }));
 
-  // Compute spell attack and save DC using the character's actual spellcasting stat
+  // Compute spell attack and save DC using the character's actual spellcasting stat,
+  // including the powergroup's misc modifiers (atkmod/savemod, usually 0)
   const spellBonus = abilities[spellStatName]?.bonus ?? 0;
-  const spellDC = 8 + profBonus + spellBonus;
-  const spellAtk = profBonus + spellBonus;
+  const spellDC = 8 + profBonus + spellBonus + getNum(q(spellGroupEntry, 'savemod'));
+  const spellAtk = profBonus + spellBonus + getNum(q(spellGroupEntry, 'atkmod'));
 
   return {
     name, race, level, background, destiny, size, senses,
     inspiration, hero, exp, expNeeded, profBonus, perception,
-    classes, abilities, hp, ac, initiative, speed, enc,
+    classes, abilities, hp, ac, initiative, speed, speedSpecial, enc,
     skills, coins, languages, proficiencies,
-    spellSlots, powers, weapons, inventory,
+    spellSlots, pactPoints, powers, weapons, inventory,
     features, traits, feats, spellDC, spellAtk, spellStatName, spellAbilAbbr, spellBonus,
   };
 }
@@ -1526,10 +1543,10 @@ function renderStatsBar(ch) {
       <div class="stat-label">Initiative</div>
       <div class="stat-value">${fmt(ch.initiative)}</div>
     </div>
-    <div class="stat-block">
+    <div class="stat-block"${ch.speedSpecial ? ` title="${ch.speedSpecial}"` : ''}>
       <div class="stat-label">Speed</div>
       <div class="stat-value">${ch.speed}</div>
-      <div class="stat-sub">ft</div>
+      <div class="stat-sub">${ch.speedSpecial ? 'ft +' : 'ft'}</div>
     </div>
     <div class="stat-block">
       <div class="stat-label">Proficiency</div>
@@ -1620,8 +1637,8 @@ function renderSkills(ch) {
     <div class="skills-list">
       ${ch.skills.map(sk => `
         <div class="skill-row ${sk.prof ? 'proficient' : ''}">
-          <div class="prof-pip ${sk.prof ? 'filled' : ''}"></div>
-          <div class="skill-name">${sk.name}</div>
+          <div class="prof-pip ${sk.prof >= 2 ? 'filled expert' : sk.prof ? 'filled' : ''}" title="${sk.prof >= 2 ? 'Expertise' : sk.prof ? 'Proficient' : 'Not proficient'}"></div>
+          <div class="skill-name">${sk.name}${sk.prof >= 2 ? ' ★' : ''}</div>
           <div class="skill-stat">${statAbbr[sk.stat?.toLowerCase()] || ''}</div>
           <div class="skill-bonus">${fmt(sk.total)}</div>
         </div>
@@ -1632,19 +1649,31 @@ function renderSkills(ch) {
 }
 
 function renderCombatTab(ch) {
+  const abilityBonus = (name) => ch.abilities[name]?.bonus ?? 0;
+
+  // FG usually omits <attackstat>; resolve it the way FG does:
+  // ranged → DEX, finesse → best of STR/DEX, otherwise STR.
+  function effAttackStat(w) {
+    if (w.attackStat && w.attackStat !== 'base') return w.attackStat;
+    if (w.ranged) return 'dexterity';
+    if (w.properties?.toLowerCase().includes('finesse')) {
+      return abilityBonus('dexterity') >= abilityBonus('strength') ? 'dexterity' : 'strength';
+    }
+    return 'strength';
+  }
+
   // Compute total attack bonus for weapon
   function weaponAtkBonus(w) {
-    const stat = w.attackStat === 'dexterity' ? ch.abilities.dexterity?.bonus : ch.abilities.strength?.bonus;
     const profBonus = w.prof ? ch.profBonus : 0;
-    return (stat ?? 0) + profBonus + w.attackBonus;
+    return abilityBonus(effAttackStat(w)) + profBonus + w.attackBonus;
   }
 
   function formatDamage(w) {
-    const stat = w.attackStat === 'dexterity' ? ch.abilities.dexterity?.bonus : ch.abilities.strength?.bonus;
-    const statBonus = stat ?? 0;
+    const baseStatBonus = abilityBonus(effAttackStat(w));
     return w.damages.map(d => {
       let total = d.bonus;
-      if (d.stat === 'base' || d.stat === 'strength' || d.stat === 'dexterity') total += statBonus;
+      if (d.stat === 'base') total += baseStatBonus * d.statmult;
+      else if (d.stat) total += abilityBonus(d.stat) * d.statmult;
       const bonusStr = total !== 0 ? (total > 0 ? `+${total}` : `${total}`) : '';
       return `${d.dice}${bonusStr} <span style="color:var(--text-dim);font-size:0.75em">${d.type}</span>`;
     }).join(' / ');
@@ -1664,7 +1693,11 @@ function renderCombatTab(ch) {
         <tbody>
           ${equippedWeapons.map(w => {
             const atk = weaponAtkBonus(w);
-            const isMagic = w.name?.toLowerCase().includes('majestic') || w.properties?.toLowerCase().includes('magic');
+            // A weapon is magic if its own properties say so, or its inventory entry is a magic item
+            const invItem = ch.inventory.find(i => i.name === w.name);
+            const isMagic = w.properties?.toLowerCase().includes('magic')
+              || invItem?.properties?.toLowerCase().includes('magic')
+              || /\b(uncommon|rare|legendary|artifact)\b/i.test(invItem?.rarity || '');
             const carried1 = w.carried === 1 ? '🟢' : '📦';
             return `<tr>
               <td>
@@ -1679,13 +1712,16 @@ function renderCombatTab(ch) {
         </tbody>
       </table>`;
 
-  // Special actions (any power group whose name contains 'Action')
-  const classActions = ch.powers.filter(p => p.group && p.group.includes('Action'));
+  // Special actions: every non-spell power group (e.g. "Cleric Actions/Effects",
+  // "Class (Rogue)", "Species (Goblin)")
+  const classActions = ch.powers.filter(p => p.group && p.group !== 'Spells');
+  const periodLabels = { enc: 'Per Encounter', day: 'Per Day', sr: 'Short Rest', lr: 'Long Rest' };
   const actionsHtml = classActions.map(a => `
     <div class="action-card" onclick="this.classList.toggle('expanded')">
       <div class="action-header">
         <span class="action-icon">✦</span>
         <span class="action-name">${a.name}</span>
+        ${a.usesPeriod ? `<span class="action-usage">${periodLabels[a.usesPeriod] || a.usesPeriod}</span>` : ''}
         ${a.castingTime ? `<span class="action-usage">${a.castingTime.replace('1 ', '')}</span>` : ''}
         <span class="action-chevron">▶</span>
       </div>
@@ -1731,7 +1767,7 @@ function renderCombatTab(ch) {
 function renderSpellsTab(ch) {
   function toSlug(name) {
     const stopWords = new Set(['of', 'the', 'a', 'an', 'at', 'in', 'on', 'to', 'for', 'with', 'from', 'and', 'or', 'by']);
-    return name
+    return unesc(name)                    // names are stored HTML-escaped
       .replace(/\s*\(.*?\)/g, '')        // strip parentheticals like (30)
       .toLowerCase()
       .replace(/['']/g, '')
@@ -1760,7 +1796,8 @@ function renderSpellsTab(ch) {
     return match ? match.charAt(0).toUpperCase() + match.slice(1) : school.split(';')[0].trim();
   }
 
-  const spells = ch.powers.filter(p => p.group === 'Spells' || !p.group || p.level !== undefined);
+  // Only true spells — powers from action groups are shown on the Combat tab
+  const spells = ch.powers.filter(p => p.group === 'Spells' || !p.group);
 
   // Group by level
   const byLevel = {};
@@ -1770,9 +1807,10 @@ function renderSpellsTab(ch) {
     byLevel[lvl].push(sp);
   });
 
+  const ordinal = (n) => n === 1 ? '1st' : n === 2 ? '2nd' : n === 3 ? '3rd' : n + 'th';
   const slotHtml = ch.spellSlots.map(sl => `
-    <div class="slot-group">
-      <div class="slot-level">${sl.level === 1 ? '1st' : sl.level === 2 ? '2nd' : sl.level === 3 ? '3rd' : sl.level + 'th'}</div>
+    <div class="slot-group"${sl.pact ? ' title="Pact slot usage estimated from pact points"' : ''}>
+      <div class="slot-level">${ordinal(sl.level)}${sl.pact ? ' (Pact)' : ''}</div>
       <div class="slot-pips">
         ${Array.from({length: sl.max}, (_, i) => `
           <div class="slot-pip ${i < sl.remaining ? 'available' : 'used'}" title="${i < sl.remaining ? 'Available' : 'Used'}"></div>
@@ -1780,7 +1818,17 @@ function renderSpellsTab(ch) {
       </div>
       <div class="slot-count">${sl.remaining}/${sl.max}</div>
     </div>
-  `).join('');
+  `).join('') + (ch.pactPoints ? `
+    <div class="slot-group" title="Pact magic points">
+      <div class="slot-level">Pact Points</div>
+      <div class="slot-pips">
+        ${Array.from({length: ch.pactPoints.max}, (_, i) => `
+          <div class="slot-pip ${i < ch.pactPoints.remaining ? 'available' : 'used'}"></div>
+        `).join('')}
+      </div>
+      <div class="slot-count">${ch.pactPoints.remaining}/${ch.pactPoints.max}</div>
+    </div>
+  ` : '');
 
   const levelNames = ['Cantrips', '1st Level', '2nd Level', '3rd Level', '4th Level', '5th Level', '6th Level', '7th Level', '8th Level', '9th Level'];
 
@@ -1810,7 +1858,7 @@ function renderSpellsTab(ch) {
                 ${sp.duration ? `<div class="spell-meta"><span class="spell-meta-lbl">Duration</span><span class="spell-meta-val">${sp.duration.trim()}</span></div>` : ''}
                 ${sp.components ? `<div class="spell-meta"><span class="spell-meta-lbl">Components</span><span class="spell-meta-val">${sp.components.trim()}</span></div>` : ''}
               </div>
-              ${sp.description ? `<div class="spell-desc-body">${sp.description}<a class="spell-ext-link" href="https://a5e.tools/spell/${toSlug(sp.name)}" target="_blank" rel="noopener">↗ View on a5e.tools</a></div>` : ''}
+              ${sp.description ? `<div class="spell-desc-body">${sp.description}<a class="spell-ext-link" href="https://a5e.tools/spell/${toSlug(sp.name)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">↗ View on a5e.tools</a></div>` : ''}
             </div>
           `;
         }).join('')}
@@ -1847,7 +1895,7 @@ function renderSpellsTab(ch) {
       <div class="section-title" style="margin-bottom:0">Spell Slots</div>
       <div class="slots-grid">${slotHtml}</div>
     </div>` : ''}
-    <div id="spells-list">${spellsHtml}</div>
+    <div id="spells-list">${spellsHtml || '<div class="no-items">No spells known.</div>'}</div>
   `;
 }
 
@@ -1890,18 +1938,13 @@ function renderInventoryTab(ch) {
 
   function itemTags(item) {
     const tags = [];
-    if (item.rarity && !item.rarity.toLowerCase().includes('common')) {
-      const r = item.rarity.toLowerCase();
-      if (r.includes('uncommon')) tags.push(`<span class="inv-tag tag-uncommon">Uncommon</span>`);
-      else if (r.includes('rare')) tags.push(`<span class="inv-tag tag-rare">Rare</span>`);
-      else if (r.includes('common')) tags.push(`<span class="inv-tag tag-common">Common</span>`);
-    } else if (item.rarity?.toLowerCase() === 'common') {
-      tags.push(`<span class="inv-tag tag-common">Common</span>`);
-    }
-    if (item.properties?.toLowerCase().includes('magic') || item.rarity?.toLowerCase().includes('uncommon') || item.rarity?.toLowerCase().includes('rare')) {
-      if (!tags.some(t => t.includes('tag-magic'))) {
-        if (item.properties?.toLowerCase().includes('magic')) tags.push(`<span class="inv-tag tag-magic">Magic</span>`);
-      }
+    const r = (item.rarity || '').toLowerCase();
+    if (r.includes('uncommon')) tags.push(`<span class="inv-tag tag-uncommon">Uncommon</span>`);
+    else if (r.includes('very rare')) tags.push(`<span class="inv-tag tag-rare">Very Rare</span>`);
+    else if (r.includes('rare')) tags.push(`<span class="inv-tag tag-rare">Rare</span>`);
+    else if (r.includes('common')) tags.push(`<span class="inv-tag tag-common">Common</span>`);
+    if (item.properties?.toLowerCase().includes('magic')) {
+      tags.push(`<span class="inv-tag tag-magic">Magic</span>`);
     }
     if (item.attune) tags.push(`<span class="inv-tag tag-attuned">Attuned</span>`);
     if (item.type === 'Weapon') tags.push(`<span class="inv-tag tag-weapon">Weapon</span>`);
@@ -2023,10 +2066,14 @@ function renderInfoTab(ch) {
             <div class="sense-label">Speed</div>
             <div class="sense-val">${ch.speed} ft</div>
           </div>
-          <div class="sense-item">
+          ${ch.speedSpecial ? `<div class="sense-item">
+            <div class="sense-label">Special Movement</div>
+            <div class="sense-val">${ch.speedSpecial}</div>
+          </div>` : ''}
+          ${ch.size ? `<div class="sense-item">
             <div class="sense-label">Size</div>
             <div class="sense-val">${ch.size}</div>
-          </div>
+          </div>` : ''}
           ${ch.senses ? `<div class="sense-item">
             <div class="sense-label">Special Senses</div>
             <div class="sense-val">${ch.senses}</div>
@@ -2151,7 +2198,7 @@ dropZone.addEventListener('drop', e => {
   e.preventDefault();
   dropZone.classList.remove('drag-over');
   const file = e.dataTransfer.files[0];
-  if (file && (file.name.endsWith('.xml') || file.type.includes('xml'))) {
+  if (file && (file.name.toLowerCase().endsWith('.xml') || file.type.includes('xml'))) {
     const reader = new FileReader();
     reader.onload = ev => loadXML(ev.target.result);
     reader.readAsText(file);
@@ -2166,7 +2213,7 @@ document.querySelector('.font-bar').addEventListener('click', e => {
   if (!btn) return;
   document.querySelectorAll('.font-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
-  document.body.classList.remove('font-arial', 'font-verdana', 'font-calibri');
+  document.body.classList.remove('font-arial', 'font-calibri');
   if (btn.dataset.font) document.body.classList.add(btn.dataset.font);
 });
 
