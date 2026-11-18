@@ -900,7 +900,7 @@
 			<hdmod type="number">0</hdmod>
 			<temporary type="number">0</temporary>
 			<total type="number">44</total>
-			<wounds type="number">36</wounds>
+			<wounds type="number">0</wounds>
 		</hp>
 		<initiative>
 			<misc type="number">0</misc>
