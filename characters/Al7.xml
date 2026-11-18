@@ -1,0 +1,2809 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root version="5.1" dataversion="20260124" release="9|CoreRPG:7">
+	<character>
+		<abilities>
+			<charisma>
+				<bonus type="number">0</bonus>
+				<save type="number">0</save>
+				<savemodifier type="number">0</savemodifier>
+				<saveprof type="number">0</saveprof>
+				<score type="number">10</score>
+			</charisma>
+			<constitution>
+				<bonus type="number">1</bonus>
+				<save type="number">1</save>
+				<savemodifier type="number">0</savemodifier>
+				<saveprof type="number">0</saveprof>
+				<score type="number">12</score>
+			</constitution>
+			<dexterity>
+				<bonus type="number">0</bonus>
+				<save type="number">0</save>
+				<savemodifier type="number">0</savemodifier>
+				<saveprof type="number">0</saveprof>
+				<score type="number">10</score>
+			</dexterity>
+			<intelligence>
+				<bonus type="number">4</bonus>
+				<save type="number">7</save>
+				<savemodifier type="number">0</savemodifier>
+				<saveprof type="number">1</saveprof>
+				<score type="number">18</score>
+			</intelligence>
+			<luck>
+				<bonus type="number">-3</bonus>
+				<current type="number">0</current>
+				<score type="number">5</score>
+			</luck>
+			<strength>
+				<bonus type="number">-1</bonus>
+				<save type="number">-1</save>
+				<savemodifier type="number">0</savemodifier>
+				<saveprof type="number">0</saveprof>
+				<score type="number">8</score>
+			</strength>
+			<wisdom>
+				<bonus type="number">2</bonus>
+				<save type="number">5</save>
+				<savemodifier type="number">0</savemodifier>
+				<saveprof type="number">1</saveprof>
+				<score type="number">14</score>
+			</wisdom>
+		</abilities>
+		<adventurelist>
+			<id-00001>
+				<name type="string">notes</name>
+				<text type="formattedtext">
+					<p>Crisalleys fine tomes</p>
+				</text>
+			</id-00001>
+		</adventurelist>
+		<age type="string">24</age>
+		<alignment type="string">Lawful Evil</alignment>
+		<background type="string">Cultist</background>
+		<backgroundlink type="windowreference">
+			<class>reference_background</class>
+			<recordname>reference.backgrounddata.id-00005@Level Up Advanced 5e Adventurer's Guide</recordname>
+		</backgroundlink>
+		<classes>
+			<id-00002>
+				<casterlevelinvmult type="number">1</casterlevelinvmult>
+				<casterpactmagic type="number">0</casterpactmagic>
+				<hddie type="dice">1d6</hddie>
+				<hdused type="number">0</hdused>
+				<level type="number">7</level>
+				<name type="string">Wizard A5E</name>
+				<shortcut type="windowreference">
+					<class>reference_class</class>
+					<recordname>class.id-00003@Brian D</recordname>
+				</shortcut>
+				<specializationlink type="windowreference">
+					<class />
+					<recordname />
+				</specializationlink>
+			</id-00002>
+		</classes>
+		<cohorts>
+			<id-00001>
+				<abilities>
+					<charisma>
+						<bonus type="number">-5</bonus>
+						<score type="number">1</score>
+					</charisma>
+					<constitution>
+						<bonus type="number">3</bonus>
+						<score type="number">16</score>
+					</constitution>
+					<dexterity>
+						<bonus type="number">-2</bonus>
+						<score type="number">6</score>
+					</dexterity>
+					<intelligence>
+						<bonus type="number">-5</bonus>
+						<score type="number">1</score>
+					</intelligence>
+					<strength>
+						<bonus type="number">1</bonus>
+						<score type="number">12</score>
+					</strength>
+					<wisdom>
+						<bonus type="number">-2</bonus>
+						<score type="number">6</score>
+					</wisdom>
+				</abilities>
+				<ac type="number">8</ac>
+				<actions>
+					<id-00001>
+						<desc type="string">Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 3 (1d4 + 1) bludgeoning damage plus 5 (2d4) acid damage. Nonmagical metal armor worn by the target corrodes, taking a permanent -1 penalty to its AC protection per hit. If the penalty reduces the armor's AC protection to 10, the armor is destroyed.</desc>
+						<name type="string">Pseudopod</name>
+					</id-00001>
+				</actions>
+				<alignment type="string">unaligned</alignment>
+				<bonusactions />
+				<coins>
+					<id-00001>
+						<amount type="number">0</amount>
+						<name type="string">PP</name>
+					</id-00001>
+					<id-00002>
+						<amount type="number">0</amount>
+						<name type="string">GP</name>
+					</id-00002>
+					<id-00003>
+						<amount type="number">0</amount>
+						<name type="string">EP</name>
+					</id-00003>
+					<id-00004>
+						<amount type="number">0</amount>
+						<name type="string">SP</name>
+					</id-00004>
+					<id-00005>
+						<amount type="number">0</amount>
+						<name type="string">CP</name>
+					</id-00005>
+				</coins>
+				<conditionimmunities type="string">blinded, charmed, deafened, fatigue, frightened, prone</conditionimmunities>
+				<cr type="string">1/2</cr>
+				<damageresistances type="string">acid, cold, fire</damageresistances>
+				<damagethreshold type="number">0</damagethreshold>
+				<death_indicator_token type="token"></death_indicator_token>
+				<deathsavefail type="number">0</deathsavefail>
+				<deathsavesuccess type="number">0</deathsavesuccess>
+				<encumbrance>
+					<encumbered type="number">60</encumbered>
+					<encumberedheavy type="number">120</encumberedheavy>
+					<heavy type="number">120</heavy>
+					<lift type="number">360</lift>
+					<liftpushdrag type="number">360</liftpushdrag>
+					<load type="number">0</load>
+					<max type="number">180</max>
+				</encumbrance>
+				<hd type="string">(3d8 + 9; bloodied 11)</hd>
+				<hp type="number">22</hp>
+				<hptemp type="number">0</hptemp>
+				<hptotal type="number">22</hptotal>
+				<important_npc type="number">0</important_npc>
+				<innatespells />
+				<lairactions />
+				<languages type="string">-</languages>
+				<legendaryactions />
+				<locked type="number">1</locked>
+				<maneuver type="number">11</maneuver>
+				<name type="string">Gray Ooze</name>
+				<picture type="token">tokens/monsters_ooze_a_01.png@Monster Tokens</picture>
+				<polymorphism>
+					<active type="number">0</active>
+				</polymorphism>
+				<polymorphism_linked_token type="token"></polymorphism_linked_token>
+				<polymorphism_original_token type="token"></polymorphism_original_token>
+				<proficiency type="number">2</proficiency>
+				<reactions />
+				<senses type="string">blindsight 60 ft. (blind beyond this radius), passive Perception 8</senses>
+				<size type="string">Medium</size>
+				<speed type="string">25 ft., climb 25 ft., swim 25 ft.</speed>
+				<spells />
+				<spellslots>
+					<level1 type="number">0</level1>
+					<level2 type="number">0</level2>
+					<level3 type="number">0</level3>
+					<level4 type="number">0</level4>
+					<level5 type="number">0</level5>
+					<level6 type="number">0</level6>
+					<level7 type="number">0</level7>
+					<level8 type="number">0</level8>
+					<level9 type="number">0</level9>
+				</spellslots>
+				<text type="formattedtext">
+					<h>Gray Ooze</h>
+					<p>Apart from its wet sheen, a gray ooze is indistinguishable from limestone or granite. When it spreads itself flat against a stone surface, it can be hard to spot&#8212;until it extends a pseudopod to dissolve flesh, metal, and bone.</p>
+					<h>Combat</h>
+					<p>The ooze slides along damp stone walls or floors. It pauses when it senses prey approaching. It chases the closest creature it can reach, but flees from sunlight.</p>
+					<h>Oozes</h>
+					<p>Oozes thrive in the deep, dark, and dank places of the world. Shapeless blobs capable of squeezing through even the narrowest spaces, they are mindless scavengers that dissolve metal and organic matter to fuel their strange metabolisms.</p>
+					<p>
+						<b>
+							<i>Multipliers. </i>
+						</b>Oozes have no organs or internal structure of any kind. Split in half, each piece of an ooze can grow into an independent organism. Even a bit of ooze stuck to an adventurer&#8217;s boot can eventually grow into a new ooze, devouring the boot and the adventurer as well. Scorching an ooze&#8217;s remains with fire, or exposing it to sunlight, are the surest ways of wiping it out permanently.</p>
+					<p>
+						<b>
+							<i>Thrive in Darkness. </i>
+						</b>Oozes need little to survive. Unlike plants, they don&#8217;t require air, and sunlight shrivels them. They don&#8217;t need water to grow, although they can swim through it as easily as they crawl over dry land. All an ooze needs is organic matter or ferrous metal, and it can survive without much of either. When trapped in a pit or passageway it can&#8217;t escape from, an ooze can serve as a tireless custodian and watchdog. Immaculately clean stone passageways are a sure sign that an ooze is nearby, and hungry.</p>
+					<p>
+						<b>
+							<i>Ooze Nature. </i>
+						</b>An ooze doesn&#8217;t require air or sleep.</p>
+				</text>
+				<token type="token">tokens/ooze_A_01.png@Monster Pogs</token>
+				<token3Dflat type="token">tokens/monsters_ooze_a_01.png@Monster Tokens</token3Dflat>
+				<traits>
+					<id-00001>
+						<desc type="string">The ooze can pass through an opening as narrow as 1 inch wide without squeezing.</desc>
+						<name type="string">Amorphous</name>
+					</id-00001>
+					<id-00002>
+						<desc type="string">A creature or a metal object that touches the ooze takes 5 (2d4) acid damage. A nonmagical weapon made of metal that hits the ooze corrodes after dealing damage, taking a permanent -1 penalty to damage rolls per hit. If this penalty reaches -5, the weapon is destroyed. Metal nonmagical ammunition is destroyed after dealing damage.</desc>
+						<name type="string">Corrosive Body</name>
+					</id-00002>
+					<id-00003>
+						<desc type="string">While motionless, the ooze is indistinguishable from wet stone.</desc>
+						<name type="string">False Appearance</name>
+					</id-00003>
+					<id-00004>
+						<desc type="string">While in sunlight, the ooze has disadvantage on attack rolls.</desc>
+						<name type="string">Sunlight Sensitivity</name>
+					</id-00004>
+				</traits>
+				<type type="string">Ooze</type>
+				<wounds type="number">0</wounds>
+				<xp type="number">100</xp>
+			</id-00001>
+			<id-00002>
+				<abilities>
+					<charisma>
+						<bonus type="number">-5</bonus>
+						<score type="number">1</score>
+					</charisma>
+					<constitution>
+						<bonus type="number">2</bonus>
+						<score type="number">14</score>
+					</constitution>
+					<dexterity>
+						<bonus type="number">-2</bonus>
+						<score type="number">6</score>
+					</dexterity>
+					<intelligence>
+						<bonus type="number">-5</bonus>
+						<score type="number">1</score>
+					</intelligence>
+					<strength>
+						<bonus type="number">2</bonus>
+						<score type="number">14</score>
+					</strength>
+					<wisdom>
+						<bonus type="number">-2</bonus>
+						<score type="number">6</score>
+					</wisdom>
+				</abilities>
+				<ac type="number">8</ac>
+				<actions>
+					<id-00001>
+						<desc type="string">Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 9 (2d6 + 2) bludgeoning damage plus 3 (1d6) acid damage, and the target is grappled (escape DC 12). A grappled target takes 3 (1d6) acid damage at the start of each of the jelly's turns.</desc>
+						<name type="string">Pseudopod</name>
+					</id-00001>
+				</actions>
+				<alignment type="string">unaligned</alignment>
+				<bonusactions />
+				<conditionimmunities type="string">blinded, charmed, deafened, fatigue, frightened, prone</conditionimmunities>
+				<cr type="string">2</cr>
+				<damageimmunities type="string">acid, lightning, slashing</damageimmunities>
+				<damagethreshold type="number">0</damagethreshold>
+				<death_indicator_token type="token"></death_indicator_token>
+				<deathsavefail type="number">0</deathsavefail>
+				<deathsavesuccess type="number">0</deathsavesuccess>
+				<encumbrance>
+					<encumbered type="number">140</encumbered>
+					<encumberedheavy type="number">280</encumberedheavy>
+					<heavy type="number">280</heavy>
+					<level type="number">0</level>
+					<lift type="number">840</lift>
+					<liftpushdrag type="number">840</liftpushdrag>
+					<load type="number">0</load>
+					<max type="number">420</max>
+				</encumbrance>
+				<hd type="string">(6d10 + 12; bloodied 22)</hd>
+				<hp type="number">45</hp>
+				<hptemp type="number">0</hptemp>
+				<hptotal type="number">45</hptotal>
+				<important_npc type="number">0</important_npc>
+				<innatespells />
+				<lairactions />
+				<languages type="string">-</languages>
+				<legendaryactions />
+				<locked type="number">1</locked>
+				<maneuver type="number">12</maneuver>
+				<name type="string">Ochre Jelly - Familiar</name>
+				<proficiency type="number">2</proficiency>
+				<reactions>
+					<id-00001>
+						<desc type="string">When a Medium or larger jelly with at least 10 hit points is subjected to lightning or slashing damage, it splits into two jellies that are each one size smaller, freeing any grappled targets. Each new jelly has half the original's hit points (rounded down).</desc>
+						<name type="string">Split</name>
+					</id-00001>
+				</reactions>
+				<senses type="string">blindsight 60 ft. (blind beyond this radius), passive Perception 8</senses>
+				<size type="string">Large</size>
+				<speed type="string">25 ft., climb 25 ft., swim 25 ft.</speed>
+				<spells />
+				<spellslots>
+					<level1 type="number">0</level1>
+					<level2 type="number">0</level2>
+					<level3 type="number">0</level3>
+					<level4 type="number">0</level4>
+					<level5 type="number">0</level5>
+					<level6 type="number">0</level6>
+					<level7 type="number">0</level7>
+					<level8 type="number">0</level8>
+					<level9 type="number">0</level9>
+				</spellslots>
+				<text type="formattedtext">
+					<p>Ochre jelly is yellow or tan and can be difficult to distinguish from clay or sandstone. It often clings to ceilings and extends a slimy pseudopod to seize passing creatures. Once its prey is in its sucking grasp, ochre jelly is as difficult to escape as quicksand. An ochre jelly quickly dissolves a creature&#8217;s flesh and then spits out indigestible bones and equipment.</p>
+					<p>As with many oozes, cutting up ochre jelly doesn&#8217;t kill it. If you hack an ochre jelly in half, you now have two problems instead of one.</p>
+					<h>Combat</h>
+					<p>The ochre jelly grapples passing creatures with its pseudopods. Given time, it will grab as many creatures as approach within 5 feet of it. It flees from sunlight.</p>
+					<h>Oozes</h>
+					<p>Oozes thrive in the deep, dark, and dank places of the world. Shapeless blobs capable of squeezing through even the narrowest spaces, they are mindless scavengers that dissolve metal and organic matter to fuel their strange metabolisms.</p>
+					<p>
+						<b>
+							<i>Multipliers. </i>
+						</b>Oozes have no organs or internal structure of any kind. Split in half, each piece of an ooze can grow into an independent organism. Even a bit of ooze stuck to an adventurer&#8217;s boot can eventually grow into a new ooze, devouring the boot and the adventurer as well. Scorching an ooze&#8217;s remains with fire, or exposing it to sunlight, are the surest ways of wiping it out permanently.</p>
+					<p>
+						<b>
+							<i>Thrive in Darkness. </i>
+						</b>Oozes need little to survive. Unlike plants, they don&#8217;t require air, and sunlight shrivels them. They don&#8217;t need water to grow, although they can swim through it as easily as they crawl over dry land. All an ooze needs is organic matter or ferrous metal, and it can survive without much of either. When trapped in a pit or passageway it can&#8217;t escape from, an ooze can serve as a tireless custodian and watchdog. Immaculately clean stone passageways are a sure sign that an ooze is nearby, and hungry.</p>
+					<p>
+						<b>
+							<i>Ooze Nature. </i>
+						</b>An ooze doesn&#8217;t require air or sleep.</p>
+				</text>
+				<token type="token">tokens/ooze_A_01.png@Monster Pogs</token>
+				<traits>
+					<id-00001>
+						<desc type="string">The jelly can pass through an opening as narrow as 1 inch wide without squeezing.</desc>
+						<name type="string">Amorphous</name>
+					</id-00001>
+					<id-00002>
+						<desc type="string">The jelly can use its climb speed even on difficult surfaces and upside down on ceilings.</desc>
+						<name type="string">Spider Climb</name>
+					</id-00002>
+					<id-00003>
+						<desc type="string">While in sunlight, the jelly has disadvantage on attack rolls.</desc>
+						<name type="string">Sunlight Sensitivity</name>
+					</id-00003>
+				</traits>
+				<type type="string">Ooze</type>
+				<wounds type="number">45</wounds>
+				<xp type="number">450</xp>
+			</id-00002>
+			<id-00003>
+				<abilities>
+					<charisma>
+						<bonus type="number">-5</bonus>
+						<score type="number">1</score>
+					</charisma>
+					<constitution>
+						<bonus type="number">2</bonus>
+						<score type="number">14</score>
+					</constitution>
+					<dexterity>
+						<bonus type="number">-2</bonus>
+						<score type="number">6</score>
+					</dexterity>
+					<intelligence>
+						<bonus type="number">-5</bonus>
+						<score type="number">1</score>
+					</intelligence>
+					<strength>
+						<bonus type="number">2</bonus>
+						<score type="number">14</score>
+					</strength>
+					<wisdom>
+						<bonus type="number">-2</bonus>
+						<score type="number">6</score>
+					</wisdom>
+				</abilities>
+				<ac type="number">8</ac>
+				<actions>
+					<id-00001>
+						<desc type="string">Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 9 (2d6 + 2) bludgeoning damage plus 3 (1d6) acid damage, and the target is grappled (escape DC 12). A grappled target takes 3 (1d6) acid damage at the start of each of the jelly's turns.</desc>
+						<name type="string">Pseudopod</name>
+					</id-00001>
+				</actions>
+				<alignment type="string">unaligned</alignment>
+				<bonusactions />
+				<conditionimmunities type="string">blinded, charmed, deafened, fatigue, frightened, prone</conditionimmunities>
+				<cr type="string">2</cr>
+				<damageimmunities type="string">acid, lightning, slashing</damageimmunities>
+				<damagethreshold type="number">0</damagethreshold>
+				<death_indicator_token type="token"></death_indicator_token>
+				<deathsavefail type="number">0</deathsavefail>
+				<deathsavesuccess type="number">0</deathsavesuccess>
+				<encumbrance>
+					<encumbered type="number">70</encumbered>
+					<encumberedheavy type="number">140</encumberedheavy>
+					<heavy type="number">140</heavy>
+					<lift type="number">420</lift>
+					<liftpushdrag type="number">420</liftpushdrag>
+					<load type="number">0</load>
+					<max type="number">210</max>
+				</encumbrance>
+				<hd type="string">(3d10 + 6; bloodied 11)</hd>
+				<hp type="number">22</hp>
+				<hptemp type="number">0</hptemp>
+				<hptotal type="number">22</hptotal>
+				<important_npc type="number">0</important_npc>
+				<innatespells />
+				<lairactions />
+				<languages type="string">-</languages>
+				<legendaryactions />
+				<locked type="number">1</locked>
+				<maneuver type="number">12</maneuver>
+				<name type="string">Ochre Jelly - Split</name>
+				<picture type="token">tokens/Token - Ochre Jelly.png@Book of Lairs</picture>
+				<proficiency type="number">2</proficiency>
+				<reactions>
+					<id-00001>
+						<desc type="string">When a Medium or larger jelly with at least 10 hit points is subjected to lightning or slashing damage, it splits into two jellies that are each one size smaller, freeing any grappled targets. Each new jelly has half the original's hit points (rounded down).</desc>
+						<name type="string">Split</name>
+					</id-00001>
+				</reactions>
+				<senses type="string">blindsight 60 ft. (blind beyond this radius), passive Perception 8</senses>
+				<size type="string">Medium</size>
+				<speed type="string">25 ft., climb 25 ft., swim 25 ft.</speed>
+				<spells />
+				<spellslots>
+					<level1 type="number">0</level1>
+					<level2 type="number">0</level2>
+					<level3 type="number">0</level3>
+					<level4 type="number">0</level4>
+					<level5 type="number">0</level5>
+					<level6 type="number">0</level6>
+					<level7 type="number">0</level7>
+					<level8 type="number">0</level8>
+					<level9 type="number">0</level9>
+				</spellslots>
+				<text type="formattedtext">
+					<p>Ochre jelly is yellow or tan and can be difficult to distinguish from clay or sandstone. It often clings to ceilings and extends a slimy pseudopod to seize passing creatures. Once its prey is in its sucking grasp, ochre jelly is as difficult to escape as quicksand. An ochre jelly quickly dissolves a creature&#8217;s flesh and then spits out indigestible bones and equipment.</p>
+					<p>As with many oozes, cutting up ochre jelly doesn&#8217;t kill it. If you hack an ochre jelly in half, you now have two problems instead of one.</p>
+					<h>Combat</h>
+					<p>The ochre jelly grapples passing creatures with its pseudopods. Given time, it will grab as many creatures as approach within 5 feet of it. It flees from sunlight.</p>
+					<h>Oozes</h>
+					<p>Oozes thrive in the deep, dark, and dank places of the world. Shapeless blobs capable of squeezing through even the narrowest spaces, they are mindless scavengers that dissolve metal and organic matter to fuel their strange metabolisms.</p>
+					<p>
+						<b>
+							<i>Multipliers. </i>
+						</b>Oozes have no organs or internal structure of any kind. Split in half, each piece of an ooze can grow into an independent organism. Even a bit of ooze stuck to an adventurer&#8217;s boot can eventually grow into a new ooze, devouring the boot and the adventurer as well. Scorching an ooze&#8217;s remains with fire, or exposing it to sunlight, are the surest ways of wiping it out permanently.</p>
+					<p>
+						<b>
+							<i>Thrive in Darkness. </i>
+						</b>Oozes need little to survive. Unlike plants, they don&#8217;t require air, and sunlight shrivels them. They don&#8217;t need water to grow, although they can swim through it as easily as they crawl over dry land. All an ooze needs is organic matter or ferrous metal, and it can survive without much of either. When trapped in a pit or passageway it can&#8217;t escape from, an ooze can serve as a tireless custodian and watchdog. Immaculately clean stone passageways are a sure sign that an ooze is nearby, and hungry.</p>
+					<p>
+						<b>
+							<i>Ooze Nature. </i>
+						</b>An ooze doesn&#8217;t require air or sleep.</p>
+				</text>
+				<token type="token">tokens/Token - Ochre Jelly.png@Book of Lairs</token>
+				<token3Dflat type="token">tokens/Token - Ochre Jelly.png@Book of Lairs</token3Dflat>
+				<traits>
+					<id-00001>
+						<desc type="string">The jelly can pass through an opening as narrow as 1 inch wide without squeezing.</desc>
+						<name type="string">Amorphous</name>
+					</id-00001>
+					<id-00002>
+						<desc type="string">The jelly can use its climb speed even on difficult surfaces and upside down on ceilings.</desc>
+						<name type="string">Spider Climb</name>
+					</id-00002>
+					<id-00003>
+						<desc type="string">While in sunlight, the jelly has disadvantage on attack rolls.</desc>
+						<name type="string">Sunlight Sensitivity</name>
+					</id-00003>
+				</traits>
+				<type type="string">Ooze</type>
+				<wounds type="number">0</wounds>
+				<xp type="number">450</xp>
+			</id-00003>
+			<id-00004>
+				<abilities>
+					<charisma>
+						<bonus type="number">-5</bonus>
+						<score type="number">1</score>
+					</charisma>
+					<constitution>
+						<bonus type="number">2</bonus>
+						<score type="number">14</score>
+					</constitution>
+					<dexterity>
+						<bonus type="number">-2</bonus>
+						<score type="number">6</score>
+					</dexterity>
+					<intelligence>
+						<bonus type="number">-5</bonus>
+						<score type="number">1</score>
+					</intelligence>
+					<strength>
+						<bonus type="number">2</bonus>
+						<score type="number">14</score>
+					</strength>
+					<wisdom>
+						<bonus type="number">-2</bonus>
+						<score type="number">6</score>
+					</wisdom>
+				</abilities>
+				<ac type="number">8</ac>
+				<actions>
+					<id-00001>
+						<desc type="string">Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 9 (2d6 + 2) bludgeoning damage plus 3 (1d6) acid damage, and the target is grappled (escape DC 12). A grappled target takes 3 (1d6) acid damage at the start of each of the jelly's turns.</desc>
+						<name type="string">Pseudopod</name>
+					</id-00001>
+				</actions>
+				<alignment type="string">unaligned</alignment>
+				<bonusactions />
+				<conditionimmunities type="string">blinded, charmed, deafened, fatigue, frightened, prone</conditionimmunities>
+				<cr type="string">2</cr>
+				<damageimmunities type="string">acid, lightning, slashing</damageimmunities>
+				<damagethreshold type="number">0</damagethreshold>
+				<death_indicator_token type="token"></death_indicator_token>
+				<deathsavefail type="number">0</deathsavefail>
+				<deathsavesuccess type="number">0</deathsavesuccess>
+				<encumbrance>
+					<encumbered type="number">70</encumbered>
+					<encumberedheavy type="number">140</encumberedheavy>
+					<heavy type="number">140</heavy>
+					<lift type="number">420</lift>
+					<liftpushdrag type="number">420</liftpushdrag>
+					<load type="number">0</load>
+					<max type="number">210</max>
+				</encumbrance>
+				<hd type="string">(3d10 + 6; bloodied 11)</hd>
+				<hp type="number">22</hp>
+				<hptemp type="number">0</hptemp>
+				<hptotal type="number">22</hptotal>
+				<important_npc type="number">0</important_npc>
+				<innatespells />
+				<lairactions />
+				<languages type="string">-</languages>
+				<legendaryactions />
+				<locked type="number">1</locked>
+				<maneuver type="number">12</maneuver>
+				<name type="string">Ochre Jelly - Split 2</name>
+				<picture type="token">tokens/Token - Ochre Jelly.png@Book of Lairs</picture>
+				<proficiency type="number">2</proficiency>
+				<reactions>
+					<id-00001>
+						<desc type="string">When a Medium or larger jelly with at least 10 hit points is subjected to lightning or slashing damage, it splits into two jellies that are each one size smaller, freeing any grappled targets. Each new jelly has half the original's hit points (rounded down).</desc>
+						<name type="string">Split</name>
+					</id-00001>
+				</reactions>
+				<senses type="string">blindsight 60 ft. (blind beyond this radius), passive Perception 8</senses>
+				<size type="string">Medium</size>
+				<speed type="string">25 ft., climb 25 ft., swim 25 ft.</speed>
+				<spells />
+				<spellslots>
+					<level1 type="number">0</level1>
+					<level2 type="number">0</level2>
+					<level3 type="number">0</level3>
+					<level4 type="number">0</level4>
+					<level5 type="number">0</level5>
+					<level6 type="number">0</level6>
+					<level7 type="number">0</level7>
+					<level8 type="number">0</level8>
+					<level9 type="number">0</level9>
+				</spellslots>
+				<text type="formattedtext">
+					<p>Ochre jelly is yellow or tan and can be difficult to distinguish from clay or sandstone. It often clings to ceilings and extends a slimy pseudopod to seize passing creatures. Once its prey is in its sucking grasp, ochre jelly is as difficult to escape as quicksand. An ochre jelly quickly dissolves a creature&#8217;s flesh and then spits out indigestible bones and equipment.</p>
+					<p>As with many oozes, cutting up ochre jelly doesn&#8217;t kill it. If you hack an ochre jelly in half, you now have two problems instead of one.</p>
+					<h>Combat</h>
+					<p>The ochre jelly grapples passing creatures with its pseudopods. Given time, it will grab as many creatures as approach within 5 feet of it. It flees from sunlight.</p>
+					<h>Oozes</h>
+					<p>Oozes thrive in the deep, dark, and dank places of the world. Shapeless blobs capable of squeezing through even the narrowest spaces, they are mindless scavengers that dissolve metal and organic matter to fuel their strange metabolisms.</p>
+					<p>
+						<b>
+							<i>Multipliers. </i>
+						</b>Oozes have no organs or internal structure of any kind. Split in half, each piece of an ooze can grow into an independent organism. Even a bit of ooze stuck to an adventurer&#8217;s boot can eventually grow into a new ooze, devouring the boot and the adventurer as well. Scorching an ooze&#8217;s remains with fire, or exposing it to sunlight, are the surest ways of wiping it out permanently.</p>
+					<p>
+						<b>
+							<i>Thrive in Darkness. </i>
+						</b>Oozes need little to survive. Unlike plants, they don&#8217;t require air, and sunlight shrivels them. They don&#8217;t need water to grow, although they can swim through it as easily as they crawl over dry land. All an ooze needs is organic matter or ferrous metal, and it can survive without much of either. When trapped in a pit or passageway it can&#8217;t escape from, an ooze can serve as a tireless custodian and watchdog. Immaculately clean stone passageways are a sure sign that an ooze is nearby, and hungry.</p>
+					<p>
+						<b>
+							<i>Ooze Nature. </i>
+						</b>An ooze doesn&#8217;t require air or sleep.</p>
+				</text>
+				<token type="token">tokens/Token - Ochre Jelly.png@Book of Lairs</token>
+				<token3Dflat type="token">tokens/Token - Ochre Jelly.png@Book of Lairs</token3Dflat>
+				<traits>
+					<id-00001>
+						<desc type="string">The jelly can pass through an opening as narrow as 1 inch wide without squeezing.</desc>
+						<name type="string">Amorphous</name>
+					</id-00001>
+					<id-00002>
+						<desc type="string">The jelly can use its climb speed even on difficult surfaces and upside down on ceilings.</desc>
+						<name type="string">Spider Climb</name>
+					</id-00002>
+					<id-00003>
+						<desc type="string">While in sunlight, the jelly has disadvantage on attack rolls.</desc>
+						<name type="string">Sunlight Sensitivity</name>
+					</id-00003>
+				</traits>
+				<type type="string">Ooze</type>
+				<wounds type="number">0</wounds>
+				<xp type="number">450</xp>
+			</id-00004>
+		</cohorts>
+		<coins>
+			<id-00001>
+				<amount type="number">0</amount>
+				<name type="string">PP</name>
+			</id-00001>
+			<id-00002>
+				<amount type="number">13</amount>
+				<name type="string">GP</name>
+			</id-00002>
+			<id-00003>
+				<amount type="number">0</amount>
+				<name type="string">EP</name>
+			</id-00003>
+			<id-00004>
+				<amount type="number">0</amount>
+				<name type="string">SP</name>
+			</id-00004>
+			<id-00005>
+				<amount type="number">0</amount>
+				<name type="string">CP</name>
+			</id-00005>
+		</coins>
+		<death_indicator_token type="token"></death_indicator_token>
+		<death_indicators />
+		<defenses>
+			<ac>
+				<armor type="number">4</armor>
+				<disstealth type="number">0</disstealth>
+				<misc type="number">1</misc>
+				<prof type="number">1</prof>
+				<shield type="number">0</shield>
+				<temporary type="number">0</temporary>
+				<total type="number">15</total>
+			</ac>
+		</defenses>
+		<deity type="string">Kyrzin</deity>
+		<destiny type="string">Knowledge</destiny>
+		<destinylink type="windowreference">
+			<class>reference_destiny</class>
+			<recordname>reference.destinydata.id-00005@Level Up Advanced 5e Adventurer's Guide</recordname>
+		</destinylink>
+		<encumbrance>
+			<bulkyitems type="number">1</bulkyitems>
+			<encumbered type="number">40</encumbered>
+			<encumberedheavy type="number">80</encumberedheavy>
+			<level type="number">0</level>
+			<liftpushdrag type="number">240</liftpushdrag>
+			<load type="number">43</load>
+			<max type="number">120</max>
+			<supply type="number">8</supply>
+		</encumbrance>
+		<exp type="number">0</exp>
+		<expneeded type="number">34000</expneeded>
+		<faction type="string">Silver Ravens rise up!</faction>
+		<featlist>
+			<id-00001>
+				<locked type="number">1</locked>
+				<name type="string">Air Lift</name>
+				<text type="formattedtext">
+					<p>You can use an action to increase your vertical jump distance to 15 feet until the end of your turn. When you jump in this way, you can also glide with the updraft, allowing you to move 10 feet horizontally for every 5 feet you descend vertically.</p>
+				</text>
+				<type type="string">Elective Studies</type>
+			</id-00001>
+		</featlist>
+		<featurelist>
+			<id-00001>
+				<level type="number">1</level>
+				<locked type="number">1</locked>
+				<name type="string">Spellcasting (Wizard)</name>
+				<specializationchoice type="number">0</specializationchoice>
+				<text type="formattedtext">
+					<p>At 1st level you have a spellbook containing the written spells you study. You use your spellbook to cast your spells.</p>
+					<p>
+						<b>Cantrips </b>&#13;At 1st level, you know three cantrips of your choice from the wizard spell list. You learn additional wizard cantrips of your choice at higher levels, as shown in the Cantrips Known column of the Wizard Spells table. Additionally, you know the prestidigitation cantrip.</p>
+					<p>
+						<b>Spellbook </b>&#13;At 1st level, your spellbook contains six 1st-level wizard spells of your choice. Your spellbook contains all of the wizard spells you know, except your cantrips, which you maintain in your memory.</p>
+					<p>
+						<b>Preparing and Casting Spells </b>&#13;The Wizard Spells table shows how many spell slots you have to cast your wizard spells. To cast one of these wizard spells, you must expend a slot of the spell&#8217;s level or higher. You regain all expended spell slots when you finish a long rest.</p>
+					<p>You prepare the list of wizard spells that are available for you to cast, choosing from the wizard spell list. When you do so, choose a number of wizard spells written in your spellbook equal to your Intelligence modifier + your wizard level (minimum of one spell). The spells must be of a level for which you have spell slots.</p>
+					<p>Casting spells doesn&#8217;t remove them from your list of prepared spells.</p>
+					<p>You can change your list of prepared spells whenever you finish a long rest by studying your spellbook for at least 1 minute per spell level for each spell on your list.</p>
+					<p>
+						<b>Spellcasting Ability </b>&#13;Intelligence is your spellcasting ability for your wizard spells. You use your Intelligence whenever a spell refers to your spellcasting ability. In addition, you use your Intelligence modifier when setting the saving throw DC for a wizard spell you cast and when making an attack roll with one. <b>&#13;Spell save DC </b>= 8 + your proficiency bonus + your Intelligence modifier <b>&#13;Spell attack modifier </b>= your proficiency bonus + your Intelligence modifier</p>
+					<p>
+						<b>Ritual Casting </b>&#13;You can cast a wizard spell as a ritual if that spell has the ritual tag and you have the spell in your spellbook.</p>
+					<p>
+						<b>Spellcasting Focus </b>&#13;You can use an arcane focus as a spellcasting focus for your wizard spells.</p>
+					<p>
+						<b>Learning Spells of 1st-Level and Higher </b>&#13;Each time you gain a wizard level, you can add two wizard spells of your choice to your spellbook for free. Each of these spells must be of a level for which you have spell slots, as shown on the Wizard Spells table.</p>
+					<h>Your Spellbook</h>
+					<p>As you research magic and spells, you will add new spells to your spellbook. You might find spells during your adventures, such as spells from other spellcasters&#8217; spellbooks, or spells recorded on scrolls.</p>
+					<p>
+						<b>
+							<i>Copying a Spell into the Book. </i>
+						</b>When you find a wizard spell of 1st-level or higher, you can add it to your spellbook if it is of a spell level that you can prepare, and if you take the time to decipher and copy it. Copying a spell into your spellbook involves reproducing the instructions of the spell, as well as deciphering any notation or cipher used by the wizard who wrote it. You must also practice the spell until you comprehend any words, sounds, gestures, or materials required to use the spell. Finally, you transcribe the spell into your own spellbook, with any notation or cipher you wish to write it with.</p>
+					<p>For each level of the spell, the process takes 2 hours and costs 50 gold. The cost represents material components you utilize as you experiment with the spell to master it, as well as the fine inks you use to record it into your spellbook. Once you have spent this time and money, you can prepare the spell like any other spell in your spellbook.</p>
+					<p>
+						<b>
+							<i>Replacing the Book. </i>
+						</b>You can copy a spell from your own spellbook into another book, in the case that you want to create a backup copy of your spellbook. This is similar to copying a new spell into your spellbook, but simpler and quicker since you understand your own notation and already know how to cast the spell. You spend 1 hour and 10 gold per level of copying your own spells.</p>
+					<p>If you lose your spellbook, you can use the same procedure to transcribe spells that you have prepared into a new spellbook.</p>
+					<p>
+						<b>The Spellbook&#8217;s Appearance. </b>Your spellbook is as unique as you want it to be, and can have its own decoration, including margin notes and addendums made by you. It could be a simple, leather-bound book, or it can be finely-bound, gilded, leaflets stored in a box, or made of unique materials as well.</p>
+				</text>
+			</id-00001>
+			<id-00002>
+				<level type="number">5</level>
+				<locked type="number">1</locked>
+				<name type="string">Signature Spells</name>
+				<specializationchoice type="number">0</specializationchoice>
+				<text type="formattedtext">
+					<p>At 5th level, you have developed your spellcasting skill and honed it into spells that you consider to be your Signature Spells.</p>
+					<p>Choose one 1st-level wizard spell that is in your spellbook. You always have this spell prepared, it doesn&#8217;t count toward your maximum prepared spells, and you can cast this spell at its lowest level without expending a spell slot. Once you have cast a Signature Spell in this way, you must finish a short or long rest before you can do so again.</p>
+					<p>At higher levels, you gain additional Signature Spells, each of which you can cast once between rests. At 11th level, you can choose one 2nd-level Signature Spell. At 17th level, you can choose one 3rd-level Signature Spell. Each time you gain a level in this class, you can replace one of your Signature Spells with another of the same level.</p>
+				</text>
+			</id-00002>
+			<id-00003>
+				<locked type="number">1</locked>
+				<name type="string">Ability Score Increases</name>
+				<text type="formattedtext">
+					<p>+1 to Intelligence and one other ability score.</p>
+				</text>
+			</id-00003>
+			<id-00004>
+				<locked type="number">1</locked>
+				<name type="string">Feature: Forbidden Lore.</name>
+				<text type="formattedtext">
+					<p>When you fail an Arcana or Religion check, you know what being or book holds the knowledge you seek&#8212; finding the book or paying the being&#8217;s price is another matter.</p>
+				</text>
+			</id-00004>
+			<id-00005>
+				<level type="number">2</level>
+				<locked type="number">1</locked>
+				<name type="string">Ooze Familiar</name>
+				<specialization type="string">Oozemancer</specialization>
+				<specializationchoice type="number">0</specializationchoice>
+				<text type="formattedtext">
+					<p>When you choose this archetype at 2nd level, you master the conjuration of tame oozes. You add the find familiar spell to your spellbook. When you cast the spell, you can choose one of the normal forms for your familiar or choose a gray ooze. When you take the Attack action, you can forgo one of your own attacks to allow your familiar to make one attack of its own.</p>
+					<p>In addition, oozes you summon move extremely quickly, increasing their Speed to 25 feet.</p>
+				</text>
+			</id-00005>
+			<id-00006>
+				<level type="number">2</level>
+				<locked type="number">1</locked>
+				<name type="string">Ooze Within</name>
+				<specialization type="string">Oozemancer</specialization>
+				<specializationchoice type="number">0</specializationchoice>
+				<text type="formattedtext">
+					<p>Also starting at 2nd level, your body becomes more ooze-like, allowing you to thwart attackers. Whenever you are subjected to a critical hit, the hit is treated as a normal hit instead. In addition, you are immune to Sneak Attack damage from class features or traits. Finally, you have advantage on ability checks and saving throws you make to escape a grapple.</p>
+				</text>
+			</id-00006>
+			<id-00007>
+				<level type="number">3</level>
+				<locked type="number">1</locked>
+				<name type="string">Scholarly Excellence</name>
+				<specializationchoice type="number">0</specializationchoice>
+				<text type="formattedtext">
+					<p>At 3rd level, you have a particular set of skills that sets you a cut above a novice mage. Choose one of the following:</p>
+					<p>
+						<b>Academic </b>&#13;You&#8217;ve got a whole lot of book smarts. You gain 4 specialties from Arcana, Culture, Engineering, History, Nature, and Religion. Unlike normal, academic specialties may be taken twice (increasing the specialty&#8217;s expertise die to 1d6).</p>
+					<p>In addition, when you use either Deception or Persuasion to make a point related to an academic specialty, you gain your expertise die from the specialty and use Intelligence for your ability check.</p>
+					<linklist>
+						<link class="reference_classfeature" recordname="class.id-00003.features.id-00042@Brian D">Academic</link>
+					</linklist>
+					<p>
+						<b>Ritual Efficiency </b>&#13;When you cast a spell as a ritual, you only add 1 minute to the casting time (instead of 10 minutes).</p>
+					<linklist>
+						<link class="reference_classfeature" recordname="class.id-00003.features.id-00043@Brian D">Ritual Efficiency</link>
+					</linklist>
+					<p>
+						<b>Rote Memorization </b>&#13;Choose one cantrip which has a casting time of 1 action and doesn&#8217;t deal damage. You can cast that cantrip as a bonus action without any seen or material components a number of times equal to your proficiency modifier. You regain all expended uses of this feature when you finish a long rest, and can switch the cantrip associated with this feature each time you gain a wizard level.</p>
+					<linklist>
+						<link class="reference_classfeature" recordname="class.id-00003.features.id-00044@Brian D">Rote Memorization</link>
+					</linklist>
+				</text>
+			</id-00007>
+			<id-00008>
+				<level type="number">0</level>
+				<locked type="number">1</locked>
+				<name type="string">Inspiration Feature: Critical Evaluation</name>
+				<text type="formattedtext">
+					<p>Drawing upon a lifetime of study, you leap to accurate conclusions with only preliminary findings. As a bonus action you may spend your inspiration to quickly evaluate a creature or item you can see and accurately determine one objective attribute of your choice.</p>
+					<p>When evaluating a creature in this way, you may determine its resistances, immunities, vulnerabilities, what languages it speaks, or its Armor Class.</p>
+					<p>When evaluating an item in this way, you may determine if it is magical, poisonous, cursed, trapped, or its approximate value.</p>
+				</text>
+			</id-00008>
+			<id-00009>
+				<level type="number">0</level>
+				<locked type="number">1</locked>
+				<name type="string">Rote Memorization</name>
+				<specializationchoice type="number">0</specializationchoice>
+				<text type="formattedtext">
+					<p>Choose one cantrip which has a casting time of 1 action and doesn&#8217;t deal damage. You can cast that cantrip as a bonus action without any seen or material components a number of times equal to your proficiency modifier. You regain all expended uses of this feature when you finish a long rest, and can switch the cantrip associated with this feature each time you gain a wizard level.</p>
+				</text>
+			</id-00009>
+			<id-00010>
+				<level type="number">1</level>
+				<locked type="number">1</locked>
+				<name type="string">Spellcasting</name>
+				<specializationchoice type="number">0</specializationchoice>
+				<text type="formattedtext">
+					<p>At 1st level you have a spellbook containing the written spells you study. You use your spellbook to cast your spells.</p>
+					<p>
+						<b>Cantrips </b>&#13;At 1st level, you know three cantrips of your choice from the wizard spell list. You learn additional wizard cantrips of your choice at higher levels, as shown in the Cantrips Known column of the Wizard Spells table. Additionally, you know the prestidigitation cantrip.</p>
+					<p>
+						<b>Spellbook </b>&#13;At 1st level, your spellbook contains six 1st-level wizard spells of your choice. Your spellbook contains all of the wizard spells you know, except your cantrips, which you maintain in your memory.</p>
+					<p>
+						<b>Preparing and Casting Spells </b>&#13;The Wizard Spells table shows how many spell slots you have to cast your wizard spells. To cast one of these wizard spells, you must expend a slot of the spell&#8217;s level or higher. You regain all expended spell slots when you finish a long rest.</p>
+					<p>You prepare the list of wizard spells that are available for you to cast, choosing from the wizard spell list. When you do so, choose a number of wizard spells written in your spellbook equal to your Intelligence modifier + your wizard level (minimum of one spell). The spells must be of a level for which you have spell slots.</p>
+					<p>Casting spells doesn&#8217;t remove them from your list of prepared spells.</p>
+					<p>You can change your list of prepared spells whenever you finish a long rest by studying your spellbook for at least 1 minute per spell level for each spell on your list.</p>
+					<p>
+						<b>Spellcasting Ability </b>&#13;Intelligence is your spellcasting ability for your wizard spells. You use your Intelligence whenever a spell refers to your spellcasting ability. In addition, you use your Intelligence modifier when setting the saving throw DC for a wizard spell you cast and when making an attack roll with one. <b>&#13;Spell save DC </b>= 8 + your proficiency bonus + your Intelligence modifier <b>&#13;Spell attack modifier </b>= your proficiency bonus + your Intelligence modifier</p>
+					<p>
+						<b>Ritual Casting </b>&#13;You can cast a wizard spell as a ritual if that spell has the ritual tag and you have the spell in your spellbook.</p>
+					<p>
+						<b>Spellcasting Focus </b>&#13;You can use an arcane focus as a spellcasting focus for your wizard spells.</p>
+					<p>
+						<b>Learning Spells of 1st-Level and Higher </b>&#13;Each time you gain a wizard level, you can add two wizard spells of your choice to your spellbook for free. Each of these spells must be of a level for which you have spell slots, as shown on the Wizard Spells table.</p>
+					<h>Your Spellbook</h>
+					<p>As you research magic and spells, you will add new spells to your spellbook. You might find spells during your adventures, such as spells from other spellcasters&#8217; spellbooks, or spells recorded on scrolls.</p>
+					<p>
+						<b>
+							<i>Copying a Spell into the Book. </i>
+						</b>When you find a wizard spell of 1st-level or higher, you can add it to your spellbook if it is of a spell level that you can prepare, and if you take the time to decipher and copy it. Copying a spell into your spellbook involves reproducing the instructions of the spell, as well as deciphering any notation or cipher used by the wizard who wrote it. You must also practice the spell until you comprehend any words, sounds, gestures, or materials required to use the spell. Finally, you transcribe the spell into your own spellbook, with any notation or cipher you wish to write it with.</p>
+					<p>For each level of the spell, the process takes 2 hours and costs 50 gold. The cost represents material components you utilize as you experiment with the spell to master it, as well as the fine inks you use to record it into your spellbook. Once you have spent this time and money, you can prepare the spell like any other spell in your spellbook.</p>
+					<p>
+						<b>
+							<i>Replacing the Book. </i>
+						</b>You can copy a spell from your own spellbook into another book, in the case that you want to create a backup copy of your spellbook. This is similar to copying a new spell into your spellbook, but simpler and quicker since you understand your own notation and already know how to cast the spell. You spend 1 hour and 10 gold per level of copying your own spells.</p>
+					<p>If you lose your spellbook, you can use the same procedure to transcribe spells that you have prepared into a new spellbook.</p>
+					<p>
+						<b>The Spellbook&#8217;s Appearance. </b>Your spellbook is as unique as you want it to be, and can have its own decoration, including margin notes and addendums made by you. It could be a simple, leather-bound book, or it can be finely-bound, gilded, leaflets stored in a box, or made of unique materials as well.</p>
+				</text>
+			</id-00010>
+			<id-00011>
+				<level type="number">1</level>
+				<locked type="number">1</locked>
+				<name type="string">Arcane Recovery</name>
+				<specializationchoice type="number">0</specializationchoice>
+				<text type="formattedtext">
+					<p>Once per day when you finish a short rest, you can choose expended spell slots to recover. The spell slots can have a combined level that is equal to or less than half your wizard level (rounded up), and none of the slots can be 6th-level or higher.</p>
+				</text>
+			</id-00011>
+			<id-00012>
+				<level type="number">7</level>
+				<locked type="number">1</locked>
+				<name type="string">Spell Study</name>
+				<specializationchoice type="number">0</specializationchoice>
+				<text type="formattedtext">
+					<p>At 7th level, you learn to hone your magic and spells to new power levels thanks to your dedicated studies. Choose one Spell Study that reflects what you have dedicated your arcane studies to.</p>
+					<p>
+						<b>Arcane Objects </b>&#13;When you touch a magic item, either willingly or when hit by it, you are immediately aware that it&#8217;s magical. If you hold such an item in your hand, you can cast <i>identify </i>on it as an action without spending a spell slot, even if you don&#8217;t have the spell prepared.</p>
+					<p>In addition, when you cast <i>identify </i>using a spell slot or as a ritual, you also learn if the item is cursed, and the Narrator will give you a hint as to the curse&#8217;s effects (which may be cryptic and vague, but must not be a lie).</p>
+					<linklist>
+						<link class="reference_classfeature" recordname="class.id-00003.features.id-00045@Brian D">Arcane Objects</link>
+					</linklist>
+					<p>
+						<b>Detective Spell Study </b>&#13;You are adept at sensing magic and its effects. If there are active magical effects near you, such as a spell effect on an object or a spell effect in an area, you automatically sense its presence. You don&#8217;t know what spell effects there are or where they are, but you can automatically sense the effect of magic in a 20-foot radius around you.</p>
+					<p>In addition, you have honed your detection spells. Add <i>detect magic </i>and <i>detect thoughts </i>to your spellbook if they weren&#8217;t already there. Whenever you cast detect magic, the range that you can sense magic is increased to 60 feet. Whenever you cast detect thoughts, the range of creatures that you can read thoughts from is increased to 60 feet.</p>
+					<linklist>
+						<link class="reference_classfeature" recordname="class.id-00003.features.id-00046@Brian D">Detective Spell Study</link>
+					</linklist>
+					<p>
+						<b>Fauna and Flora </b>
+						<i>Your research into plants, wildlife, and the natural workings of magic grants you superior insights into the magic of living creatures and flora. When a plant or beast makes a saving throw against a spell that you cast, it makes the saving throw with disadvantage.</i>
+					</p>
+					<linklist>
+						<link class="reference_classfeature" recordname="class.id-00003.features.id-00047@Brian D">Fauna and Flora</link>
+					</linklist>
+				</text>
+			</id-00012>
+		</featurelist>
+		<gender type="string">Male</gender>
+		<height type="string">6'</height>
+		<hero type="number">0</hero>
+		<hp>
+			<deathsavefail type="number">0</deathsavefail>
+			<deathsavesuccess type="number">0</deathsavesuccess>
+			<hdmod type="number">0</hdmod>
+			<temporary type="number">0</temporary>
+			<total type="number">44</total>
+			<wounds type="number">36</wounds>
+		</hp>
+		<initiative>
+			<misc type="number">0</misc>
+			<prof type="number">0</prof>
+			<temporary type="number">0</temporary>
+			<total type="number">0</total>
+		</initiative>
+		<inspiration type="number">0</inspiration>
+		<inventorylist>
+			<id-00001>
+				<attune type="number">0</attune>
+				<carried type="number">2</carried>
+				<count type="number">1</count>
+				<name type="string">Travel Gourd (ooze famliar)</name>
+				<weight type="number">0</weight>
+			</id-00001>
+			<id-00002>
+				<ac type="number">0</ac>
+				<attune type="number">0</attune>
+				<bonus type="number">0</bonus>
+				<carried type="number">1</carried>
+				<cost type="string">50 gp</cost>
+				<count type="number">1</count>
+				<description type="formattedtext">
+					<p>Many trades and crafts require special tools or sets of tools needed to do things like pick a lock, paint a portrait, or brew a potion.</p>
+					<p>Any character can use a tool kit, but many characters also gain proficiency with specific tools. When you are proficient, you add your proficiency bonus to any ability checks made with them. Tool use is not tied to any single ability score and your Narrator may decide your work may require any sort of ability check. For example, you may be asked to make a Dexterity check with your glass-blower&#8217;s tools while making a delicate glass chalice, but you may be asked to make a Charisma check for creating an artistic glass sculpture.</p>
+					<p>
+						<b>
+							<i>Masterwork Tools. </i>
+						</b>When using tools of masterwork quality, if you are proficient you gain an expertise die on checks made with them.</p>
+				</description>
+				<isidentified type="number">1</isidentified>
+				<locked type="number">1</locked>
+				<name type="string">Alchemist's Supplies</name>
+				<subtype type="string">Tools</subtype>
+				<type type="string">Artisan's Tools</type>
+				<weight type="number">8</weight>
+			</id-00002>
+			<id-00003>
+				<attune type="number">0</attune>
+				<carried type="number">1</carried>
+				<count type="number">0</count>
+				<weight type="number">0</weight>
+			</id-00003>
+			<id-00004>
+				<ac type="number">0</ac>
+				<attune type="number">0</attune>
+				<bonus type="number">0</bonus>
+				<carried type="number">1</carried>
+				<cost type="string">50 - 100 gp</cost>
+				<count type="number">1</count>
+				<description type="formattedtext">
+					<h>Description</h>
+					<p>This polished Eberron dragonshard fits in the hand and stores information similar to a book. The shard can hold the equivalent of one book that's no more than 320 pages long. A shard can be created blank or already filled with information. When the shard is created, the creator can set a passphrase that must be spoken to access the information stored within.</p>
+					<p>While holding the shard, you can use an action to open your mind to the shard, seeing its content in your mind. On subsequent rounds, reading the text or scribing new text on blank &#34;pages&#34; in the shard requires concentration (as if concentrating on a spell) and takes the same amount of time it takes you to read and write normally. Thinking of a particular phrase or topic draws you to the first section in the shard that addresses it.</p>
+					<p>A wizard can use a <i>spellshard </i>as a spellbook, with the usual cost in gold and time to &#34;scribe&#34; a spell into the shard.</p>
+					<p>acid bolt, light, muddle, color spray, disguise self, grasp of the bile lord, sleep, acid arrow, invisibility, misty step, enemies abound, shadow tendrils, water breathing, knock, haste</p>
+				</description>
+				<isidentified type="number">1</isidentified>
+				<locked type="number">0</locked>
+				<name type="string">Spellshard</name>
+				<nonid_name type="string">Stone</nonid_name>
+				<nonidentified type="string">This polished Eberron dragonshard fits in the hand</nonidentified>
+				<picture type="token"></picture>
+				<properties type="string">Magic</properties>
+				<rarity type="string">Common</rarity>
+				<spells>
+					<id-00001>
+						<link type="windowreference">
+							<class />
+							<recordname />
+						</link>
+						<name type="string">Spellshard</name>
+					</id-00001>
+					<id-00002>
+						<link type="windowreference">
+							<class />
+							<recordname />
+						</link>
+						<name type="string">Stone</name>
+					</id-00002>
+				</spells>
+				<type type="string">Wondrous Item</type>
+				<weight type="number">0.3</weight>
+			</id-00004>
+			<id-00005>
+				<ac type="number">0</ac>
+				<attune type="number">0</attune>
+				<bonus type="number">0</bonus>
+				<carried type="number">2</carried>
+				<cost type="string">2 sp</cost>
+				<count type="number">1</count>
+				<damage type="string">1d6  bludgeoning</damage>
+				<description type="formattedtext">
+					<p>
+						<b>
+							<i>Parrying. </i>
+						</b>When you are wielding this weapon and you are not using a shield, once before your next turn you can gain an expertise die to your AC against a single attack made against you by a creature you can see.</p>
+					<p>
+						<b>
+							<i>Two-Handed. </i>
+						</b>You must use two hands to wield this weapon.</p>
+				</description>
+				<isidentified type="number">1</isidentified>
+				<locked type="number">1</locked>
+				<name type="string">Quarterstaff</name>
+				<properties type="string">Parrying, two-handed</properties>
+				<subtype type="string">Simple Melee Weapons</subtype>
+				<type type="string">Weapon</type>
+				<weight type="number">4</weight>
+			</id-00005>
+			<id-00006>
+				<ac type="number">0</ac>
+				<attune type="number">0</attune>
+				<bonus type="number">0</bonus>
+				<carried type="number">1</carried>
+				<cost type="string">1 sp</cost>
+				<count type="number">1</count>
+				<description type="formattedtext">
+					<p>
+						<b>
+							<i>Oil. </i>
+						</b>Oil usually comes in a clay flask that holds 1 pint. As an action, you can splash the oil in this flask up to 20 feet, shattering it on impact. Make a ranged weapon attack against a target creature or object, treating the oil as an improvised weapon. On a hit, the target is covered in oil. If the target takes any fire damage before the oil dries (after 1 minute) it takes an additional 5 fire damage from the burning oil. You can also pour a flask of oil on the ground to cover a 5-foot-square level area. When lit, the oil burns for 2 rounds and deals 5 fire damage to any creature that enters the area or ends its turn in the area. A creature can take this damage only once per turn.</p>
+				</description>
+				<isidentified type="number">1</isidentified>
+				<locked type="number">1</locked>
+				<name type="string">Oil (Flask)</name>
+				<subtype type="string">Standard</subtype>
+				<type type="string">Adventuring Gear</type>
+				<weight type="number">1</weight>
+			</id-00006>
+			<id-00007>
+				<ac type="number">0</ac>
+				<attune type="number">0</attune>
+				<bonus type="number">0</bonus>
+				<carried type="number">1</carried>
+				<cost type="string">2 gp</cost>
+				<count type="number">1</count>
+				<description type="formattedtext">
+					<p>
+						<b>
+							<i>Capacity: </i>
+						</b>30 pounds of gear or 1 cubic foot</p>
+				</description>
+				<locked type="number">1</locked>
+				<name type="string">Backpack</name>
+				<subtype type="string">Standard</subtype>
+				<type type="string">Containers</type>
+				<weight type="number">5</weight>
+			</id-00007>
+			<id-00008>
+				<ac type="number">0</ac>
+				<attune type="number">0</attune>
+				<bonus type="number">0</bonus>
+				<carried type="number">1</carried>
+				<cost type="string">1 gp</cost>
+				<count type="number">1</count>
+				<description type="formattedtext">
+					<p>
+						<b>
+							<i>Bedroll. </i>
+						</b>This essential commodity provides insulation and comfortable sleep on rocky, wet, or uneven terrain.</p>
+				</description>
+				<isidentified type="number">1</isidentified>
+				<locked type="number">1</locked>
+				<name type="string">Bedroll</name>
+				<subtype type="string">Standard</subtype>
+				<type type="string">Survival Gear</type>
+				<weight type="number">7</weight>
+			</id-00008>
+			<id-00009>
+				<ac type="number">0</ac>
+				<attune type="number">0</attune>
+				<bonus type="number">0</bonus>
+				<carried type="number">1</carried>
+				<cost type="string">25 gp</cost>
+				<count type="number">1</count>
+				<description type="formattedtext">
+					<p>
+						<b>
+							<i>Component Pouch. </i>
+						</b>A component pouch is a small, watertight leather belt pouch that has compartments to hold all the material components and other special items you need to cast your spells, except for those components that have a specific cost (as indicated in a spell&#8217;s description).</p>
+				</description>
+				<isidentified type="number">1</isidentified>
+				<locked type="number">1</locked>
+				<name type="string">Component Pouch</name>
+				<subtype type="string">Standard</subtype>
+				<type type="string">Adventuring Gear</type>
+				<weight type="number">2</weight>
+			</id-00009>
+			<id-00010>
+				<ac type="number">0</ac>
+				<attune type="number">0</attune>
+				<bonus type="number">0</bonus>
+				<carried type="number">1</carried>
+				<cost type="string">5 gp</cost>
+				<count type="number">1</count>
+				<description type="formattedtext">
+					<p>
+						<b>
+							<i>Lantern. </i>
+						</b>Once lit, a lantern burns for 6 hours on a flask of oil (1 pint).</p>
+					<p>
+						<b>
+							<i>Hooded: </i>
+						</b>Casts bright light in a 30-foot radius and dim light for an additional 30 feet. As an action, you can lower the hood, reducing the light to dim light in a 5-foot radius.</p>
+				</description>
+				<isidentified type="number">1</isidentified>
+				<locked type="number">1</locked>
+				<name type="string">Lantern, Hooded</name>
+				<subtype type="string">Standard</subtype>
+				<type type="string">Adventuring Gear</type>
+				<weight type="number">2</weight>
+			</id-00010>
+			<id-00011>
+				<ac type="number">0</ac>
+				<attune type="number">0</attune>
+				<bonus type="number">0</bonus>
+				<carried type="number">1</carried>
+				<cost type="string">2 sp</cost>
+				<count type="number">1</count>
+				<description type="formattedtext">
+					<p>
+						<b>
+							<i>Mess Tin. </i>
+						</b>This tin box contains a cup and simple cutlery. The box clamps together, and one side can be used as a cooking pan while the other is used as a plate or shallow bowl.</p>
+				</description>
+				<isidentified type="number">1</isidentified>
+				<locked type="number">1</locked>
+				<name type="string">Mess Tin</name>
+				<subtype type="string">Equipment Kits</subtype>
+				<type type="string">Adventuring Gear</type>
+				<weight type="number">1</weight>
+			</id-00011>
+			<id-00012>
+				<attune type="number">0</attune>
+				<carried type="number">1</carried>
+				<count type="number">0</count>
+				<weight type="number">0</weight>
+			</id-00012>
+			<id-00013>
+				<ac type="number">0</ac>
+				<attune type="number">0</attune>
+				<bonus type="number">0</bonus>
+				<carried type="number">1</carried>
+				<cost type="string">175 gp</cost>
+				<count type="number">1</count>
+				<description type="formattedtext">
+					<h>Description</h>
+					<linklist>
+						<link class="power" recordname="reference.spelldata.id-00410@Level Up Advanced 5e Adventurer's Guide">
+							<b>Spell: </b>Sending</link>
+					</linklist>
+					<p>
+						<b>Crafting Components: </b>Dire Wolf Hide</p>
+					<p>This spell scroll bears the words of, <i>Sending </i>, a sealed within. If the spell is on your class' spell list, you can use the scroll to cast the spell (taking the spell's normal casting time) without the need for material components. Otherwise the spell scroll is unreadable to you. If you are interrupted while using the scroll, you may attempt to use it again. Once the spell within a scroll has been cast, the scroll crumbles away.</p>
+					<p>To use a spell scroll of a higher spell level than you are able to cast, you must succeed on spellcasting ability check (DC 10 + the spell's level). On a failure, the magical energy within is expended with no effect, leaving behind a blank piece of parchment.</p>
+					<p>A wizard may use a spell scroll to copy the spell stored within to their spellbook by making an Intelligence (Arcana) check (DC 10 + the spell's level). Whether the check succeeds or not, the attempt destroys the spell scroll.</p>
+					<p>This spell scroll's DC is 15 and the attack bonus is +7. The costs of the spell scroll are in addition to any material components, which are required (and if necessary also consumed) when it is made.</p>
+				</description>
+				<isidentified type="number">1</isidentified>
+				<locked type="number">1</locked>
+				<name type="string">Scroll of Sending</name>
+				<nonid_name type="string">Scroll</nonid_name>
+				<nonidentified type="string">Spell scroll</nonidentified>
+				<properties type="string">Magic</properties>
+				<rarity type="string">Uncommon</rarity>
+				<type type="string">Scroll</type>
+				<weight type="number">0</weight>
+			</id-00013>
+			<id-00014>
+				<ac type="number">0</ac>
+				<attune type="number">0</attune>
+				<bonus type="number">0</bonus>
+				<carried type="number">1</carried>
+				<cost type="string">500 gp</cost>
+				<count type="number">1</count>
+				<description type="formattedtext">
+					<h>Description</h>
+					<p>
+						<b>Crafting Components: </b>Gilded raven's feather</p>
+					<p>A small, palm-sized figurine of a Raven.</p>
+					<p>If you use an action to speak the appropriate command word and throw the figurine at a point within 60 feet, it transforms into a bronze-colored Raven.</p>
+					<p>If the chosen space is occupied (either by creatures or non-living obstacles) the figurine does not transform. The Raven is friendly to you and your companions. It understands any language you can speak and follows your verbal commands. When not carrying out a task, the Raven defends itself but does not otherwise act.</p>
+					<p>The Raven stays transformed for 12 hours. While it is in raven form, you can cast <i>animal messenger </i>on it at will. At the end of this duration, the Raven turns back to its inanimate form. It also reverts early if it drops to 0 hit points or if you use an action to speak the command word while touching it. Once it has reverted to its figurine form, it cannot transform again for 2 days.</p>
+					<linklist>
+						<link class="power" recordname="reference.spelldata.id-00018@Level Up Advanced 5e Adventurer's Guide">
+							<b>Spell: </b>Animal Messenger</link>
+						<link class="npc" recordname="npc.id-00506@Level Up 5e Monstrous Menagerie">
+							<b>Stat Block: </b>Raven</link>
+					</linklist>
+				</description>
+				<locked type="number">1</locked>
+				<name type="string">Figurine of Wondrous Power (Silver Raven)</name>
+				<nonid_name type="string">Figurine</nonid_name>
+				<nonidentified type="string">A silver raven statuette</nonidentified>
+				<properties type="string">Magic</properties>
+				<rarity type="string">Uncommon</rarity>
+				<spells>
+					<id-00001>
+						<link type="windowreference">
+							<class />
+							<recordname />
+						</link>
+						<name type="string">Figurine of Wondrous Power (Silver Raven)</name>
+					</id-00001>
+					<id-00002>
+						<link type="windowreference">
+							<class />
+							<recordname />
+						</link>
+						<name type="string">Web</name>
+					</id-00002>
+				</spells>
+				<type type="string">Wondrous Item</type>
+				<weight type="number">0</weight>
+			</id-00014>
+			<id-00015>
+				<attune type="number">0</attune>
+				<carried type="number">1</carried>
+				<count type="number">0</count>
+				<weight type="number">0</weight>
+			</id-00015>
+			<id-00016>
+				<attune type="number">0</attune>
+				<carried type="number">2</carried>
+				<cost type="string">500 - 1000 gp</cost>
+				<count type="number">1</count>
+				<description type="formattedtext">
+					<h>Description</h>
+					<p>This pair of magical boots shimmers in vibrant shades of blazing red and burning orange when they are held up to the light. These boots allow the wearer to gain extra maneuverability while moving through hazardous areas. While performing a Tumble maneuver to avoid provoking an attack of opportunity, the wearer gains advantage on the Dexterity Save. If successful, they gain a +1 bonus on attack rolls for 1 round, but not on the enemy tumbled past.</p>
+				</description>
+				<locked type="number">1</locked>
+				<name type="string">Daredevil Boots</name>
+				<nonid_name type="string">Fine red and orange knee high leather boots</nonid_name>
+				<nonidentified type="string">Fine red and orange knee high leather boots</nonidentified>
+				<properties type="string">Magic</properties>
+				<rarity type="string">Uncommon</rarity>
+				<spells>
+					<id-00001>
+						<link type="windowreference">
+							<class />
+							<recordname />
+						</link>
+						<name type="string">Boots of False Tracks</name>
+					</id-00001>
+					<id-00002>
+						<link type="windowreference">
+							<class />
+							<recordname />
+						</link>
+						<name type="string">Boots</name>
+					</id-00002>
+				</spells>
+				<type type="string">Wondrous Item</type>
+				<weight type="number">0.5</weight>
+			</id-00016>
+			<id-00017>
+				<attune type="number">0</attune>
+				<carried type="number">1</carried>
+				<count type="number">0</count>
+				<weight type="number">0</weight>
+			</id-00017>
+			<id-00018>
+				<ac type="number">13</ac>
+				<attune type="number">0</attune>
+				<bonus type="number">1</bonus>
+				<carried type="number">2</carried>
+				<cost type="string">400 gp</cost>
+				<count type="number">1</count>
+				<description type="formattedtext">
+					<h>Description</h>
+					<p>
+						<b>Crafting Components: </b>hide or scales of a beast of CR 1-4 (like an ankheg)</p>
+					<p>Wearing this armor gives a +1 magic boost to AC.</p>
+				</description>
+				<dexbonus type="string">Yes</dexbonus>
+				<isidentified type="number">1</isidentified>
+				<locked type="number">1</locked>
+				<name type="string">Leather Brigandine, +1</name>
+				<nonid_name type="string">Armor</nonid_name>
+				<nonidentified type="string">Armor</nonidentified>
+				<properties type="string">Magic</properties>
+				<rarity type="string">Uncommon</rarity>
+				<spells>
+					<id-00001>
+						<link type="windowreference">
+							<class />
+							<recordname />
+						</link>
+						<name type="string">Uncommon Armor +1</name>
+					</id-00001>
+					<id-00002>
+						<link type="windowreference">
+							<class />
+							<recordname />
+						</link>
+						<name type="string">Leather Brigandine</name>
+					</id-00002>
+				</spells>
+				<stealth type="string">-</stealth>
+				<strength type="string">-</strength>
+				<subtype type="string">Medium Armor</subtype>
+				<type type="string">Armor</type>
+				<weight type="number">10</weight>
+			</id-00018>
+			<id-00019>
+				<ac type="number">0</ac>
+				<attune type="number">0</attune>
+				<bonus type="number">0</bonus>
+				<carried type="number">1</carried>
+				<cost type="string">50 gp</cost>
+				<count type="number">0</count>
+				<description type="formattedtext">
+					<p>These potions have auras of evocation magic invisible to mundane eyes.</p>
+					<p>When you drink the bright red liquid in this flask, you regain 2d4 + 2 hit points.</p>
+				</description>
+				<locked type="number">1</locked>
+				<name type="string">Basic Healing Potion</name>
+				<type type="string">Medicinals</type>
+				<weight type="number">0.5</weight>
+			</id-00019>
+			<id-00020>
+				<ac type="number">0</ac>
+				<attune type="number">0</attune>
+				<bonus type="number">0</bonus>
+				<carried type="number">1</carried>
+				<cost type="string">50 gp</cost>
+				<count type="number">1</count>
+				<description type="formattedtext">
+					<h>Description</h>
+					<p>
+						<b>Crafting Components: </b>Flower potpourri with petals taken from wedding bouquets and flowers laid at gravestones</p>
+					<p>Various schools of magic employ all manner of particularly foul-smelling and noxious substances, nauseating some would-be wizards to the point of illness. These enchanted amulets were created to guard against the various stenches found in their masters' laboratories and supply closets. Enterprising apprentices quickly saw the value of peddling the enchanted trinkets to the affluent wishing to avoid the stench of the streets however, and now they are commonplace among nobility. The most typical of these amulets look like pomanders though dozens of different styles, varieties, and scents are available for sale. While wearing it, you can spend an action and expend 1 charge from the amulet to fill your nostrils with pleasing scents for 1 hour. These scents are chosen by the amulet's creator at the time of its crafting. In more extreme circumstances like a stinking cloud spell or troglodyte's stench, you can expend 3 charges as a reaction to have advantage on saving throws against the dangerous smell until the end of your next turn.</p>
+					<p>The amulet has 3 charges and regains 1d3 charges each dawn. If you expend the last charge, roll a d20. On a or 5 or less, the amulet loses its magic and becomes a mundane item.</p>
+				</description>
+				<locked type="number">1</locked>
+				<name type="string">Amulet of the Pleasing Bouquet</name>
+				<nonid_name type="string">Amulet</nonid_name>
+				<nonidentified type="string">An amulet</nonidentified>
+				<properties type="string">Magic</properties>
+				<rarity type="string">Common</rarity>
+				<spells>
+					<id-00001>
+						<link type="windowreference">
+							<class />
+							<recordname />
+						</link>
+						<name type="string">Amulet of the Pleasing Bouquet</name>
+					</id-00001>
+					<id-00002>
+						<link type="windowreference">
+							<class />
+							<recordname />
+						</link>
+						<name type="string">Amulet</name>
+					</id-00002>
+				</spells>
+				<subtype type="string">Magical Trinket</subtype>
+				<type type="string">Wondrous Item</type>
+				<weight type="number">1</weight>
+			</id-00020>
+			<id-00021>
+				<ac type="number">0</ac>
+				<attune type="number">0</attune>
+				<bonus type="number">0</bonus>
+				<carried type="number">1</carried>
+				<cost type="string">150 gp</cost>
+				<count type="number">0</count>
+				<description type="formattedtext">
+					<p>These potions have auras of evocation magic invisible to mundane eyes.</p>
+					<p>When you drink the pure red concoction in this flask, you regain 4d4 + 4 hit points.</p>
+				</description>
+				<locked type="number">1</locked>
+				<name type="string">Greater Healing Potion</name>
+				<type type="string">Medicinals</type>
+				<weight type="number">0.5</weight>
+			</id-00021>
+			<id-00022>
+				<ac type="number">0</ac>
+				<attune type="number">0</attune>
+				<bonus type="number">0</bonus>
+				<carried type="number">2</carried>
+				<cost type="string">200 gp</cost>
+				<count type="number">1</count>
+				<description type="formattedtext">
+					<h>Description</h>
+					<p>
+						<b>Crafting Components: </b>Water from the Plane of Water</p>
+					<p>While wearing this ring, you have a swim speed of 40 feet.</p>
+				</description>
+				<locked type="number">1</locked>
+				<name type="string">Ring of Swimming</name>
+				<nonid_name type="string">Ring</nonid_name>
+				<nonidentified type="string">Ring</nonidentified>
+				<properties type="string">Magic</properties>
+				<rarity type="string">Uncommon</rarity>
+				<spells>
+					<id-00001>
+						<link type="windowreference">
+							<class />
+							<recordname />
+						</link>
+						<name type="string">Ring of Swimming</name>
+					</id-00001>
+					<id-00002>
+						<link type="windowreference">
+							<class />
+							<recordname />
+						</link>
+						<name type="string">Ring</name>
+					</id-00002>
+				</spells>
+				<type type="string">Ring</type>
+				<weight type="number">0</weight>
+			</id-00022>
+			<id-00023>
+				<ac type="number">0</ac>
+				<attune type="number">0</attune>
+				<aura type="string">strong transmutation</aura>
+				<bonus type="number">0</bonus>
+				<carried type="number">1</carried>
+				<checkpenalty type="number">0</checkpenalty>
+				<cl type="number">13</cl>
+				<cost type="string">Slot body</cost>
+				<count type="number">1</count>
+				<description type="formattedtext">
+					<p>A robe of powerlessness appears to be a magic robe of another sort. As soon as a character dons this garment, she takes a -10 penalty to Strength, as well as to Intelligence, Wisdom, or Charisma, forgetting spells and magic knowledge accordingly. If the character is a spellcaster, the robe targets the character's primary spellcasting score, otherwise it targets Intelligence. The robe can be removed easily, but in order to restore mind and body, the character must receive a remove curse spell followed by heal.</p>
+				</description>
+				<isidentified type="number">1</isidentified>
+				<locked type="number">1</locked>
+				<maxstatbonus type="number">0</maxstatbonus>
+				<name type="string">Robe Of Powerlessness</name>
+				<nonid_name type="string">Magic Robe w/ Scintilating Colors</nonid_name>
+				<prerequisites type="string">Magic Items robe of the archmagi, robe of blending, robe of bones, robe of eyes, robe of scintillating colors, robe of stars, robe of useful items</prerequisites>
+				<range type="number">0</range>
+				<speed20 type="number">0</speed20>
+				<speed30 type="number">0</speed30>
+				<spellfailure type="number">0</spellfailure>
+				<weight type="number">1</weight>
+			</id-00023>
+			<id-00024>
+				<attune type="number">0</attune>
+				<carried type="number">1</carried>
+				<count type="number">1</count>
+				<description type="formattedtext">
+					<p>To Finest Example of Citizenship: Al Nox</p>
+					<p>The Citizens of Thaliost invite you to attend the Aria Park on Therendor the 14th at Noon for a singular and vital purpose: to publicly recognize and express our deepest gratitude to the extraordinary individuals among us who embody the true spirit of Thaliost.</p>
+					<p>The Wax Seal of the Pure Flame seals the invitation and adorns the bottom as a signature</p>
+				</description>
+				<locked type="number">1</locked>
+				<name type="string">Invitation - Aria Park Al Nox</name>
+				<rarity type="string">common</rarity>
+				<subtype type="string">Standard</subtype>
+				<type type="string">Adventuring Gear</type>
+				<version type="string">2024</version>
+				<weight type="number">0</weight>
+			</id-00024>
+			<id-00025>
+				<ac type="number">0</ac>
+				<attune type="number">0</attune>
+				<bonus type="number">0</bonus>
+				<carried type="number">1</carried>
+				<cost type="string">50 gp</cost>
+				<count type="number">0</count>
+				<description type="formattedtext">
+					<p>These potions have auras of evocation magic invisible to mundane eyes.</p>
+					<p>When you drink the bright red liquid in this flask, you regain 2d4 + 2 hit points.</p>
+				</description>
+				<locked type="number">1</locked>
+				<name type="string">Potion of Healing</name>
+				<type type="string">Medicinals</type>
+				<weight type="number">0.5</weight>
+			</id-00025>
+			<id-00026>
+				<ac type="number">0</ac>
+				<attune type="number">0</attune>
+				<bonus type="number">0</bonus>
+				<carried type="number">1</carried>
+				<cost type="string">150 gp</cost>
+				<count type="number">0</count>
+				<description type="formattedtext">
+					<h>Description</h>
+					<p>
+						<b>Crafting Components: </b>Alchemist's supplies, diamonds (2 carats)</p>
+					<p>Drinking this swirling red liquid restores 4d4+4 hit points.</p>
+					<p>
+						<b>Potion Notes</b>
+					</p>
+					<p>Drinking or administering a potion takes an action.</p>
+				</description>
+				<locked type="number">1</locked>
+				<name type="string">Potion of Healing Greater</name>
+				<nonid_name type="string">Potion</nonid_name>
+				<nonidentified type="string">This vial contains a swirling red liquid</nonidentified>
+				<properties type="string">Magic</properties>
+				<rarity type="string">Uncommon</rarity>
+				<spells>
+					<id-00001>
+						<link type="windowreference">
+							<class />
+							<recordname />
+						</link>
+						<name type="string">Potion of Greater Healing</name>
+					</id-00001>
+					<id-00002>
+						<link type="windowreference">
+							<class />
+							<recordname />
+						</link>
+						<name type="string">Potion</name>
+					</id-00002>
+				</spells>
+				<type type="string">Potion</type>
+				<weight type="number">0</weight>
+			</id-00026>
+		</inventorylist>
+		<languagelist>
+			<id-00001>
+				<name type="string">Common</name>
+			</id-00001>
+			<id-00002>
+				<name type="string">Celestial</name>
+			</id-00002>
+			<id-00003>
+				<name type="string">Daelkyr</name>
+			</id-00003>
+		</languagelist>
+		<level type="number">7</level>
+		<locked type="number">1</locked>
+		<name type="string">Al Nox </name>
+		<pc_label_hero type="string">Hero Points</pc_label_hero>
+		<perception type="number">12</perception>
+		<perceptionmodifier type="number">0</perceptionmodifier>
+		<polymorphism>
+			<active type="number">0</active>
+		</polymorphism>
+		<polymorphism_linked_token type="token"></polymorphism_linked_token>
+		<polymorphism_original_token type="token"></polymorphism_original_token>
+		<portrait type="token">campaign/portraits/id-00004</portrait>
+		<powerdisplaymode type="string">action</powerdisplaymode>
+		<powergroup>
+			<id-00001>
+				<atkmod type="number">0</atkmod>
+				<atkprof type="number">1</atkprof>
+				<castertype type="string">memorization</castertype>
+				<name type="string">Spells</name>
+				<prepared type="number">1</prepared>
+				<savemod type="number">0</savemod>
+				<saveprof type="number">1</saveprof>
+				<savestat type="string">ranger</savestat>
+				<stat type="string">intelligence</stat>
+				<uses type="number">0</uses>
+			</id-00001>
+			<id-00002>
+				<atkmod type="number">0</atkmod>
+				<atkprof type="number">1</atkprof>
+				<name type="string">Wizard A5E Actions/Effects</name>
+				<prepared type="number">0</prepared>
+				<savemod type="number">0</savemod>
+				<saveprof type="number">1</saveprof>
+				<uses type="number">0</uses>
+			</id-00002>
+			<id-00003>
+				<name type="string">Race Actions/Effects</name>
+			</id-00003>
+		</powergroup>
+		<powermeta>
+			<pactmagiclevel type="number">0</pactmagiclevel>
+			<pactmagicpoints>
+				<max type="number">0</max>
+				<used type="number">0</used>
+			</pactmagicpoints>
+			<spellslots1>
+				<max type="number">4</max>
+				<used type="number">0</used>
+			</spellslots1>
+			<spellslots2>
+				<max type="number">3</max>
+				<used type="number">2</used>
+			</spellslots2>
+			<spellslots3>
+				<max type="number">3</max>
+				<used type="number">1</used>
+			</spellslots3>
+			<spellslots4>
+				<max type="number">1</max>
+				<used type="number">1</used>
+			</spellslots4>
+			<spellslots5>
+				<max type="number">0</max>
+				<used type="number">0</used>
+			</spellslots5>
+			<spellslots6>
+				<max type="number">0</max>
+				<used type="number">0</used>
+			</spellslots6>
+			<spellslots7>
+				<max type="number">0</max>
+				<used type="number">0</used>
+			</spellslots7>
+			<spellslots8>
+				<max type="number">0</max>
+				<used type="number">0</used>
+			</spellslots8>
+			<spellslots9>
+				<max type="number">0</max>
+				<used type="number">0</used>
+			</spellslots9>
+		</powermeta>
+		<powermode type="string">combat</powermode>
+		<powers>
+			<id-00001>
+				<actions />
+				<cast type="number">0</cast>
+				<description type="formattedtext">
+					<p>Once per day when you finish a short rest, you can choose expended spell slots to recover. The spell slots can have a combined level that is equal to or less than half your wizard level (rounded up), and none of the slots can be 6th-level or higher.</p>
+				</description>
+				<group type="string">Wizard A5E Actions/Effects</group>
+				<level type="number">0</level>
+				<locked type="number">1</locked>
+				<name type="string">Arcane Recovery</name>
+				<prepared type="number">1</prepared>
+				<rare type="number">0</rare>
+				<specializationchoice type="number">0</specializationchoice>
+			</id-00001>
+			<id-00002>
+				<actions />
+				<cast type="number">0</cast>
+				<description type="formattedtext">
+					<p>You are careful not to show weakness in front of others for fear of losing status. If you miss with an attack roll or fail an ability check, you can gain a bonus to the roll equal to the number of allies you can see within 30 feet of you (maximum +3), possibly changing a failure into a success. Once you use this trait, you can&#8217;t use it again until you finish a short or long rest.</p>
+				</description>
+				<group type="string">Race Actions/Effects</group>
+				<level type="number">0</level>
+				<locked type="number">1</locked>
+				<name type="string">Saving Face</name>
+				<prepared type="number">1</prepared>
+			</id-00002>
+			<id-00003>
+				<actions>
+					<id-00001>
+						<atktype type="string">melee</atktype>
+						<order type="number">1</order>
+						<savemagic type="number">1</savemagic>
+						<savetype type="string">strength</savetype>
+						<type type="string">cast</type>
+					</id-00001>
+					<id-00002>
+						<damagelist>
+							<id-00001>
+								<bonus type="number">0</bonus>
+								<dice type="dice">d8</dice>
+								<statmult type="number">1</statmult>
+								<type type="string">acid</type>
+							</id-00001>
+						</damagelist>
+						<order type="number">2</order>
+						<type type="string">damage</type>
+					</id-00002>
+					<id-00003>
+						<durmod type="number">1</durmod>
+						<durunit type="string">minute</durunit>
+						<label type="string">Restrained; (C)</label>
+						<order type="number">3</order>
+						<type type="string">effect</type>
+					</id-00003>
+					<id-00004>
+						<damagelist>
+							<id-00001>
+								<bonus type="number">0</bonus>
+								<dice type="dice">d8</dice>
+								<statmult type="number">1</statmult>
+								<type type="string">acid</type>
+							</id-00001>
+						</damagelist>
+						<order type="number">4</order>
+						<type type="string">damage</type>
+					</id-00004>
+				</actions>
+				<cast type="number">0</cast>
+				<castingtime type="string">1 action</castingtime>
+				<components type="string">S,M (finger bone)</components>
+				<description type="formattedtext">
+					<p>Tendrils of ooze reach from a wall or other vertical surface to grasp a creature within 5 feet of the surface. Make a melee spell attack. On a hit, the target takes 1d8 necrotic damage and is restrained until the spell ends. A creature restrained by the hands can use a bonus action to make a Strength saving throw to escape, ending the spell early on a success. On a failure, the target takes 1d8 necrotic damage. When the spell ends, the tendrils dissolve into the wall.</p>
+					<p>Cast at Higher Levels. The spell&#8217;s initial damage and damage on a failed escape attempt increase by 1d8 per slot level above 1st.</p>
+				</description>
+				<duration type="string">Concentration, up to 1 minute</duration>
+				<group type="string">Spells</group>
+				<level type="number">1</level>
+				<locked type="number">1</locked>
+				<name type="string">Grasp of the Bile Lord (30)</name>
+				<prepared type="number">1</prepared>
+				<range type="string">30 feet</range>
+				<rare type="number">0</rare>
+				<ritual type="number">0</ritual>
+				<school type="string">Necromancy</school>
+				<source type="string">Cleric, sorcerer, warlock, wizard</source>
+			</id-00003>
+			<id-00004>
+				<actions>
+					<id-00001>
+						<durmod type="number">1</durmod>
+						<label type="string">Color Spray; Blinded</label>
+						<order type="number">1</order>
+						<type type="string">effect</type>
+					</id-00001>
+				</actions>
+				<cast type="number">0</cast>
+				<castingtime type="string">1 action </castingtime>
+				<components type="string">V, S, M (pinch of red, yellow, and blue colored sand or powder) </components>
+				<description type="formattedtext">
+					<linklist>
+						<link class="power" recordname="reference.spelldata.id-00087@Level Up Advanced 5e Adventurer's Guide">Color Spray</link>
+					</linklist>
+				</description>
+				<duration type="string">1 round</duration>
+				<group type="string">Spells</group>
+				<level type="number">1</level>
+				<locked type="number">1</locked>
+				<name type="string">Color Spray (S)</name>
+				<prepared type="number">1</prepared>
+				<range type="string">Self </range>
+				<rare type="number">0</rare>
+				<ritual type="number">0</ritual>
+				<school type="string">illusion; arcane, prismatic, senses</school>
+				<source type="string">Sorcerer, Wizard </source>
+			</id-00004>
+			<id-00005>
+				<actions>
+					<id-00001>
+						<order type="number">1</order>
+						<savemagic type="number">1</savemagic>
+						<savetype type="string">dexterity</savetype>
+						<type type="string">cast</type>
+					</id-00001>
+				</actions>
+				<cast type="number">0</cast>
+				<castingtime type="string">1 action </castingtime>
+				<components type="string">V, M (small tinder box) </components>
+				<description type="formattedtext">
+					<p>
+						<b>Target: </b>Object no larger than 10 feet in any dimension</p>
+					<p>Until the spell ends, the target emits bright light in a 20-foot radius and dim light an additional 20 feet. Light emanating from the target may be any color. Completely covering the target with something that is not transparent blocks the light. The spell ends when you use an action to dismiss it or if you cast it again.</p>
+					<p>If the object is worn or held by a hostile creature it must make a Dexterity saving throw and on a success the spell has no effect.</p>
+				</description>
+				<duration type="string">1 hour</duration>
+				<group type="string">Spells</group>
+				<level type="number">0</level>
+				<locked type="number">1</locked>
+				<name type="string">Light</name>
+				<prepared type="number">0</prepared>
+				<range type="string">Touch </range>
+				<rare type="number">0</rare>
+				<ritual type="number">0</ritual>
+				<school type="string">evocation; arcane, utility</school>
+				<source type="string">Bard, Cleric, Herald, Sorcerer, Wizard</source>
+			</id-00005>
+			<id-00006>
+				<actions>
+					<id-00001>
+						<atktype type="string">ranged</atktype>
+						<order type="number">1</order>
+						<type type="string">cast</type>
+					</id-00001>
+					<id-00002>
+						<damagelist>
+							<id-00001>
+								<bonus type="number">0</bonus>
+								<dice type="dice">2d10</dice>
+								<statmult type="number">0</statmult>
+								<type type="string">acid</type>
+							</id-00001>
+						</damagelist>
+						<order type="number">2</order>
+						<type type="string">damage</type>
+					</id-00002>
+				</actions>
+				<cast type="number">0</cast>
+				<castingtime type="string">1 action </castingtime>
+				<components type="string">V, S </components>
+				<description type="formattedtext">
+					<linklist>
+						<link class="power" recordname="reference.spelldata.id-00195@Level Up Advanced 5e Adventurer's Guide">Fire Bolt</link>
+					</linklist>
+				</description>
+				<duration type="string">Instantaneous</duration>
+				<group type="string">Spells</group>
+				<level type="number">0</level>
+				<locked type="number">1</locked>
+				<name type="string">Acid Bolt (120)</name>
+				<prepared type="number">0</prepared>
+				<range type="string">Long (120 feet) </range>
+				<rare type="number">0</rare>
+				<ritual type="number">0</ritual>
+				<school type="string">evocation; arcane, fire</school>
+				<source type="string">Sorcerer, Wizard </source>
+			</id-00006>
+			<id-00007>
+				<actions>
+					<id-00001>
+						<durmod type="number">1</durmod>
+						<label type="string">Muddle (30)</label>
+						<order type="number">1</order>
+						<targeting type="string">self</targeting>
+						<type type="string">effect</type>
+					</id-00001>
+					<id-00002>
+						<order type="number">2</order>
+						<savemagic type="number">1</savemagic>
+						<savetype type="string">constitution</savetype>
+						<type type="string">cast</type>
+					</id-00002>
+				</actions>
+				<cast type="number">0</cast>
+				<castingtime type="string">1 action</castingtime>
+				<components type="string">V,S</components>
+				<description type="formattedtext">
+					<p>You attempt to disorient a creature. Choose either fatigue or strife . If you choose fatigue, the creature must succeed on a Constitution saving throw or suffer a level of fatigue. If you choose strife, the creature must succeed on a Wisdom saving throw or suffer a level of strife. Regardless, the effect only lasts until the end of the creature&#8217;s next turn. This spell fails if the target already has a level of fatigue or strife (whichever the spell is meant to inflict).</p>
+					<p>
+						<b>Cast at Higher Levels</b>
+					</p>
+					<p>You can inflict an additional level of fatigue or strife when you reach 5th level, 11th level, and 17th level. These levels must be either all fatigue or all strife.</p>
+				</description>
+				<duration type="string">1 round</duration>
+				<group type="string">Spells</group>
+				<level type="number">0</level>
+				<locked type="number">1</locked>
+				<name type="string">Muddle (30) Con</name>
+				<prepared type="number">0</prepared>
+				<range type="string">Short (30 feet)</range>
+				<rare type="number">0</rare>
+				<ritual type="number">0</ritual>
+				<school type="string">EnchantmentAfflictionPsychic</school>
+				<source type="string">Cleric, Sorcerer, Warlock, Wizard</source>
+			</id-00007>
+			<id-00008>
+				<actions>
+					<id-00001>
+						<atkmod type="number">0</atkmod>
+						<atkprof type="number">1</atkprof>
+						<atktype type="string">melee</atktype>
+						<order type="number">1</order>
+						<savedcbase type="string">ability</savedcbase>
+						<savedcmod type="number">0</savedcmod>
+						<savedcprof type="number">1</savedcprof>
+						<savedcstat type="string">intelligence</savedcstat>
+						<savemagic type="number">1</savemagic>
+						<savetype type="string">dexterity</savetype>
+						<type type="string">cast</type>
+					</id-00001>
+					<id-00002>
+						<damagelist>
+							<id-00001>
+								<bonus type="number">0</bonus>
+								<dice type="dice">2d8</dice>
+								<type type="string">cold</type>
+							</id-00001>
+						</damagelist>
+						<order type="number">2</order>
+						<type type="string">damage</type>
+					</id-00002>
+					<id-00003>
+						<durmod type="number">1</durmod>
+						<durunit type="string">minute</durunit>
+						<label type="string">Restrained; (C)</label>
+						<order type="number">3</order>
+						<type type="string">effect</type>
+					</id-00003>
+					<id-00004>
+						<durmod type="number">1</durmod>
+						<durunit type="string">minute</durunit>
+						<label type="string">concentration</label>
+						<order type="number">4</order>
+						<targeting type="string">self</targeting>
+						<type type="string">effect</type>
+					</id-00004>
+				</actions>
+				<cast type="number">0</cast>
+				<castingtime type="string">1 action</castingtime>
+				<components type="string">V, S</components>
+				<description type="formattedtext">
+					<p>Writhing ribbons of quasi-real darkness extend from your hand. As an action, you can make a melee spell attack with the tendrils against any creature within range. On a hit, the target takes 2d8 cold damage and must succeed at a Dexterity saving throw or be restrained.</p>
+					<p>A creature that starts its turn restrained by the shadow tendrils takes the cold damage again. It can take an action to make a Dexterity check against your spell save DC to free itself. On your turn, as a bonus action, you can drag a creature restrained by the shadow tendrils up to 15 feet closer to you.</p>
+					<p>The tendrils have AC 13 and 12 hit points. They are immune to bludgeoning damage and to piercing and slashing damage from nonmagical weapons. They are vulnerable to radiant damage. If the tendrils are destroyed by damage but the spell is still in effect, you can re-form them on your turn as a bonus action.</p>
+				</description>
+				<duration type="string">Concentration, up to 1 minute</duration>
+				<group type="string">Spells</group>
+				<level type="number">3</level>
+				<locked type="number">1</locked>
+				<name type="string">Shadow Tendrils</name>
+				<prepared type="number">1</prepared>
+				<range type="string">30 feet</range>
+				<rare type="number">0</rare>
+				<ritual type="number">0</ritual>
+				<school type="string">Necromancy</school>
+				<source type="string">Sorcerer, Warlock, Wizard</source>
+			</id-00008>
+			<id-00009>
+				<actions>
+					<id-00001>
+						<durmod type="number">1</durmod>
+						<label type="string">Muddle (30)</label>
+						<order type="number">1</order>
+						<targeting type="string">self</targeting>
+						<type type="string">effect</type>
+					</id-00001>
+					<id-00002>
+						<atkmod type="number">0</atkmod>
+						<atkprof type="number">1</atkprof>
+						<order type="number">2</order>
+						<savedcmod type="number">0</savedcmod>
+						<savedcprof type="number">1</savedcprof>
+						<savemagic type="number">1</savemagic>
+						<savetype type="string">wisdom</savetype>
+						<type type="string">cast</type>
+					</id-00002>
+				</actions>
+				<cast type="number">0</cast>
+				<castingtime type="string">1 action</castingtime>
+				<components type="string">V,S</components>
+				<description type="formattedtext">
+					<p>You attempt to disorient a creature. Choose either fatigue or strife . If you choose fatigue, the creature must succeed on a Constitution saving throw or suffer a level of fatigue. If you choose strife, the creature must succeed on a Wisdom saving throw or suffer a level of strife. Regardless, the effect only lasts until the end of the creature&#8217;s next turn. This spell fails if the target already has a level of fatigue or strife (whichever the spell is meant to inflict).</p>
+					<p>
+						<b>Cast at Higher Levels</b>
+					</p>
+					<p>You can inflict an additional level of fatigue or strife when you reach 5th level, 11th level, and 17th level. These levels must be either all fatigue or all strife.</p>
+				</description>
+				<duration type="string">1 round</duration>
+				<group type="string">Spells</group>
+				<level type="number">0</level>
+				<locked type="number">1</locked>
+				<name type="string">Muddle (30) Wis</name>
+				<prepared type="number">0</prepared>
+				<range type="string">Short (30 feet)</range>
+				<rare type="number">0</rare>
+				<ritual type="number">0</ritual>
+				<school type="string">EnchantmentAfflictionPsychic</school>
+				<source type="string">Cleric, Sorcerer, Warlock, Wizard</source>
+			</id-00009>
+			<id-00010>
+				<actions>
+					<id-00001>
+						<durmod type="number">1</durmod>
+						<durunit type="string">hour</durunit>
+						<label type="string">Disguise Self</label>
+						<order type="number">1</order>
+						<targeting type="string">self</targeting>
+						<type type="string">effect</type>
+					</id-00001>
+				</actions>
+				<cast type="number">0</cast>
+				<castingtime type="string">1 action </castingtime>
+				<components type="string">V, S </components>
+				<description type="formattedtext">
+					<p>Until the spell ends or you use an action to dismiss it, you and your gear are cloaked by an illusory disguise that makes you appear like another creature of your general size and body type, including but not limited to: your heritage, 1 foot of height, weight, clothing, tattoos, piercings, facial features, hair style and length, skin and eye coloration, sex and any other distinguishing features. You cannot disguise yourself as a creature of a different size category, and your limb structure remains the same; for example if you&#8217;re bipedal, you can&#8217;t use this spell to appear as a quadruped.</p>
+					<p>The disguise does not hold up to physical inspection. A creature that tries to grab an illusory hat, for example, finds its hand passes straight through the figment. To see through your disguise without such an inspection, a creature must use its action to make an Investigation check against your spell save DC.</p>
+					<p>
+						<b>
+							<i>Cast at Higher Levels. </i>
+						</b>When using a spell slot of 3rd-level or higher, this spell functions identically to the seeming spell, except the spell&#8217;s duration is 10 minutes.</p>
+				</description>
+				<duration type="string">1 hour</duration>
+				<group type="string">Spells</group>
+				<level type="number">1</level>
+				<locked type="number">1</locked>
+				<name type="string">Disguise Self</name>
+				<prepared type="number">1</prepared>
+				<range type="string">Self </range>
+				<rare type="number">0</rare>
+				<ritual type="number">0</ritual>
+				<school type="string">illusion; arcane, obscurement</school>
+				<source type="string">Bard, Sorcerer, Wizard</source>
+			</id-00010>
+			<id-00011>
+				<actions />
+				<cast type="number">0</cast>
+				<castingtime type="string">1 bonus action </castingtime>
+				<components type="string">V </components>
+				<description type="formattedtext">
+					<linklist>
+						<link class="power" recordname="reference.spelldata.id-00336@Level Up Advanced 5e Adventurer's Guide">Misty Step</link>
+					</linklist>
+				</description>
+				<duration type="string">Instantaneous</duration>
+				<group type="string">Spells</group>
+				<level type="number">2</level>
+				<locked type="number">1</locked>
+				<name type="string">Misty Step (B) (30)</name>
+				<prepared type="number">1</prepared>
+				<range type="string">Short (30 feet) </range>
+				<rare type="number">0</rare>
+				<ritual type="number">0</ritual>
+				<school type="string">conjuration; arcane, chaos, movement, teleportation</school>
+				<source type="string">Sorcerer, Warlock, Wizard</source>
+			</id-00011>
+			<id-00012>
+				<actions>
+					<id-00001>
+						<durmod type="number">1</durmod>
+						<durunit type="string">minute</durunit>
+						<label type="string">Sleep; Unconscious; ends if damaged</label>
+						<order type="number">1</order>
+						<type type="string">effect</type>
+					</id-00001>
+					<id-00002>
+						<durmod type="number">1</durmod>
+						<label type="string">Sleep; Rattled</label>
+						<order type="number">2</order>
+						<type type="string">effect</type>
+					</id-00002>
+				</actions>
+				<cast type="number">0</cast>
+				<castingtime type="string">1 action </castingtime>
+				<components type="string">V, S, M (pinch of fine sand) </components>
+				<description type="formattedtext">
+					<linklist>
+						<link class="power" recordname="reference.spelldata.id-00424@Level Up Advanced 5e Adventurer's Guide">Sleep</link>
+					</linklist>
+				</description>
+				<duration type="string">1 minute</duration>
+				<group type="string">Spells</group>
+				<level type="number">1</level>
+				<locked type="number">1</locked>
+				<name type="string">Sleep (60)</name>
+				<prepared type="number">1</prepared>
+				<range type="string">Medium (60 feet) </range>
+				<rare type="number">0</rare>
+				<ritual type="number">0</ritual>
+				<school type="string">enchantment; arcane, compulsion</school>
+				<source type="string">Bard, Sorcerer, Wizard </source>
+			</id-00012>
+			<id-00013>
+				<actions>
+					<id-00001>
+						<atktype type="string">ranged</atktype>
+						<order type="number">1</order>
+						<type type="string">cast</type>
+					</id-00001>
+					<id-00002>
+						<damagelist>
+							<id-00001>
+								<bonus type="number">0</bonus>
+								<dice type="dice">4d4</dice>
+								<type type="string">acid</type>
+							</id-00001>
+						</damagelist>
+						<order type="number">2</order>
+						<type type="string">damage</type>
+					</id-00002>
+					<id-00003>
+						<durmod type="number">1</durmod>
+						<label type="string">Acid Arrow; DMGO: 2d4 acid</label>
+						<order type="number">3</order>
+						<type type="string">effect</type>
+					</id-00003>
+					<id-00004>
+						<damagelist>
+							<id-00001>
+								<bonus type="number">0</bonus>
+								<dice type="dice">2d4</dice>
+								<type type="string">acid</type>
+							</id-00001>
+						</damagelist>
+						<order type="number">4</order>
+						<type type="string">damage</type>
+					</id-00004>
+				</actions>
+				<cast type="number">0</cast>
+				<castingtime type="string">1 action</castingtime>
+				<components type="string">V, S, M, (flint arrowhead)</components>
+				<description type="formattedtext">
+					<linklist>
+						<link class="power" recordname="reference.spelldata.id-00003@Level Up Advanced 5e Adventurer's Guide">Acid Arrow</link>
+					</linklist>
+				</description>
+				<duration type="string">Instantaneous</duration>
+				<group type="string">Spells</group>
+				<level type="number">2</level>
+				<locked type="number">1</locked>
+				<name type="string">Acid Arrow (120)</name>
+				<prepared type="number">1</prepared>
+				<range type="string">Long (120 feet)</range>
+				<rare type="number">0</rare>
+				<ritual type="number">0</ritual>
+				<school type="string">evocation; acid, arcane</school>
+				<shortdescription type="string">Target: One creature or object</shortdescription>
+				<source type="string">Sorcerer, Wizard</source>
+			</id-00013>
+			<id-00014>
+				<actions>
+					<id-00001>
+						<durmod type="number">1</durmod>
+						<durunit type="string">hour</durunit>
+						<label type="string">Invisibility; (C); Invisible; ends if you attack or cast a spell</label>
+						<order type="number">1</order>
+						<type type="string">effect</type>
+					</id-00001>
+					<id-00002>
+						<durmod type="number">1</durmod>
+						<durunit type="string">hour</durunit>
+						<label type="string">Invisibility; (C)</label>
+						<order type="number">2</order>
+						<targeting type="string">self</targeting>
+						<type type="string">effect</type>
+					</id-00002>
+				</actions>
+				<cast type="number">0</cast>
+				<castingtime type="string">1 action </castingtime>
+				<components type="string">V, S, M (piece of a veil) </components>
+				<description type="formattedtext">
+					<linklist>
+						<link class="power" recordname="reference.spelldata.id-00289@Level Up Advanced 5e Adventurer's Guide">Invisibility</link>
+					</linklist>
+				</description>
+				<duration type="string">Concentration (1 hour)</duration>
+				<group type="string">Spells</group>
+				<level type="number">2</level>
+				<locked type="number">1</locked>
+				<name type="string">Invisibility (T) (C)</name>
+				<prepared type="number">1</prepared>
+				<range type="string">Touch </range>
+				<rare type="number">0</rare>
+				<ritual type="number">0</ritual>
+				<school type="string">illusion; arcane, obscurement, shadow</school>
+				<source type="string">Bard, Sorcerer, Warlock, Wizard </source>
+			</id-00014>
+			<id-00015>
+				<actions>
+					<id-00001>
+						<durmod type="number">1</durmod>
+						<durunit type="string">minute</durunit>
+						<label type="string">Haste; (C); AC: 2; ADVSAV: dexterity; one additional action on each of your turns to make a single attack or Dash, Disengage, Hide or Use an Object</label>
+						<order type="number">1</order>
+						<type type="string">effect</type>
+					</id-00001>
+					<id-00002>
+						<durmod type="number">1</durmod>
+						<label type="string">Haste; ENDED; Can't move or take actions this turn</label>
+						<order type="number">2</order>
+						<type type="string">effect</type>
+					</id-00002>
+				</actions>
+				<cast type="number">0</cast>
+				<castingtime type="string">1 action</castingtime>
+				<components type="string">V, S, M (coffee bean) </components>
+				<description type="formattedtext">
+					<linklist>
+						<link class="power" recordname="reference.spelldata.id-00255@Level Up Advanced 5e Adventurer's Guide">Haste</link>
+					</linklist>
+				</description>
+				<duration type="string">Concentration (1 minute)</duration>
+				<group type="string">Spells</group>
+				<level type="number">3</level>
+				<locked type="number">1</locked>
+				<name type="string">Haste (30) (C)</name>
+				<prepared type="number">1</prepared>
+				<range type="string">Short (30 feet) </range>
+				<rare type="number">0</rare>
+				<ritual type="number">0</ritual>
+				<school type="string">transformation; enhancement, time</school>
+				<source type="string">Sorcerer, Wizard </source>
+			</id-00015>
+			<id-00016>
+				<actions>
+					<id-00001>
+						<atkprof type="number">1</atkprof>
+						<order type="number">1</order>
+						<savedcprof type="number">1</savedcprof>
+						<savemagic type="number">1</savemagic>
+						<savetype type="string">intelligence</savetype>
+						<type type="string">cast</type>
+					</id-00001>
+					<id-00002>
+						<durmod type="number">1</durmod>
+						<durunit type="string">minute</durunit>
+						<label type="string">Enemies Abound (C)</label>
+						<order type="number">2</order>
+						<type type="string">effect</type>
+					</id-00002>
+				</actions>
+				<cast type="number">0</cast>
+				<castingtime type="string">1 action</castingtime>
+				<components type="string">V, S</components>
+				<description type="formattedtext">
+					<p />
+				</description>
+				<duration type="string">Concentration, up to 1 minute</duration>
+				<group type="string">Spells</group>
+				<level type="number">3</level>
+				<locked type="number">1</locked>
+				<name type="string">Enemies Abound (120) (C)</name>
+				<prepared type="number">1</prepared>
+				<range type="string">120 feet</range>
+				<rare type="number">0</rare>
+				<ritual type="number">0</ritual>
+				<Rob2E type="string">EffectsCodingSpellsVERSION10</Rob2E>
+				<school type="string">Enchantment</school>
+				<source type="string">Bard, Sorcerer, Warlock, Wizard</source>
+			</id-00016>
+			<id-00017>
+				<actions>
+					<id-00001>
+						<durmod type="number">0</durmod>
+						<label type="string">Find Familiar; Familiar summoned; can be dismissed with an action; lasts until it drops to 0 hp; telepathic communication within 100 feet</label>
+						<order type="number">1</order>
+						<targeting type="string">self</targeting>
+						<type type="string">effect</type>
+					</id-00001>
+				</actions>
+				<cast type="number">0</cast>
+				<castingtime type="string">1 hour (ritual) </castingtime>
+				<components type="string">V, S, M (10 gold worth of charcoal, incense, and herbs that must be burned in a brass brazier) </components>
+				<description type="formattedtext">
+					<linklist>
+						<link class="power" recordname="reference.spelldata.id-00185@Level Up Advanced 5e Adventurer's Guide">Find Familiar</link>
+					</linklist>
+				</description>
+				<duration type="string">Instantaneous</duration>
+				<group type="string">Spells</group>
+				<level type="number">1</level>
+				<locked type="number">1</locked>
+				<name type="string">Find Familiar (RIT) ($)</name>
+				<prepared type="number">0</prepared>
+				<range type="string">Short (30 feet)</range>
+				<rare type="number">0</rare>
+				<ritual type="number">0</ritual>
+				<school type="string">conjuration; arcane, summoning</school>
+				<source type="string">Wizard</source>
+			</id-00017>
+			<id-00018>
+				<actions>
+					<id-00001>
+						<durmod type="number">24</durmod>
+						<durunit type="string">hour</durunit>
+						<label type="string">Water Breathing; Lasts 24 hours; Can breathe underwater</label>
+						<order type="number">1</order>
+						<type type="string">effect</type>
+					</id-00001>
+				</actions>
+				<cast type="number">0</cast>
+				<castingtime type="string">1 action (ritual) </castingtime>
+				<components type="string">V, S, M (short reed or piece of straw)</components>
+				<description type="formattedtext">
+					<linklist>
+						<link class="power" recordname="reference.spelldata.id-00497@Level Up Advanced 5e Adventurer's Guide">Water Breathing</link>
+					</linklist>
+				</description>
+				<duration type="string">24 hours</duration>
+				<group type="string">Spells</group>
+				<level type="number">3</level>
+				<locked type="number">1</locked>
+				<name type="string">Water Breathing (RIT) (30)</name>
+				<prepared type="number">0</prepared>
+				<range type="string">Short (30 feet)</range>
+				<rare type="number">0</rare>
+				<ritual type="number">1</ritual>
+				<school type="string">transmutation; arcane, divine, enhancement, utility, water</school>
+				<source type="string">Druid, Sorcerer, Wizard </source>
+			</id-00018>
+			<id-00019>
+				<actions />
+				<cast type="number">0</cast>
+				<castingtime type="string">1 minute (ritual) </castingtime>
+				<components type="string">V, S, M (pearl worth at least 100 gold and a feather) </components>
+				<description type="formattedtext">
+					<linklist>
+						<link class="power" recordname="reference.spelldata.id-00274@Level Up Advanced 5e Adventurer's Guide">Identify</link>
+					</linklist>
+				</description>
+				<duration type="string">Instantaneous</duration>
+				<group type="string">Spells</group>
+				<level type="number">1</level>
+				<locked type="number">1</locked>
+				<name type="string">Identify (RIT) (T) ($)</name>
+				<prepared type="number">0</prepared>
+				<range type="string">Touch </range>
+				<rare type="number">0</rare>
+				<ritual type="number">1</ritual>
+				<school type="string">divination; arcane, knowledge</school>
+				<source type="string">Bard, Wizard</source>
+			</id-00019>
+			<id-00020>
+				<actions>
+					<id-00001>
+						<durmod type="number">8</durmod>
+						<durunit type="string">hour</durunit>
+						<label type="string">Tiny Hut</label>
+						<order type="number">1</order>
+						<targeting type="string">self</targeting>
+						<type type="string">effect</type>
+					</id-00001>
+				</actions>
+				<cast type="number">0</cast>
+				<castingtime type="string">1 minute (ritual) </castingtime>
+				<components type="string">V, S, M (piece of thatched roof woven into a dome and a sculpture of a protective deity worth 200 gold, consumed by the spell) </components>
+				<description type="formattedtext">
+					<p>
+						<b>Area: </b>10-foot radius hemisphere</p>
+					<p>You create an immobile dome of protective force that provides shelter and can be used as a safe haven (Chapter 5: Exploration in Trials &#38; Treasures). The dome is of a color of your choosing, can&#8217;t be seen through from the outside, is transparent on the inside, and can fit up to 10 Medium creatures (including you) within.</p>
+					<p>The dome prevents inclement weather and environmental effects from passing through it, though creatures and objects may pass through freely. Spells and other magical effects can&#8217;t cross the dome in either direction, and the dome provides a comfortable dry interior no matter the conditions outside of it. You can command the interior to become dimly lit or dark at any time on your turn.</p>
+					<p>The spell fails if a Large creature or more than 10 creatures are inside the dome. The spell ends when you leave the dome.</p>
+				</description>
+				<duration type="string">8 hours</duration>
+				<group type="string">Spells</group>
+				<level type="number">3</level>
+				<locked type="number">1</locked>
+				<name type="string">Tiny Hut</name>
+				<prepared type="number">0</prepared>
+				<range type="string">Self </range>
+				<ritual type="number">1</ritual>
+				<school type="string">evocation; arcane, force, protection, utility</school>
+				<source type="string">Bard, wizard</source>
+			</id-00020>
+			<id-00021>
+				<actions />
+				<cast type="number">0</cast>
+				<castingtime type="string">1 action</castingtime>
+				<components type="string">V, S, M (copper piece) </components>
+				<description type="formattedtext">
+					<p>
+						<b>Target </b>: Self</p>
+					<p>On the round you cast it, and as an action on subsequent turns until the spell ends, you can probe a creature&#8217;s mind to read its thoughts by focusing on one creature you can see within range. The creature makes a Wisdom saving throw. Creatures with an Intelligence score of 3 or less or that don&#8217;t speak any languages are unaffected. On a failed save, you learn the creature&#8217;s surface thoughts &#8212;what is most on its mind in that moment. On a successful save, you fail to read the creature&#8217;s thoughts and can&#8217;t attempt to probe its mind for the duration. Conversation naturally shapes the course of a creature&#8217;s thoughts and what it is thinking about may change based on questions verbally directed at it.</p>
+					<p>Once you have read a creature&#8217;s surface thoughts, you can use an action to probe deeper into its mind. The creature makes a second Wisdom saving throw. On a successful save, you fail to read the creature&#8217;s deeper thoughts and the spell ends. On a failure, you gain insight into the creature&#8217;s motivations, emotional state, and something that looms large in its mind. The creature then becomes aware you are probing its mind and can use an action to make an Intelligence check contested by your Intelligence check, ending the spell if it succeeds.</p>
+					<p>Additionally, you can use an action to scan for thinking creatures within range that you can&#8217;t see. Once you detect the presence of a thinking creature, so long as it remains within range you can attempt to read its thoughts as described above (even if you can&#8217;t see it).</p>
+					<p>The spell penetrates most barriers but is blocked by 2 feet of stone, 2 inches of common metal, or a thin sheet of lead.</p>
+					<p>
+						<b>
+							<i>Cast at Higher Levels. </i>
+						</b>When using a 5th-level spell slot, increase the spell&#8217;s range to 1 mile. When using a 7th-level spell slot, increase the range to 10 miles. When using a 9th-level spell slot, increase the range to 1,000 miles.</p>
+				</description>
+				<duration type="string"> Concentration (1 minute)</duration>
+				<group type="string">Spells</group>
+				<level type="number">2</level>
+				<locked type="number">1</locked>
+				<name type="string">Detect Thoughts</name>
+				<prepared type="number">0</prepared>
+				<range type="string">Special (30-foot radius) </range>
+				<ritual type="number">0</ritual>
+				<school type="string">divination; arcane, senses, telepathy</school>
+				<source type="string">Bard, Sorcerer, Wizard </source>
+			</id-00021>
+			<id-00022>
+				<actions>
+					<id-00001>
+						<damagelist>
+							<id-00001>
+								<bonus type="number">0</bonus>
+								<dice type="dice">8d6</dice>
+								<statmult type="number">1</statmult>
+								<type type="string">thunder,magic</type>
+							</id-00001>
+						</damagelist>
+						<order type="number">1</order>
+						<type type="string">damage</type>
+					</id-00001>
+					<id-00002>
+						<durmod type="number">1</durmod>
+						<label type="string">Deafened</label>
+						<order type="number">2</order>
+						<type type="string">effect</type>
+					</id-00002>
+					<id-00003>
+						<damagelist>
+							<id-00001>
+								<bonus type="number">0</bonus>
+								<dice type="dice">8d6</dice>
+								<type type="string">thunder,magic</type>
+							</id-00001>
+						</damagelist>
+						<order type="number">3</order>
+						<type type="string">damage</type>
+					</id-00003>
+					<id-00004>
+						<damagelist>
+							<id-00001>
+								<bonus type="number">0</bonus>
+								<dice type="dice">2d6</dice>
+								<type type="string">slashing,magic</type>
+							</id-00001>
+						</damagelist>
+						<order type="number">4</order>
+						<type type="string">damage</type>
+					</id-00004>
+					<id-00005>
+						<atkmod type="number">0</atkmod>
+						<atkprof type="number">1</atkprof>
+						<onmissdamage type="string">half</onmissdamage>
+						<order type="number">5</order>
+						<savedcbase type="string">ability</savedcbase>
+						<savedcmod type="number">0</savedcmod>
+						<savedcprof type="number">1</savedcprof>
+						<savedcstat type="string">intelligence</savedcstat>
+						<savemagic type="number">0</savemagic>
+						<savetype type="string">dexterity</savetype>
+						<type type="string">cast</type>
+					</id-00005>
+				</actions>
+				<cast type="number">0</cast>
+				<castingtime type="string">1 action</castingtime>
+				<components type="string">V, S, M (tiny sheet of metal</components>
+				<description type="formattedtext">
+					<p>Dexterity halves and negates deafness</p>
+					<p>A peal of thunder ripples from a point you can see within range. Each creature in the area muat make a Dexterity saving throw or takes 8d6 thunder damage and is deafened until the end of its next turn. If the area contains Large or larger nonmagical wood or stone objects, the objects take 8d6 thunder damage and creatures in the area that fail their saving throw take an additional 2d6 slashing damage from fling splinters. The thunderclap can be heard from 600 feet away.</p>
+					<p>Cast at Higher Levels. For every slot level above 3rd, the thunder and slashing damage increase by 1d6, and the thunderclap can be heard from an additional 100 feet away.</p>
+				</description>
+				<duration type="string">Instantaneous</duration>
+				<group type="string">Spells</group>
+				<level type="number">4</level>
+				<locked type="number">1</locked>
+				<name type="string">Thunder Bolt</name>
+				<prepared type="number">1</prepared>
+				<range type="string">Long (120 feet)</range>
+				<rare type="number">0</rare>
+				<ritual type="number">0</ritual>
+				<school type="string"> (evocation; arcane, attck, nature, sound, storm, thunder)</school>
+				<source type="string">Level Up Dungeon Delvers Guide</source>
+			</id-00022>
+			<id-00024>
+				<actions>
+					<id-00001>
+						<durmod type="number">10</durmod>
+						<durunit type="string">minute</durunit>
+						<label type="string">Detect Magic - redacted; (C)</label>
+						<order type="number">1</order>
+						<targeting type="string">self</targeting>
+						<type type="string">effect</type>
+					</id-00001>
+				</actions>
+				<cast type="number">0</cast>
+				<castingtime type="string">1 minute</castingtime>
+				<components type="string">V, S</components>
+				<description type="formattedtext">
+					<p>For the duration, you sense the presence of magic within 30 feet of you. If you sense magic in this way, you can use your action to see a faint aura around any visible creature or object in the area that bears magic, and you learn its school of magic, if any.</p>
+					<p>The spell can penetrate most barriers, but it is blocked by 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt.</p>
+				</description>
+				<duration type="string">Concentration, up to 10 minutes</duration>
+				<group type="string">Spells</group>
+				<level type="number">0</level>
+				<locked type="number">1</locked>
+				<name type="string">Detect Magic - redacted</name>
+				<prepared type="number">0</prepared>
+				<range type="string">Self</range>
+				<rare type="number">0</rare>
+				<ritual type="number">1</ritual>
+				<school type="string">Divination</school>
+				<source type="string">Bard, Cleric, Druid, Eldritch Knight, Eldritch Invocations, Paladin, Ranger, Sorcerer, Wizard, Arcane Trickster</source>
+			</id-00024>
+		</powers>
+		<profbonus type="number">3</profbonus>
+		<proficiencylist>
+			<id-00001>
+				<name type="string">Tool: One artisan’s tool of your choice from alchemist’s supplies, calligrapher’s supplies, or cartographer’s tools </name>
+			</id-00001>
+			<id-00002>
+				<name type="string">Weapon: Daggers, darts, slings, and quarterstaffs </name>
+			</id-00002>
+		</proficiencylist>
+		<race type="string">Human (Tyrannized)</race>
+		<racelink type="windowreference">
+			<class>reference_race</class>
+			<recordname>reference.racedata.id-00006@Level Up Advanced 5e Adventurer's Guide</recordname>
+		</racelink>
+		<senses type="string">Darkvision 5'</senses>
+		<size type="string">Medium</size>
+		<skilllist>
+			<id-00001>
+				<misc type="number">0</misc>
+				<name type="string">Perception</name>
+				<prof type="number">0</prof>
+				<shortcut type="number">0</shortcut>
+				<stat type="string">wisdom</stat>
+				<total type="number">2</total>
+			</id-00001>
+			<id-00002>
+				<misc type="number">0</misc>
+				<name type="string">Arcana</name>
+				<prof type="number">1</prof>
+				<shortcut type="number">0</shortcut>
+				<stat type="string">intelligence</stat>
+				<total type="number">7</total>
+			</id-00002>
+			<id-00003>
+				<misc type="number">0</misc>
+				<name type="string">Persuasion</name>
+				<prof type="number">0</prof>
+				<shortcut type="number">0</shortcut>
+				<stat type="string">charisma</stat>
+				<total type="number">0</total>
+			</id-00003>
+			<id-00004>
+				<misc type="number">0</misc>
+				<name type="string">Nature</name>
+				<prof type="number">0</prof>
+				<shortcut type="number">0</shortcut>
+				<stat type="string">intelligence</stat>
+				<total type="number">4</total>
+			</id-00004>
+			<id-00005>
+				<misc type="number">0</misc>
+				<name type="string">Medicine</name>
+				<prof type="number">0</prof>
+				<shortcut type="number">0</shortcut>
+				<stat type="string">wisdom</stat>
+				<total type="number">2</total>
+			</id-00005>
+			<id-00006>
+				<misc type="number">0</misc>
+				<name type="string">Survival</name>
+				<prof type="number">0</prof>
+				<shortcut type="number">0</shortcut>
+				<stat type="string">wisdom</stat>
+				<total type="number">2</total>
+			</id-00006>
+			<id-00007>
+				<misc type="number">0</misc>
+				<name type="string">Performance</name>
+				<prof type="number">0</prof>
+				<shortcut type="number">0</shortcut>
+				<stat type="string">charisma</stat>
+				<total type="number">0</total>
+			</id-00007>
+			<id-00008>
+				<misc type="number">0</misc>
+				<name type="string">Acrobatics</name>
+				<prof type="number">0</prof>
+				<shortcut type="number">0</shortcut>
+				<stat type="string">dexterity</stat>
+				<total type="number">0</total>
+			</id-00008>
+			<id-00009>
+				<misc type="number">0</misc>
+				<name type="string">Culture</name>
+				<prof type="number">1</prof>
+				<shortcut type="number">0</shortcut>
+				<stat type="string">intelligence</stat>
+				<total type="number">7</total>
+			</id-00009>
+			<id-00010>
+				<misc type="number">0</misc>
+				<name type="string">Athletics</name>
+				<prof type="number">0</prof>
+				<shortcut type="number">0</shortcut>
+				<stat type="string">strength</stat>
+				<total type="number">-1</total>
+			</id-00010>
+			<id-00011>
+				<misc type="number">0</misc>
+				<name type="string">Sleight of Hand</name>
+				<prof type="number">0</prof>
+				<shortcut type="number">0</shortcut>
+				<stat type="string">dexterity</stat>
+				<total type="number">0</total>
+			</id-00011>
+			<id-00012>
+				<misc type="number">0</misc>
+				<name type="string">Insight</name>
+				<prof type="number">0</prof>
+				<shortcut type="number">0</shortcut>
+				<stat type="string">wisdom</stat>
+				<total type="number">2</total>
+			</id-00012>
+			<id-00013>
+				<misc type="number">0</misc>
+				<name type="string">Intimidation</name>
+				<prof type="number">0</prof>
+				<shortcut type="number">0</shortcut>
+				<stat type="string">charisma</stat>
+				<total type="number">0</total>
+			</id-00013>
+			<id-00014>
+				<misc type="number">0</misc>
+				<name type="string">Deception</name>
+				<prof type="number">1</prof>
+				<shortcut type="number">0</shortcut>
+				<stat type="string">charisma</stat>
+				<total type="number">3</total>
+			</id-00014>
+			<id-00015>
+				<misc type="number">0</misc>
+				<name type="string">Investigation</name>
+				<prof type="number">0</prof>
+				<shortcut type="number">0</shortcut>
+				<stat type="string">intelligence</stat>
+				<total type="number">4</total>
+			</id-00015>
+			<id-00016>
+				<misc type="number">0</misc>
+				<name type="string">Religion</name>
+				<prof type="number">1</prof>
+				<shortcut type="number">0</shortcut>
+				<stat type="string">intelligence</stat>
+				<total type="number">7</total>
+			</id-00016>
+			<id-00017>
+				<misc type="number">0</misc>
+				<name type="string">Engineering</name>
+				<prof type="number">0</prof>
+				<shortcut type="number">0</shortcut>
+				<stat type="string">intelligence</stat>
+				<total type="number">4</total>
+			</id-00017>
+			<id-00018>
+				<misc type="number">0</misc>
+				<name type="string">Stealth</name>
+				<prof type="number">0</prof>
+				<shortcut type="number">0</shortcut>
+				<stat type="string">dexterity</stat>
+				<total type="number">0</total>
+			</id-00018>
+			<id-00019>
+				<misc type="number">0</misc>
+				<name type="string">History</name>
+				<prof type="number">0</prof>
+				<shortcut type="number">0</shortcut>
+				<stat type="string">intelligence</stat>
+				<total type="number">4</total>
+			</id-00019>
+			<id-00020>
+				<misc type="number">0</misc>
+				<name type="string">Animal Handling</name>
+				<prof type="number">0</prof>
+				<shortcut type="number">0</shortcut>
+				<stat type="string">wisdom</stat>
+				<total type="number">2</total>
+			</id-00020>
+			<id-00021>
+				<misc type="number">0</misc>
+				<name type="string">Maneuver</name>
+				<prof type="number">1</prof>
+				<shortcut type="number">0</shortcut>
+				<stat type="string">dexterity</stat>
+				<total type="number">3</total>
+			</id-00021>
+		</skilllist>
+		<speed>
+			<armor type="number">0</armor>
+			<base type="number">30</base>
+			<misc type="number">0</misc>
+			<temporary type="number">0</temporary>
+			<total type="number">30</total>
+		</speed>
+		<subracelink type="windowreference">
+			<class />
+			<recordname />
+		</subracelink>
+		<temp />
+		<token type="token">campaign/tokens/Al Nox 1.png</token>
+		<token3Dflat type="token">campaign/tokens/Al Nox 1.png</token3Dflat>
+		<traitlist>
+			<id-00001>
+				<locked type="number">1</locked>
+				<name type="string">Fast Learner</name>
+				<text type="formattedtext">
+					<p>With their shorter life spans, humans can acquire knowledge at a higher rate than more long-lived heritages (although not all acquire the wisdom to use it). You gain proficiency in one skill of your choice. In addition, you require half as much time as normal to train yourself in the use of a suit of armor, skill, tool, or weapon during downtime.</p>
+				</text>
+				<type type="string">racial</type>
+			</id-00001>
+			<id-00002>
+				<locked type="number">1</locked>
+				<name type="string">Intrepid</name>
+				<text type="formattedtext">
+					<p>Your survival instinct is remarkably strong. When you make an ability check, attack roll, or saving throw, you can choose to gain an expertise die on that roll. Once you use this trait, you cannot use it again until you finish a short or long rest.</p>
+				</text>
+				<type type="string">racial</type>
+			</id-00002>
+			<id-00003>
+				<locked type="number">1</locked>
+				<name type="string">Ingenious Focus</name>
+				<text type="formattedtext">
+					<p>Not all human minds work the same &#8212; some have a nearly miraculous level of focus. People with this intellectual mode often bring a surprising level of insight and passion to almost any topic they engage. In spite of their brilliance, they typically have difficulty with more general awareness. You have the following traits:</p>
+					<p>
+						<b>
+							<i>Inexorable Concentration. </i>
+						</b>When you fail a Constitution saving throw to maintain concentration, you can immediately reroll it, taking the new result. You may use this trait a number of times equal to your Intelligence modifier (minimum 1), and regain all expended uses after a long rest.</p>
+					<p>
+						<b>
+							<i>Resident Expert. </i>
+						</b>You have a reputation for painstaking detail on certain tasks and subjects. Choose two tools with which you are proficient, or a skill with which you are proficient from Animal Handling, Arcana, Culture, Engineering, History, Medicine, Nature, or Religion. When you make a check with that tool or skill and the d20 shows a natural result of less than 10, you can count the d20 result as being 10.</p>
+				</text>
+				<type type="string">racial</type>
+			</id-00003>
+			<id-00004>
+				<locked type="number">1</locked>
+				<name type="string">Tyrannized</name>
+				<text type="formattedtext">
+					<p>Many people live in fear of a tyrannical ruler and of the militant minions that punish dissent and disobedience. Performative loyalty becomes necessary for survival, until even those who oppose the ruler will sometimes betray their neighbors lest they be dragged away to torture and enslavement. Those who resist the tyrant learn to feign the role of faithful soldier, and the cruel irony is that they often profit from the violent conquests of the regime they loathe.</p>
+					<h>Traits</h>
+					<p>Characters raised in the tyrannized culture share a variety of traits in common with one another.</p>
+					<linklist>
+						<link class="reference_culturaltrait" recordname="..traits.id-00001">All Hail the Tyrant</link>
+						<link class="reference_culturaltrait" recordname="..traits.id-00002">Defiant Will</link>
+						<link class="reference_culturaltrait" recordname="..traits.id-00003">Saving Face</link>
+						<link class="reference_culturaltrait" recordname="..traits.id-00004">Scars of the Scourge</link>
+						<link class="reference_culturaltrait" recordname="..traits.id-00005">Languages</link>
+					</linklist>
+				</text>
+				<traits>
+					<id-00001>
+						<name type="string">All Hail the Tyrant</name>
+						<text type="formattedtext">
+							<p>With true freedom denied them many learn to feign deference, while some resign themselves to collaborating with the tyrant&#8217;s minions so as not to be suspected of disloyalty. You gain proficiency in either Deception or Intimidation.</p>
+						</text>
+					</id-00001>
+					<id-00002>
+						<name type="string">Defiant Will</name>
+						<text type="formattedtext">
+							<p>Whether out of fearful devotion to the tyrant or a stalwart resistance, you refuse to be subdued. You gain an expertise die on saving throws made to resist being charmed, frightened, paralyzed, poisoned, stunned, or put to sleep.</p>
+						</text>
+					</id-00002>
+					<id-00003>
+						<name type="string">Saving Face</name>
+						<text type="formattedtext">
+							<p>You are careful not to show weakness in front of others for fear of losing status. If you miss with an attack roll or fail an ability check, you can gain a bonus to the roll equal to the number of allies you can see within 30 feet of you (maximum +3), possibly changing a failure into a success. Once you use this trait, you can&#8217;t use it again until you finish a short or long rest.</p>
+						</text>
+					</id-00003>
+					<id-00004>
+						<name type="string">Scars of the Scourge</name>
+						<text type="formattedtext">
+							<p>The tyrant&#8217;s minions invariably have some preferred method of torment and you have either learned to survive it or chosen to use the weapon of your oppressors against them. Choose either scars or scourge, and then choose one of the following damage types: acid, cold, fire, force, lightning, necrotic, poison, psychic, radiant, or thunder.</p>
+							<p>
+								<b>
+									<i>Scars: </i>
+								</b>You have resistance to the chosen damage type.</p>
+							<p>
+								<b>
+									<i>Scourge: </i>
+								</b>As a bonus action, you can enhance the next attack you make this turn. If that attack hits, it deals extra damage of the chosen type equal to your proficiency bonus. However, the sting of the scourge lessens after the initial strike, so after you deal this extra damage to a creature, this trait cannot deal extra damage to it during the same combat.</p>
+						</text>
+					</id-00004>
+					<id-00005>
+						<name type="string">Languages</name>
+						<text type="formattedtext">
+							<p>You can speak, read, write, and sign Common and one other language.</p>
+						</text>
+					</id-00005>
+				</traits>
+			</id-00004>
+			<id-00005>
+				<locked type="number">1</locked>
+				<name type="string">Defiant Will</name>
+				<text type="formattedtext">
+					<p>Whether out of fearful devotion to the tyrant or a stalwart resistance, you refuse to be subdued. You gain an expertise die on saving throws made to resist being charmed, frightened, paralyzed, poisoned, stunned, or put to sleep.</p>
+				</text>
+			</id-00005>
+			<id-00006>
+				<locked type="number">1</locked>
+				<name type="string">All Hail the Tyrant</name>
+				<text type="formattedtext">
+					<p>With true freedom denied them many learn to feign deference, while some resign themselves to collaborating with the tyrant&#8217;s minions so as not to be suspected of disloyalty. You gain proficiency in either Deception or Intimidation.</p>
+				</text>
+			</id-00006>
+			<id-00007>
+				<locked type="number">1</locked>
+				<name type="string">Saving Face</name>
+				<text type="formattedtext">
+					<p>You are careful not to show weakness in front of others for fear of losing status. If you miss with an attack roll or fail an ability check, you can gain a bonus to the roll equal to the number of allies you can see within 30 feet of you (maximum +3), possibly changing a failure into a success. Once you use this trait, you can&#8217;t use it again until you finish a short or long rest.</p>
+				</text>
+			</id-00007>
+			<id-00008>
+				<locked type="number">1</locked>
+				<name type="string">Scars of the Scourge</name>
+				<text type="formattedtext">
+					<p>The tyrant&#8217;s minions invariably have some preferred method of torment and you have either learned to survive it or chosen to use the weapon of your oppressors against them. Choose either scars or scourge, and then choose one of the following damage types: acid, cold, fire, force, lightning, necrotic, poison, psychic, radiant, or thunder.</p>
+					<p>
+						<b>
+							<i>Scars: </i>
+						</b>You have resistance to the chosen damage type.</p>
+					<p>
+						<b>
+							<i>Scourge: </i>
+						</b>As a bonus action, you can enhance the next attack you make this turn. If that attack hits, it deals extra damage of the chosen type equal to your proficiency bonus. However, the sting of the scourge lessens after the initial strike, so after you deal this extra damage to a creature, this trait cannot deal extra damage to it during the same combat.</p>
+				</text>
+			</id-00008>
+			<id-00009>
+				<name type="string">Campaign Trait: Historian of the Rebellion (+1 CHA Skill / Stealth)</name>
+			</id-00009>
+		</traitlist>
+		<units />
+		<vehicles />
+		<weaponlist>
+			<id-00001>
+				<attackbonus type="number">0</attackbonus>
+				<carried type="number">2</carried>
+				<damagelist>
+					<id-00001>
+						<bonus type="number">0</bonus>
+						<dice type="dice">d6</dice>
+						<stat type="string">base</stat>
+						<type type="string">bludgeoning</type>
+					</id-00001>
+				</damagelist>
+				<handling type="number">0</handling>
+				<isidentified type="number">1</isidentified>
+				<maxammo type="number">0</maxammo>
+				<name type="string">Quarterstaff</name>
+				<prof type="number">1</prof>
+				<properties type="string">Parrying, two-handed</properties>
+				<shortcut type="windowreference">
+					<class>item</class>
+					<recordname>....inventorylist.id-00005</recordname>
+				</shortcut>
+				<type type="number">0</type>
+			</id-00001>
+		</weaponlist>
+	</character>
+</root>

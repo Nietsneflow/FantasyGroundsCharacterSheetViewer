@@ -1,0 +1,2587 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root version="5.1" dataversion="20260124" release="9|CoreRPG:7">
+	<character>
+		<abilities>
+			<charisma>
+				<bonus type="number">4</bonus>
+				<save type="number">9</save>
+				<savemodifier type="number">2</savemodifier>
+				<saveprof type="number">1</saveprof>
+				<score type="number">18</score>
+			</charisma>
+			<constitution>
+				<bonus type="number">2</bonus>
+				<save type="number">4</save>
+				<savemodifier type="number">2</savemodifier>
+				<saveprof type="number">0</saveprof>
+				<score type="number">14</score>
+			</constitution>
+			<dexterity>
+				<bonus type="number">2</bonus>
+				<save type="number">4</save>
+				<savemodifier type="number">2</savemodifier>
+				<saveprof type="number">0</saveprof>
+				<score type="number">14</score>
+			</dexterity>
+			<intelligence>
+				<bonus type="number">2</bonus>
+				<save type="number">7</save>
+				<savemodifier type="number">2</savemodifier>
+				<saveprof type="number">1</saveprof>
+				<score type="number">14</score>
+			</intelligence>
+			<luck>
+				<bonus type="number">0</bonus>
+				<current type="number">0</current>
+				<score type="number">10</score>
+			</luck>
+			<strength>
+				<bonus type="number">-1</bonus>
+				<save type="number">1</save>
+				<savemodifier type="number">2</savemodifier>
+				<saveprof type="number">0</saveprof>
+				<score type="number">8</score>
+			</strength>
+			<wisdom>
+				<bonus type="number">0</bonus>
+				<save type="number">2</save>
+				<savemodifier type="number">2</savemodifier>
+				<saveprof type="number">0</saveprof>
+				<score type="number">10</score>
+			</wisdom>
+		</abilities>
+		<adventurelist>
+			<id-00001 />
+		</adventurelist>
+		<attunement />
+		<background type="string">Artisan</background>
+		<backgroundlink type="windowreference">
+			<class>reference_background</class>
+			<recordname>reference.backgrounddata.id-00002@Level Up Advanced 5e Adventurer's Guide</recordname>
+		</backgroundlink>
+		<classes>
+			<id-00002>
+				<casterlevelinvmult type="number">1</casterlevelinvmult>
+				<casterpactmagic type="number">1</casterpactmagic>
+				<hddie type="dice">1d8</hddie>
+				<hdused type="number">0</hdused>
+				<level type="number">7</level>
+				<name type="string">Warlock - A5E</name>
+				<shortcut type="windowreference">
+					<class>reference_class</class>
+					<recordname>class.id-00005@Brian D</recordname>
+				</shortcut>
+				<specializationlink type="windowreference">
+					<class />
+					<recordname />
+				</specializationlink>
+			</id-00002>
+		</classes>
+		<cohorts />
+		<coins>
+			<id-00001>
+				<amount type="number">0</amount>
+				<name type="string">PP</name>
+			</id-00001>
+			<id-00002>
+				<amount type="number">0</amount>
+				<name type="string">GP</name>
+			</id-00002>
+			<id-00003>
+				<amount type="number">0</amount>
+				<name type="string">EP</name>
+			</id-00003>
+			<id-00004>
+				<amount type="number">0</amount>
+				<name type="string">SP</name>
+			</id-00004>
+			<id-00005>
+				<amount type="number">0</amount>
+				<name type="string">CP</name>
+			</id-00005>
+		</coins>
+		<death_indicator_token type="token"></death_indicator_token>
+		<death_indicators />
+		<defenses>
+			<ac>
+				<armor type="number">3</armor>
+				<disstealth type="number">0</disstealth>
+				<misc type="number">1</misc>
+				<prof type="number">1</prof>
+				<shield type="number">2</shield>
+				<temporary type="number">0</temporary>
+				<total type="number">18</total>
+			</ac>
+		</defenses>
+		<destiny type="string">Revenge</destiny>
+		<destinylink type="windowreference">
+			<class>reference_destiny</class>
+			<recordname>reference.destinydata.id-00007@Level Up Advanced 5e Adventurer's Guide</recordname>
+		</destinylink>
+		<encumbrance>
+			<bulkyitems type="number">1</bulkyitems>
+			<encumbered type="number">40</encumbered>
+			<encumberedheavy type="number">80</encumberedheavy>
+			<level type="number">0</level>
+			<liftpushdrag type="number">240</liftpushdrag>
+			<load type="number">13</load>
+			<max type="number">120</max>
+			<supply type="number">8</supply>
+		</encumbrance>
+		<exp type="number">0</exp>
+		<expneeded type="number">34000</expneeded>
+		<featlist>
+			<id-00001>
+				<locked type="number">1</locked>
+				<name type="string">Armor of Shadows </name>
+				<text type="formattedtext">
+					<p>You are under the constant effects of the <i>mage armor </i>spell. This effect does not emit a magical aura.</p>
+					<linklist>
+						<link class="power" recordname="reference.spelldata.id-00305@Level Up Advanced 5e Adventurer's Guide">
+							<b>Spell: </b>Mage Armor</link>
+					</linklist>
+				</text>
+				<type type="string">Eldritch Invocations</type>
+			</id-00001>
+			<id-00002>
+				<locked type="number">1</locked>
+				<name type="string">Mask of Many Faces </name>
+				<text type="formattedtext">
+					<p>You can cast <i>disguise self </i>without spending spell points.</p>
+					<linklist>
+						<link class="power" recordname="reference.spelldata.id-00137@Level Up Advanced 5e Adventurer's Guide">
+							<b>Spell: </b>Disguise Self</link>
+					</linklist>
+				</text>
+				<type type="string">Eldritch Invocations</type>
+			</id-00002>
+			<id-00003>
+				<locked type="number">1</locked>
+				<name type="string">Beguiling Influence </name>
+				<text type="formattedtext">
+					<p>You gain proficiency in Deception and Persuasion. If you are already proficient in either of these skills, you instead gain an expertise die.</p>
+				</text>
+				<type type="string">Eldritch Invocations</type>
+			</id-00003>
+			<id-00004>
+				<locked type="number">1</locked>
+				<name type="string">Agonizing Blast </name>
+				<text type="formattedtext">
+					<p>When you use your Eldritch Blast, you deal extra damage equal to your spellcasting ability modifier.</p>
+				</text>
+				<type type="string">Eldritch Invocations</type>
+			</id-00004>
+		</featlist>
+		<featurelist>
+			<id-00001>
+				<level type="number">1</level>
+				<locked type="number">1</locked>
+				<name type="string">Warlock Archetype</name>
+				<specializationchoice type="number">1</specializationchoice>
+				<text type="formattedtext">
+					<p>At 1st level, you have reached out to, stumbled upon, or otherwise crossed paths with a powerful entity beyond the ken of mortals, an otherworldly patron who sets you on the path of a Warlock Archetype. Whether you were willing, coerced, tricked&#8212; or if you exploited elder magical laws&#8212;a bargain was struck and you gained great power in exchange. Your choice of archetype grants you an expanded spell list and features at 1st level and again at 6th, 10th, and 14th level.</p>
+					<p>Warlocks are defined by their approach to eldritch mysteries&#8212;their patron may be an ever present menace or a mere cosmic echo. No matter the bargain struck or entity courted, the warlock is the hero of their own story and the pilot of their own fate.</p>
+					<h>Expanded Spell List</h>
+					<p>When you choose an archetype, you also choose an expanded spell list your patron grants you access to. Choose one patron expanded spell list. These spells count as warlock spells for you.</p>
+					<p>The enigmatic and often horrifying patrons of the Alienist convey the secrets of psionics and the stars. Some also teach about the darkness between stars.</p>
+					<p>The patrons of the Diabolist&#8212;often portrayed as demons, devils, and the shadow of the inner self&#8212;often grant spells of darkness and fire.</p>
+					<p>Faeries instruct their Spellbound on capricious spells related to bewilderment and mobility. The spiteful fey of the Unseelie Court also adore spells of darkness, and fairies who guard natural land-forms might specialize in a given element like fire.</p>
+				</text>
+			</id-00001>
+			<id-00002>
+				<level type="number">1</level>
+				<locked type="number">1</locked>
+				<name type="string">Pact Magic</name>
+				<specializationchoice type="number">0</specializationchoice>
+				<text type="formattedtext">
+					<p>With care, practice, and dedication you have learned how to best siphon and channel the otherworldly powers you&#8217;ve gained from your patron.</p>
+					<p>
+						<b>Cantrips </b>&#13;You know two cantrips of your choice from the warlock spell list. You learn additional warlock cantrips of your choice at higher levels, as shown in the Cantrips Known column of the Warlock table.</p>
+					<p>
+						<b>Spell Points </b>&#13;The Warlock table shows how many spell points you have. To cast one of your warlock spells of 1st-level or higher, you must spend a number spell points dependent on the spell&#8217;s level, shown on the table.</p>
+					<p>You can also cast a spell you know at a higher spell level by spending the appropriate number of spell points. The maximum spell level you can cast is shown in the Spell Level column of the Warlock table. You regain all expended spell points when you finish a short or long rest.</p>
+					<h>Table: Spell Points</h>
+					<table>
+						<tr>
+							<td>
+								<b>Spell Level</b>
+							</td>
+							<td>
+								<b>Spell Points</b>
+							</td>
+						</tr>
+						<tr>
+							<td>1st</td>
+							<td>2</td>
+						</tr>
+						<tr>
+							<td>2nd</td>
+							<td>3</td>
+						</tr>
+						<tr>
+							<td>3rd</td>
+							<td>5</td>
+						</tr>
+						<tr>
+							<td>4th</td>
+							<td>6</td>
+						</tr>
+						<tr>
+							<td>5th</td>
+							<td>7</td>
+						</tr>
+					</table>
+					<p>
+						<b>Spells Known of 1st-Level and Higher </b>&#13;You know two 1st-level spells of your choice from the warlock spell list.</p>
+					<p>The Spells Known column of the Warlock table shows when you learn more warlock spells of your choice. Each of these spells must be of a level that you are able to cast. For instance, when you reach 3rd level in this class, you can learn one new spell of 1st-or 2nd-level.</p>
+					<p>Additionally, when you gain a level in this class, you can choose one of the warlock spells you know and replace it with another spell from the warlock spell list, which also must be of a level of which you can cast.</p>
+					<p>
+						<b>Spellcasting Ability </b>&#13;The manner in which you pursue ever greater power from your patron is defined by the nature of that pursuit: through wit, devotion, or fervor. Choose Intelligence, Wisdom, or Charisma to be your spellcasting ability. Once you make this choice, you cannot change it. You use the chosen ability whenever a spell refers to your spellcasting ability. In addition, you use that ability modifier when setting the saving throw DC for a warlock spell you cast and when making an attack roll with one. <b>&#13;Spell save DC </b>= 8 + your proficiency bonus + your chosen ability modifier <b>&#13;Spell attack modifier </b>= your proficiency bonus + your chosen ability modifier</p>
+					<p>
+						<b>Spellcasting Focus </b>&#13;You can use an arcane focus as a spellcasting focus for your warlock spells.</p>
+				</text>
+			</id-00002>
+			<id-00003>
+				<level type="number">1</level>
+				<locked type="number">1</locked>
+				<name type="string">Eldritch Blast</name>
+				<specializationchoice type="number">0</specializationchoice>
+				<text type="formattedtext">
+					<p>At 1st level you learn to use your patron&#8217;s power as a weapon, blasting enemies with an eldritch force that defies even the laws of magic. Choose one of the following features:</p>
+					<p>
+						<b>Eldritch Disturbance </b>&#13;You can use an action to strike a creature you can see within 60 feet with a reality-distorting curse, blending pain both mental and physical. The target makes a Wisdom saving throw, taking 1d10 force damage on a failure, or half damage on a success.</p>
+					<linklist>
+						<link class="reference_classfeature" recordname="class.id-00005.features.id-00008@Brian D">Eldritch Disturbance</link>
+					</linklist>
+					<p>
+						<b>Eldritch Ray </b>&#13;You can use an action to create a deadly beam that strikes a creature within 120 feet. Make a ranged spell attack against the creature, dealing 1d10 force damage on a hit.</p>
+					<linklist>
+						<link class="reference_classfeature" recordname="class.id-00005.features.id-00043@Brian D">Eldritch Ray</link>
+					</linklist>
+					<p>
+						<b>Eldritch Scythe </b>&#13;Once per turn when you would make a melee weapon attack as part of the Attack action or an opportunity attack, you can instead make a melee spell attack, lashing out with an ephemeral and unearthly blade. On hit, the target takes 1d8 force damage. In addition, choose a different creature that you can see and that is within your reach. It takes half as much damage.</p>
+					<linklist>
+						<link class="reference_classfeature" recordname="class.id-00005.features.id-00055@Brian D">Eldritch Scythe</link>
+					</linklist>
+					<p>
+						<b>Eldritch Whip </b>&#13;You can use an action to thrash a creature with a scintillating tendril of arcane force. Make a melee spell attack against a creature within 15 feet, dealing 1d6 force damage on a hit.</p>
+					<p>At the end of your turn you gain a number of temporary hit points equal to half the damage you dealt with Eldritch Whip this turn (minimum 1), which last until the end of your next turn. When you hit a creature with your Eldritch Whip and you already have temporary hit points, you can end the temporary hit points early to gain a bonus to the Eldritch Whip&#8217;s damage roll equal to half the number of temporary hit points you ended early.</p>
+					<linklist>
+						<link class="reference_classfeature" recordname="class.id-00005.features.id-00056@Brian D">Eldritch Whip</link>
+					</linklist>
+				</text>
+			</id-00003>
+			<id-00004>
+				<locked type="number">1</locked>
+				<name type="string">Ability Score Increases</name>
+				<text type="formattedtext">
+					<p>+1 to Intelligence and one other ability score.</p>
+				</text>
+			</id-00004>
+			<id-00005>
+				<locked type="number">1</locked>
+				<name type="string">Feature: Trade Mark.</name>
+				<text type="formattedtext">
+					<p>When in a city or town, you have access to a fully-stocked workshop with everything you need to ply your trade. Furthermore, you can expect to earn full price when you sell items you have crafted (though there is no guarantee of a buyer).</p>
+				</text>
+			</id-00005>
+			<id-00006>
+				<level type="number">2</level>
+				<locked type="number">1</locked>
+				<name type="string">Eldritch Invocations (1)</name>
+				<specializationchoice type="number">0</specializationchoice>
+				<text type="formattedtext">
+					<p>The gifts of your patron are manyfold&#8212;not only can you channel their magic to work spells, but you can also siphon away talents, tricks, and reality-defying essence to perform other impressive magical feats.</p>
+					<p>At 2nd level, you gain an eldritch invocation of your choice. Your invocation options are detailed at the end of the class description. When you gain certain warlock levels, you gain additional invocations of your choice, as shown in the Invocations Known column of the Warlock table. Additionally, when you gain a level in this class, you can choose one of the invocations you know and replace it with another invocation that you could learn at that level.</p>
+					<p>If you should gain a bonus invocation, they do not count against your Invocations known.</p>
+					<p>
+						<b>
+							<i>Extra Secrets of Arcana. </i>
+						</b>When you are able to learn a new invocation in this way, you may instead choose to learn a secret of arcana.</p>
+					<p>If an eldritch invocation has prerequisites, you must meet them to learn it. You can learn the invocation at the same time that you meet its prerequisites. A level prerequisite refers to your warlock level.</p>
+					<p>
+						<b>Agonizing Blast </b>&#13;When you use your Eldritch Blast, you deal extra damage equal to your spellcasting ability modifier.</p>
+					<linklist>
+						<link class="reference_feat" recordname="reference.featdata.id-00479@Level Up Advanced 5e Adventurer's Guide">Agonizing Blast</link>
+					</linklist>
+					<p>
+						<b>Arcane Appropriation </b>
+						<i>&#13;Prerequisite: 5th level </i>&#13;When you use a magic item, you ignore any requirements related to class, culture, heritage, or level.</p>
+					<linklist>
+						<link class="reference_feat" recordname="reference.featdata.id-00480@Level Up Advanced 5e Adventurer's Guide">Arcane Appropriation</link>
+					</linklist>
+					<p>
+						<b>Armor of Shadows </b>&#13;You are under the constant effects of the mage armor spell. This effect does not emit a magical aura.</p>
+					<linklist>
+						<link class="reference_feat" recordname="reference.featdata.id-00481@Level Up Advanced 5e Adventurer's Guide">Armor of Shadows</link>
+					</linklist>
+					<p>
+						<b>Beguiling Influence </b>&#13;You gain proficiency in Deception and Persuasion. If you are already proficient in either of these skills, you instead gain an expertise die.</p>
+					<linklist>
+						<link class="reference_feat" recordname="reference.featdata.id-00482@Level Up Advanced 5e Adventurer's Guide">Beguiling Influence</link>
+					</linklist>
+					<p>
+						<b>Chains of Carceri </b>
+						<i>&#13;Prerequisite: 15th level, Pact of the Chain feature </i>&#13;You can cast hold monster on a celestial, fiend, or elemental without spending spell points or material components. You must finish a long rest before you can use this invocation on the same creature again.</p>
+					<linklist>
+						<link class="reference_feat" recordname="reference.featdata.id-00483@Level Up Advanced 5e Adventurer's Guide">Chains of Carceri</link>
+					</linklist>
+					<p>
+						<b>Cosmic Armory </b>
+						<i>&#13;Prerequisite: 17th level </i>&#13;Your patron bestows you with a magic item worth no more than 25,000 gold. Your patron collects this item when you die or lose this invocation.</p>
+					<linklist>
+						<link class="reference_feat" recordname="reference.featdata.id-00484@Level Up Advanced 5e Adventurer's Guide">Cosmic Armory</link>
+					</linklist>
+					<p>
+						<b>Courts of the Outer Realms </b>&#13;Choose one creature type from the following: aberration, celestial, elemental, fey, fiend, or undead. You are familiar with the intricacies of society and politics among those creatures, and you have advantage on checks made to interact with them or recall lore about them.</p>
+					<p>Additionally, you gain proficiency with your choice of either Arcana, Culture, History, or Religion. If you are already proficient in the chosen skill, you instead gain an expertise die.</p>
+					<linklist>
+						<link class="reference_feat" recordname="reference.featdata.id-00485@Level Up Advanced 5e Adventurer's Guide">Courts of the Outer Realms</link>
+					</linklist>
+					<p>
+						<b>Deep Patronage </b>
+						<i>&#13;Prerequisite: 11th level </i>&#13;Choose an additional patron expanded spell list. You learn all the spells on that list and they do not count against your spells known.</p>
+					<linklist>
+						<link class="reference_feat" recordname="reference.featdata.id-00486@Level Up Advanced 5e Adventurer's Guide">Deep Patronage</link>
+					</linklist>
+					<p>
+						<b>Dreadful Word </b>
+						<i>&#13;Prerequisite: 7th level </i>&#13;You learn the confusion spell, and the spell doesn&#8217;t count against your number of spells known.</p>
+					<linklist>
+						<link class="reference_feat" recordname="reference.featdata.id-00487@Level Up Advanced 5e Adventurer's Guide">Dreadful Word</link>
+					</linklist>
+					<p>
+						<b>Eighth Arcanum </b>
+						<i>&#13;Prerequisite: 15th level </i>&#13;You learn an 8th-level warlock spell that you can cast once between long rests.</p>
+					<linklist>
+						<link class="reference_feat" recordname="reference.featdata.id-00488@Level Up Advanced 5e Adventurer's Guide">Eighth Arcanum</link>
+					</linklist>
+					<p>
+						<b>Eldritch Bind </b>
+						<i>&#13;Prerequisite: 7th level, Eldritch Whip feature </i>&#13;When you hit a creature with your Eldritch Whip, you can force it to make a Constitution saving throw or be paralyzed for 1 minute. At the end of each of its turns, the paralyzed creature can repeat the saving throw, ending the effect on a success.</p>
+					<p>Once you use this feature, you cannot do so again until you finish a short or long rest. You also regain the use of this feature after you&#8217;ve spent 5 spell points to cast a spell or use other warlock features.</p>
+					<linklist>
+						<link class="reference_feat" recordname="reference.featdata.id-00489@Level Up Advanced 5e Adventurer's Guide">Eldritch Bind</link>
+					</linklist>
+					<p>
+						<b>Eldritch Elementalism </b>&#13;When you use your Eldritch Blast, you can spend 1 spell point to choose acid, cold, fire, lightning, necrotic, poison, psychic, radiant, or thunder damage. Until you complete a short or long rest, your Eldritch Blast deals your choice of force damage or the chosen damage type.</p>
+					<linklist>
+						<link class="reference_feat" recordname="reference.featdata.id-00490@Level Up Advanced 5e Adventurer's Guide">Eldritch Elementalism</link>
+					</linklist>
+					<p>
+						<b>Eldritch Grasp </b>
+						<i>&#13;Prerequisite: 7th level </i>&#13;When you hit a Large-sized or smaller creature with your Eldritch Blast or when a Large-sized or smaller creature fails its saving throw against it, you can attempt to grapple the creature, using your spell save DC instead of your maneuver DC. The grapple automatically ends if the creature leaves your Eldritch Blast range or if you attempt to grapple another creature.</p>
+					<linklist>
+						<link class="reference_feat" recordname="reference.featdata.id-00491@Level Up Advanced 5e Adventurer's Guide">Eldritch Grasp</link>
+					</linklist>
+					<p>
+						<b>Eldritch Prism </b>
+						<i>&#13;Prerequisite: 7th level, Eldritch Disturbance feature </i>&#13;You can use an action to unleash your Eldritch Blast against creatures within a 20-foot diameter cube originating at a point within 60 feet. Each creature in the area makes a Wisdom saving throw, taking force damage equal to 1d10 &#215; your proficiency bonus on a failure, or half damage on a success. Once you use this feature, you cannot do so again until you finish a short or long rest. You also regain the use of this feature after you&#8217;ve spent 5 spell points to cast a spell or use other features.</p>
+					<linklist>
+						<link class="reference_feat" recordname="reference.featdata.id-00492@Level Up Advanced 5e Adventurer's Guide">Eldritch Prism</link>
+					</linklist>
+					<p>
+						<b>Eldritch Riposte </b>
+						<i>&#13;Prerequisite: Eldritch Disturbance or Eldritch Ray feature </i>&#13;When a creature you can see within 30 feet deals damage to you, you can use your reaction and spend spell points to use your Eldritch Disturbance or Eldritch Ray against it. Instead of the normal damage, you deal 1d10 force damage for every 1 spell point spent activating this feature (up to a maximum equal to your proficiency bonus).</p>
+					<linklist>
+						<link class="reference_feat" recordname="reference.featdata.id-00493@Level Up Advanced 5e Adventurer's Guide">Eldritch Riposte</link>
+					</linklist>
+					<p>
+						<b>Eldritch Severance </b>
+						<i>&#13;Prerequisite: 7th level, Eldritch Scythe feature </i>&#13;You can use an action to unleash your Eldritch Blast against creatures within a 60-foot line that is 5 feet wide. Each creature in the area makes a Dexterity saving throw, taking force damage equal to 1d10 x your proficiency bonus on a failure, or half damage on a success.</p>
+					<p>Once you use this feature, you cannot do so again until you finish a short or long rest. You also regain the use of this feature after you&#8217;ve spent 5 spell points to cast a spell or use other features.</p>
+					<linklist>
+						<link class="reference_feat" recordname="reference.featdata.id-00494@Level Up Advanced 5e Adventurer's Guide">Eldritch Severance</link>
+					</linklist>
+					<p>
+						<b>Eldritch Spear </b>
+						<i>&#13;Prerequisite: Eldritch Ray feature </i>&#13;The range of your Eldritch Ray increases to 300 feet.</p>
+					<linklist>
+						<link class="reference_feat" recordname="reference.featdata.id-00495@Level Up Advanced 5e Adventurer's Guide">Eldritch Spear</link>
+					</linklist>
+					<p>
+						<b>Eldritch Squall </b>
+						<i>&#13;Prerequisite: 7th level, Eldritch Ray feature </i>&#13;You can use an action to unleash your Eldritch Blast against all creatures within a 30-foot cone. Each creature in the area makes a Dexterity saving throw, taking force damage equal to 1d10 &#215; your proficiency bonus on a failure, or half damage on a success.</p>
+					<p>Once you use this feature, you cannot do so again until you finish a short or long rest. You also regain the use of this feature after you&#8217;ve spent 5 spell points to cast a spell or use other features.</p>
+					<linklist>
+						<link class="reference_feat" recordname="reference.featdata.id-00496@Level Up Advanced 5e Adventurer's Guide">Eldritch Squall</link>
+					</linklist>
+					<p>
+						<b>Eldritch Tentacle </b>&#13;When you hit a creature with your Eldritch Blast or when a creature fails its saving throw against it, you can pull the creature up to 10 feet straight toward you.</p>
+					<linklist>
+						<link class="reference_feat" recordname="reference.featdata.id-00497@Level Up Advanced 5e Adventurer's Guide">Eldritch Tentacle</link>
+					</linklist>
+					<p>
+						<b>Eldritch Warrior </b>&#13;You gain proficiency with medium armor and martial weapons.</p>
+					<linklist>
+						<link class="reference_feat" recordname="reference.featdata.id-00498@Level Up Advanced 5e Adventurer's Guide">Eldritch Warrior</link>
+					</linklist>
+					<p>
+						<b>Entity of Myth </b>
+						<i>&#13;Prerequisite: 17th level </i>&#13;You gain resistance to bludgeoning, piercing, and slashing damage from nonmagical weapons and weapons not made from cold iron.</p>
+					<linklist>
+						<link class="reference_feat" recordname="reference.featdata.id-00499@Level Up Advanced 5e Adventurer's Guide">Entity of Myth</link>
+					</linklist>
+					<p>
+						<b>Eyes of the Rune Keeper </b>&#13;You can read all writing.</p>
+					<linklist>
+						<link class="reference_feat" recordname="reference.featdata.id-00500@Level Up Advanced 5e Adventurer's Guide">Eyes of the Rune Keeper</link>
+					</linklist>
+					<p>
+						<b>Fiendish Vigor </b>&#13;You learn the <i>false life </i>spell, and the spell doesn&#8217;t count against your number of spells known. When you cast it on yourself as 1st-level spell, you can do so without spending spell points or material components.</p>
+					<linklist>
+						<link class="reference_feat" recordname="reference.featdata.id-00501@Level Up Advanced 5e Adventurer's Guide">Fiendish Vigor</link>
+					</linklist>
+					<p>
+						<b>Fog Dance </b>
+						<i>&#13;Prerequisite: 13th level, Spellbound archetype </i>&#13;You can cast <i>misty step </i>at will, and if you do not move on your turn you can cast it without using a bonus action.</p>
+					<linklist>
+						<link class="reference_feat" recordname="reference.featdata.id-00502@Level Up Advanced 5e Adventurer's Guide">Fog Dance</link>
+					</linklist>
+					<p>
+						<b>Frog Fangs </b>
+						<i>&#13;Prerequisite: Pact of the Chain feature </i>&#13;Your familiar can take the Attack action. Attacks made by or delivered through your familiar use your spell attack bonus and deal additional force damage equal to your proficiency bonus.</p>
+					<linklist>
+						<link class="reference_feat" recordname="reference.featdata.id-00503@Level Up Advanced 5e Adventurer's Guide">Frog Fangs</link>
+					</linklist>
+					<p>
+						<b>Gaze of Two Minds </b>&#13;You can use your action to touch a willing humanoid and perceive through its senses until the end of your next turn. On subsequent turns you can use a bonus action to maintain this connection, extending the duration until the end of your next turn. While perceiving through the other creature&#8217;s senses, you benefit from any special senses possessed by that creature, and you are blinded and deafened to your own surroundings.</p>
+					<linklist>
+						<link class="reference_feat" recordname="reference.featdata.id-00504@Level Up Advanced 5e Adventurer's Guide">Gaze of Two Minds</link>
+					</linklist>
+					<p>
+						<b>Lifedrinker </b>
+						<i>&#13;Prerequisite: Pact of the Blade feature </i>&#13;When you hit a creature with your pact weapon, the creature takes extra necrotic damage equal to your spellcasting ability modifier (minimum 1).</p>
+					<linklist>
+						<link class="reference_feat" recordname="reference.featdata.id-00505@Level Up Advanced 5e Adventurer's Guide">Lifedrinker</link>
+					</linklist>
+					<p>
+						<b>Mask of Many Faces </b>&#13;You can cast disguise self without spending spell points.</p>
+					<linklist>
+						<link class="reference_feat" recordname="reference.featdata.id-00506@Level Up Advanced 5e Adventurer's Guide">Mask of Many Faces</link>
+					</linklist>
+					<p>
+						<b>Minions of the Multiverse </b>
+						<i>&#13;Prerequisite: 7th level </i>&#13;When you choose this invocation, choose one spell of the summoning school of your choice from any spell list, up to a spell level that you are capable of casting (maximum of 5th-level). You can cast this spell once by spending an appropriate number of spell points (see Table: Spell Points). You cannot do so again until you finish a long rest.</p>
+					<linklist>
+						<link class="reference_feat" recordname="reference.featdata.id-00507@Level Up Advanced 5e Adventurer's Guide">Minions of the Multiverse</link>
+					</linklist>
+					<p>
+						<b>Mire the Mind </b>
+						<i>&#13;Prerequisite: 5th level </i>&#13;You can cast <i>slow </i>once by spending 5 spell points. You cannot do so again until you finish a long rest.</p>
+					<linklist>
+						<link class="reference_feat" recordname="reference.featdata.id-00508@Level Up Advanced 5e Adventurer's Guide">Mire the Mind</link>
+					</linklist>
+					<p>
+						<b>Misty Visions </b>&#13;You can cast <i>silent image </i>without spending spell points or material components.</p>
+					<linklist>
+						<link class="reference_feat" recordname="reference.featdata.id-00509@Level Up Advanced 5e Adventurer's Guide">Misty Visions</link>
+					</linklist>
+					<p>
+						<b>Noxious Invigoration </b>&#13;Whenever you gain temporary hit points, increase the amount you gain by your proficiency bonus.</p>
+					<linklist>
+						<link class="reference_feat" recordname="reference.featdata.id-00510@Level Up Advanced 5e Adventurer's Guide">Noxious Invigoration</link>
+					</linklist>
+					<p>
+						<b>Ominous Tormentor </b>&#13;You gain proficiency in Insight and Intimidation. If you are already proficient in either of these skills, you instead gain an expertise die.</p>
+					<linklist>
+						<link class="reference_feat" recordname="reference.featdata.id-00511@Level Up Advanced 5e Adventurer's Guide">Ominous Tormentor</link>
+					</linklist>
+					<p>
+						<b>Overclocked Concentration </b>
+						<i>&#13;Prerequisite: 15th level </i>&#13;You can maintain concentration on two spells simultaneously. Their cumulative spell-level can be no higher than 5th-level. You roll once for concentration checks, as if you were concentrating on a single spell, and when you lose concentration both spells end.</p>
+					<linklist>
+						<link class="reference_feat" recordname="reference.featdata.id-00512@Level Up Advanced 5e Adventurer's Guide">Overclocked Concentration</link>
+					</linklist>
+					<p>
+						<b>Pactkeeper&#8217;s Reward </b>
+						<i>&#13;Prerequisite: 13th level </i>&#13;You gain an additional Pact Boon of your choice.</p>
+					<linklist>
+						<link class="reference_feat" recordname="reference.featdata.id-00513@Level Up Advanced 5e Adventurer's Guide">Pactkeeper&#8217;s Reward</link>
+					</linklist>
+					<p>
+						<b>Patron Token </b>&#13;Your patron gifts you with a patron token (Chapter 9: Enchanted Gear in Trials &#38; Treasures). You are unable to sell your patron token, and if you somehow lose it the next time you finish a long rest you discover it on your person. Once your token is consumed, your patron replaces it and you find it on your person the next time you finish a long rest.</p>
+					<linklist>
+						<link class="reference_feat" recordname="reference.featdata.id-00514@Level Up Advanced 5e Adventurer's Guide">Patron Token</link>
+					</linklist>
+					<p>
+						<b>Penultimate Arcanum </b>
+						<i>&#13;Prerequisite: 17th level </i>&#13;You learn a 9th-level warlock spell that you can cast once between long rests.</p>
+					<linklist>
+						<link class="reference_feat" recordname="reference.featdata.id-00515@Level Up Advanced 5e Adventurer's Guide">Penultimate Arcanum</link>
+					</linklist>
+					<p>
+						<b>Potent Witchcraft </b>&#13;Your warlock cantrips deal extra damage equal to your spellcasting ability modifier.</p>
+					<linklist>
+						<link class="reference_feat" recordname="reference.featdata.id-00516@Level Up Advanced 5e Adventurer's Guide">Potent Witchcraft</link>
+					</linklist>
+					<p>
+						<b>Psionic Secrecy </b>
+						<i>&#13;Prerequisite: 11th level, Alienist archetype </i>&#13;When you cast a warlock spell, you may choose to do so psionically without the need for seen or vocalized components. Once you have used this feature a number of times equal to your spellcasting ability modifier, you cannot do so again until you finish a long rest.</p>
+					<linklist>
+						<link class="reference_feat" recordname="reference.featdata.id-00517@Level Up Advanced 5e Adventurer's Guide">Psionic Secrecy</link>
+					</linklist>
+					<p>
+						<b>Reanimator </b>
+						<i>&#13;Prerequisite: 5th level </i>&#13;You can cast <i>animate dead </i>once by spending 5 spell points; you can instead cast it as 4th-level spell by spending 6 spell points, or as a 5th-level spell by spending 7 spell points. You cannot do so again until you finish a long rest.</p>
+					<linklist>
+						<link class="reference_feat" recordname="reference.featdata.id-00518@Level Up Advanced 5e Adventurer's Guide">Reanimator</link>
+					</linklist>
+					<p>
+						<b>Repelling Blast </b>&#13;When you hit a creature with your Eldritch Blast or when a creature fails its saving throw against it, you can push the creature up to 10 feet away from you in a straight line.</p>
+					<linklist>
+						<link class="reference_feat" recordname="reference.featdata.id-00519@Level Up Advanced 5e Adventurer's Guide">Repelling Blast</link>
+					</linklist>
+					<p>
+						<b>Sculptor of Flesh </b>
+						<i>&#13;Prerequisite: 7th level </i>&#13;You can cast <i>polymorph </i>once by spending 6 spell points. You cannot do so again until you finish a long rest.</p>
+					<linklist>
+						<link class="reference_feat" recordname="reference.featdata.id-00520@Level Up Advanced 5e Adventurer's Guide">Sculptor of Flesh</link>
+					</linklist>
+					<p>
+						<b>Seething Aura </b>
+						<i>&#13;Prerequisite: 15h level </i>&#13;Choose one of the following damage types: cold, fire, lightning, necrotic, psychic, radiant. Whenever you spend spell points, you can choose to unleash energy that deals an equal amount of damage of the chosen type to hostile creatures within 15 feet of you.</p>
+					<linklist>
+						<link class="reference_feat" recordname="reference.featdata.id-00521@Level Up Advanced 5e Adventurer's Guide">Seething Aura</link>
+					</linklist>
+					<p>
+						<b>Seventh Arcanum </b>
+						<i>&#13;Prerequisite: 13th level </i>&#13;You learn a 7th-level warlock spell that you can cast once between long rests.</p>
+					<linklist>
+						<link class="reference_feat" recordname="reference.featdata.id-00522@Level Up Advanced 5e Adventurer's Guide">Seventh Arcanum</link>
+					</linklist>
+					<p>
+						<b>Sixth Arcanum </b>
+						<i>&#13;Prerequisite: 11th level </i>
+						<b>&#13;You learn a 6th-level warlock spell that you can cast once between long rests.</b>
+					</p>
+					<linklist>
+						<link class="reference_feat" recordname="reference.featdata.id-00523@Level Up Advanced 5e Adventurer's Guide">Sixth Arcanum</link>
+					</linklist>
+					<p>
+						<b>Sign of Ill Omen </b>
+						<i>&#13;Prerequisite: 5th level </i>&#13;You learn the <i>bestow curse </i>spell, and the spell doesn&#8217;t count against your number of spells known.</p>
+					<linklist>
+						<link class="reference_feat" recordname="reference.featdata.id-00524@Level Up Advanced 5e Adventurer's Guide">Sign of Ill Omen</link>
+					</linklist>
+					<p>
+						<b>Spellbinding Contract </b>
+						<i>&#13;Prerequisite: 9th level </i>&#13;You can cast <i>geas </i>once by spending 7 spell points. You cannot do so again until you finish a long rest. If the command of the geas is the stipulation of an agreement to which the target consents, the target automatically fails its saving throw against this spell.</p>
+					<linklist>
+						<link class="reference_feat" recordname="reference.featdata.id-00525@Level Up Advanced 5e Adventurer's Guide">Spellbinding Contract</link>
+					</linklist>
+					<p>
+						<b>Thief of Five Fates </b>&#13;You learn the <i>bane </i>spell, and the spell doesn&#8217;t count against your number of spells known.</p>
+					<linklist>
+						<link class="reference_feat" recordname="reference.featdata.id-00526@Level Up Advanced 5e Adventurer's Guide">Thief of Five Fates</link>
+					</linklist>
+					<p>
+						<b>Tines of Wyrd </b>
+						<i>&#13;Prerequisite: 15th level </i>&#13;When you fail a saving throw, you can spend 5 spell points to reroll it and take the second result.</p>
+					<linklist>
+						<link class="reference_feat" recordname="reference.featdata.id-00527@Level Up Advanced 5e Adventurer's Guide">Tines of Wyrd</link>
+					</linklist>
+					<p>
+						<b>Thirsting Blade </b>
+						<i>&#13;Prerequisite: 5th level, Pact of the Blade feature </i>&#13;You can attack with your pact weapon twice, instead of once, whenever you take the Attack action on your turn.</p>
+					<linklist>
+						<link class="reference_feat" recordname="reference.featdata.id-00528@Level Up Advanced 5e Adventurer's Guide">Thirsting Blade</link>
+					</linklist>
+					<p>
+						<b>Versatile Blast </b>&#13;You learn an additional Eldritch Blast feature of your choice.</p>
+					<p>You can take this invocation a second and third time, each time learning a new Eldritch Blast feature.</p>
+					<linklist>
+						<link class="reference_feat" recordname="reference.featdata.id-00529@Level Up Advanced 5e Adventurer's Guide">Versatile Blast</link>
+					</linklist>
+					<p>
+						<b>Voice of the Chain Master </b>
+						<i>&#13;Prerequisite: Pact of the Chain feature </i>&#13;So long as you are on the same plane of existence, you can communicate telepathically with your familiar, perceive through your familiar&#8217;s senses, and also speak through your familiar in your own voice (even if your familiar is normally incapable of speech).</p>
+					<linklist>
+						<link class="reference_feat" recordname="reference.featdata.id-00530@Level Up Advanced 5e Adventurer's Guide">Voice of the Chain Master</link>
+					</linklist>
+					<p>
+						<b>Whispers of the Grave </b>
+						<i>&#13;Prerequisite: 9th level </i>&#13;You can cast <i>speak with dead </i>without spending spell points.</p>
+					<linklist>
+						<link class="reference_feat" recordname="reference.featdata.id-00531@Level Up Advanced 5e Adventurer's Guide">Whispers of the Grave</link>
+					</linklist>
+					<p>
+						<b>Wicked Youth </b>
+						<i>&#13;Prerequisite: 15th level, Diabolist archetype </i>&#13;You are immune to necrotic damage, you are immune to disease, and you cannot be magically aged. When you kill a creature, you can either reduce your apparent age or extend your life span by a number of years equal to the creature&#8217;s CR. When you would die of old age, you instead become undead, gaining the skeletal or zombie template (Monstrous Menagerie) with no changes to your ability scores.</p>
+					<linklist>
+						<link class="reference_feat" recordname="reference.featdata.id-00532@Level Up Advanced 5e Adventurer's Guide">Wicked Youth</link>
+					</linklist>
+					<p>
+						<b>Witch Sight </b>
+						<i>&#13;Prerequisite: 15th level </i>&#13;You can see the true form of any shapechanger or creature concealed by illusion or transmutation magic while the creature is within 30 feet of you and within line of sight.</p>
+					<linklist>
+						<link class="reference_feat" recordname="reference.featdata.id-00533@Level Up Advanced 5e Adventurer's Guide">Witch Sight</link>
+					</linklist>
+					<p>
+						<b>Writhing Void </b>
+						<i>&#13;Prerequisite: 7th level </i>&#13;You learn the <i>black tentacles </i>spell, and the spell doesn&#8217;t count against your number of spells known.</p>
+					<linklist>
+						<link class="reference_feat" recordname="reference.featdata.id-00534@Level Up Advanced 5e Adventurer's Guide">Writhing Void</link>
+					</linklist>
+				</text>
+			</id-00006>
+			<id-00007>
+				<level type="number">2</level>
+				<locked type="number">1</locked>
+				<name type="string">Secrets of Arcana (1)</name>
+				<specializationchoice type="number">0</specializationchoice>
+				<text type="formattedtext">
+					<p>Also at 2nd level, you realize that there is power to be taken that your patron may never have meant for you to have. You gain a secret of arcana of your choice. Your secrets are detailed at the end of the class description. The Secrets Known column of the Warlock table shows when you learn more secrets of arcana.</p>
+					<p>When you gain access to a new secret of arcana, choose one of the following. Some secrets have requirements, such as minimum warlock level, class feature, or another secret. You must meet those requirements before you choose that secret.</p>
+					<h>Ascendant Step</h>
+					<p>
+						<i>Prerequisite: 9th level</i>
+					</p>
+					<p>You can cast <i>levitate </i>on yourself without spending spell points or material components.</p>
+					<linklist>
+						<link class="power" recordname="reference.spelldata.id-00514@Level Up Advanced 5e Adventurer's Guide">Spell: Levitate</link>
+					</linklist>
+					<h>Beast Speech</h>
+					<p>You are under the constant effects of the <i>speak with animals </i>spell. This effect does not emit a magical aura.</p>
+					<linklist>
+						<link class="power" recordname="reference.spelldata.id-00430@Level Up Advanced 5e Adventurer's Guide">Spell: Speak with Animals</link>
+					</linklist>
+					<h>Book of Ancient Secrets</h>
+					<p>
+						<i>Prerequisite: Pact of the Tome feature</i>
+					</p>
+					<p>The complex sigils and symbols of ritual magic appear in your Book of Shadows. Choose two 1st-level spells that have the ritual tag. The spells appear in the book and don&#8217;t count against the number of spells you know. While the book is in your possession, you can cast these spells as rituals. You can&#8217;t cast the spells except as rituals, unless you&#8217;ve learned them by some other means. You can also cast a warlock spell you know as a ritual if it has the ritual tag.</p>
+					<p>When you find a spell with the ritual tag, you can transcribe it into your Book of Shadows if the spell&#8217;s level is equal to or less than half your warlock level (rounded up). For each level of the spell, the transcription process takes 2 hours and costs 50 gold for the rare inks needed to inscribe it.</p>
+					<h>Devil&#8217;s Sight</h>
+					<p>You can see normally in all types of darkness (including magical) to a distance of 120 feet.</p>
+					<h>Eldritch Sight</h>
+					<p>You can cast <i>detect magic </i>without spending spell points.</p>
+					<linklist>
+						<link class="power" recordname="reference.spelldata.id-00132@Level Up Advanced 5e Adventurer's Guide">Spell: Detect Magic</link>
+					</linklist>
+					<h>Inscrutability</h>
+					<p>
+						<i>Prerequisite: 13th level</i>
+					</p>
+					<p>You are under the constant effects of the <i>nondetection </i>spell.</p>
+					<linklist>
+						<link class="power" recordname="reference.spelldata.id-00343@Level Up Advanced 5e Adventurer's Guide">Spell: Nondetection</link>
+					</linklist>
+					<h>Master of Myriad Forms</h>
+					<p>
+						<i>Prerequisite: 15th level</i>
+					</p>
+					<p>You can cast <i>alter self </i>without spending spell points.</p>
+					<linklist>
+						<link class="power" recordname="reference.spelldata.id-00014@Level Up Advanced 5e Adventurer's Guide">Spell: Alter Self</link>
+					</linklist>
+					<h>Mirror, Mirror</h>
+					<p>
+						<i>Prerequisite: 3rd level</i>
+					</p>
+					<p>Using a reflective object, such as an ordinary mirror or the smooth surface of water, you can commune with your patron or their emissary. You may do so during a short or long rest, receiving or conveying information related to your master&#8217;s bidding. This entity may also use such surfaces to bridge communication with you on its own terms.</p>
+					<p>You can also use this invocation to cast <i>augury </i>without spending spell points. Casting the spell in this way does not require material components, although you do need a reflective surface by which your patron might appear to you. Once you cast the spell in this way, you cannot do so again until you finish a long rest.</p>
+					<linklist>
+						<link class="power" recordname="reference.spelldata.id-00045@Level Up Advanced 5e Adventurer's Guide">Spell: Augury</link>
+					</linklist>
+					<h>One with Shadows</h>
+					<p>
+						<i>Prerequisite: 5th level</i>
+					</p>
+					<p>You can use an action to become invisible while you are in an area of dim light or darkness. Your invisibility lasts until you move, take an action, or use your reaction.</p>
+					<h>Otherworldly Leap</h>
+					<p>You are under the constant effects of the <i>jump </i>spell. This effect does not emit a magical aura.</p>
+					<linklist>
+						<link class="power" recordname="reference.spelldata.id-00293@Level Up Advanced 5e Adventurer's Guide">Spell: Jump</link>
+					</linklist>
+					<h>Portents and Portals</h>
+					<p>You automatically know when you are within 1 mile of a portal or gateway to another plane, even if it is inactive or malfunctioning (but not destroyed). You have advantage on checks made to locate this portal, and gain an expertise die on any checks you make to stabilize, activate, or open it.</p>
+					<h>Shadowveil</h>
+					<p>
+						<i>Prerequisite: 15th level</i>
+					</p>
+					<p>You can cast <i>invisibility </i>at will.</p>
+					<linklist>
+						<link class="power" recordname="reference.spelldata.id-00289@Level Up Advanced 5e Adventurer's Guide">Spell: Invisibility</link>
+					</linklist>
+					<h>Visions of Distant Realms</h>
+					<p>
+						<i>Prerequisite: 7th level</i>
+					</p>
+					<p>You can cast <i>arcane eye </i>once without spending spell points. You cannot do so again until you finish a long rest.</p>
+					<p>At 15th level, you can instead cast <i>arcane eye </i>at will.</p>
+					<linklist>
+						<link class="power" recordname="reference.spelldata.id-00032@Level Up Advanced 5e Adventurer's Guide">Spell: Arcane Eye</link>
+					</linklist>
+					<h>Whiff of the Beyond</h>
+					<p>You automatically know when an aberration, celestial, elemental, fey, fiend, or undead creature has been in a space within 30 feet of you within the past 24 hours, though not which type of creature triggered this invocation.</p>
+					<p>Additionally, you gain an expertise die on Perception checks, and you have advantage on checks made to track these creatures.</p>
+				</text>
+			</id-00007>
+			<id-00008>
+				<level type="number">0</level>
+				<locked type="number">1</locked>
+				<name type="string">Eldritch Whip</name>
+				<specializationchoice type="number">0</specializationchoice>
+				<text type="formattedtext">
+					<p>You can use an action to thrash a creature with a scintillating tendril of arcane force. Make a melee spell attack against a creature within 15 feet, dealing 1d6 force damage on a hit.</p>
+					<p>At the end of your turn you gain a number of temporary hit points equal to half the damage you dealt with Eldritch Whip this turn (minimum 1), which last until the end of your next turn. When you hit a creature with your Eldritch Whip and you already have temporary hit points, you can end the temporary hit points early to gain a bonus to the Eldritch Whip&#8217;s damage roll equal to half the number of temporary hit points you ended early.</p>
+				</text>
+			</id-00008>
+			<id-00009>
+				<locked type="number">1</locked>
+				<name type="string">Inspiration Feature: Cloak and Dagger</name>
+				<text type="formattedtext">
+					<p>You know how to avert suspicion when danger closes in. Whenever you or an ally you can see fail a Sleight of Hand or Stealth check, you can use your reaction to spend your inspiration and undo any consequences of that failed check.</p>
+				</text>
+			</id-00009>
+			<id-00010>
+				<level type="number">3</level>
+				<locked type="number">1</locked>
+				<name type="string">Eldritch Invocations (2)</name>
+				<specializationchoice type="number">0</specializationchoice>
+				<text type="formattedtext">
+					<p>You learn a new Invocation</p>
+					<linklist>
+						<link class="reference_classfeature" recordname="class.id-00005.features.id-00004@Brian D">Eldritch Invocations</link>
+					</linklist>
+				</text>
+			</id-00010>
+			<id-00011>
+				<level type="number">3</level>
+				<locked type="number">1</locked>
+				<name type="string">Pact Boon</name>
+				<specializationchoice type="number">0</specializationchoice>
+				<text type="formattedtext">
+					<p>At 3rd level, the entity to which you are beholden provides a more durable and lasting blessing. Choose one of the following features.</p>
+					<p>
+						<b>Pact of the Blade </b>&#13;You can use your action to conjure in your empty hand an armament bestowed with power: a pact weapon. Choose any simple or martial weapon when you conjure your pact weapon. You are proficient with it while you wield your pact weapon, and you can use your spellcasting ability for attack and damage rolls with it. This weapon counts as magical for the purpose of overcoming resistance and immunity to nonmagical attacks and damage. Your pact weapon disappears if it is more than 5 feet away from you for 1 minute or more. It also disappears if you use this feature again, if you dismiss the weapon (no action required), or if you die.</p>
+					<p>By performing a 1 hour ritual while holding a magic weapon or rare weapon, you can transform it into your pact weapon. If this weapon has a bonus to attack or damage rolls, or if it deals bonus damage, you can apply these to your Eldritch Blast (ranged weapons add these bonuses to Eldritch Ray, and melee weapons to Eldritch Scythe; it has no effect on Eldritch Disturbance or Eldritch Whip). You can then dismiss the weapon, shunting it into an extradimensional space, and it appears whenever you create your pact weapon thereafter. You can&#8217;t affect an artifact or a sentient weapon in this way. The weapon ceases being your pact weapon if you die, if you perform the ritual on a different weapon, or if you use a 1 hour ritual to break your bond to it. The weapon is collected by your patron if the bond breaks while it is in the extradimensional space.</p>
+					<linklist>
+						<link class="reference_classfeature" recordname="class.id-00005.features.id-00057@Brian D">Pact of the Blade</link>
+					</linklist>
+					<p>
+						<b>Pact of the Chain </b>&#13;You learn the find familiar spell and can cast it as a ritual. The spell doesn&#8217;t count against your number of spells known. When you cast the spell, you can choose one of the normal forms for your familiar or one of the following special forms: imp, pseudodragon, quasit, sprite, or any Tiny creature of CR 1/2 or less. You can also opt for the spirit you call forth to be an aberration, elemental, or undead.</p>
+					<p>When you take the Attack action, you can forgo one of your own attacks to allow your familiar to make one attack of its own with its reaction. Additionally, when you use Eldritch Scythe, you can choose to deliver the attack through your familiar as though you had cast a spell with a range of touch.</p>
+					<linklist>
+						<link class="reference_classfeature" recordname="class.id-00005.features.id-00058@Brian D">Pact of the Chain</link>
+					</linklist>
+					<p>
+						<b>Pact of the Tome </b>&#13;Aware of your drive for knowledge, you awaken to find a grimoire left in your pack by your patron: a Book of Shadows. Choose three cantrips. While the book is in your possession, you know these cantrips and they are treated as warlock spells. They don&#8217;t count against your number of cantrips known. If you lose your Book of Shadows, you can perform a 1 hour ceremony to receive a replacement from your patron. This ceremony destroys the previous book. The book is collected by your patron when you die.</p>
+					<linklist>
+						<link class="reference_classfeature" recordname="class.id-00005.features.id-00059@Brian D">Pact of the Tome</link>
+					</linklist>
+				</text>
+			</id-00011>
+			<id-00012>
+				<level type="number">5</level>
+				<locked type="number">1</locked>
+				<name type="string">Eldritch Invocations (3)</name>
+				<specializationchoice type="number">0</specializationchoice>
+				<text type="formattedtext">
+					<p>You learn a new Invocation</p>
+					<linklist>
+						<link class="reference_classfeature" recordname="class.id-00005.features.id-00004@Brian D">Eldritch Invocations</link>
+					</linklist>
+				</text>
+			</id-00012>
+			<id-00013>
+				<level type="number">5</level>
+				<locked type="number">1</locked>
+				<name type="string">Extra Blast (1)</name>
+				<specializationchoice type="number">0</specializationchoice>
+				<text type="formattedtext">
+					<p>Beginning at 5th level, your Eldritch Blast becomes more vicious. When you use Eldritch Ray, Eldritch Scythe, or Eldritch Whip as part of your action on your turn, as long as you make no weapon attacks you can attack twice instead of once. At 11th level you can make three attacks, and at 17th level you can make four attacks.</p>
+					<p>In addition, your Eldritch Disturbance&#8217;s damage increases by 1d10 at 5th level, and again at 11th level and 17th level (to a maximum of 4d10).</p>
+					<p>These improvements are based on your warlock level, not your character level. This feature otherwise counts as Extra Attack (for the purpose of qualifying for feats, spell effects, and the like).</p>
+				</text>
+			</id-00013>
+			<id-00014>
+				<level type="number">6</level>
+				<locked type="number">1</locked>
+				<name type="string">Eldritch Evolution</name>
+				<specializationchoice type="number">0</specializationchoice>
+				<text type="formattedtext">
+					<p>At 6th level, you gain a bonus invocation &#8212; one which represents your growth in the lethal lore behind Eldritch Blast. Choose one invocation from the following list: Agonizing Blast, Eldritch Bind, Eldritch Elementalism, Eldritch Grasp, Eldritch Prism, Eldritch Riposte, Eldritch Severance, Eldritch Spear, Eldritch Squall, Eldritch Tentacle, Repelling Blast, Versatile Blast.</p>
+					<linklist>
+						<link class="reference_classfeature" recordname="class.id-00005.features.id-00004@Brian D">Eldritch Invocations</link>
+					</linklist>
+					<p>You gain another bonus invocation in this way at 12th level and again at 18th level. When you gain a level in this class, you can choose one of the bonus invocations you know and replace it with another bonus invocation from this list that you could learn at that level.</p>
+				</text>
+			</id-00014>
+			<id-00015>
+				<level type="number">7</level>
+				<locked type="number">1</locked>
+				<name type="string">Eldritch Invocations (4)</name>
+				<specializationchoice type="number">0</specializationchoice>
+				<text type="formattedtext">
+					<p>You learn a new Invocation</p>
+					<linklist>
+						<link class="reference_classfeature" recordname="class.id-00005.features.id-00004@Brian D">Eldritch Invocations</link>
+					</linklist>
+				</text>
+			</id-00015>
+		</featurelist>
+		<hero type="number">1</hero>
+		<hp>
+			<deathsavefail type="number">0</deathsavefail>
+			<deathsavesuccess type="number">0</deathsavesuccess>
+			<temporary type="number">0</temporary>
+			<total type="number">59</total>
+			<wounds type="number">28</wounds>
+		</hp>
+		<initiative>
+			<misc type="number">0</misc>
+			<prof type="number">0</prof>
+			<temporary type="number">0</temporary>
+			<total type="number">2</total>
+		</initiative>
+		<inspiration type="number">1</inspiration>
+		<inventorylist>
+			<id-00001>
+				<ac type="number">0</ac>
+				<attune type="number">0</attune>
+				<bonus type="number">0</bonus>
+				<carried type="number">2</carried>
+				<cost type="string">2 gp</cost>
+				<count type="number">1</count>
+				<damage type="string">1d4 piercing</damage>
+				<description type="formattedtext">
+					<p>
+						<b>
+							<i>Dual-Wielding. </i>
+						</b>This weapon is designed to be wielded in concert with another weapon. When wielding another weapon in your main hand that does not have the heavy property, you can use your bonus action to make an attack with this weapon (see Two-Weapon Fighting in Chapter 8: Combat).</p>
+					<p>
+						<b>
+							<i>Finesse. </i>
+						</b>You may choose to use your Dexterity modifier for attack and damage rolls made with this weapon.</p>
+				</description>
+				<isidentified type="number">1</isidentified>
+				<locked type="number">1</locked>
+				<name type="string">Dagger</name>
+				<properties type="string">Dual-weilding, Finesse</properties>
+				<subtype type="string">Simple Melee Weapons</subtype>
+				<type type="string">Weapon</type>
+				<weight type="number">1</weight>
+			</id-00001>
+			<id-00002>
+				<ac type="number">0</ac>
+				<attune type="number">0</attune>
+				<bonus type="number">0</bonus>
+				<carried type="number">1</carried>
+				<cost type="string">1 gp</cost>
+				<count type="number">1</count>
+				<description type="formattedtext">
+					<p>Many trades and crafts require special tools or sets of tools needed to do things like pick a lock, paint a portrait, or brew a potion.</p>
+					<p>Any character can use a tool kit, but many characters also gain proficiency with specific tools. When you are proficient, you add your proficiency bonus to any ability checks made with them. Tool use is not tied to any single ability score and your Narrator may decide your work may require any sort of ability check. For example, you may be asked to make a Dexterity check with your glass-blower&#8217;s tools while making a delicate glass chalice, but you may be asked to make a Charisma check for creating an artistic glass sculpture.</p>
+					<p>
+						<b>
+							<i>Masterwork Tools. </i>
+						</b>When using tools of masterwork quality, if you are proficient you gain an expertise die on checks made with them.</p>
+				</description>
+				<isidentified type="number">1</isidentified>
+				<locked type="number">1</locked>
+				<name type="string">Cook's Utensils</name>
+				<subtype type="string">Tools</subtype>
+				<type type="string">Artisan's Tools</type>
+				<weight type="number">8</weight>
+			</id-00002>
+			<id-00003>
+				<ac type="number">0</ac>
+				<attune type="number">0</attune>
+				<bonus type="number">0</bonus>
+				<carried type="number">0</carried>
+				<cost type="string">10 gp</cost>
+				<count type="number">1</count>
+				<description type="formattedtext">
+					<p>Many trades and crafts require special tools or sets of tools needed to do things like pick a lock, paint a portrait, or brew a potion.</p>
+					<p>Any character can use a tool kit, but many characters also gain proficiency with specific tools. When you are proficient, you add your proficiency bonus to any ability checks made with them. Tool use is not tied to any single ability score and your Narrator may decide your work may require any sort of ability check. For example, you may be asked to make a Dexterity check with your glass-blower&#8217;s tools while making a delicate glass chalice, but you may be asked to make a Charisma check for creating an artistic glass sculpture.</p>
+					<p>
+						<b>
+							<i>Masterwork Tools. </i>
+						</b>When using tools of masterwork quality, if you are proficient you gain an expertise die on checks made with them.</p>
+				</description>
+				<isidentified type="number">1</isidentified>
+				<locked type="number">1</locked>
+				<name type="string">Potter's Tools</name>
+				<subtype type="string">Tools</subtype>
+				<type type="string">Artisan's Tools</type>
+				<weight type="number">3</weight>
+			</id-00003>
+			<id-00004>
+				<attune type="number">0</attune>
+				<carried type="number">1</carried>
+				<count type="number">1</count>
+				<name type="string">Pound of Flour</name>
+				<weight type="number">1</weight>
+			</id-00004>
+			<id-00005>
+				<attune type="number">0</attune>
+				<carried type="number">1</carried>
+				<count type="number">1</count>
+				<name type="string">Dose of Dreamlilly</name>
+				<weight type="number">0</weight>
+			</id-00005>
+			<id-00006>
+				<ac type="number">0</ac>
+				<attune type="number">0</attune>
+				<bonus type="number">0</bonus>
+				<carried type="number">1</carried>
+				<cost type="string">500 gp</cost>
+				<count type="number">1</count>
+				<description type="formattedtext">
+					<h>Description</h>
+					<p>
+						<b>Crafting Components: </b>Gilded raven's feather</p>
+					<p>A small, palm-sized figurine of a Raven.</p>
+					<p>If you use an action to speak the appropriate command word and throw the figurine at a point within 60 feet, it transforms into a bronze-colored Raven.</p>
+					<p>If the chosen space is occupied (either by creatures or non-living obstacles) the figurine does not transform. The Raven is friendly to you and your companions. It understands any language you can speak and follows your verbal commands. When not carrying out a task, the Raven defends itself but does not otherwise act.</p>
+					<p>The Raven stays transformed for 12 hours. While it is in raven form, you can cast <i>animal messenger </i>on it at will. At the end of this duration, the Raven turns back to its inanimate form. It also reverts early if it drops to 0 hit points or if you use an action to speak the command word while touching it. Once it has reverted to its figurine form, it cannot transform again for 2 days.</p>
+					<linklist>
+						<link class="power" recordname="reference.spelldata.id-00018@Level Up Advanced 5e Adventurer's Guide">
+							<b>Spell: </b>Animal Messenger</link>
+						<link class="npc" recordname="npc.id-00506@Level Up 5e Monstrous Menagerie">
+							<b>Stat Block: </b>Raven</link>
+					</linklist>
+				</description>
+				<locked type="number">1</locked>
+				<name type="string">Figurine of Wondrous Power (Silver Raven)</name>
+				<nonid_name type="string">Figurine</nonid_name>
+				<nonidentified type="string">A silver raven statuette</nonidentified>
+				<properties type="string">Magic</properties>
+				<rarity type="string">Uncommon</rarity>
+				<spells>
+					<id-00001>
+						<link type="windowreference">
+							<class />
+							<recordname />
+						</link>
+						<name type="string">Figurine of Wondrous Power (Silver Raven)</name>
+					</id-00001>
+					<id-00002>
+						<link type="windowreference">
+							<class />
+							<recordname />
+						</link>
+						<name type="string">Web</name>
+					</id-00002>
+				</spells>
+				<type type="string">Wondrous Item</type>
+				<weight type="number">0</weight>
+			</id-00006>
+			<id-00007>
+				<attune type="number">0</attune>
+				<carried type="number">1</carried>
+				<cost type="string">Priceless</cost>
+				<count type="number">0</count>
+				<name type="string">Scroll of "you wish"</name>
+				<rarity type="string">One of a kind</rarity>
+				<type type="string">Fictious</type>
+				<weight type="number">0</weight>
+			</id-00007>
+			<id-00009>
+				<ac type="number">0</ac>
+				<attune type="number">0</attune>
+				<bonus type="number">0</bonus>
+				<carried type="number">1</carried>
+				<cost type="string">25 gp</cost>
+				<count type="number">1</count>
+				<description type="formattedtext">
+					<p>
+						<b>
+							<i>Book. </i>
+						</b>A book might contain poetry, historical accounts, information pertaining to a particular field of lore, diagrams and notes on gnomish contraptions, or just about anything else that can be represented using text or pictures. Any book of masterwork quality covers in detail one specialty (see Specialties in Chapter 6: Using Ability Scores). You gain an expertise die on checks made regarding the specialty detailed in the last masterwork book you&#8217;ve read.</p>
+				</description>
+				<isidentified type="number">1</isidentified>
+				<locked type="number">1</locked>
+				<name type="string">AFRIIZ: Alchemists Feast - Recipes of Invention and Intrigue from Zilargo</name>
+				<nonid_name type="string">Pact of the Tome: Chomsky</nonid_name>
+				<subtype type="string">Standard</subtype>
+				<type type="string">Adventuring Gear</type>
+				<weight type="number">2</weight>
+			</id-00009>
+			<id-00010>
+				<ac type="number">0</ac>
+				<attune type="number">1</attune>
+				<bonus type="number">0</bonus>
+				<carried type="number">2</carried>
+				<cost type="string">3,000 gp</cost>
+				<count type="number">1</count>
+				<description type="formattedtext">
+					<h>Description</h>
+					<p>
+						<b>Crafting Components: </b>Diamond dust</p>
+					<p>While wearing this subtle brooch the size of a gold coin painted as a lady bug you gain a +2 bonus to Armor Class and saving throws.</p>
+				</description>
+				<locked type="number">1</locked>
+				<name type="string">Lady Bug Brooch of Protection +2</name>
+				<nonid_name type="string">Lady Bug Brooch</nonid_name>
+				<nonidentified type="string">Brooch</nonidentified>
+				<properties type="string">Magic</properties>
+				<rarity type="string">Rare (Requires Attunement)</rarity>
+				<spells>
+					<id-00001>
+						<link type="windowreference">
+							<class />
+							<recordname />
+						</link>
+						<name type="string">Ring of Protection</name>
+					</id-00001>
+					<id-00002>
+						<link type="windowreference">
+							<class />
+							<recordname />
+						</link>
+						<name type="string">Ring</name>
+					</id-00002>
+				</spells>
+				<type type="string">Brooch</type>
+				<weight type="number">0</weight>
+			</id-00010>
+			<id-00011>
+				<ac type="number">0</ac>
+				<attune type="number">0</attune>
+				<bonus type="number">0</bonus>
+				<carried type="number">1</carried>
+				<cost type="string">50 gp</cost>
+				<count type="number">3</count>
+				<description type="formattedtext">
+					<p>These potions have auras of evocation magic invisible to mundane eyes.</p>
+					<p>When you drink the bright red liquid in this flask, you regain 2d4 + 2 hit points.</p>
+				</description>
+				<locked type="number">1</locked>
+				<name type="string">Potion of Healing</name>
+				<type type="string">Medicinals</type>
+				<weight type="number">0.5</weight>
+			</id-00011>
+			<id-00012>
+				<ac type="number">0</ac>
+				<attune type="number">0</attune>
+				<bonus type="number">0</bonus>
+				<carried type="number">2</carried>
+				<cost type="string">400 gp</cost>
+				<count type="number">1</count>
+				<description type="formattedtext">
+					<h>Description</h>
+					<p>
+						<b>Crafting Components: </b>A merfolk's joyous song</p>
+					<p>While you wear this cloak with its hood up, you gain a swim speed of 60 feet and can breathe water. You can use an action to put the hood up or down.</p>
+				</description>
+				<locked type="number">1</locked>
+				<name type="string">Cloak of the Manta Ray</name>
+				<nonid_name type="string">Cloak</nonid_name>
+				<nonidentified type="string">Cloak</nonidentified>
+				<properties type="string">Magic</properties>
+				<rarity type="string">Uncommon</rarity>
+				<spells>
+					<id-00001>
+						<link type="windowreference">
+							<class />
+							<recordname />
+						</link>
+						<name type="string">Cloak of the Manta Ray</name>
+					</id-00001>
+					<id-00002>
+						<link type="windowreference">
+							<class />
+							<recordname />
+						</link>
+						<name type="string">Web</name>
+					</id-00002>
+				</spells>
+				<type type="string">Wondrous Item</type>
+				<weight type="number">0</weight>
+			</id-00012>
+			<id-00013>
+				<ac type="number">0</ac>
+				<attune type="number">0</attune>
+				<bonus type="number">0</bonus>
+				<carried type="number">1</carried>
+				<cost type="string">25 gp</cost>
+				<count type="number">1</count>
+				<description type="formattedtext">
+					<h>Description</h>
+					<linklist>
+						<link class="power" recordname="reference.spelldata.id-00478@Level Up Advanced 5e Adventurer's Guide">
+							<b>Spell: </b>Unseen Servant</link>
+					</linklist>
+					<p>
+						<b>Crafting Components: </b>Magical inks</p>
+					<p>This spell scroll bears the words of, <i>Unseen Servant </i>, a sealed within. If the spell is on your class' spell list, you can use the scroll to cast the spell (taking the spell's normal casting time) without the need for material components. Otherwise the spell scroll is unreadable to you. If you are interrupted while using the scroll, you may attempt to use it again. Once the spell within a scroll has been cast, the scroll crumbles away.</p>
+					<p>To use a spell scroll of a higher spell level than you are able to cast, you must succeed on spellcasting ability check (DC 10 + the spell's level). On a failure, the magical energy within is expended with no effect, leaving behind a blank piece of parchment.</p>
+					<p>A wizard may use a spell scroll to copy the spell stored within to their spellbook by making an Intelligence (Arcana) check (DC 10 + the spell's level). Whether the check succeeds or not, the attempt destroys the spell scroll.</p>
+					<p>This spell scroll's DC is 13 and the attack bonus is +5. The costs of the spell scroll are in addition to any material components, which are required (and if necessary also consumed) when it is made.</p>
+				</description>
+				<locked type="number">1</locked>
+				<name type="string">Scroll of Unseen Servant</name>
+				<nonid_name type="string">Scroll</nonid_name>
+				<nonidentified type="string">Spell scroll</nonidentified>
+				<properties type="string">Magic</properties>
+				<rarity type="string">Common</rarity>
+				<type type="string">Scroll</type>
+				<weight type="number">0</weight>
+			</id-00013>
+			<id-00014>
+				<attune type="number">0</attune>
+				<carried type="number">1</carried>
+				<cost type="string">37 gp</cost>
+				<count type="number">1</count>
+				<description type="formattedtext">
+					<h>Description</h>
+					<linklist>
+						<link class="reference_spell" recordname="reference.spelldata.causefear@DD Xanathar's Guide to Everything">
+							<b>Spell: </b>Cause Fear</link>
+					</linklist>
+					<p>This spell scroll bears the words of a single spell, <i>Cause Fear </i>, written in a mystical cipher. If the spell is on your class's spell list, you can read the scroll and cast its spell without providing any material components. Otherwise, the scroll is unintelligible. Casting the spell by reading the scroll requires the spell's normal casting time. Once the spell is cast, the words on the scroll fade, and it crumbles to dust. If the casting is interrupted, the scroll is not lost.</p>
+					<p>If the spell is on your class's spell list but of a higher level than you can normally cast, you must make an ability check using your spellcasting ability to determine whether you cast it successfully. The DC equals 10 + the spell's level. On a failed check, the spell disappears from the scroll with no other effect.</p>
+					<p>Once the spell is cast, the words on the scroll fade, and the scroll itself crumbles to dust.</p>
+					<p>This spell scroll's saving throw DC 13 and attack bonus +5.</p>
+					<p>A wizard spell on a spell scroll can be copied just as spells in spellbooks can be copied. When a spell is copied from a spell scroll, the copier must succeed on an Intelligence (Arcana) check with a DC equal to 10 + the spell's level. If the check succeeds, the spell is successfully copied. Whether the check succeeds or fails, the spell scroll is destroyed.</p>
+				</description>
+				<locked type="number">1</locked>
+				<name type="string">Scroll of Cause Fear</name>
+				<nonid_name type="string">Fine Scroll</nonid_name>
+				<nonidentified type="string">The parchment of this scroll is of the finest quality and the writing is careful and delicate.</nonidentified>
+				<properties type="string">Magic</properties>
+				<rarity type="string">Common</rarity>
+				<spells>
+					<id-00001>
+						<link type="windowreference">
+							<class>reference_spell</class>
+							<recordname>reference.spelldata.causefear@DD Xanathar's Guide to Everything</recordname>
+						</link>
+						<name type="string">Cause Fear</name>
+					</id-00001>
+				</spells>
+				<type type="string">Scroll</type>
+				<weight type="number">0</weight>
+			</id-00014>
+			<id-00015>
+				<ac type="number">0</ac>
+				<attune type="number">0</attune>
+				<bonus type="number">0</bonus>
+				<carried type="number">1</carried>
+				<cost type="string">75 gp</cost>
+				<count type="number">1</count>
+				<description type="formattedtext">
+					<h>Description</h>
+					<linklist>
+						<link class="power" recordname="reference.spelldata.id-00123@Level Up Advanced 5e Adventurer's Guide">
+							<b>Spell: </b>Darkness</link>
+					</linklist>
+					<p>
+						<b>Crafting Components: </b>Magical inks</p>
+					<p>This spell scroll bears the words of, <i>Darkness </i>, a sealed within. If the spell is on your class' spell list, you can use the scroll to cast the spell (taking the spell's normal casting time) without the need for material components. Otherwise the spell scroll is unreadable to you. If you are interrupted while using the scroll, you may attempt to use it again. Once the spell within a scroll has been cast, the scroll crumbles away.</p>
+					<p>To use a spell scroll of a higher spell level than you are able to cast, you must succeed on spellcasting ability check (DC 10 + the spell's level). On a failure, the magical energy within is expended with no effect, leaving behind a blank piece of parchment.</p>
+					<p>A wizard may use a spell scroll to copy the spell stored within to their spellbook by making an Intelligence (Arcana) check (DC 10 + the spell's level). Whether the check succeeds or not, the attempt destroys the spell scroll.</p>
+					<p>This spell scroll's DC is 13 and the attack bonus is +5. The costs of the spell scroll are in addition to any material components, which are required (and if necessary also consumed) when it is made.</p>
+				</description>
+				<locked type="number">1</locked>
+				<name type="string">Scroll of Darkness</name>
+				<nonid_name type="string">Scroll</nonid_name>
+				<nonidentified type="string">Spell scroll</nonidentified>
+				<properties type="string">Magic</properties>
+				<rarity type="string">Common</rarity>
+				<type type="string">Scroll</type>
+				<weight type="number">0</weight>
+			</id-00015>
+			<id-00016>
+				<attune type="number">0</attune>
+				<carried type="number">1</carried>
+				<count type="number">1</count>
+				<locked type="number">1</locked>
+				<name type="string">Luculla Gens Wooden Spoon</name>
+				<weight type="number">0</weight>
+			</id-00016>
+			<id-00017>
+				<attune type="number">0</attune>
+				<carried type="number">1</carried>
+				<count type="number">1</count>
+				<description type="formattedtext">
+					<p>To Finest Example of Citizenship Chomsky Burgell</p>
+					<p>The Citizens of Thaliost invite you to attend the Aria Park on Therendor the 14th at Noon for a singular and vital purpose: to publicly recognize and express our deepest gratitude to the extraordinary individuals among us who embody the true spirit of Thaliost.</p>
+					<p>The Wax Seal of the Pure Flame seals the invitation and adorns the bottom as a signature</p>
+				</description>
+				<locked type="number">1</locked>
+				<name type="string">Invitation - Aria Park Chomsky</name>
+				<rarity type="string">common</rarity>
+				<subtype type="string">Standard</subtype>
+				<type type="string">Adventuring Gear</type>
+				<version type="string">2024</version>
+				<weight type="number">0</weight>
+			</id-00017>
+			<id-00018>
+				<ac type="number">0</ac>
+				<attune type="number">1</attune>
+				<bonus type="number">0</bonus>
+				<carried type="number">2</carried>
+				<cost type="string">2500 gp</cost>
+				<count type="number">1</count>
+				<description type="formattedtext">
+					<h>Description</h>
+					<p>
+						<b>Crafting Components: </b>Lock of hair from a dwarf's beard, freely given in friendship</p>
+					<p>While wearing this belt, you gain the following benefit:</p>
+					<list>
+						<li>Your Constitution score increases by 2, to a maximum of 20.</li>
+					</list>
+					<p>This leather belt is decorated with Studden Silver Ravens going around it's length, reminding you of the style of clothing found within the Fair Fortune Livery cache</p>
+				</description>
+				<locked type="number">1</locked>
+				<name type="string">Silver Ravens Belt</name>
+				<nonid_name type="string">Fancy Belt</nonid_name>
+				<nonidentified type="string">A fancy older styled belt</nonidentified>
+				<properties type="string">Magic</properties>
+				<rarity type="string">Uncommon (Requires Attunement)</rarity>
+				<spells>
+					<id-00001>
+						<link type="windowreference">
+							<class />
+							<recordname />
+						</link>
+						<name type="string">Belt of Dwarvenkind</name>
+					</id-00001>
+					<id-00002>
+						<link type="windowreference">
+							<class />
+							<recordname />
+						</link>
+						<name type="string">Web</name>
+					</id-00002>
+				</spells>
+				<type type="string">Wondrous Item</type>
+				<weight type="number">0</weight>
+			</id-00018>
+			<id-00020>
+				<ac type="number">0</ac>
+				<attune type="number">0</attune>
+				<bonus type="number">0</bonus>
+				<carried type="number">1</carried>
+				<cost type="string">150 gp</cost>
+				<count type="number">2</count>
+				<description type="formattedtext">
+					<h>Description</h>
+					<p>
+						<b>Crafting Components: </b>Alchemist's supplies, diamonds (2 carats)</p>
+					<p>Drinking this swirling red liquid restores 4d4+4 hit points.</p>
+					<p>
+						<b>Potion Notes</b>
+					</p>
+					<p>Drinking or administering a potion takes an action.</p>
+				</description>
+				<locked type="number">1</locked>
+				<name type="string">Potion of Healing Greater</name>
+				<nonid_name type="string">Potion</nonid_name>
+				<nonidentified type="string">This vial contains a swirling red liquid</nonidentified>
+				<properties type="string">Magic</properties>
+				<rarity type="string">Uncommon</rarity>
+				<spells>
+					<id-00001>
+						<link type="windowreference">
+							<class />
+							<recordname />
+						</link>
+						<name type="string">Potion of Greater Healing</name>
+					</id-00001>
+					<id-00002>
+						<link type="windowreference">
+							<class />
+							<recordname />
+						</link>
+						<name type="string">Potion</name>
+					</id-00002>
+				</spells>
+				<type type="string">Potion</type>
+				<weight type="number">0</weight>
+			</id-00020>
+		</inventorylist>
+		<languagelist>
+			<id-00001>
+				<name type="string">Common</name>
+			</id-00001>
+			<id-00002>
+				<name type="string">Gnomish</name>
+			</id-00002>
+			<id-00003>
+				<name type="string">Goblin</name>
+			</id-00003>
+		</languagelist>
+		<level type="number">7</level>
+		<locked type="number">1</locked>
+		<name type="string">Chomsky Burgell</name>
+		<pc_label_hero type="string">Hero Points</pc_label_hero>
+		<perception type="number">10</perception>
+		<perceptionmodifier type="number">0</perceptionmodifier>
+		<polymorphism>
+			<active type="number">0</active>
+		</polymorphism>
+		<polymorphism_linked_token type="token"></polymorphism_linked_token>
+		<polymorphism_original_token type="token"></polymorphism_original_token>
+		<portrait type="token">campaign/images/Chomsky 1.jpg</portrait>
+		<powerdisplaymode type="string">action</powerdisplaymode>
+		<powergroup>
+			<id-00001>
+				<name type="string">Race Actions/Effects</name>
+			</id-00001>
+			<id-00002>
+				<atkmod type="number">0</atkmod>
+				<atkprof type="number">1</atkprof>
+				<castertype type="string">memorization</castertype>
+				<name type="string">Spells</name>
+				<prepared type="number">0</prepared>
+				<savemod type="number">0</savemod>
+				<saveprof type="number">1</saveprof>
+				<uses type="number">0</uses>
+			</id-00002>
+		</powergroup>
+		<powermeta>
+			<pactmagiclevel type="number">4</pactmagiclevel>
+			<pactmagicpoints>
+				<max type="number">12</max>
+				<used type="number">7</used>
+			</pactmagicpoints>
+			<pactmagicslots1>
+				<max type="number">0</max>
+			</pactmagicslots1>
+			<pactmagicslots2>
+				<max type="number">0</max>
+			</pactmagicslots2>
+			<pactmagicslots3>
+				<max type="number">0</max>
+			</pactmagicslots3>
+			<pactmagicslots4>
+				<max type="number">2</max>
+			</pactmagicslots4>
+			<spellslots1>
+				<max type="number">0</max>
+				<used type="number">0</used>
+			</spellslots1>
+			<spellslots2>
+				<max type="number">0</max>
+				<used type="number">0</used>
+			</spellslots2>
+			<spellslots3>
+				<max type="number">0</max>
+				<used type="number">0</used>
+			</spellslots3>
+			<spellslots4>
+				<max type="number">0</max>
+				<used type="number">0</used>
+			</spellslots4>
+			<spellslots5>
+				<max type="number">0</max>
+				<used type="number">0</used>
+			</spellslots5>
+			<spellslots6>
+				<max type="number">0</max>
+				<used type="number">0</used>
+			</spellslots6>
+			<spellslots7>
+				<max type="number">0</max>
+				<used type="number">0</used>
+			</spellslots7>
+			<spellslots8>
+				<max type="number">0</max>
+				<used type="number">0</used>
+			</spellslots8>
+			<spellslots9>
+				<max type="number">0</max>
+				<used type="number">0</used>
+			</spellslots9>
+		</powermeta>
+		<powers>
+			<id-00001>
+				<actions>
+					<id-00001>
+						<apply type="string">action</apply>
+						<label type="string">Gnome Cunning; ADVSAV: intelligence,wisdom,charisma</label>
+						<order type="number">1</order>
+						<targeting type="string">self</targeting>
+						<type type="string">effect</type>
+					</id-00001>
+				</actions>
+				<cast type="number">0</cast>
+				<description type="formattedtext">
+					<p>You have advantage on all Intelligence, Wisdom, and Charisma saving throws against magic.</p>
+				</description>
+				<group type="string">Race Actions/Effects</group>
+				<level type="number">0</level>
+				<locked type="number">1</locked>
+				<name type="string">Gnome Cunning</name>
+				<prepared type="number">0</prepared>
+			</id-00001>
+			<id-00002>
+				<actions>
+					<id-00001>
+						<label type="string">Gifted Scribe; SKILL: 1d4 forgery kit, calligrapher's supplies</label>
+						<order type="number">1</order>
+						<targeting type="string">self</targeting>
+						<type type="string">effect</type>
+					</id-00001>
+				</actions>
+				<cast type="number">0</cast>
+				<description type="formattedtext">
+					<p>When you make an Intelligence (History) check or an ability check using calligrapher's supplies, you can roll a d4 and add the number rolled to the ability check.</p>
+				</description>
+				<group type="string">Race Actions/Effects</group>
+				<level type="number">0</level>
+				<locked type="number">1</locked>
+				<name type="string">Gifted Scribe</name>
+				<prepared type="number">0</prepared>
+			</id-00002>
+			<id-00003>
+				<actions>
+					<id-00001>
+						<durmod type="number">1</durmod>
+						<durunit type="string">minute</durunit>
+						<label type="string">ADVCHK: charisma; (C)</label>
+						<order type="number">1</order>
+						<type type="string">effect</type>
+					</id-00001>
+				</actions>
+				<cast type="number">0</cast>
+				<castingtime type="string">1 bonus action </castingtime>
+				<components type="string">S </components>
+				<description type="formattedtext">
+					<p>
+						<b>Target: </b>One nonhostile creature</p>
+					<p>Once before the start of your next turn, when you make a Charisma ability check against the target, you gain an expertise die. If you roll a 1 on the ability or skill check, the target realizes its judgment was influenced by magic and may become hostile.</p>
+				</description>
+				<duration type="string">1 round</duration>
+				<group type="string">Spells</group>
+				<level type="number">0</level>
+				<locked type="number">1</locked>
+				<name type="string">Friends</name>
+				<prepared type="number">0</prepared>
+				<range type="string">Short (30 feet) </range>
+				<rare type="number">0</rare>
+				<ritual type="number">0</ritual>
+				<school type="string">enchantment; arcane</school>
+				<source type="string">Bard, Sorcerer, Warlock, Wizard </source>
+			</id-00003>
+			<id-00004>
+				<actions />
+				<cast type="number">0</cast>
+				<description type="formattedtext">
+					<p>You are careful not to show weakness in front of others for fear of losing status. If you miss with an attack roll or fail an ability check, you can gain a bonus to the roll equal to the number of allies you can see within 30 feet of you (maximum +3), possibly changing a failure into a success. Once you use this trait, you can&#8217;t use it again until you finish a short or long rest.</p>
+				</description>
+				<group type="string">Race Actions/Effects</group>
+				<level type="number">0</level>
+				<locked type="number">1</locked>
+				<name type="string">Saving Face</name>
+				<prepared type="number">1</prepared>
+			</id-00004>
+			<id-00005>
+				<actions>
+					<id-00001>
+						<atkbase type="string">ability</atkbase>
+						<atkmod type="number">0</atkmod>
+						<atkprof type="number">1</atkprof>
+						<atkstat type="string">charisma</atkstat>
+						<atktype type="string">ranged</atktype>
+						<order type="number">1</order>
+						<savedcmod type="number">0</savedcmod>
+						<savedcprof type="number">1</savedcprof>
+						<savemagic type="number">0</savemagic>
+						<type type="string">cast</type>
+					</id-00001>
+					<id-00002>
+						<damagelist>
+							<id-00001>
+								<bonus type="number">0</bonus>
+								<dice type="dice">d8</dice>
+								<statmult type="number">1</statmult>
+								<type type="string">necrotic</type>
+							</id-00001>
+							<id-00002>
+								<dice type="dice">d8</dice>
+								<statmult type="number">1</statmult>
+								<type type="string">necrotic</type>
+							</id-00002>
+						</damagelist>
+						<order type="number">2</order>
+						<type type="string">damage</type>
+					</id-00002>
+					<id-00003>
+						<durmod type="number">1</durmod>
+						<label type="string">Chill Touch; Can't regain hit points</label>
+						<order type="number">3</order>
+						<type type="string">effect</type>
+					</id-00003>
+					<id-00004>
+						<durmod type="number">1</durmod>
+						<label type="string">Chill Touch (SD); [TRGT]; GRANTDISATK</label>
+						<order type="number">4</order>
+						<targeting type="string">self</targeting>
+						<type type="string">effect</type>
+					</id-00004>
+				</actions>
+				<cast type="number">0</cast>
+				<castingtime type="string">1 action </castingtime>
+				<components type="string">V, S </components>
+				<description type="formattedtext">
+					<linklist>
+						<link class="power" recordname="reference.spelldata.id-00078@Level Up Advanced 5e Adventurer's Guide">Chill Touch</link>
+					</linklist>
+				</description>
+				<duration type="string">1 round</duration>
+				<group type="string">Spells</group>
+				<level type="number">0</level>
+				<locked type="number">1</locked>
+				<name type="string">Chill Touch (120) (SD)</name>
+				<prepared type="number">0</prepared>
+				<range type="string">Long (120 feet) </range>
+				<rare type="number">0</rare>
+				<ritual type="number">0</ritual>
+				<school type="string">necromancy; affliction, arcane, attack, necrotic</school>
+				<source type="string">Sorcerer, Warlock, Wizard </source>
+			</id-00005>
+			<id-00006>
+				<actions>
+					<id-00001>
+						<atkmod type="number">0</atkmod>
+						<atkprof type="number">1</atkprof>
+						<onmissdamage type="string">half</onmissdamage>
+						<order type="number">1</order>
+						<savedcbase type="string">ability</savedcbase>
+						<savedcmod type="number">0</savedcmod>
+						<savedcprof type="number">1</savedcprof>
+						<savedcstat type="string">charisma</savedcstat>
+						<savemagic type="number">1</savemagic>
+						<savetype type="string">intelligence</savetype>
+						<type type="string">cast</type>
+					</id-00001>
+					<id-00002>
+						<damagelist>
+							<id-00001>
+								<bonus type="number">0</bonus>
+								<dice type="dice">3d4</dice>
+								<type type="string">psychic</type>
+							</id-00001>
+						</damagelist>
+						<order type="number">2</order>
+						<type type="string">damage</type>
+					</id-00002>
+					<id-00003>
+						<durmod type="number">1</durmod>
+						<label type="string">Searing Equation; Deafened</label>
+						<order type="number">3</order>
+						<type type="string">effect</type>
+					</id-00003>
+				</actions>
+				<cast type="number">0</cast>
+				<castingtime type="string">1 action </castingtime>
+				<components type="string">V, S </components>
+				<description type="formattedtext">
+					<linklist>
+						<link class="power" recordname="reference.spelldata.id-00404@Level Up Advanced 5e Adventurer's Guide">Searing Equation</link>
+					</linklist>
+				</description>
+				<duration type="string">Instantaneous </duration>
+				<group type="string">Spells</group>
+				<level type="number">1</level>
+				<locked type="number">1</locked>
+				<name type="string">Searing Equation (S)</name>
+				<prepared type="number">0</prepared>
+				<range type="string">Self </range>
+				<rare type="number">0</rare>
+				<ritual type="number">0</ritual>
+				<school type="string">enchantment; affliction, psychic</school>
+				<source type="string">Warlock, Wizard </source>
+			</id-00006>
+			<id-00007>
+				<actions>
+					<id-00001>
+						<atkbase type="string">ability</atkbase>
+						<atkmod type="number">0</atkmod>
+						<atkprof type="number">1</atkprof>
+						<atkstat type="string">charisma</atkstat>
+						<order type="number">1</order>
+						<savedcbase type="string">ability</savedcbase>
+						<savedcmod type="number">0</savedcmod>
+						<savedcprof type="number">1</savedcprof>
+						<savedcstat type="string">charisma</savedcstat>
+						<savemagic type="number">1</savemagic>
+						<savetype type="string">wisdom</savetype>
+						<type type="string">cast</type>
+					</id-00001>
+					<id-00002>
+						<damagelist>
+							<id-00001>
+								<bonus type="number">0</bonus>
+								<dice type="dice">d6</dice>
+								<statmult type="number">1</statmult>
+								<type type="string">psychic</type>
+							</id-00001>
+							<id-00004>
+								<dice type="dice">d6</dice>
+								<statmult type="number">1</statmult>
+								<type type="string">psychic</type>
+							</id-00004>
+						</damagelist>
+						<order type="number">2</order>
+						<type type="string">damage</type>
+					</id-00002>
+					<id-00003>
+						<apply type="string">roll</apply>
+						<durmod type="number">1</durmod>
+						<label type="string">Vicious Mockery; DISATK</label>
+						<order type="number">3</order>
+						<type type="string">effect</type>
+					</id-00003>
+				</actions>
+				<cast type="number">0</cast>
+				<castingtime type="string">1 action </castingtime>
+				<components type="string">V </components>
+				<description type="formattedtext">
+					<linklist>
+						<link class="power" recordname="reference.spelldata.id-00483@Level Up Advanced 5e Adventurer's Guide">Vicious Mockery</link>
+					</linklist>
+				</description>
+				<duration type="string">Instantaneous </duration>
+				<group type="string">Spells</group>
+				<level type="number">0</level>
+				<locked type="number">1</locked>
+				<name type="string">Vicious Mockery (60)</name>
+				<prepared type="number">0</prepared>
+				<range type="string">Medium (60 feet) </range>
+				<rare type="number">0</rare>
+				<ritual type="number">0</ritual>
+				<school type="string">enchantment; arcane, attack, psychic</school>
+				<source type="string">Bard</source>
+			</id-00007>
+			<id-00008>
+				<actions>
+					<id-00001>
+						<order type="number">1</order>
+						<savemagic type="number">1</savemagic>
+						<savetype type="string">charisma</savetype>
+						<type type="string">cast</type>
+					</id-00001>
+					<id-00002>
+						<label type="string">Incapacitated</label>
+						<order type="number">2</order>
+						<type type="string">effect</type>
+					</id-00002>
+				</actions>
+				<cast type="number">0</cast>
+				<castingtime type="string">1 action </castingtime>
+				<components type="string">V, S, M (an item distasteful to the target, consumed by the spell) </components>
+				<description type="formattedtext">
+					<p>You employ sheer force of will to make reality question the existence of a nearby creature, causing them to warp visibly in front of you.</p>
+					<p>The target must make a Charisma saving throw and on a failure, until the spell ends, a target native to your current plane is banished to a harmless demiplane and is incapacitated. At the end of the duration the target reappears in the space it left (or the nearest unoccupied space). A target native to a different plane is instead banished to its native plane.</p>
+					<p>At the end of each of its turns, a banished creature can repeat the saving throw with a &#8211;1 penalty for each round it has spent banished, returning on a success. If the spell ends before its maximum duration, the target reappears in the space it left (or the nearest unoccupied space) but otherwise a target native to a different plane doesn&#8217;t return.</p>
+					<p>
+						<b>
+							<i>Cast at Higher Levels. </i>
+						</b>The duration of banishment increases by 1 round for each slot level above 4th.</p>
+				</description>
+				<duration type="string">Concentration (1d4+2 rounds; the Narrator rolls in secret) </duration>
+				<group type="string">Spells</group>
+				<level type="number">4</level>
+				<locked type="number">1</locked>
+				<name type="string">Banishment</name>
+				<prepared type="number">0</prepared>
+				<range type="string">Medium (60 feet) </range>
+				<rare type="number">0</rare>
+				<ritual type="number">0</ritual>
+				<school type="string">abjuration; affliction, planar</school>
+				<source type="string">Cleric, Herald, Sorcerer, Warlock, Wizard</source>
+			</id-00008>
+			<id-00009>
+				<actions>
+					<id-00001>
+						<durmod type="number">1</durmod>
+						<label type="string">Message; Target may reply in whisper audible only to you</label>
+						<order type="number">1</order>
+						<targeting type="string">self</targeting>
+						<type type="string">effect</type>
+					</id-00001>
+				</actions>
+				<cast type="number">0</cast>
+				<castingtime type="string">1 action </castingtime>
+				<components type="string">V, S, M (scrap of paper) </components>
+				<description type="formattedtext">
+					<linklist>
+						<link class="power" recordname="reference.spelldata.id-00326@Level Up Advanced 5e Adventurer's Guide">Message</link>
+					</linklist>
+				</description>
+				<duration type="string">1 round</duration>
+				<group type="string">Spells</group>
+				<level type="number">0</level>
+				<locked type="number">1</locked>
+				<name type="string">Message (120)</name>
+				<prepared type="number">0</prepared>
+				<range type="string">Long (120 feet) </range>
+				<rare type="number">0</rare>
+				<ritual type="number">0</ritual>
+				<school type="string">transmutation; arcane, communication</school>
+				<source type="string">Bard, Herald, Sorcerer, Wizard </source>
+			</id-00009>
+			<id-00010>
+				<actions>
+					<id-00002>
+						<atkmod type="number">0</atkmod>
+						<atkprof type="number">1</atkprof>
+						<onmissdamage type="string">half</onmissdamage>
+						<order type="number">2</order>
+						<savedcbase type="string">ability</savedcbase>
+						<savedcmod type="number">0</savedcmod>
+						<savedcprof type="number">1</savedcprof>
+						<savedcstat type="string">charisma</savedcstat>
+						<savemagic type="number">0</savemagic>
+						<savetype type="string">charisma</savetype>
+						<type type="string">cast</type>
+					</id-00002>
+					<id-00003>
+						<damagelist>
+							<id-00001>
+								<bonus type="number">0</bonus>
+								<dice type="dice">5d6</dice>
+								<statmult type="number">1</statmult>
+								<type type="string">psychic</type>
+							</id-00001>
+						</damagelist>
+						<order type="number">3</order>
+						<type type="string">damage</type>
+					</id-00003>
+				</actions>
+				<cast type="number">0</cast>
+				<castingtime type="string">1 action</castingtime>
+				<components type="string">V, S, M (a silver locket)</components>
+				<description type="formattedtext">
+					<p>You force an enemy to experience pangs of unrequited love and emotional distress. These feelings manifest with such intensity that the target must make a Charislma saving throw or the target takes 5d6 psychic damage on a failed Charisma saving throw, or half the damage on a successful save.</p>
+					<p>
+						<b>At Higher Levels. </b>When you cast this spell using a spell slot of 3rd level or higher, you can target an additional enemy for each slot level above 2nd.</p>
+				</description>
+				<duration type="string">Instantaneous</duration>
+				<group type="string">Spells</group>
+				<level type="number">2</level>
+				<locked type="number">1</locked>
+				<name type="string">Heartache</name>
+				<prepared type="number">0</prepared>
+				<range type="string">30 feet</range>
+				<rare type="number">0</rare>
+				<ritual type="number">0</ritual>
+				<school type="string">Enchantment</school>
+				<source type="string">Bard, Sorcerer, Warlock, Wizard</source>
+			</id-00010>
+			<id-00011>
+				<actions />
+				<cast type="number">0</cast>
+				<castingtime type="string">1 bonus action </castingtime>
+				<components type="string">V </components>
+				<description type="formattedtext">
+					<p>
+						<b>Target: </b>Self</p>
+					<p>You teleport to an unoccupied space that you can see, disappearing and reappearing in a swirl of shimmering mist.</p>
+				</description>
+				<duration type="string">Instantaneous</duration>
+				<group type="string">Spells</group>
+				<level type="number">2</level>
+				<locked type="number">1</locked>
+				<name type="string">Misty Step</name>
+				<prepared type="number">0</prepared>
+				<range type="string">Short (30 feet) </range>
+				<ritual type="number">0</ritual>
+				<school type="string">conjuration; arcane, chaos, movement, teleportation</school>
+				<source type="string">Sorcerer, Warlock, Wizard</source>
+			</id-00011>
+			<id-00012>
+				<actions>
+					<id-00001>
+						<atkmod type="number">0</atkmod>
+						<atkprof type="number">1</atkprof>
+						<order type="number">1</order>
+						<savedcbase type="string">ability</savedcbase>
+						<savedcmod type="number">0</savedcmod>
+						<savedcprof type="number">1</savedcprof>
+						<savedcstat type="string">charisma</savedcstat>
+						<savemagic type="number">1</savemagic>
+						<savetype type="string">strength</savetype>
+						<type type="string">cast</type>
+					</id-00001>
+					<id-00002>
+						<damagelist>
+							<id-00001>
+								<bonus type="number">0</bonus>
+								<dice type="dice">2d10</dice>
+								<type type="string">force</type>
+							</id-00001>
+						</damagelist>
+						<order type="number">2</order>
+						<type type="string">damage</type>
+					</id-00002>
+					<id-00003>
+						<label type="string">Prone</label>
+						<order type="number">3</order>
+						<type type="string">effect</type>
+					</id-00003>
+				</actions>
+				<cast type="number">0</cast>
+				<castingtime type="string">1 action</castingtime>
+				<components type="string">V, S</components>
+				<description type="formattedtext">
+					<p>You create an arcane speck of light above a creature you can see within range. The speck turns into a portal from which a massive fiendish fist strikes down on the target. The target must make a Strength saving throw. On a failed save, it takes 2d10 force damage and is knocked prone. On a successful save, it takes half the damage and isn&#8217;t knocked prone.</p>
+					<p>
+						<b>At Higher Levels. </b>When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d10 for each slot level above 1st.</p>
+				</description>
+				<duration type="string">Instantaneous</duration>
+				<group type="string">Spells</group>
+				<level type="number">1</level>
+				<locked type="number">1</locked>
+				<name type="string">Fist From Khyber</name>
+				<prepared type="number">0</prepared>
+				<range type="string">60 feet</range>
+				<rare type="number">0</rare>
+				<ritual type="number">0</ritual>
+				<school type="string">Evocation</school>
+				<source type="string">Warlock,</source>
+			</id-00012>
+			<id-00013>
+				<actions>
+					<id-00001>
+						<durmod type="number">1</durmod>
+						<durunit type="string">minute</durunit>
+						<label type="string">Immolating Geist; (C)</label>
+						<order type="number">1</order>
+						<targeting type="string">self</targeting>
+						<type type="string">effect</type>
+					</id-00001>
+					<id-00002>
+						<atkprof type="number">1</atkprof>
+						<onmissdamage type="string">half</onmissdamage>
+						<order type="number">2</order>
+						<savedcbase type="string">ability</savedcbase>
+						<savedcprof type="number">1</savedcprof>
+						<savedcstat type="string">charisma</savedcstat>
+						<savemagic type="number">1</savemagic>
+						<savetype type="string">wisdom</savetype>
+						<type type="string">cast</type>
+					</id-00002>
+					<id-00003>
+						<damagelist>
+							<id-00001>
+								<bonus type="number">0</bonus>
+								<dice type="dice">3d6</dice>
+								<type type="string">fire</type>
+							</id-00001>
+							<id-00002>
+								<bonus type="number">0</bonus>
+								<dice type="dice">3d6</dice>
+								<type type="string">necrotic</type>
+							</id-00002>
+						</damagelist>
+						<order type="number">3</order>
+						<type type="string">damage</type>
+					</id-00003>
+				</actions>
+				<cast type="number">0</cast>
+				<castingtime type="string">1 action</castingtime>
+				<components type="string">V, S, M (a length of charred linen ribbon)</components>
+				<description type="formattedtext">
+					<p>A Medium spectral humanoid engulfed in ghostly flames appears in an unoccupied space you can see within range. As a bonus action on your turn, you can move the flaming spirit up to 20 feet. The spirit can enter the space of another creature and can pass through objects, such as walls, provided you can see the destination space. A creature that starts its turn in the spirit&#8217;s space must make a Wisdom saving throw, taking 3d6 fire damage and 3d6 necrotic damage on a failed save, or half as much damage on a successful one.</p>
+					<p>
+						<b>At Higher Levels. </b>When you cast this spell using a spell slot of 4th level or higher, the damage increases by 1d6 fire damage for each slot level above 3rd.</p>
+				</description>
+				<duration type="string">Concentration, up to 1 minute</duration>
+				<group type="string">Spells</group>
+				<level type="number">3</level>
+				<locked type="number">1</locked>
+				<name type="string">Immolating Geist</name>
+				<prepared type="number">0</prepared>
+				<range type="string">90 feet</range>
+				<rare type="number">0</rare>
+				<ritual type="number">0</ritual>
+				<school type="string">Necromancy</school>
+				<source type="string">Bard, Sorcerer, Warlock, Wizard</source>
+			</id-00013>
+			<id-00015>
+				<actions>
+					<id-00001>
+						<atkmod type="number">0</atkmod>
+						<atkprof type="number">1</atkprof>
+						<order type="number">1</order>
+						<savedcbase type="string">ability</savedcbase>
+						<savedcmod type="number">0</savedcmod>
+						<savedcprof type="number">1</savedcprof>
+						<savedcstat type="string">charisma</savedcstat>
+						<savemagic type="number">1</savemagic>
+						<savetype type="string">wisdom</savetype>
+						<type type="string">cast</type>
+					</id-00001>
+					<id-00002>
+						<label type="string">Charmed</label>
+						<order type="number">2</order>
+						<type type="string">effect</type>
+					</id-00002>
+					<id-00003>
+						<label type="string">Incapacitated</label>
+						<order type="number">3</order>
+						<type type="string">effect</type>
+					</id-00003>
+				</actions>
+				<cast type="number">0</cast>
+				<castingtime type="string">1 action </castingtime>
+				<components type="string">S, M (piece of crystal) </components>
+				<description type="formattedtext">
+					<p>
+						<b>Area: </b>20-foot cube</p>
+					<p>You conjure a swirling pattern of twisting hues that roils through the air, appearing for a moment and then vanishing. Creatures in the area that can perceive the pattern must make a Wisdom saving throw and on a failure the target is charmed. A creature charmed by this spell is incapacitated and its Speed is reduced to 0.</p>
+					<p>The effect ends on a creature when it takes damage or when another creature uses an action to shake it out of its daze.</p>
+				</description>
+				<duration type="string">Concentration (1 minute)</duration>
+				<group type="string">Spells</group>
+				<level type="number">3</level>
+				<locked type="number">1</locked>
+				<name type="string">Hypnotic Pattern</name>
+				<prepared type="number">0</prepared>
+				<range type="string">Long (120 feet) </range>
+				<rare type="number">0</rare>
+				<ritual type="number">0</ritual>
+				<school type="string">illusion; arcane, prismatic</school>
+				<source type="string">Bard, Sorcerer, Warlock, Wizard </source>
+			</id-00015>
+			<id-00016>
+				<actions>
+					<id-00001>
+						<durmod type="number">1</durmod>
+						<durunit type="string">hour</durunit>
+						<label type="string">Hex (C); IFT:CUSTOM(Hex); DMG: 1d6 necrotic</label>
+						<order type="number">1</order>
+						<targeting type="string">self</targeting>
+						<type type="string">effect</type>
+					</id-00001>
+					<id-00002>
+						<durmod type="number">1</durmod>
+						<durunit type="string">hour</durunit>
+						<label type="string">Hex; DISCHK: dexterity; (C)</label>
+						<order type="number">4</order>
+						<type type="string">effect</type>
+					</id-00002>
+					<id-00003>
+						<durmod type="number">1</durmod>
+						<durunit type="string">hour</durunit>
+						<label type="string">Hex; DISCHK: strength; (C)</label>
+						<order type="number">2</order>
+						<type type="string">effect</type>
+					</id-00003>
+					<id-00005>
+						<durmod type="number">1</durmod>
+						<durunit type="string">hour</durunit>
+						<label type="string">Hex; DISCHK: constitution; (C)</label>
+						<order type="number">5</order>
+						<type type="string">effect</type>
+					</id-00005>
+					<id-00006>
+						<durmod type="number">1</durmod>
+						<durunit type="string">hour</durunit>
+						<label type="string">Hex; DISCHK: intelligence; (C)</label>
+						<order type="number">6</order>
+						<type type="string">effect</type>
+					</id-00006>
+					<id-00007>
+						<durmod type="number">1</durmod>
+						<durunit type="string">hour</durunit>
+						<label type="string">Hex; DISCHK: wisdom; (C)</label>
+						<order type="number">7</order>
+						<type type="string">effect</type>
+					</id-00007>
+					<id-00008>
+						<durmod type="number">1</durmod>
+						<durunit type="string">hour</durunit>
+						<label type="string">Hex; DISCHK: charisma; (C)</label>
+						<order type="number">8</order>
+						<type type="string">effect</type>
+					</id-00008>
+					<id-00009>
+						<damagelist>
+							<id-00001>
+								<bonus type="number">0</bonus>
+								<dice type="dice">d6</dice>
+								<statmult type="number">1</statmult>
+								<type type="string">necrotic</type>
+							</id-00001>
+						</damagelist>
+						<order type="number">9</order>
+						<type type="string">damage</type>
+					</id-00009>
+				</actions>
+				<cast type="number">0</cast>
+				<castingtime type="string">1 bonus action</castingtime>
+				<components type="string">V, S, M (the petrified eye of a newt)</components>
+				<description type="formattedtext">
+					<p>You place a curse on a creature that you can see within range. Until the spell ends, you deal an extra 1d6 necrotic damage to the target whenever you hit it with an attack. Also, choose one ability when you cast the spell. The target has disadvantage on ability checks made with the chosen ability.</p>
+					<p>If the target drops to 0 hit points before this spell ends, you can use a bonus action on a subsequent turn of yours to curse a new creature.</p>
+					<p>A remove curse cast on the target ends this spell early.</p>
+					<p>
+						<b>At Higher Levels. </b>When you cast this spell using a spell slot of 3rd or 4th level, you can maintain your concentration on the spell for up to 8 hours. When you use a spell slot of 5th level or higher, you can maintain your concentration on the spell for up to 24 hours.</p>
+				</description>
+				<duration type="string">Concentration, up to 1 hour</duration>
+				<group type="string">Spells</group>
+				<level type="number">1</level>
+				<locked type="number">1</locked>
+				<name type="string">Hex (B) (90) (C)</name>
+				<prepared type="number">0</prepared>
+				<range type="string">90 feet</range>
+				<rare type="number">0</rare>
+				<ritual type="number">0</ritual>
+				<Rob2E type="string">EffectsCodingSpellsVERSION10</Rob2E>
+				<school type="string">Enchantment</school>
+				<source type="string">Warlock</source>
+			</id-00016>
+			<id-00019>
+				<actions>
+					<id-00001>
+						<atkmod type="number">0</atkmod>
+						<atkprof type="number">1</atkprof>
+						<order type="number">1</order>
+						<savedcmod type="number">0</savedcmod>
+						<savedcprof type="number">1</savedcprof>
+						<savemagic type="number">0</savemagic>
+						<savetype type="string">intelligence</savetype>
+						<type type="string">cast</type>
+					</id-00001>
+					<id-00002>
+						<durmod type="number">1</durmod>
+						<durunit type="string">minute</durunit>
+						<label type="string">Minor Illusion; Conjured in 5-foot cube</label>
+						<order type="number">2</order>
+						<targeting type="string">self</targeting>
+						<type type="string">effect</type>
+					</id-00002>
+				</actions>
+				<cast type="number">0</cast>
+				<castingtime type="string">1 action </castingtime>
+				<components type="string"> S, M (tinderbox and small mirror) </components>
+				<description type="formattedtext">
+					<linklist>
+						<link class="power" recordname="reference.spelldata.id-00331@Level Up Advanced 5e Adventurer's Guide">Minor Illusion</link>
+					</linklist>
+				</description>
+				<duration type="string">1 minute</duration>
+				<group type="string">Spells</group>
+				<level type="number">0</level>
+				<locked type="number">1</locked>
+				<name type="string">Minor Illusion (30)</name>
+				<prepared type="number">0</prepared>
+				<range type="string">Short (30 feet) </range>
+				<rare type="number">0</rare>
+				<ritual type="number">0</ritual>
+				<school type="string">illusion; arcane, chaos</school>
+				<source type="string">Bard, Sorcerer, Warlock, Wizard </source>
+			</id-00019>
+			<id-00022>
+				<actions>
+					<id-00004>
+						<atkbase type="string">ability</atkbase>
+						<atkmod type="number">0</atkmod>
+						<atkprof type="number">1</atkprof>
+						<atkstat type="string">charisma</atkstat>
+						<atktype type="string">melee</atktype>
+						<order type="number">1</order>
+						<savedcmod type="number">0</savedcmod>
+						<savedcprof type="number">1</savedcprof>
+						<savemagic type="number">0</savemagic>
+						<type type="string">cast</type>
+					</id-00004>
+					<id-00005>
+						<damagelist>
+							<id-00001>
+								<bonus type="number">0</bonus>
+								<dice type="dice">d6</dice>
+								<stat type="string">charisma</stat>
+								<statmult type="number">1</statmult>
+								<type type="string">force</type>
+							</id-00001>
+						</damagelist>
+						<order type="number">2</order>
+						<type type="string">damage</type>
+					</id-00005>
+					<id-00006>
+						<heallist>
+							<id-00001>
+								<bonus type="number">3</bonus>
+								<dice type="dice"></dice>
+								<statmult type="number">1</statmult>
+							</id-00001>
+						</heallist>
+						<healtargeting type="string">self</healtargeting>
+						<healtype type="string">temp</healtype>
+						<order type="number">3</order>
+						<type type="string">heal</type>
+					</id-00006>
+				</actions>
+				<cast type="number">0</cast>
+				<description type="formattedtext">
+					<p>You can use an action to thrash a creature with a scintillating tendril of arcane force. Make a melee spell attack against a creature within 15 feet, dealing 1d6 force damage on a hit.</p>
+					<p>At the end of your turn you gain a number of temporary hit points equal to half the damage you dealt with Eldritch Whip this turn (minimum 1), which last until the end of your next turn. When you hit a creature with your Eldritch Whip and you already have temporary hit points, you can end the temporary hit points early to gain a bonus to the Eldritch Whip&#8217;s damage roll equal to half the number of temporary hit points you ended early.</p>
+				</description>
+				<level type="number">0</level>
+				<locked type="number">1</locked>
+				<name type="string">Eldritch Whip</name>
+				<prepared type="number">0</prepared>
+				<rare type="number">0</rare>
+				<ritual type="number">0</ritual>
+				<specializationchoice type="number">0</specializationchoice>
+			</id-00022>
+			<id-00025>
+				<actions />
+				<cast type="number">0</cast>
+				<castingtime type="string">1 action (ritual) </castingtime>
+				<components type="string">V, S</components>
+				<description type="formattedtext">
+					<p>You call upon the secret lore of beasts and gain the ability to speak with them. Beasts have a different perspective of the world, and their knowledge and awareness is filtered through that perspective. At a minimum, beasts can tell you about nearby locations and monsters, including things they have recently perceived. At the Narrator&#8217;s discretion, you might be able to persuade a beast to perform a small favor for you.</p>
+				</description>
+				<duration type="string">10 minutes</duration>
+				<group type="string">Race Actions/Effects</group>
+				<level type="number">1</level>
+				<locked type="number">1</locked>
+				<name type="string">Speak with Animals</name>
+				<prepared type="number">0</prepared>
+				<range type="string">Self </range>
+				<ritual type="number">0</ritual>
+				<school type="string">divination; beasts, communication, nature, utility</school>
+				<source type="string">Bard, Druid </source>
+			</id-00025>
+			<id-00026>
+				<actions>
+					<id-00001>
+						<durmod type="number">1</durmod>
+						<durunit type="string">minute</durunit>
+						<label type="string">Mage Hand; can control hand using an action</label>
+						<order type="number">1</order>
+						<targeting type="string">self</targeting>
+						<type type="string">effect</type>
+					</id-00001>
+				</actions>
+				<cast type="number">0</cast>
+				<castingtime type="string">1 action </castingtime>
+				<components type="string">V, S</components>
+				<description type="formattedtext">
+					<linklist>
+						<link class="power" recordname="reference.spelldata.id-00307@Level Up Advanced 5e Adventurer's Guide">Mage Hand</link>
+					</linklist>
+				</description>
+				<duration type="string">1 minute</duration>
+				<group type="string">Spells</group>
+				<level type="number">0</level>
+				<locked type="number">1</locked>
+				<name type="string">Mage Hand (30)</name>
+				<prepared type="number">0</prepared>
+				<range type="string">Short (30 feet) </range>
+				<rare type="number">0</rare>
+				<ritual type="number">0</ritual>
+				<school type="string">conjuration; arcane, utility</school>
+				<source type="string">Sorcerer, Warlock, Wizard </source>
+			</id-00026>
+		</powers>
+		<profbonus type="number">3</profbonus>
+		<proficiencylist>
+			<id-00001>
+				<name type="string">Armor: Light armor</name>
+			</id-00001>
+			<id-00002>
+				<name type="string">Tool: Game set (cards) </name>
+			</id-00002>
+			<id-00003>
+				<name type="string">Weapon: Daggers, darts, slings, quarterstaffs, light crossbows</name>
+			</id-00003>
+			<id-00004>
+				<name type="string">Tool: One type of artisan’s tools.</name>
+			</id-00004>
+			<id-00005>
+				<name type="string">Tool: One type of artisan’s tools.</name>
+			</id-00005>
+		</proficiencylist>
+		<race type="string">Gnome (Tyrannized)</race>
+		<racelink type="windowreference">
+			<class>reference_race</class>
+			<recordname>reference.racedata.gnome@DD Eberron Rising From the Last War - Players</recordname>
+		</racelink>
+		<senses type="string">Darkvision 60'</senses>
+		<size type="string">Small</size>
+		<skilllist>
+			<id-00001>
+				<misc type="number">0</misc>
+				<name type="string">Perception</name>
+				<prof type="number">0</prof>
+				<shortcut type="number">0</shortcut>
+				<stat type="string">wisdom</stat>
+				<total type="number">0</total>
+			</id-00001>
+			<id-00002>
+				<misc type="number">0</misc>
+				<name type="string">Persuasion</name>
+				<prof type="number">1</prof>
+				<shortcut type="number">0</shortcut>
+				<stat type="string">charisma</stat>
+				<total type="number">7</total>
+			</id-00002>
+			<id-00003>
+				<misc type="number">0</misc>
+				<name type="string">Insight</name>
+				<prof type="number">1</prof>
+				<shortcut type="number">0</shortcut>
+				<stat type="string">wisdom</stat>
+				<total type="number">3</total>
+			</id-00003>
+			<id-00004>
+				<misc type="number">0</misc>
+				<name type="string">Arcana</name>
+				<prof type="number">0</prof>
+				<shortcut type="number">0</shortcut>
+				<stat type="string">intelligence</stat>
+				<total type="number">2</total>
+			</id-00004>
+			<id-00005>
+				<misc type="number">0</misc>
+				<name type="string">Nature</name>
+				<prof type="number">0</prof>
+				<shortcut type="number">0</shortcut>
+				<stat type="string">intelligence</stat>
+				<total type="number">2</total>
+			</id-00005>
+			<id-00006>
+				<misc type="number">0</misc>
+				<name type="string">Medicine</name>
+				<prof type="number">0</prof>
+				<shortcut type="number">0</shortcut>
+				<stat type="string">wisdom</stat>
+				<total type="number">0</total>
+			</id-00006>
+			<id-00007>
+				<misc type="number">0</misc>
+				<name type="string">Survival</name>
+				<prof type="number">0</prof>
+				<shortcut type="number">0</shortcut>
+				<stat type="string">wisdom</stat>
+				<total type="number">0</total>
+			</id-00007>
+			<id-00008>
+				<misc type="number">0</misc>
+				<name type="string">Performance</name>
+				<prof type="number">1</prof>
+				<shortcut type="number">0</shortcut>
+				<stat type="string">charisma</stat>
+				<total type="number">7</total>
+			</id-00008>
+			<id-00009>
+				<misc type="number">0</misc>
+				<name type="string">Acrobatics</name>
+				<prof type="number">0</prof>
+				<shortcut type="number">0</shortcut>
+				<stat type="string">dexterity</stat>
+				<total type="number">2</total>
+			</id-00009>
+			<id-00010>
+				<misc type="number">0</misc>
+				<name type="string">Culture</name>
+				<prof type="number">0</prof>
+				<shortcut type="number">0</shortcut>
+				<stat type="string">intelligence</stat>
+				<total type="number">2</total>
+			</id-00010>
+			<id-00011>
+				<misc type="number">0</misc>
+				<name type="string">Athletics</name>
+				<prof type="number">0</prof>
+				<shortcut type="number">0</shortcut>
+				<stat type="string">strength</stat>
+				<total type="number">-1</total>
+			</id-00011>
+			<id-00012>
+				<misc type="number">0</misc>
+				<name type="string">Sleight of Hand</name>
+				<prof type="number">0</prof>
+				<shortcut type="number">0</shortcut>
+				<stat type="string">dexterity</stat>
+				<total type="number">2</total>
+			</id-00012>
+			<id-00013>
+				<misc type="number">0</misc>
+				<name type="string">Intimidation</name>
+				<prof type="number">1</prof>
+				<shortcut type="number">0</shortcut>
+				<stat type="string">charisma</stat>
+				<total type="number">7</total>
+			</id-00013>
+			<id-00014>
+				<misc type="number">1</misc>
+				<name type="string">Deception</name>
+				<prof type="number">1</prof>
+				<shortcut type="number">0</shortcut>
+				<stat type="string">charisma</stat>
+				<total type="number">8</total>
+			</id-00014>
+			<id-00015>
+				<misc type="number">0</misc>
+				<name type="string">Investigation</name>
+				<prof type="number">1</prof>
+				<shortcut type="number">0</shortcut>
+				<stat type="string">intelligence</stat>
+				<total type="number">5</total>
+			</id-00015>
+			<id-00016>
+				<misc type="number">0</misc>
+				<name type="string">Religion</name>
+				<prof type="number">0</prof>
+				<shortcut type="number">0</shortcut>
+				<stat type="string">intelligence</stat>
+				<total type="number">2</total>
+			</id-00016>
+			<id-00017>
+				<misc type="number">0</misc>
+				<name type="string">Engineering</name>
+				<prof type="number">0</prof>
+				<shortcut type="number">0</shortcut>
+				<stat type="string">intelligence</stat>
+				<total type="number">2</total>
+			</id-00017>
+			<id-00018>
+				<misc type="number">0</misc>
+				<name type="string">Stealth</name>
+				<prof type="number">0</prof>
+				<shortcut type="number">0</shortcut>
+				<stat type="string">dexterity</stat>
+				<total type="number">2</total>
+			</id-00018>
+			<id-00019>
+				<misc type="number">0</misc>
+				<name type="string">History</name>
+				<prof type="number">0</prof>
+				<shortcut type="number">0</shortcut>
+				<stat type="string">intelligence</stat>
+				<total type="number">2</total>
+			</id-00019>
+			<id-00020>
+				<misc type="number">0</misc>
+				<name type="string">Animal Handling</name>
+				<prof type="number">0</prof>
+				<shortcut type="number">0</shortcut>
+				<stat type="string">wisdom</stat>
+				<total type="number">0</total>
+			</id-00020>
+			<id-00022>
+				<misc type="number">0</misc>
+				<name type="string">Maneuver</name>
+				<prof type="number">1</prof>
+				<shortcut type="number">0</shortcut>
+				<stat type="string">dexterity</stat>
+				<total type="number">5</total>
+			</id-00022>
+		</skilllist>
+		<speed>
+			<armor type="number">0</armor>
+			<base type="number">25</base>
+			<misc type="number">0</misc>
+			<temporary type="number">0</temporary>
+			<total type="number">25</total>
+		</speed>
+		<subracelink type="windowreference">
+			<class>reference_subrace</class>
+			<recordname>reference.racedata.gnome.subraces.markofscribing@DD Eberron Rising From the Last War - Players</recordname>
+		</subracelink>
+		<temp />
+		<token type="token">campaign/tokens/Chomsky.png</token>
+		<token3Dflat type="token">portrait_id-00005_token</token3Dflat>
+		<traitlist>
+			<id-00001>
+				<locked type="number">1</locked>
+				<name type="string">Gnome Cunning</name>
+				<text type="formattedtext">
+					<p>You have advantage on all Intelligence, Wisdom, and Charisma saving throws against magic.</p>
+				</text>
+				<type type="string">racial</type>
+			</id-00001>
+			<id-00002>
+				<locked type="number">1</locked>
+				<name type="string">Gifted Scribe</name>
+				<text type="formattedtext">
+					<p>When you make an Intelligence (History) check or an ability check using calligrapher's supplies, you can roll a d4 and add the number rolled to the ability check.</p>
+				</text>
+				<type type="string">subracial</type>
+			</id-00002>
+			<id-00003>
+				<locked type="number">1</locked>
+				<name type="string">Scribe's Insight</name>
+				<text type="formattedtext">
+					<p>You know the <i>message </i>cantrip. You can also cast <i>comprehend languages </i>once with this trait, and you regain the ability to cast it when you finish a short or long rest. Starting at 3rd level, you can cast the <i>magic mouth </i>spell with this trait, and you regain the ability to cast it when you finish a long rest. Intelligence is your spellcasting ability for these spells.</p>
+					<linklist>
+						<link class="power" recordname="reference.spelldata.message@DD PHB Deluxe">
+							<b>Spell: </b>Message</link>
+						<link class="power" recordname="reference.spelldata.comprehendlanguages@DD PHB Deluxe">
+							<b>Spell: </b>Comprehend Languages</link>
+						<link class="power" recordname="reference.spelldata.magicmouth@DD PHB Deluxe">
+							<b>Spell: </b>Magic Mouth</link>
+					</linklist>
+				</text>
+				<type type="string">subracial</type>
+			</id-00003>
+			<id-00004>
+				<locked type="number">1</locked>
+				<name type="string">Spells of the Mark</name>
+				<text type="formattedtext">
+					<p>If you have the Spellcasting or the Pact Magic class feature, the spells on the Mark of Scribing Spells table are added to the spell list of your spellcasting class.</p>
+					<p>
+						<b>Mark of Scribing Spells</b>
+					</p>
+					<linklist>
+						<link class="power" recordname="reference.spelldata.comprehendlanguages@DD PHB Deluxe">
+							<b>Spell 1st Level: </b>Comprehend Languages</link>
+						<link class="power" recordname="reference.spelldata.illusoryscript@DD PHB Deluxe">
+							<b>Spell 1st Level: </b>Illusory Script</link>
+						<link class="power" recordname="reference.spelldata.animalmessenger@DD PHB Deluxe">
+							<b>Spell 2nd Level: </b>Animal Messenger</link>
+						<link class="power" recordname="reference.spelldata.silence@DD PHB Deluxe">
+							<b>Spell 2nd Level: </b>Silence</link>
+						<link class="power" recordname="reference.spelldata.sending@DD PHB Deluxe">
+							<b>Spell 3rd Level: </b>Sending</link>
+						<link class="power" recordname="reference.spelldata.tongues@DD PHB Deluxe">
+							<b>Spell 3rd Level: </b>Tongues</link>
+						<link class="power" recordname="reference.spelldata.arcaneeye@DD PHB Deluxe">
+							<b>Spell 4th Level: </b>Arcane Eye</link>
+						<link class="power" recordname="reference.spelldata.confusion@DD PHB Deluxe">
+							<b>Spell 4th Level: </b>Confusion</link>
+						<link class="power" recordname="reference.spelldata.dream@DD PHB Deluxe">
+							<b>Spell 5th Level: </b>Dream</link>
+					</linklist>
+				</text>
+				<type type="string">subracial</type>
+			</id-00004>
+			<id-00005>
+				<locked type="number">1</locked>
+				<name type="string">Tyrannized</name>
+				<text type="formattedtext">
+					<p>Many people live in fear of a tyrannical ruler and of the militant minions that punish dissent and disobedience. Performative loyalty becomes necessary for survival, until even those who oppose the ruler will sometimes betray their neighbors lest they be dragged away to torture and enslavement. Those who resist the tyrant learn to feign the role of faithful soldier, and the cruel irony is that they often profit from the violent conquests of the regime they loathe.</p>
+					<h>Traits</h>
+					<p>Characters raised in the tyrannized culture share a variety of traits in common with one another.</p>
+					<linklist>
+						<link class="reference_culturaltrait" recordname="..traits.id-00001">All Hail the Tyrant</link>
+						<link class="reference_culturaltrait" recordname="..traits.id-00002">Defiant Will</link>
+						<link class="reference_culturaltrait" recordname="..traits.id-00003">Saving Face</link>
+						<link class="reference_culturaltrait" recordname="..traits.id-00004">Scars of the Scourge</link>
+						<link class="reference_culturaltrait" recordname="..traits.id-00005">Languages</link>
+					</linklist>
+				</text>
+				<traits>
+					<id-00001>
+						<name type="string">All Hail the Tyrant</name>
+						<text type="formattedtext">
+							<p>With true freedom denied them many learn to feign deference, while some resign themselves to collaborating with the tyrant&#8217;s minions so as not to be suspected of disloyalty. You gain proficiency in either Deception or Intimidation.</p>
+						</text>
+					</id-00001>
+					<id-00002>
+						<name type="string">Defiant Will</name>
+						<text type="formattedtext">
+							<p>Whether out of fearful devotion to the tyrant or a stalwart resistance, you refuse to be subdued. You gain an expertise die on saving throws made to resist being charmed, frightened, paralyzed, poisoned, stunned, or put to sleep.</p>
+						</text>
+					</id-00002>
+					<id-00003>
+						<name type="string">Saving Face</name>
+						<text type="formattedtext">
+							<p>You are careful not to show weakness in front of others for fear of losing status. If you miss with an attack roll or fail an ability check, you can gain a bonus to the roll equal to the number of allies you can see within 30 feet of you (maximum +3), possibly changing a failure into a success. Once you use this trait, you can&#8217;t use it again until you finish a short or long rest.</p>
+						</text>
+					</id-00003>
+					<id-00004>
+						<name type="string">Scars of the Scourge</name>
+						<text type="formattedtext">
+							<p>The tyrant&#8217;s minions invariably have some preferred method of torment and you have either learned to survive it or chosen to use the weapon of your oppressors against them. Choose either scars or scourge, and then choose one of the following damage types: acid, cold, fire, force, lightning, necrotic, poison, psychic, radiant, or thunder.</p>
+							<p>
+								<b>
+									<i>Scars: </i>
+								</b>You have resistance to the chosen damage type.</p>
+							<p>
+								<b>
+									<i>Scourge: </i>
+								</b>As a bonus action, you can enhance the next attack you make this turn. If that attack hits, it deals extra damage of the chosen type equal to your proficiency bonus. However, the sting of the scourge lessens after the initial strike, so after you deal this extra damage to a creature, this trait cannot deal extra damage to it during the same combat.</p>
+						</text>
+					</id-00004>
+					<id-00005>
+						<name type="string">Languages</name>
+						<text type="formattedtext">
+							<p>You can speak, read, write, and sign Common and one other language.</p>
+						</text>
+					</id-00005>
+				</traits>
+			</id-00005>
+			<id-00006>
+				<locked type="number">1</locked>
+				<name type="string">Defiant Will</name>
+				<text type="formattedtext">
+					<p>Whether out of fearful devotion to the tyrant or a stalwart resistance, you refuse to be subdued. You gain an expertise die on saving throws made to resist being charmed, frightened, paralyzed, poisoned, stunned, or put to sleep.</p>
+				</text>
+			</id-00006>
+			<id-00007>
+				<locked type="number">1</locked>
+				<name type="string">All Hail the Tyrant</name>
+				<text type="formattedtext">
+					<p>With true freedom denied them many learn to feign deference, while some resign themselves to collaborating with the tyrant&#8217;s minions so as not to be suspected of disloyalty. You gain proficiency in either Deception or Intimidation.</p>
+				</text>
+			</id-00007>
+			<id-00008>
+				<locked type="number">1</locked>
+				<name type="string">Saving Face</name>
+				<text type="formattedtext">
+					<p>You are careful not to show weakness in front of others for fear of losing status. If you miss with an attack roll or fail an ability check, you can gain a bonus to the roll equal to the number of allies you can see within 30 feet of you (maximum +3), possibly changing a failure into a success. Once you use this trait, you can&#8217;t use it again until you finish a short or long rest.</p>
+				</text>
+			</id-00008>
+			<id-00009>
+				<locked type="number">1</locked>
+				<name type="string">Scars of the Scourge</name>
+				<text type="formattedtext">
+					<p>The tyrant&#8217;s minions invariably have some preferred method of torment and you have either learned to survive it or chosen to use the weapon of your oppressors against them. Choose either scars or scourge, and then choose one of the following damage types: acid, cold, fire, force, lightning, necrotic, poison, psychic, radiant, or thunder.</p>
+					<p>
+						<b>
+							<i>Scars: </i>
+						</b>You have resistance to the chosen damage type.</p>
+					<p>
+						<b>
+							<i>Scourge: </i>
+						</b>As a bonus action, you can enhance the next attack you make this turn. If that attack hits, it deals extra damage of the chosen type equal to your proficiency bonus. However, the sting of the scourge lessens after the initial strike, so after you deal this extra damage to a creature, this trait cannot deal extra damage to it during the same combat.</p>
+				</text>
+			</id-00009>
+			<id-00010>
+				<name type="string">Campaign Trait: Fed Up (+1 on Deception Checks)</name>
+			</id-00010>
+		</traitlist>
+		<units />
+		<vehicles />
+		<weapon>
+			<critdicebonus>
+				<melee type="number">0</melee>
+				<ranged type="number">0</ranged>
+			</critdicebonus>
+			<critrange>
+				<melee type="number">20</melee>
+				<ranged type="number">20</ranged>
+			</critrange>
+			<twoweaponfighting type="number">0</twoweaponfighting>
+		</weapon>
+		<weaponlist>
+			<id-00003>
+				<attackbonus type="number">0</attackbonus>
+				<carried type="number">2</carried>
+				<damagelist>
+					<id-00001>
+						<bonus type="number">0</bonus>
+						<dice type="dice">d4</dice>
+						<stat type="string">base</stat>
+						<type type="string">piercing</type>
+					</id-00001>
+				</damagelist>
+				<handling type="number">0</handling>
+				<isidentified type="number">1</isidentified>
+				<maxammo type="number">0</maxammo>
+				<name type="string">Dagger</name>
+				<prof type="number">1</prof>
+				<properties type="string">Dual-weilding, Finesse</properties>
+				<shortcut type="windowreference">
+					<class>item</class>
+					<recordname>....inventorylist.id-00001</recordname>
+				</shortcut>
+				<type type="number">0</type>
+			</id-00003>
+		</weaponlist>
+	</character>
+</root>

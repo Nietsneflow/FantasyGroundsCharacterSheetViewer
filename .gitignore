@@ -1,2 +1,9 @@
-*.xml
-*.md
+# Character exports are only published from characters/.
+# Anything dropped in the repo root (old exports, scratch saves) stays local.
+/*.xml
+
+# Dev tooling
+node_modules/
+
+# Local Claude Code settings
+.claude/settings.local.json

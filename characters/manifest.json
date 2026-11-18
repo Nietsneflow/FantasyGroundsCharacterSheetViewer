@@ -1,0 +1,7 @@
+{
+  "characters": [
+    { "id": "eamon",   "file": "Eamon7.xml",   "updated": "2026-11-17" },
+    { "id": "al-nox",  "file": "Al7.xml",      "updated": "2026-11-17" },
+    { "id": "chomsky", "file": "Chomsky7.xml", "updated": "2026-11-17" }
+  ]
+}

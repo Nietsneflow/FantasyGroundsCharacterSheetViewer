@@ -1,0 +1,14 @@
+{
+  "name": "fg-character-sheet-viewer",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static viewer for Fantasy Grounds (Level Up A5E) character XML exports, hosted on GitHub Pages.",
+  "type": "module",
+  "scripts": {
+    "check": "node tools/check.mjs",
+    "serve": "python -m http.server 8080"
+  },
+  "devDependencies": {
+    "jsdom": "^25.0.1"
+  }
+}
