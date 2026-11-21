@@ -89,6 +89,7 @@ function renderStatsBar(ch) {
       <div class="stat-label">Armor Class</div>
       <div class="stat-value blue">${ch.ac.total}</div>
       <div class="stat-sub">${acParts || 'AC'}</div>
+      ${ch.ac.stealthDis ? `<div class="stat-sub stat-warn"${ch.ac.stealthFrom ? ` title="From ${ch.ac.stealthFrom}"` : ''}>Stealth disadvantage</div>` : ''}
     </div>
     <div class="stat-block">
       <div class="stat-label">Initiative</div>
@@ -148,14 +149,23 @@ function renderAbilities(ch) {
 }
 
 function renderSaves(ch) {
+  // A flat bonus (a cloak of protection, say) is already inside each total; say so,
+  // because nothing else on the sheet explains why a save is higher than mod + proficiency.
+  const present = ABILITY_NAMES.filter(ab => ch.abilities[ab]);
+  const mods = present.map(ab => ch.abilities[ab].saveMod);
+  const uniform = mods.length && mods.every(m => m === mods[0]);
+  const bonusNote = !mods.some(Boolean) ? ''
+    : uniform ? `Every save includes a ${fmt(mods[0])} bonus from an item or effect.`
+    : `Includes item or effect bonuses: ${present.filter(ab => ch.abilities[ab].saveMod).map(ab => `${ABILITY_ABBR[ab]} ${fmt(ch.abilities[ab].saveMod)}`).join(', ')}.`;
+
   document.getElementById('sidebar-saves').innerHTML = `
     <div class="section-title">Saving Throws</div>
     <div class="saves-list">
-      ${ABILITY_NAMES.map(ab => {
+      ${present.map(ab => {
         const a = ch.abilities[ab];
-        if (!a) return '';
+        const breakdown = [`${ABILITY_ABBR[ab]} ${fmt(a.bonus)}`, a.saveProf ? `proficiency ${fmt(ch.profBonus)}` : '', a.saveMod ? `bonus ${fmt(a.saveMod)}` : ''].filter(Boolean).join(' · ');
         return `
-          <div class="save-row">
+          <div class="save-row" title="${breakdown}">
             <div class="prof-pip ${a.saveProf ? 'filled' : ''}"></div>
             <div class="save-name">${ab.charAt(0).toUpperCase() + ab.slice(1)}</div>
             <div class="save-bonus">${fmt(a.save)}</div>
@@ -163,6 +173,7 @@ function renderSaves(ch) {
         `;
       }).join('')}
     </div>
+    ${bonusNote ? `<div class="save-note">${bonusNote}</div>` : ''}
   `;
 }
 
@@ -455,23 +466,36 @@ function renderInventoryTab(ch) {
     <div class="inv-category">
       <div class="inv-cat-title">${type}</div>
       <div class="inv-items-grid">
-        ${grouped[type].sort((a, b) => b.carried - a.carried).map(item => `
-          <div class="inv-card${item.desc ? ' expandable' : ''}${item.count === 0 ? ' inv-empty' : ''}">
+        ${grouped[type].sort((a, b) => b.carried - a.carried).map(item => {
+          // Armor limits sit beside its AC; aura and prerequisites are detail, so they open with the description
+          const armorNotes = [
+            /disadvantage/i.test(item.stealth) ? 'Stealth disadvantage' : '',
+            /^\d+$/.test(item.strength) ? `Needs Strength ${item.strength}` : '',
+          ].filter(Boolean).join(' · ');
+          const extra = [
+            item.aura ? `<p><b>Aura:</b> ${item.aura}</p>` : '',
+            item.prerequisites ? `<p><b>Prerequisites:</b> ${item.prerequisites}</p>` : '',
+          ].join('');
+          const body = item.desc + extra;
+          return `
+          <div class="inv-card${body ? ' expandable' : ''}${item.count === 0 ? ' inv-empty' : ''}">
             <div class="inv-card-header">
               <div class="inv-name">${item.name}</div>
               ${item.count !== 1 ? `<div class="inv-count">×${item.count}</div>` : ''}
-              ${item.desc ? `<span class="action-chevron">▶</span>` : ''}
+              ${body ? `<span class="action-chevron">▶</span>` : ''}
             </div>
             <div class="inv-tags">${itemTags(item)}</div>
             ${item.subtype ? `<div class="inv-weight">${item.subtype}</div>` : ''}
             ${item.damage ? `<div class="inv-weight" style="color:var(--orange)">${item.damage}</div>` : ''}
             ${item.ac > 0 ? `<div class="inv-weight" style="color:var(--blue-bright)">AC ${item.ac}</div>` : ''}
+            ${armorNotes ? `<div class="inv-weight" style="color:var(--orange)">${armorNotes}</div>` : ''}
+            ${item.spells.map(sp => `<div class="inv-weight">📜 Holds the spell <b>${sp.name}</b>${sp.module ? ` (${sp.module})` : ''}</div>`).join('')}
             ${item.cost ? `<div class="inv-weight">💰 ${item.cost}</div>` : ''}
             ${item.weight > 0 ? `<div class="inv-weight">⚖ ${item.weight} lb${item.weight !== 1 ? 's' : ''}</div>` : ''}
             ${item.properties ? `<div class="inv-weight" style="font-style:italic">${item.properties}</div>` : ''}
-            ${item.desc ? `<div class="inv-desc card-body">${item.desc}</div>` : ''}
+            ${body ? `<div class="inv-desc card-body">${body}</div>` : ''}
           </div>
-        `).join('')}
+        `; }).join('')}
       </div>
     </div>
   `).join('');
@@ -631,6 +655,14 @@ function renderInfoTab(ch) {
           ${ch.proficiencies.map(p => `<div class="prof-item">${p}</div>`).join('') || '<div class="no-items">None listed.</div>'}
         </div>
       </div>
+
+      ${ch.sources.length ? `${divider}
+      <div class="info-section">
+        <div class="info-section-title">Rulebook Sources</div>
+        <div class="summary-grid">
+          ${ch.sources.map(s => `<div><span class="summary-lbl">${s.label}${s.name ? ` · ${s.name}` : ''}</span><br>${s.homebrew ? 'Homebrew module (the GM’s own)' : s.module || '<span class="source-manual">Entered by hand — not linked to a rulebook</span>'}</div>`).join('')}
+        </div>
+      </div>` : ''}
 
       ${divider}
       <div class="info-section">

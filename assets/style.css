@@ -1302,3 +1302,8 @@ body.font-calibri   { --font-display: Calibri, 'Gill Sans', sans-serif; --font-d
   .action-card .act-chips, .action-desc { padding-left: 0; }
   .spell-filter { align-items: flex-start; }
 }
+
+/* ===== Details added from the export: stealth, save bonuses, sources ===== */
+.stat-warn { color: var(--orange); }
+.save-note { margin-top: 8px; font-size: 0.72rem; color: var(--text-dim); font-style: italic; line-height: 1.35; }
+.source-manual { color: var(--text-dim); font-style: italic; }

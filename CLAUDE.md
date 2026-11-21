@@ -63,6 +63,10 @@ Root-level `*.xml` is git-ignored on purpose: only `characters/` is ever publish
   returns the wrong node.
 - **Unidentified items.** `isidentified = 0` means the players have not identified it; show
   `nonid_name` / `nonidentified` and nothing else. The real name is a spoiler.
+- **Reskinned items.** An item's `<spells>` container mostly lists the templates FG forged it
+  from; that is a spoiler too. Show only entries linked to a spell record (`reference_spell`).
+- **Public site.** Module names from `…link > recordname` are shown as "Rulebook Sources", but a
+  module that is not a published book is labelled "Homebrew module" instead of by name.
 - **`carried`**: 0 not carried, 1 carried, 2 equipped (FG counts armor toward AC only at 2).
 - **Expand/collapse.** Add class `expandable` to a card and `card-body` to its hidden part; one
   delegated listener in `app.js` does the rest. No inline `onclick`.

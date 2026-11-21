@@ -23,6 +23,10 @@ const getText = (node) => esc(rawText(node));
 const getNum = (node) => node ? (parseInt(node.textContent.trim(), 10) || 0) : 0;
 const getNumOr = (node, fallback) => node ? getNum(node) : fallback;
 const fmt = (n) => n >= 0 ? `+${n}` : `${n}`;
+// FG writes "-" in fields that do not apply to an item
+const dashless = (s) => s === '-' ? '' : s;
+// A windowreference's <recordname> ends in "@Module Name": the rulebook module a record came from
+const moduleOf = (linkNode) => esc((rawText(q(linkNode, 'recordname')).split('@')[1] || '').trim());
 const textToHtml = (s) => esc(s).replace(/\r\n|\r|\n/g, '<br>');
 
 const ABILITY_NAMES = ['strength', 'dexterity', 'constitution', 'intelligence', 'wisdom', 'charisma'];
@@ -143,7 +147,23 @@ function parseCharacter(xmlDoc) {
     hddie: getText(q(cls, 'hddie')),
     hdUsed: getNum(q(cls, 'hdused')),
     casterpactmagic: getNum(q(cls, 'casterpactmagic')),
+    module: moduleOf(q(cls, 'shortcut')),
   })).filter(cl => cl.name);
+
+  // Where each building block was taken from. An empty module means the name was
+  // typed in by hand rather than added from a rulebook, so nothing came with it.
+  const sources = [
+    { label: 'Heritage', name: race, module: moduleOf(q(c, 'racelink')) },
+    { label: 'Heritage variant', name: '', module: moduleOf(q(c, 'subracelink')) },
+    { label: 'Background', name: background, module: moduleOf(q(c, 'backgroundlink')) },
+    { label: 'Destiny', name: destiny, module: moduleOf(q(c, 'destinylink')) },
+    ...classes.map(cl => ({ label: 'Class', name: cl.name, module: cl.module })),
+  ].filter(s => s.name || s.module).map(s => ({
+    ...s,
+    // A GM's own module is usually named after a person; the site is public, so say
+    // "homebrew" rather than print the name.
+    homebrew: !!s.module && !/level up|a5e|^dd\b|^d&amp;d|guide|codex|gazette|menagerie|handbook|manual|compendium/i.test(s.module),
+  }));
 
   // Abilities
   const abilities = {};
@@ -155,6 +175,7 @@ function parseCharacter(xmlDoc) {
         bonus: getNum(q(node, 'bonus')),
         save: getNum(q(node, 'save')),
         saveProf: getNum(q(node, 'saveprof')),
+        saveMod: getNum(q(node, 'savemodifier')),   // flat bonus already included in `save`
         current: ab === 'luck' ? getNum(q(node, 'current')) : null,
       };
     }
@@ -416,6 +437,7 @@ function parseCharacter(xmlDoc) {
         ...base,
         name: getText(q(item, 'nonid_name')) || 'Unidentified item',
         damage: '', ac: 0, rarity: '', properties: '', cost: '',
+        stealth: '', strength: '', aura: '', prerequisites: '', spells: [],
         desc: textToHtml(rawText(q(item, 'nonidentified'))),
       };
     }
@@ -427,9 +449,24 @@ function parseCharacter(xmlDoc) {
       rarity: getText(q(item, 'rarity')),
       properties: getText(q(item, 'properties')),
       cost: getText(q(item, 'cost')),
+      stealth: dashless(getText(q(item, 'stealth'))),       // armor: "Disadvantage"
+      strength: dashless(getText(q(item, 'strength'))),     // armor: Strength needed to wear it
+      aura: getText(q(item, 'aura')),
+      prerequisites: getText(q(item, 'prerequisites')),
+      // <spells> mostly holds the templates FG forged the item from (a spoiler for
+      // reskinned items); only entries linked to a spell record are spells the item holds.
+      spells: qa(item, 'spells > *')
+        .filter(s => rawText(q(s, 'link > class')) === 'reference_spell')
+        .map(s => ({ name: getText(q(s, 'name')), module: moduleOf(q(s, 'link')) }))
+        .filter(s => s.name),
       desc: ftToHtml(q(item, 'description')),
     };
   }).filter(Boolean);
+
+  // FG's sheet-level stealth flag is often left unset; the worn armor says so itself
+  const noisyArmor = inventory.find(i => i.identified && i.carried === 2 && /disadvantage/i.test(i.stealth));
+  if (noisyArmor) ac.stealthDis = 1;
+  ac.stealthFrom = noisyArmor ? noisyArmor.name : '';
 
   // ----- Weapons -----
   const critRange = {
@@ -550,7 +587,7 @@ function parseCharacter(xmlDoc) {
   return {
     name, race, level, background, destiny, size, senses,
     inspiration, hero, exp, expNeeded, profBonus, perception,
-    details, narrative, notes,
+    details, narrative, notes, sources,
     classes, abilities, hp, ac, initiative, speed, speedSpecial, enc,
     skills, coins, languages, proficiencies,
     spellSlots, spellPoints, powers, spells, usesPreparation, hasSpellcasting,

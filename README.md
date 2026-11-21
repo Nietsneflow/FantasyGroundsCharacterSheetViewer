@@ -13,10 +13,15 @@ Pick your character on the home page and bookmark the link — each sheet has it
   species actions, death saves
 - **Spells** — slots or spell points remaining, every spell with its attack / save DC / damage,
   full description, and a "prepared only" filter
-- **Inventory** — currency, encumbrance, attuned items, everything carried with descriptions
+- **Inventory** — currency, encumbrance, attuned items, everything carried with descriptions,
+  armor limits (Stealth disadvantage, Strength needed) and the spell a scroll holds
 - **Features** — class features, heritage / culture / campaign traits, feats
 - **Companions** — full stat blocks for familiars and other companions
-- **Info** — biography, journal notes, languages, senses, proficiencies, XP
+- **Info** — biography, journal notes, languages, senses, proficiencies, which rulebook each part
+  of the character came from, XP
+
+The sidebar also says when saving throws include a bonus from an item, and the Armor Class box
+warns when worn armor gives disadvantage on Stealth.
 
 Sheets are a snapshot from the last export, so hit points and spell slots show where things stood
 at that moment.

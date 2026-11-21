@@ -100,7 +100,7 @@ Ability names: `strength`, `dexterity`, `constitution`, `intelligence`, `wisdom`
 |---|---|---|
 | `bonus` | number | Ability modifier |
 | `save` | number | Saving throw total |
-| `savemodifier` | number | Misc save modifier |
+| `savemodifier` | number | Flat bonus from items or effects, already included in `save` (e.g. +1 on every ability from a cloak of protection). The viewer notes it under the saves list |
 | `saveprof` | number | 1 if proficient in save, 0 otherwise |
 | `score` | number | Ability score |
 | `current` | number | **Luck only** — current luck points spent |
@@ -404,9 +404,9 @@ A single `cast` action can carry leftover `atkmod`/`savedcmod` fields with neith
 | `speed20` | number | Speed at 20 Strength (armor) |
 | `speed30` | number | Speed at 30 Strength (armor) |
 | `spellfailure` | number | Arcane spell failure % |
-| `spells` | container | Spells stored in item (scrolls, charged items) |
-| `stealth` | string | Stealth disadvantage flag (armor) |
-| `strength` | string | Strength requirement (armor) |
+| `spells` | container | **Mostly not spells.** Each entry is `link` (windowreference) + `name`. For forged or reskinned items the entries are the templates FG built the item from (e.g. "Ring of Protection" + "Ring" under a renamed brooch) with an empty `link > class` — showing those would spoil what a reskinned item really is. Only entries whose `link > class` is `reference_spell` are spells the item holds (scrolls); the viewer shows just those |
+| `stealth` | string | "Disadvantage" on armor that hinders Stealth, otherwise `-` or absent. The sheet-level `defenses > ac > disstealth` is often left at 0 even when the worn armor says Disadvantage, so the viewer trusts the equipped armor |
+| `strength` | string | Strength requirement (armor), a number or `-` |
 | `subtype` | string | Item sub-category |
 | `type` | string | Item category: "Weapon", "Armor", "Wondrous Item", "Ring", "Scroll", "Medicinals", "Adventuring Gear", "Unusual Item", etc. |
 | `version` | string | Item version string |
@@ -551,7 +551,13 @@ FG internal cross-reference. Contains two children:
 - `<class>` — reference type, e.g. "reference_class"
 - `<recordname>` — module path, e.g. "reference.classdata.id-00010@Level Up Advanced 5e Adventurer's Guide"
 
-> These are UI navigation links within FG. Not needed for the character viewer — can be ignored.
+> These are UI navigation links within FG, but the part of `<recordname>` after `@` is the name of
+> the module the record came from. The viewer shows it on the Info tab ("Rulebook Sources") for
+> `racelink`, `subracelink`, `backgroundlink`, `destinylink` and each class `shortcut`. An empty
+> link next to a filled-in name (e.g. a `<background>` with no `backgroundlink`) means the name was
+> typed by hand, so its features and proficiencies were never applied. A module that is not a
+> published book is shown as "Homebrew module" rather than by name — GM modules tend to carry a
+> person's name and the site is public.
 
 ---
 
